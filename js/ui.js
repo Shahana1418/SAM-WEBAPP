@@ -850,11 +850,28 @@ window.renderAssessments = function(container) {
                 </div>
                 <div class="wiz-field full">
                     <label>Core Subject for Assignment</label>
-                    <input type="text" class="form-input" id="course-name-input" placeholder="e.g. Design and Analysis of Algorithms" value="${cfg.courseName || ''}" oninput="(navState.assignConfig = navState.assignConfig || {}).courseName = this.value">
+                    ${(() => {
+                        const r = batchYear >= 2029 ? 'R2025' : 'R2021';
+                        const sList = (typeof SUBJECTS_DATA !== 'undefined' && SUBJECTS_DATA[r] && SUBJECTS_DATA[r][deptCode]) ? SUBJECTS_DATA[r][deptCode] : [];
+                        const opts = sList.map(s => `<option value="${s.name}" ${cfg.courseName === s.name ? 'selected' : ''}>${s.code} — ${s.name}</option>`).join('');
+                        
+                        return `
+                        <select class="form-input" style="padding-right: 32px;" id="course-name-input" onchange="(navState.assignConfig = navState.assignConfig || {}).courseName = this.value">
+                            <option value="">-- Select a true core subject --</option>
+                            ${opts}
+                            <option value="Custom Subject" ${cfg.courseName === 'Custom Subject' ? 'selected' : ''}>+ Other / Custom Subject</option>
+                        </select>
+                        `;
+                    })()}
                 </div>
             </div>
             <div class="wiz-nav-row" style="justify-content: flex-end;">
-                <button class="btn btn-primary" onclick="if(!navState.assignConfig.courseName) navState.assignConfig.courseName='Mock Subject'; moveAssignStep(2)">Next Step →</button>
+                <button class="btn btn-primary" onclick="
+                    const val = document.getElementById('course-name-input').value;
+                    if(!val) { alert('Please select a Core Subject first.'); return; }
+                    (navState.assignConfig = navState.assignConfig || {}).courseName = val;
+                    moveAssignStep(2);
+                ">Next Step →</button>
             </div>
         </div>`;
     } else if (step === 2) {
