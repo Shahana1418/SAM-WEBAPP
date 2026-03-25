@@ -65,120 +65,129 @@ const ASSIGN_TPL = {
         `<strong>Marks:</strong> Content 40% · Clarity 25% · Visuals 15% · Q&amp;A 20%`
 };
 
+// ── Phase 3: Regulation & Bloom Level Constants ──────────────────────────────
+const BLOOM_LEVELS = {
+    1: { label: 'Remember', icon: '🔵', desc: 'Recall, define, list, identify' },
+    2: { label: 'Understand', icon: '🟢', desc: 'Summarise, classify, explain' },
+    3: { label: 'Apply', icon: '🟡', desc: 'Solve, demonstrate, execute' },
+    4: { label: 'Analyse', icon: '🟠', desc: 'Differentiate, compare, organise' },
+    5: { label: 'Evaluate', icon: '🔴', desc: 'Judge, justify, critique, defend' }
+};
+
 const ASGN_TYPE_ORDER = ['presentation', 'mini_project', 'practical', 'problem_solve'];
 
-// ── Assignment Generation ───────────────────────────────────────────────────
-function logicGenerateAssignments(teams, unitData, mode = 'auto', selectedType = 'presentation', config = {}) {
-    if (!teams || !teams.length || !unitData || !unitData.length) return [];
+// ── Phase 3 Helper Functions ───────────────────────────────────────────────
 
-    const { courseName = '', courseCode = '' } = config;
+function buildPhase3Title(aType, unit) {
+    const verbs = {
+        presentation: ['Present & Explain:', 'Deliver a Talk on:', 'Demonstrate:', 'Explain with Examples:'],
+        mini_project: ['Mini Project — Design & Build:', 'Prototype Development:', 'Working Implementation of:', 'Build a Solution for:'],
+        practical: ['Conduct a Hands-On Exercise on:', 'Perform and Document:', 'Execute and Analyse:', 'Lab Experiment:'],
+        problem_solve: ['Solve a Problem Set on:', 'Apply Concepts from:', 'Work Through Challenges in:', 'Analyse and Solve:']
+    };
+    const pool = verbs[aType] || ['Study and Analyse:'];
+    let h = 0; for (let i = 0; i < unit.length; i++) h = (h * 31 + unit.charCodeAt(i)) & 0xffff;
+    const verb = pool[h % pool.length];
+    return `${verb} ${unit.length > 50 ? unit.substring(0, 47) + '...' : unit}`;
+}
+
+function buildPhase3Description(aType, topic, code, subject, bloomLevel) {
+    const b = BLOOM_LEVELS[bloomLevel];
+    const baseTpl = (ASSIGN_TPL[aType] || ASSIGN_TPL.presentation)(topic, subject, code);
+    return baseTpl +
+        `<br><br><strong>📊 Bloom's Level ${bloomLevel} — ${b.label}:</strong> ` +
+        `Target <em>${b.desc}</em>. Students must operate at the <strong>${b.label}</strong> cognitive level.`;
+}
+
+// ── Assignment Generation (Phase 3 Engine) ──────────────────────────────────
+
+function logicGeneratePhase3Assignments(teams, unitData, cycleNum, config = {}) {
+    if (!teams || !teams.length || !unitData || !unitData.length) return [];
     
-    // Flatten unitData into a unified topic pool with unit context
+    const { courseName = '', courseCode = '' } = config;
+    const bloomRange = cycleNum === 1 ? [1, 2, 3] : [2, 3, 4];
+    const totalActive = 12;
+    const totalReserve = 3;
+    const totalNeeded = totalActive + totalReserve;
+    
+    // Flatten topics from unitData
     let topicPool = [];
     unitData.forEach(u => {
         const topics = u.topics || [];
-        topics.forEach(t => {
-            topicPool.push({ title: t, unit: `Unit ${u.id || 1}`, co: `CO${u.id || 1}` });
-        });
+        topics.forEach(t => topicPool.push({ title: t, unitId: u.id, unitTitle: u.title }));
     });
+    if (!topicPool.length) topicPool = unitData.map(u => ({ title: u.title, unitId: u.id, unitTitle: u.title }));
 
-    if (topicPool.length === 0) {
-        // Fallback to unit titles if no topics found
-        topicPool = unitData.map(u => ({ title: u.title, unit: `Unit ${u.id || 1}`, co: `CO${u.id || 1}` }));
-    }
-
-    // Shuffle pool
-    const shuffledPool = [...topicPool].sort(() => Math.random() - 0.5);
+    const assignments = [];
+    const usedCombos = new Set();
+    let uIdx = 0, tIdx = 0, bIdx = 0;
     
-    let assignments = [];
-
-    if (mode === 'auto') {
-        const pool = [];
-        let typeIdx = 0;
-
-        while (pool.length < teams.length) {
-            const curType = ASGN_TYPE_ORDER[typeIdx % ASGN_TYPE_ORDER.length];
-            // Take one topic from the shuffled pool for this type
-            const topicEntry = shuffledPool[pool.length % shuffledPool.length];
-            pool.push({ topic: topicEntry.title, type: curType, unit: topicEntry.unit, co: topicEntry.co });
-            typeIdx++;
-        }
-
-        assignments = teams.map((t, i) => {
-            const entry = pool[i];
-            const tpl = ASSIGN_TPL[entry.type] || ASSIGN_TPL.presentation;
-            return {
-                teamId: t.id,
-                teamLabel: t.name || `Team ${i+1}`,
-                subject: courseName,
-                code: courseCode,
-                topic: entry.topic,
-                unit: entry.unit,
-                co: entry.co,
-                type: entry.type,
-                objective: `To demonstrate proficiency in ${entry.topic} through ${entry.type}.`,
-                description: `Complete the ${entry.type} as specified in the template.`,
-                deliverables: ['Detailed Report', 'Sample Output/Demo', 'Team Discussion Summary'],
-                criteria: ['Technical Accuracy (40%)', 'Clarity of Presentation (30%)', 'Peer Engagement (30%)'],
-                text: tpl(entry.topic, courseName, courseCode)
-            };
-        });
-    } else {
-        const type = selectedType !== 'auto' ? selectedType : 'presentation';
-        const typeKey = Object.keys(ASSIGN_TPL).find(k => k.toLowerCase().replace('_','') === type.toLowerCase().replace(' ','')) || 'presentation';
+    while (assignments.length < totalNeeded) {
+        const topic = topicPool[uIdx % topicPool.length];
+        const aType = ASGN_TYPE_ORDER[tIdx % ASGN_TYPE_ORDER.length];
+        const bloom = bloomRange[bIdx % bloomRange.length];
+        const combo = `${topic.title}|${aType}|${bloom}`;
         
-        assignments = teams.map((t, i) => {
-            const topicEntry = shuffledPool[i % shuffledPool.length];
-            const tpl = ASSIGN_TPL[typeKey] || ASSIGN_TPL.presentation;
-            return {
-                teamId: t.id,
-                teamLabel: t.name || `Team ${i+1}`,
-                subject: courseName,
-                code: courseCode,
-                topic: topicEntry.title,
-                unit: topicEntry.unit,
-                co: topicEntry.co,
-                type: type,
-                objective: `To explore ${topicEntry.title} via ${type}.`,
-                description: `Focus on the application of ${topicEntry.title} in real-world scenarios.`,
-                deliverables: ['Comprehensive Report', 'Visual Presentation', 'Q&A session record'],
-                criteria: ['Involvement (20%)', 'Technical Depth (50%)', 'Articulation (30%)'],
-                text: tpl(topicEntry.title, courseName, courseCode)
-            };
-        });
+        if (!usedCombos.has(combo)) {
+            usedCombos.add(combo);
+            const isReserve = assignments.length >= totalActive;
+            const team = isReserve ? null : teams[assignments.length % teams.length];
+            const title = buildPhase3Title(aType, topic.title);
+            const bInfo = BLOOM_LEVELS[bloom];
+            
+            assignments.push({
+                id: `A${cycleNum}-${String(assignments.length + 1).padStart(2, '0')}`,
+                teamId: team ? team.id : null,
+                teamLabel: team ? (team.name || team.id) : null,
+                unit: `Unit ${topic.unitId}: ${topic.unitTitle}`,
+                topic: title,
+                type: aType,
+                bloomLevel: bloom,
+                bloomLabel: bInfo.label,
+                cycle: cycleNum,
+                loText: `LO: Students will be able to ${bInfo.desc.split(',')[0].toLowerCase()} concepts from Unit ${topic.unitId}.`,
+                description: buildPhase3Description(aType, topic.title, courseCode, courseName, bloom),
+                isReserve,
+                status: isReserve ? 'reserve' : 'active',
+                approved: false
+            });
+        }
+        
+        uIdx++;
+        if (uIdx % topicPool.length === 0) tIdx++;
+        if (tIdx % ASGN_TYPE_ORDER.length === 0) bIdx++;
+        if (uIdx > topicPool.length * 20) usedCombos.clear(); // Safety break
     }
+    
     return assignments;
 }
 
-// ── Session Scheduling (Blocks of 3) ─────────────────────────────────────────
+// ── Session Scheduling (Blocks of 3 with Deterministic Rotation) ──────────────
+
 function logicComputePairings(teams) {
     if (!teams || !teams.length) return [];
     
     const k = teams.length;
-    const shuffle = a => {
-        const b = [...a];
-        for (let i = b.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [b[i], b[j]] = [b[j], b[i]];
-        }
-        return b;
-    };
-    
-    const order = shuffle([...teams]);
+    // Shuffle the global order once for this "set"
+    const order = [...teams].sort(() => Math.random() - 0.5);
     const blocks = [];
     let globalSid = 1;
     
-    const fullRounds = Math.floor(k / 3);
-    const rem = k % 3;
+    // Total sessions needed = teams.length (every team presents once)
+    const numBlocksRequired = Math.ceil(k / 3);
     
-    for (let b = 0; b < fullRounds; b++) {
+    for (let b = 0; b < numBlocksRequired; b++) {
         const sessions = [];
         for (let s = 0; s < 3; s++) {
             const pIdx = b * 3 + s;
+            if (pIdx >= k) break; // All teams scheduled to present
+            
             // Rotation: P, TR (Reviewer), FP (Feedback)
             sessions.push({
                 sid: globalSid++,
+                sessNumInBlock: s + 1,
                 P: order[pIdx],
+                // TR and FP are deterministic offsets from P in the global order
                 TR: order[(pIdx + 1) % k],
                 FP: order[(pIdx + 2) % k]
             });
@@ -189,39 +198,49 @@ function logicComputePairings(teams) {
             date: '',
             period: '',
             scheduled: false,
-            completed: false,
-            revealed: false
-        });
-    }
-    
-    if (rem > 0) {
-        const sessions = [];
-        for (let s = 0; s < rem; s++) {
-            const pIdx = fullRounds * 3 + s;
-            sessions.push({
-                sid: globalSid++,
-                P: order[pIdx],
-                TR: order[(pIdx + 1) % k],
-                FP: order[(pIdx + 2) % k]
-            });
-        }
-        blocks.push({
-            blockIdx: fullRounds + 1,
-            sessions,
-            date: '',
-            period: '',
-            scheduled: false,
-            completed: false,
             revealed: false,
-            isPartial: true
+            completed: false
         });
     }
-    
     return blocks;
 }
 
-// Export to window
-window.ASSIGN_TPL = ASSIGN_TPL;
+// ── CSV Export Logic (replicated from old app for parity) ─────────────────────
+
+function logicBuildStudentSheetCSV(assignments, teams, courseConfig = {}) {
+    const { courseCode, courseName, dept, batch } = courseConfig;
+    const meta = [
+        ['SAM — Student Assignment Sheet'],
+        ['Course', courseCode, courseName],
+        ['Department', dept, 'Batch', batch],
+        []
+    ];
+    const headers = ['Roll Number', 'Student Name', 'Gender', 'Team', 'Assignment ID', 'Unit/Topic', 'Type', 'Bloom Level'];
+    const rows = [...meta, headers];
+    
+    assignments.filter(a => !a.isReserve).forEach(a => {
+        const team = teams.find(t => t.id === a.teamId);
+        const members = team ? (team.members || []) : [];
+        members.forEach(m => {
+            rows.push([
+                m.id || '—',
+                m.name || '—',
+                m.gender || '—',
+                a.teamLabel || '—',
+                a.id,
+                a.unit,
+                a.type,
+                `L${a.bloomLevel} ${a.bloomLabel}`
+            ]);
+        });
+    });
+    return rows;
+}
+
+// ── Exports ───────────────────────────────────────────────────────────────────
+
+window.BLOOM_LEVELS = BLOOM_LEVELS;
 window.ASGN_TYPE_ORDER = ASGN_TYPE_ORDER;
-window.logicGenerateAssignments = logicGenerateAssignments;
+window.logicGeneratePhase3Assignments = logicGeneratePhase3Assignments;
 window.logicComputePairings = logicComputePairings;
+window.logicBuildStudentSheetCSV = logicBuildStudentSheetCSV;

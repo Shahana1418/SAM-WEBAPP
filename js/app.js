@@ -1495,117 +1495,133 @@ function renderSessions(container) {
 
     const cal = navState.calendarConfig || null;
     const todayStr = new Date().toISOString().slice(0, 10);
-    const genAssign = (navState.assignConfig && navState.assignConfig.generatedAssignments) ? navState.assignConfig.generatedAssignments : null;
-    const defEnd = new Date(); defEnd.setMonth(defEnd.getMonth() + 3);
-    const defEndStr = defEnd.toISOString().slice(0, 10);
-    const savedSlot = cal ? (cal.periodSlot || 'morning1') : 'morning1';
+    const hasBlocks = cal && cal.blocks && cal.blocks.length > 0;
+    const genAssign = navState.assignConfig || null;
 
     /* ===== Config Panel ===== */
-    const configPanel = `<div class="cal-config-panel">
-        <div class="cal-config-title">⚙️ Schedule Configuration</div>
-        <div class="cal-config-grid">
-            <div class="cal-field"><label>Start Date</label>
-                <input type="date" id="calStartDate" value="${cal ? cal.startDate : todayStr}"></div>
-            <div class="cal-field"><label>End Date</label>
-                <input type="date" id="calEndDate" value="${cal ? cal.endDate : defEndStr}"></div>
-            <div class="cal-field"><label>Period Slot (3 sessions per day)</label>
-                <select id="calPeriodSlot">
-                    <option value="morning1" ${savedSlot === 'morning1' ? 'selected' : ''}>Morning P1-2 (9:00 – 10:40) · 3 sessions</option>
-                    <option value="morning2" ${savedSlot === 'morning2' ? 'selected' : ''}>Morning P3-4 (11:00 – 12:30) · 3 sessions</option>
-                    <option value="afternoon1" ${savedSlot === 'afternoon1' ? 'selected' : ''}>Afternoon P5-6 (13:45 – 15:15) · 3 sessions</option>
-                    <option value="afternoon2" ${savedSlot === 'afternoon2' ? 'selected' : ''}>Afternoon P7-8 (15:30 – 17:00) · 3 sessions</option>
-                </select></div>
-        </div>
-        <div style="font-size:.78rem;color:var(--text-muted);margin-bottom:8px;">
-            <strong style="color:var(--text-secondary);">Active Days:</strong> Monday – Friday only (Sat &amp; Sun are leave days) · 
-            <strong style="color:var(--accent-purple);">3 sessions per day</strong> in the selected period slot ·
-            <strong style="color:var(--accent-orange);">Teams are randomly shuffled</strong>
-        </div>
-        <div style="font-size:.75rem;color:var(--text-muted);margin-bottom:10px;">
-            🔒 <strong>Reviewer &amp; Feedback roles</strong> are only visible on the scheduled day (hidden for future sessions)
-        </div>
-        <div class="cal-actions">
-            <button class="btn btn-primary" style="width:auto;padding:10px 28px;" onclick="applyCalendarConfig()">📅 Generate Schedule</button>
-            ${cal ? '<button class="btn btn-primary" style="width:auto;padding:10px 20px;background:var(--accent);color:var(--text);" onclick="reshuffleSchedule()">🔀 Reshuffle Teams</button>' : ''}
-            <span style="font-size:.8rem;color:var(--text-muted);">${N} teams · ${N} sessions needed · ${Math.ceil(N / SESSIONS_PER_SLOT)} days minimum</span>
-        </div>
-    </div>`;
+    let configPanel = '';
+    if (!cal || !cal.isLocked) {
+        const defEnd = new Date(); defEnd.setMonth(defEnd.getMonth() + 3);
+        const defEndStr = defEnd.toISOString().slice(0, 10);
+        const savedSlot = cal ? (cal.periodSlot || 'morning1') : 'morning1';
+        
+        configPanel = `<div class="cal-config-panel">
+            <div class="cal-config-title">⚙️ Quick Auto-Schedule (Standard)</div>
+            <div class="cal-config-grid">
+                <div class="cal-field"><label>Start Date</label>
+                    <input type="date" id="calStartDate" value="${cal ? cal.startDate : todayStr}"></div>
+                <div class="cal-field"><label>End Date</label>
+                    <input type="date" id="calEndDate" value="${cal ? cal.endDate : defEndStr}"></div>
+                <div class="cal-field"><label>Period Slot</label>
+                    <select id="calPeriodSlot">
+                        <option value="morning1">Morning P1-2</option>
+                        <option value="morning2">Morning P3-4</option>
+                        <option value="afternoon1">Afternoon P5-6</option>
+                        <option value="afternoon2">Afternoon P7-8</option>
+                    </select></div>
+            </div>
+            <div class="cal-actions">
+                <button class="btn btn-primary" style="width:auto;padding:10px 28px;" onclick="applyCalendarConfig()">📅 Generate Schedule</button>
+                <span class="text-xs text-dim">Or use the <em>Assignment Wizard</em> for full Phase 3 control.</span>
+            </div>
+        </div>`;
+    } else {
+        configPanel = `
+        <div class="card p-4 mb-6" style="border-left:4px solid var(--success); background:rgba(16,185,129,0.05);">
+            <div class="flex justify-between items-center">
+                <div>
+                    <div class="font-bold text-main">🔒 Academic Schedule Locked</div>
+                    <div class="text-xs text-dim">Finalized on ${new Date(cal.finalizedAt).toLocaleDateString()} via Assessment Wizard.</div>
+                </div>
+                <button class="btn btn-sm btn-ghost" onclick="navState.calendarConfig.isLocked = false; render()">🔓 Unlock & Edit</button>
+            </div>
+        </div>`;
+    }
 
     /* ===== Schedule Table & Day Cards ===== */
     let scheduleHTML = '', dayCardsHTML = '';
 
-    if (cal && cal.sessions && cal.sessions.length > 0) {
+    if (hasBlocks) {
+        // Render block-based schedule
+        const dayCards = cal.blocks.map((b, bi) => {
+            const isToday = b.date === todayStr, isPast = b.date < todayStr;
+            const dl = new Date(b.date).toLocaleDateString('en-IN', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' });
+            
+            const sItems = b.sessions.map((s, si) => {
+                const cycleNum = s.sid <= 15 ? 1 : 2; // Rough estimate or use session data
+                const cad = (genAssign?.cycleData || {})[cycleNum];
+                const asgn = cad?.assignments?.find(a => a.teamId === s.P.id) || null;
+                const bloom = asgn ? BLOOM_LEVELS[asgn.bloomLevel] : null;
+
+                return `
+                <div class="sched-sess-item" style="border-left:3px solid ${isPast ? 'var(--border)' : (bloom ? (bloom.icon === '🔵' ? '#3B82F6' : '#10B981') : 'var(--primary)')};">
+                    <div class="flex justify-between items-center mb-2">
+                        <div class="text-[10px] font-bold text-dim uppercase tracking-tighter">Session S${s.sid} · P${b.period} · ${s.sessNumInBlock || (si+1)}/3</div>
+                        ${bloom ? `<span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-surface border border-border">${bloom.icon} ${bloom.label}</span>` : ''}
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <div class="flex items-center gap-2">
+                            <span class="chip chip-xs bg-blue-100 text-blue-700 font-bold">P</span>
+                            <span class="text-xs font-bold text-main">${s.P.name || s.P.id}</span>
+                        </div>
+                        ${asgn ? `<div class="text-[10px] font-semibold text-primary ml-7">📝 Title: ${asgn.topic}</div>` : ''}
+                        
+                        <div class="flex gap-4 ml-7">
+                            <div class="flex items-center gap-1.5 opacity-80">
+                                <span class="chip chip-xs bg-green-100 text-green-700">TR</span>
+                                <span class="text-[10px] text-dim">${s.TR.name || s.TR.id}</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 opacity-80">
+                                <span class="chip chip-xs bg-yellow-100 text-yellow-700">FP</span>
+                                <span class="text-[10px] text-dim">${s.FP.name || s.FP.id}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+            }).join('');
+
+            return `
+            <div class="sched-day-card ${isToday ? 'sched-day-today' : ''}" style="animation-delay:${bi * 0.05}s">
+                <div class="sched-day-header">
+                    <div>
+                        <div class="sched-day-name">${dl}</div>
+                        <div class="sched-day-meta">Block #${b.blockIdx} — Period ${b.period} — 3 Sessions</div>
+                    </div>
+                    ${isToday ? '<span class="sched-day-badge sched-badge-today">TODAY</span>' : ''}
+                    ${isPast ? '<span class="sched-day-badge sched-badge-done">COMPLETED</span>' : ''}
+                </div>
+                <div class="sched-sess-list">${sItems}</div>
+            </div>`;
+        }).join('');
+
+        dayCardsHTML = `
+        <div class="rt-section">
+            <div class="rt-section-header">
+                <div class="rt-section-title">🗓️ Finalized Session Blocks</div>
+                <div class="flex gap-2">
+                    <button class="btn btn-sm btn-ghost">📊 Stats</button>
+                    ${genAssign ? `<button class="btn btn-sm btn-secondary" onclick="moveAssignStep(4)">📝 View Cycle Details</button>` : ''}
+                </div>
+            </div>
+            <div class="sched-day-cards">${dayCards}</div>
+        </div>`;
+
+    } else if (cal && cal.sessions && cal.sessions.length > 0) {
         const sessions = cal.sessions;
         const pt = PERIOD_TYPES[cal.periodSlot || 'morning1'];
-
-        // Group by day
         const byDay = {};
         sessions.forEach(s => { if (!byDay[s.dateStr]) byDay[s.dateStr] = []; byDay[s.dateStr].push(s); });
         const dayKeys = Object.keys(byDay).sort();
+        const genAssignFlat = genAssign?.generatedAssignments || null;
 
-        // Table rows — each day is a row with 3 session columns
-        const colHeaders = Array.from({ length: SESSIONS_PER_SLOT }, (_, i) =>
-            `<th class="sched-col-header" style="border-left:3px solid ${pt.color}40;">
-                <div style="color:${pt.color};font-weight:800;font-size:.76rem;">Session ${i + 1}</div>
-                <div style="font-size:.68rem;color:var(--text-muted);">${pt.shortLabel}</div>
-            </th>`
-        ).join('');
-
-        const tRows = dayKeys.map(dateStr => {
-            const daySess = byDay[dateStr];
-            const first = daySess[0];
-            const isToday = dateStr === todayStr, isPast = dateStr < todayStr;
-            const dl = first.date.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
-
-            const cells = Array.from({ length: SESSIONS_PER_SLOT }, (_, si) => {
-                const s = daySess.find(x => x.slotIndex === si);
-                if (!s) return '<td class="sched-empty-cell"><span class="sched-empty">—</span></td>';
-                const p = getTeamName(deptCode, s.presenterIdx), r = getTeamName(deptCode, s.reviewerIdx), fb = getTeamName(deptCode, s.feedbackIdx);
-                const presTopicObj = genAssign && genAssign[s.presenterIdx] ? genAssign[s.presenterIdx] : null;
-                const presTopicHTML = presTopicObj ? `<div class="sched-topic-row" style="margin-top:4px;font-size:.72rem;color:var(--accent-blue);font-weight:600;">📝 ${presTopicObj.title}</div>` : '';
-                return `<td class="sched-slot-cell" style="border-top:3px solid ${pt.color};">
-                    <div class="sched-sess-num">#${String(s.sessNum).padStart(2, '0')}</div>
-                    <div class="sched-role-row"><span class="sched-chip sched-presenter">🎤 ${p}</span></div>
-                    ${presTopicHTML}
-                    ${s.revealed
-                        ? `<div class="sched-role-row" style="margin-top:4px;"><span class="sched-chip sched-reviewer">🔍 ${r}</span><span class="sched-chip sched-feedback">💬 ${fb}</span></div>`
-                        : `<div class="sched-role-row" style="margin-top:4px;"><span class="sched-chip sched-locked">🔒 Roles revealed on day</span></div>`}
-                </td>`;
-            }).join('');
-
-            return `<tr class="${isToday ? 'sched-today-row' : ''} ${isPast ? 'sched-past-row' : ''}">
-                <td class="sched-date-cell">
-                    <div class="sched-date-day">${first.dayFull.slice(0, 3).toUpperCase()}</div>
-                    <div class="sched-date-num ${isToday ? 'sched-date-today' : ''}">${dl}</div>
-                    ${isToday ? '<div class="sched-today-badge">TODAY</div>' : ''}
-                    ${isPast ? '<div class="sched-past-badge">DONE</div>' : ''}
-                </td>${cells}</tr>`;
-        }).join('');
-
-        const statusOk = sessions.length >= N
-            ? `<div class="sched-status-ok">✅ All ${N} sessions scheduled across ${dayKeys.length} working days (Mon–Fri). Presenters are randomly ordered.</div>`
-            : `<div class="sched-status-warn">⚠️ Only ${sessions.length}/${N} sessions fit. Extend the End Date to accommodate all teams.</div>`;
-
-        scheduleHTML = `<div class="rt-section" style="margin-bottom:1.5rem;">
-            <div class="rt-section-header">
-                <div class="rt-section-title">📅 Session Timetable — ${sessions.length} sessions · ${pt.label}</div>
-                <span style="font-size:.76rem;font-weight:700;padding:3px 10px;border-radius:10px;background:${pt.color}18;color:${pt.color};">${pt.shortLabel} ${pt.label}</span>
-            </div>
-            <div class="sched-table-wrap">
-                <table class="sched-table">
-                    <thead><tr><th class="sched-date-header">DATE</th>${colHeaders}</tr></thead>
-                    <tbody>${tRows}</tbody>
-                </table>
-            </div>${statusOk}</div>`;
-
-        // Day cards
         const dCards = dayKeys.map((dateStr, di) => {
             const daySess = byDay[dateStr];
             const first = daySess[0];
             const isToday = dateStr === todayStr, isPast = dateStr < todayStr;
             const dl2 = first.date.toLocaleDateString('en-IN', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' });
+            
             const sItems = daySess.map(s => {
-                const dayTopicObj = genAssign && genAssign[s.presenterIdx] ? genAssign[s.presenterIdx] : null;
+                const dayTopicObj = genAssignFlat && genAssignFlat[s.presenterIdx] ? genAssignFlat[s.presenterIdx] : null;
                 const dayTopicHTML = dayTopicObj ? `<div style="margin-top:4px;font-size:.78rem;color:var(--accent-blue);font-weight:600;padding-left:4px;">📝 Topic: ${dayTopicObj.title}</div>` : '';
                 return `<div class="sched-sess-item">
                     <div class="sched-sess-item-header" style="border-left:3px solid ${pt.color};">
@@ -1613,9 +1629,9 @@ function renderSessions(container) {
                         <div style="font-size:.82rem;font-weight:700;color:var(--text-primary);">${pt.label} &nbsp;·&nbsp; ${s.startTime} – ${s.endTime}</div>
                     </div>
                     <div class="sched-roles-inline">
-                        <span class="sched-chip sched-presenter">🎤 ${getTeamName(deptCode, s.presenterIdx)} — Presenter</span>
+                        <span class="sched-chip sched-presenter">🎤 ${getTeamName(navState.dept, s.presenterIdx)} — Presenter</span>
                         ${s.revealed
-                        ? `<span class="sched-chip sched-reviewer">🔍 ${getTeamName(deptCode, s.reviewerIdx)} — Reviewer</span><span class="sched-chip sched-feedback">💬 ${getTeamName(deptCode, s.feedbackIdx)} — Feedback</span>`
+                        ? `<span class="sched-chip sched-reviewer">🔍 ${getTeamName(navState.dept, s.reviewerIdx)} — Reviewer</span><span class="sched-chip sched-feedback">💬 ${getTeamName(navState.dept, s.feedbackIdx)} — Feedback</span>`
                         : `<span class="sched-chip sched-locked">🔒 Reviewer &amp; Feedback revealed on ${dateStr}</span>`}
                     </div>
                     ${dayTopicHTML}
@@ -1631,14 +1647,7 @@ function renderSessions(container) {
                 <div class="sched-sess-list">${sItems}</div>
             </div>`;
         }).join('');
-
-        dayCardsHTML = `<div class="rt-section" style="margin-bottom:1.5rem;">
-            <div class="rt-section-header">
-                <div class="rt-section-title">📋 Day-wise Session Details</div>
-                <span style="font-size:.8rem;color:var(--text-muted);">${dayKeys.length} working days</span>
-            </div>
-            <div class="sched-day-cards">${dCards}</div>
-        </div>`;
+        dayCardsHTML = `<div class="rt-section"><div class="sched-day-cards">${dCards}</div></div>`;
     }
 
     /* ===== Presenter Order Reference ===== */

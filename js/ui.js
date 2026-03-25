@@ -958,143 +958,183 @@ window.renderAssessments = function(container) {
             </div>
         </div>`;
     } else if (step === 4) {
-        // --- Step 4: Configure & Generate Topics ---
-        const savedType = cfg.assignType || 'auto';
-        const numTeams = (navState.teams || []).length || 12;
-        
+        // --- Step 4: Configure & Generate Topics (Phase 3 Engine) ---
+        const cfg = navState.assignConfig || {};
+        const cycleNum = navState.currentCycle || 1;
+        const cad = (cfg.cycleData || {})[cycleNum];
+        const numTeams = (navState.teams || []).length || 1;
+
+        const tabActive = "flex-1 text-xs py-2 px-3 rounded-lg border-2 border-primary bg-primary-light text-primary font-bold";
+        const tabInactive = "flex-1 text-xs py-2 px-3 rounded-lg border-2 border-border bg-surface text-dim font-medium hover:bg-surface-inset transition-colors";
+
         let resultHTML = '';
-        if (cfg.generatedAssignments && cfg.generatedAssignments.length > 0) {
-            const cards = cfg.generatedAssignments.map((a, i) => `
-            <div class="card p-3" style="border-left:4px solid var(--primary); animation: fadeIn 0.4s ease forwards ${i*0.05}s; opacity:0;">
-                <div class="flex justify-between items-start mb-2">
-                    <span class="chip chip-m" style="font-size:.65rem; background:var(--primary-light); color:var(--primary); font-weight:700;">TEAM ${i+1}</span>
-                    <span class="text-xs font-mono text-dim">${a.type || 'Present'}</span>
-                </div>
-                <div class="font-bold text-sm mb-1" style="color:var(--text-main); line-height:1.4;">${a.title}</div>
-                <div class="text-xs text-dim mb-2">${a.unit || 'Unit 1'} • ${a.co || 'CO1'}</div>
-                <button class="btn btn-sm btn-ghost w-full" style="font-size:.65rem; padding:4px;" onclick="viewAssignmentDetails(${i})">View Details ↓</button>
-            </div>`).join('');
+        if (cad && cad.assignments && cad.assignments.length > 0) {
+            const active = cad.assignments.filter(a => !a.isReserve);
+            const reserve = cad.assignments.filter(a => a.isReserve);
+
+            const gridCards = active.map((a, i) => `
+                <div class="card p-3" style="border-left:4px solid ${BLOOM_LEVELS[a.bloomLevel].icon === '🔵' ? '#3B82F6' : (BLOOM_LEVELS[a.bloomLevel].icon === '🟢' ? '#10B981' : '#F59E0B')};">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="chip chip-xs" style="background:#f1f5f9; color:#475569; font-weight:700;">S-${String(i+1).padStart(2,'0')}</span>
+                        <span class="text-[10px] font-bold px-1.5 py-0.5 rounded ${a.approved ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}">
+                            ${a.approved ? '✓ APPROVED' : '⏳ PENDING'}
+                        </span>
+                    </div>
+                    <div class="font-bold text-xs mb-1" style="color:var(--text-main); line-height:1.4;">${a.topic}</div>
+                    <div class="text-[10px] text-dim mb-2">${a.unit}</div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-[10px] font-bold" style="color:var(--primary);">${BLOOM_LEVELS[a.bloomLevel].icon} L${a.bloomLevel} ${a.bloomLabel}</span>
+                        <div class="flex gap-1">
+                            <button class="btn btn-xs btn-ghost" title="Preview" onclick="viewAssignmentDetailsInCycle(${cycleNum}, ${i})">👁️</button>
+                            ${!a.approved ? `<button class="btn btn-xs btn-primary" style="padding:2px 6px;" onclick="approveAssignment(${cycleNum}, '${a.id}')">Approve</button>` : ''}
+                        </div>
+                    </div>
+                </div>`).join('');
 
             resultHTML = `
-            <div class="mt-8">
+            <div class="mt-6">
                 <div class="flex justify-between items-center mb-4">
-                    <h4 class="font-bold text-main">✨ Generated Topics (${cfg.generatedAssignments.length})</h4>
-                    <button class="btn btn-sm btn-secondary" onclick="exportAssignmentsToCSV()">💾 Export CSV</button>
+                    <h4 class="font-bold text-main">📌 Active Assignments (${active.length}/12)</h4>
+                    <div class="flex gap-2">
+                        <button class="btn btn-sm btn-secondary" onclick="exportCycleCSV(${cycleNum})">💾 Team CSV</button>
+                        <button class="btn btn-sm btn-secondary" onclick="exportStudentSheetCSV(${cycleNum})">📤 Student Sheet</button>
+                    </div>
                 </div>
-                <div class="grid-3" style="gap:12px;">
-                    ${cards}
+                <div class="grid-3" style="gap:10px;">
+                    ${gridCards}
+                </div>
+                <div class="mt-4 p-3 rounded-lg bg-surface-inset border border-border">
+                    <div class="text-xs font-bold text-dim mb-2 uppercase">📦 Reserve Pool (${reserve.length})</div>
+                    <div class="flex gap-2 flex-wrap">
+                        ${reserve.map(r => `<span class="chip chip-s cursor-pointer" onclick="viewAssignmentDetailsInCycle(${cycleNum}, -1, '${r.id}')" style="background:var(--card-bg); border:1px solid var(--border);">${r.id}: ${r.type}</span>`).join('')}
+                    </div>
                 </div>
             </div>`;
         }
 
         panelHTML = `
         <div class="wiz-panel">
-            <h3 class="wiz-panel-title">⚙️ Configure & Generate Topics</h3>
-            <div class="wiz-form-grid">
-                <div class="wiz-field">
-                    <label>Assignment Strategy</label>
-                    <select class="form-input" id="wiz-assign-strategy" onchange="(navState.assignConfig = navState.assignConfig || {}).assignType = this.value">
-                        <option value="auto" ${savedType === 'auto' ? 'selected' : ''}>Auto-Cycle Types (Multi-modal)</option>
-                        <option value="Mini Project" ${savedType === 'Mini Project' ? 'selected' : ''}>Mini Project (All Teams)</option>
-                        <option value="Case Study" ${savedType === 'Case Study' ? 'selected' : ''}>Case Study (All Teams)</option>
-                        <option value="Research Paper" ${savedType === 'Research Paper' ? 'selected' : ''}>Research Paper (All Teams)</option>
-                        <option value="Problem Solving" ${savedType === 'Problem Solving' ? 'selected' : ''}>Technical Quiz (All Teams)</option>
-                    </select>
-                </div>
-                <div class="wiz-field">
-                    <label>Complexity Level</label>
-                    <select class="form-input" id="wiz-complexity">
-                        <option value="balanced">Balanced (Sequential)</option>
-                        <option value="Easy">Standard / Foundational</option>
-                        <option value="Medium">Intermediate / Application</option>
-                        <option value="Hard">Advanced / Synthesis</option>
-                    </select>
-                </div>
-            </div>
+            <h3 class="wiz-panel-title">📚 Configuration — Phase 3 Engine</h3>
             
-            <div class="card bg-surface-inset p-4 mb-6" style="border:1px dashed var(--border);">
-                <div class="flex gap-4 items-center">
-                    <div class="text-3xl">🧩</div>
+            <div class="flex gap-3 mb-6">
+                <button onclick="switchWizardCycle(1)" class="${cycleNum === 1 ? tabActive : tabInactive}">
+                    Cycle 1 (S1-6) ${cfg.cycleData && cfg.cycleData[1] ? '✅' : ''}
+                </button>
+                <button onclick="switchWizardCycle(2)" class="${cycleNum === 2 ? tabActive : tabInactive}">
+                    Cycle 2 (S7-12) ${cfg.cycleData && cfg.cycleData[2] ? '✅' : ''}
+                </button>
+            </div>
+
+            <div class="card p-4 mb-6" style="background:${cycleNum === 1 ? 'rgba(59,130,246,0.05)' : 'rgba(139,92,246,0.05)'}; border:1px solid ${cycleNum === 1 ? '#bfdbfe' : '#ddd6fe'};">
+                <div class="flex justify-between items-start mb-3">
                     <div>
-                        <div class="font-bold text-main">Ready for ${numTeams} Teams</div>
-                        <div class="text-xs text-dim">Topics will be pulled from unit details and mapped to teams.</div>
+                        <div class="font-bold text-main" style="color:${cycleNum === 1 ? '#1D4ED8' : '#7C3AED'};">
+                            ${cycleNum === 1 ? '🔵' : '🟣'} Cycle ${cycleNum} — Sessions ${cycleNum === 1 ? '1-6' : '7-12'}
+                        </div>
+                        <div class="text-xs text-dim">Bloom Levels: ${cycleNum === 1 ? 'Remember → Understand → Apply' : 'Understand → Apply → Analyse'}</div>
                     </div>
-                    <button class="btn btn-primary ml-auto" onclick="generateWizardAssignments()">Generate Topics</button>
+                    <button class="btn btn-primary btn-sm" onclick="generateWizardPhase3Assignments(${cycleNum})">⚡ Generate Assignments</button>
+                </div>
+                <div class="text-[11px] text-dim leading-relaxed">
+                    Automatically pulls unit-wise topics from the Anna University Syllabus. Generates 12 active + 3 reserve assignments with complex verbs and cognitive mapping.
                 </div>
             </div>
 
             ${resultHTML}
 
-            <div class="wiz-nav-row">
+            <div class="wiz-nav-row mt-8">
                 <button class="btn btn-secondary" onclick="moveAssignStep(3)">← Back</button>
-                <button class="btn btn-primary" ${!cfg.generatedAssignments ? 'disabled' : ''} onclick="moveAssignStep(5)">Proceed to Scheduling →</button>
+                <button class="btn btn-primary" ${!cad ? 'disabled' : ''} onclick="moveAssignStep(5)">Proceed to Scheduling →</button>
             </div>
         </div>`;
     } else if (step === 5) {
-        // --- Step 5: Schedule Sessions ---
-        const today = new Date().toISOString().split('T')[0];
-        
-        let pairingsHTML = '';
-        if (navState.pairings && navState.pairings.length > 0) {
-            const blocks = navState.pairings.map((b, i) => `
-            <div class="card p-4 mb-4" style="border-left:4px solid var(--secondary);">
-                <div class="flex justify-between items-center mb-3">
-                    <span class="chip chip-m" style="background:var(--secondary-light); color:var(--secondary); font-weight:800;">BLOCK ${i+1}</span>
-                    <span class="text-xs text-dim">3 Sessions • Roles Rotate</span>
-                </div>
-                <div class="grid-3" style="gap:15px;">
-                    ${b.sessions.map((s, si) => `
-                    <div class="p-2 rounded bg-surface-inset">
-                        <div class="text-[0.65rem] font-bold text-dim mb-2 uppercase tracking-wider">Session ${si+1}</div>
-                        <div class="flex flex-col gap-1">
-                            <div class="text-xs"><span class="role-p px-1 rounded text-[10px] mr-1">P</span> <b>T${s.P+1}</b></div>
-                            <div class="text-xs"><span class="role-tr px-1 rounded text-[10px] mr-1">TR</span> <b>T${s.TR+1}</b></div>
-                            <div class="text-xs"><span class="role-fp px-1 rounded text-[10px] mr-1">FP</span> <b>T${s.FP+1}</b></div>
-                        </div>
-                    </div>`).join('')}
-                </div>
-            </div>`).join('');
+        // --- Step 5: Manual/Auto Block Scheduling ---
+        const cfg = navState.assignConfig || {};
+        const pairings = navState.pairings || [];
+        const scheduledCnt = (navState.scheduledBlocks || []).length;
+        const totalTotal = pairings.length;
 
-            pairingsHTML = `
+        let scheduledHTML = '';
+        if (scheduledCnt > 0) {
+            scheduledHTML = `
             <div class="mt-8">
-                <h4 class="font-bold text-main mb-4">📅 Planned Session Blocks</h4>
-                ${blocks}
+                <h4 class="font-bold text-main mb-4">🗓️ Scheduled Blocks (${scheduledCnt}/${totalTotal})</h4>
+                <div class="overflow-x-auto">
+                    <table class="dt" style="font-size:.75rem;">
+                        <thead>
+                            <tr>
+                                <th>Block</th>
+                                <th>Date</th>
+                                <th>Period</th>
+                                <th>Sessions</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${navState.scheduledBlocks.map((b, i) => `
+                            <tr>
+                                <td class="font-bold">#${b.blockIdx}</td>
+                                <td>${b.date}</td>
+                                <td>P${b.period}</td>
+                                <td>${b.sessions.length} sessions (S${(b.blockIdx-1)*3+1}–S${(b.blockIdx-1)*3+b.sessions.length})</td>
+                                <td>
+                                    <button class="btn btn-xs btn-ghost" onclick="deleteScheduledBlock(${i})">🗑️</button>
+                                </td>
+                            </tr>`).join('')}
+                        </tbody>
+                    </table>
+                </div>
             </div>`;
         }
 
         panelHTML = `
         <div class="wiz-panel">
             <h3 class="wiz-panel-title">🗓️ Session Scheduling</h3>
-            <div class="wiz-form-grid">
-                <div class="wiz-field">
-                    <label>Start Date</label>
-                    <input type="date" class="form-input" id="wiz-start-date" value="${today}">
-                </div>
-                <div class="wiz-field">
-                    <label>Periods per Day</label>
-                    <select class="form-input" id="wiz-periods">
-                        <option value="1">1 Period (3 Sessions)</option>
-                        <option value="2">2 Periods (6 Sessions)</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="card bg-surface-inset p-4 mb-6" style="border:1px dashed var(--border);">
-                <div class="flex gap-4 items-center">
-                    <div class="text-3xl">🕐</div>
+            
+            <div class="card bg-surface-inset p-4 mb-6 border-dashed border-2">
+                <div class="flex gap-4 items-center mb-4">
+                    <div class="text-3xl">🧩</div>
                     <div>
-                        <div class="font-bold text-main">Calculate Pairings</div>
-                        <div class="text-xs text-dim">Groups teams into blocks where every team fulfills P, TR, and FP roles.</div>
+                        <div class="font-bold text-main">1. Compute Block Pairings</div>
+                        <div class="text-xs text-dim">Generates deterministic rotational pairings for TR and FP roles.</div>
                     </div>
-                    <button class="btn btn-secondary ml-auto" onclick="generateWizardPairings()">Compute Schedule</button>
+                    <button class="btn btn-secondary btn-sm ml-auto" onclick="generateWizardPairings()">${pairings.length ? '🔄 Reshuffle' : 'Compute Pairings'}</button>
                 </div>
+                
+                ${pairings.length ? `
+                <div class="p-3 bg-surface rounded border border-border">
+                    <div class="text-xs font-bold text-dim mb-3 uppercase">2. Assign Dates to Blocks</div>
+                    <div class="grid-2 gap-4">
+                        <div class="wiz-field">
+                            <label>Next Block Date</label>
+                            <input type="date" class="form-input" id="wiz-sched-date" value="${new Date().toISOString().split('T')[0]}">
+                        </div>
+                        <div class="wiz-field">
+                            <label>Period Slot</label>
+                            <select class="form-input" id="wiz-sched-period">
+                                <option value="1">Period 1 (09:00 - 09:50)</option>
+                                <option value="2">Period 2 (09:50 - 10:40)</option>
+                                <option value="3">Period 3 (11:00 - 11:50)</option>
+                                <option value="4">Period 4 (11:50 - 12:40)</option>
+                                <option value="5">Period 5 (01:40 - 02:30)</option>
+                                <option value="6">Period 6 (02:30 - 03:20)</option>
+                                <option value="7">Period 7 (03:30 - 04:20)</option>
+                                <option value="8">Period 8 (04:20 - 05:10)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 mt-4">
+                        <button class="btn btn-primary flex-1" onclick="scheduleNextBlock()">📌 Schedule Block #${scheduledCnt + 1}</button>
+                        <button class="btn btn-secondary" onclick="autoScheduleAllBlocks()">⚡ Auto-Fill All</button>
+                    </div>
+                </div>` : ''}
             </div>
 
-            ${pairingsHTML}
+            ${scheduledHTML}
 
-            <div class="wiz-nav-row">
+            <div class="wiz-nav-row mt-8">
                 <button class="btn btn-secondary" onclick="moveAssignStep(4)">← Back</button>
-                <button class="btn btn-success" ${!navState.pairings ? 'disabled' : ''} onclick="finalizeAcademicSetup()">Finalize & Lock Setup ✨</button>
+                <button class="btn btn-success" ${scheduledCnt === 0 ? 'disabled' : ''} onclick="finalizeAcademicSetup()">Finalize & Lock Setup ✨</button>
             </div>
         </div>`;
     }
@@ -1123,131 +1163,201 @@ window.moveAssignStep = function(step) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
-window.generateWizardAssignments = function() {
+window.switchWizardCycle = function(num) {
+    navState.currentCycle = num;
+    render();
+};
+
+window.generateWizardPhase3Assignments = function(cycleNum) {
     const teams = navState.teams || [];
-    if (!teams.length) { showToast('⚠️ No teams found. Generate teams first.', 'error'); return; }
+    if (!teams.length) { showToast('⚠️ No teams found.', 'error'); return; }
     
+    // Get unit data from Step 3 selected subjects
     const cfg = navState.assignConfig || {};
-    const strategy = document.getElementById('wiz-assign-strategy').value;
-    const complexity = document.getElementById('wiz-complexity').value;
-    
-    // Get unit data from Step 3 (or from SYLLABUS_DETAILS lookup)
-    let unitData = [];
     const reg = navState.batch >= 2029 ? 'R2025' : 'R2021';
     const rData = (typeof SUBJECTS_DATA !== 'undefined' && SUBJECTS_DATA[reg] && SUBJECTS_DATA[reg][navState.dept]) ? SUBJECTS_DATA[reg][navState.dept] : [];
     const matchedSubj = rData.find(s => s.name === cfg.courseName);
     const subjCode = matchedSubj ? matchedSubj.code : '';
     const syl = (typeof SYLLABUS_DETAILS !== 'undefined' && subjCode && SYLLABUS_DETAILS[subjCode]) ? SYLLABUS_DETAILS[subjCode] : null;
 
-    if (syl && syl.units) {
-        unitData = syl.units.map(u => ({
-            id: u.id,
-            title: u.title,
-            topics: u.topics
-        }));
-    }
+    if (!syl || !syl.units) { showToast('⚠️ Syllabus details not found.', 'error'); return; }
 
-    try {
-        const generated = logicGenerateAssignments(teams, unitData, strategy, complexity, {
-            courseName: cfg.courseName,
-            courseCode: subjCode
-        });
-        cfg.generatedAssignments = generated;
-        cfg.assignType = strategy;
-        cfg.courseCode = subjCode;
-        navState.assignConfig = cfg;
-        showToast(`🎉 ${generated.length} topics generated successfully!`, 'success');
+    const generated = logicGeneratePhase3Assignments(teams, syl.units, cycleNum, {
+        courseName: cfg.courseName,
+        courseCode: subjCode
+    });
+
+    cfg.cycleData = cfg.cycleData || {};
+    cfg.cycleData[cycleNum] = {
+        assignments: generated,
+        approved: false,
+        generatedAt: new Date().toISOString()
+    };
+    cfg.courseCode = subjCode;
+    navState.assignConfig = cfg;
+    showToast(`⚡ Cycle ${cycleNum} assignments generated!`, 'success');
+    render();
+};
+
+window.approveAssignment = function(cycleNum, id) {
+    const cfg = navState.assignConfig || {};
+    const cad = (cfg.cycleData || {})[cycleNum];
+    if (!cad) return;
+    const asgn = cad.assignments.find(a => a.id === id);
+    if (asgn) {
+        asgn.approved = true;
+        showToast(`Assignment ${id} Approved`, 'success');
         render();
-    } catch (e) {
-        console.error(e);
-        showToast('❌ Failed to generate assignments. Check console.', 'error');
     }
 };
 
 window.generateWizardPairings = function() {
     const teams = navState.teams || [];
     if (!teams.length) { showToast('⚠️ No teams found.', 'error'); return; }
+    navState.pairings = logicComputePairings(teams);
+    navState.scheduledBlocks = []; // reset
+    showToast('📅 Schedule blocks computed!', 'success');
+    render();
+};
+
+window.scheduleNextBlock = function() {
+    const date = document.getElementById('wiz-sched-date').value;
+    const period = parseInt(document.getElementById('wiz-sched-period').value);
+    if (!date) { showToast('⚠️ Select a date.', 'error'); return; }
+
+    const pairings = navState.pairings || [];
+    const scheduled = navState.scheduledBlocks || [];
+    if (scheduled.length >= pairings.length) { showToast('⚠️ All blocks already scheduled.', 'warn'); return; }
+
+    const block = { ...pairings[scheduled.length], date, period };
+    navState.scheduledBlocks = [...scheduled, block];
+    showToast(`Block ${block.blockIdx} Scheduled ✓`, 'success');
+    render();
+};
+
+window.autoScheduleAllBlocks = function() {
+    const dateStr = document.getElementById('wiz-sched-date').value;
+    if (!dateStr) { showToast('⚠️ Select a start date.', 'error'); return; }
     
-    try {
-        // computePairings from logic.js
-        const pairings = logicComputePairings(teams);
-        navState.pairings = pairings;
-        showToast('📅 Schedule blocks computed successfully!', 'success');
-        render();
-    } catch (e) {
-        console.error(e);
-        showToast('❌ Failed to compute schedule.', 'error');
-    }
+    let date = new Date(dateStr);
+    const pairings = navState.pairings || [];
+    const scheduled = [];
+
+    pairings.forEach((p, i) => {
+        // Skip Sundays
+        if (date.getDay() === 0) date.setDate(date.getDate() + 1);
+        scheduled.push({ ...p, date: date.toISOString().split('T')[0], period: 1 });
+        date.setDate(date.getDate() + 1);
+    });
+
+    navState.scheduledBlocks = scheduled;
+    showToast(`⚡ All ${scheduled.length} blocks scheduled!`, 'success');
+    render();
+};
+
+window.deleteScheduledBlock = function(idx) {
+    navState.scheduledBlocks.splice(idx, 1);
+    render();
 };
 
 window.finalizeAcademicSetup = function() {
-    const teams = navState.teams || [];
-    const pairings = navState.pairings || [];
-    if (!pairings.length) { showToast('⚠️ Compute schedule first.', 'error'); return; }
+    if (!navState.scheduledBlocks || !navState.scheduledBlocks.length) {
+        showToast('⚠️ No blocks scheduled.', 'error'); return;
+    }
 
-    const startDateInput = document.getElementById('wiz-start-date');
-    const periodsPerDay = parseInt(document.getElementById('wiz-periods')?.value || '1');
-    let currentDate = new Date(startDateInput?.value || new Date().toISOString().split('T')[0]);
-    
-    // Convert logic.js blocks into app.js calendarConfig format
-    const sessions = [];
-    let sessionNum = 1;
-    
-    pairings.forEach((block, bIdx) => {
-        block.sessions.forEach((s, si) => {
-            // Find a working day (Mon-Fri)
-            while (currentDate.getDay() === 0 || currentDate.getDay() === 6) {
-                currentDate.setDate(currentDate.getDate() + 1);
-            }
-            
-            const dateStr = currentDate.toISOString().split('T')[0];
-            const pt = PERIOD_TYPES.morning1; // Default
-            
-            sessions.push({
-                sessNum: sessionNum++,
-                date: new Date(currentDate),
-                dateStr: dateStr,
-                dayName: DAY_NAMES_SHORT[currentDate.getDay()],
-                dayFull: DAY_NAMES_FULL[currentDate.getDay()],
-                periodKey: 'morning1',
-                startTime: pt.startH + ':00',
-                endTime: (pt.startH + 1) + ':30',
-                presenterIdx: teams.indexOf(s.P),
-                reviewerIdx: teams.indexOf(s.TR),
-                feedbackIdx: teams.indexOf(s.FP),
-                revealed: false,
-                slotIndex: si % 3
-            });
+    const batchKey = `${navState.dept}_${navState.batch}`;
+    const batchData = appData.batches[batchKey];
+    if (!batchData) return;
 
-            // If we've filled the periods for the day, move to next day
-            if (sessionNum % (3 * periodsPerDay) === 1) {
-                currentDate.setDate(currentDate.getDate() + 1);
-            }
-        });
-    });
-
-    // Save to navState
-    navState.calendarConfig = {
-        startDate: startDateInput?.value,
-        sessions: sessions,
-        periodSlot: 'morning1'
+    // Persist into permanent batch data
+    batchData.teams = navState.teams;
+    batchData.assignments = navState.assignConfig;
+    batchData.calendarConfig = {
+        blocks: navState.scheduledBlocks,
+        isLocked: true,
+        finalizedAt: new Date().toISOString()
     };
 
-    // Lock the batch
-    const batchYear = navState.batch;
-    const batchData = appData.batches.find(b => b.year === batchYear);
-    if (batchData) {
-        batchData.isLocked = true;
-        batchData.setupCompleted = true;
-        batchData.assignmentConfig = navState.assignConfig;
-        batchData.calendarConfig = navState.calendarConfig;
-    }
+    saveData();
+    showToast('✨ Academic Cycle Finalized & Locked!', 'success');
+    navigateTo('department', { dept: navState.dept, batch: navState.batch });
+};
+
+window.exportCycleCSV = function(num) {
+    const cfg = navState.assignConfig || {};
+    const asgns = (cfg.cycleData || {})[num]?.assignments || [];
+    if (!asgns.length) return;
     
-    showToast('✨ Academic setup finalized and locked!', 'success');
+    let csv = "ID,Team,Unit,Topic,Type,Bloom,Status\n";
+    asgns.forEach(a => {
+        csv += `${a.id},"${a.teamLabel}","${a.unit}","${a.topic}","${a.type}",${a.bloomLevel},${a.status}\n`;
+    });
     
-    setTimeout(() => {
-        navigateTo('batch', navState.dept, navState.batch);
-    }, 1500);
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `SAM_Cycle${num}_Assignments.csv`;
+    a.click();
+};
+
+window.exportStudentSheetCSV = function(num) {
+    const cfg = navState.assignConfig || {};
+    const asgns = (cfg.cycleData || {})[num]?.assignments || [];
+    if (!asgns.length) return;
+    
+    const rows = logicBuildStudentSheetCSV(asgns, navState.teams, {
+        courseCode: cfg.courseCode,
+        courseName: cfg.courseName,
+        dept: navState.dept,
+        batch: navState.batch
+    });
+    
+    let csv = rows.map(r => r.map(cell => `"${cell}"`).join(',')).join('\n');
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `SAM_StudentSheet_${cfg.courseCode}_Cycle${num}.csv`;
+    a.click();
+};
+
+window.viewAssignmentDetailsInCycle = function(cycleNum, idx, id) {
+    const cfg = navState.assignConfig || {};
+    const asgns = (cfg.cycleData || {})[cycleNum]?.assignments || [];
+    const a = id ? asgns.find(x => x.id === id) : asgns.filter(x => !x.isReserve)[idx];
+    if (!a) return;
+
+    const modal = document.createElement('div');
+    modal.className = 'modal-backdrop';
+    modal.innerHTML = `
+    <div class="modal-card" style="max-width:600px;">
+        <div class="flex justify-between items-center mb-4">
+            <h3 class="font-bold text-lg">${a.id}: ${a.bloomLabel} Assessment</h3>
+            <button class="btn btn-sm btn-ghost" onclick="this.closest('.modal-backdrop').remove()">✕</button>
+        </div>
+        <div class="space-y-4">
+            <div class="p-3 bg-surface-inset rounded border border-border">
+                <div class="text-xs font-bold text-dim mb-1 uppercase">Unit / Module</div>
+                <div class="text-sm font-semibold">${a.unit}</div>
+            </div>
+            <div class="p-3 bg-surface-inset rounded border border-border">
+                <div class="text-xs font-bold text-dim mb-1 uppercase">Topic / Title</div>
+                <div class="text-sm font-semibold">${a.topic}</div>
+            </div>
+            <div class="p-4 bg-surface rounded border border-primary-light" style="max-height:200px; overflow-y:auto; line-height:1.6; font-size:13px;">
+                ${a.description}
+            </div>
+            <div class="flex gap-2">
+                <span class="chip chip-m bg-indigo-50 text-indigo-700 font-bold">${a.type.toUpperCase()}</span>
+                <span class="chip chip-m bg-blue-50 text-blue-700 font-bold">BLOOM LEVEL ${a.bloomLevel}</span>
+            </div>
+        </div>
+        <div class="mt-6 flex justify-end">
+            <button class="btn btn-secondary" onclick="this.closest('.modal-backdrop').remove()">Close</button>
+        </div>
+    </div>`;
+    document.body.appendChild(modal);
 };
 
 window.viewAssignmentDetails = function(idx) {
