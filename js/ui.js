@@ -168,7 +168,7 @@ window.attemptLogin = async function() {
 };
 
 window.openLoginModal = function(role) {
-    window.selectedLoginRole = role;
+    selectedLoginRole = role;
     const err = document.getElementById('login-error');
     if (err) err.style.display = 'none';
 
