@@ -663,5 +663,5725 @@ const SYLLABUS_DETAILS = {
             { id: 4, title: "Magnetic and Dielectric Materials", topics: ["Magnetic properties of materials", "Ferro, Para, Diamagnetic materials", "Dielectric polarization", "Applications"] },
             { id: 5, title: "Nanoscience", topics: ["Nanomaterials: properties and synthesis", "Carbon nanotubes", "Quantum dots", "Applications of nanotechnology"] }
         ]
-    }
+    },
+    "AU3601": {
+    "name": "Automotive Pollution and Control",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Automotive Pollution and Control",
+        "To apply principles and analytical techniques to Automotive Pollution and Control problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "AU3401": {
+    "name": "Fuels and Lubricants",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Fuels and Lubricants",
+        "To apply principles and analytical techniques to Fuels and Lubricants problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "AU3402": {
+    "name": "Automotive Chassis",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Automotive Chassis",
+        "To apply principles and analytical techniques to Automotive Chassis problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "AU3403": {
+    "name": "Vehicle Body Engineering",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Vehicle Body Engineering",
+        "To apply principles and analytical techniques to Vehicle Body Engineering problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "AU3404": {
+    "name": "Automotive Transmission",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Automotive Transmission",
+        "To apply principles and analytical techniques to Automotive Transmission problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "ML3391": {
+    "name": "Mechanics of Solids",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Mechanics of Solids",
+        "To apply principles and analytical techniques to Mechanics of Solids problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "ME3301": {
+    "name": "Fluid Mechanics and Machinery",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Fluid Mechanics and Machinery",
+        "To apply principles and analytical techniques to Fluid Mechanics and Machinery problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "ME3302": {
+    "name": "Manufacturing Technology \u2013 II",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Manufacturing Technology \u2013 II",
+        "To apply principles and analytical techniques to Manufacturing Technology \u2013 II problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "ME3303": {
+    "name": "Engineering Thermodynamics",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Engineering Thermodynamics",
+        "To apply principles and analytical techniques to Engineering Thermodynamics problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "ME3401": {
+    "name": "Applied Thermodynamics",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Applied Thermodynamics",
+        "To apply principles and analytical techniques to Applied Thermodynamics problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "ME3402": {
+    "name": "Design of Machine Elements",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Design of Machine Elements",
+        "To apply principles and analytical techniques to Design of Machine Elements problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "ME3403": {
+    "name": "Metrology and Measurements",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Metrology and Measurements",
+        "To apply principles and analytical techniques to Metrology and Measurements problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "ME3501": {
+    "name": "Computer Aided Design and Manufacturing",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Computer Aided Design and Manufacturing",
+        "To apply principles and analytical techniques to Computer Aided Design and Manufacturing problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "ME3601": {
+    "name": "Mechatronics",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Mechatronics",
+        "To apply principles and analytical techniques to Mechatronics problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "CE3401": {
+    "name": "Applied Hydraulics Engineering",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Applied Hydraulics Engineering",
+        "To apply principles and analytical techniques to Applied Hydraulics Engineering problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "CE3402": {
+    "name": "Strength of Materials",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Strength of Materials",
+        "To apply principles and analytical techniques to Strength of Materials problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "CE3403": {
+    "name": "Concrete Technology",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Concrete Technology",
+        "To apply principles and analytical techniques to Concrete Technology problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "CE3404": {
+    "name": "Soil Mechanics",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Soil Mechanics",
+        "To apply principles and analytical techniques to Soil Mechanics problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "CE3405": {
+    "name": "Highway and Railway Engineering",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Highway and Railway Engineering",
+        "To apply principles and analytical techniques to Highway and Railway Engineering problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "CE3601": {
+    "name": "Design of Steel Structural Elements",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Design of Steel Structural Elements",
+        "To apply principles and analytical techniques to Design of Steel Structural Elements problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "CE3602": {
+    "name": "Structural Analysis II",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Structural Analysis II",
+        "To apply principles and analytical techniques to Structural Analysis II problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "AG3601": {
+    "name": "Engineering Geology",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Engineering Geology",
+        "To apply principles and analytical techniques to Engineering Geology problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "CE3301": {
+    "name": "Fluid Mechanics",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Fluid Mechanics",
+        "To apply principles and analytical techniques to Fluid Mechanics problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "CE3302": {
+    "name": "Building Materials and Construction",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Building Materials and Construction",
+        "To apply principles and analytical techniques to Building Materials and Construction problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "CE3303": {
+    "name": "Mechanics of Solids",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Mechanics of Solids",
+        "To apply principles and analytical techniques to Mechanics of Solids problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "CE3351": {
+    "name": "Structural Analysis",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Structural Analysis",
+        "To apply principles and analytical techniques to Structural Analysis problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "CE3501": {
+    "name": "Design of Concrete Structures",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Design of Concrete Structures",
+        "To apply principles and analytical techniques to Design of Concrete Structures problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "CE3811": {
+    "name": "Traffic Engineering",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Traffic Engineering",
+        "To apply principles and analytical techniques to Traffic Engineering problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "EC3452": {
+    "name": "Electromagnetic Fields",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Electromagnetic Fields",
+        "To apply principles and analytical techniques to Electromagnetic Fields problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "EC3401": {
+    "name": "Networks and Security",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Networks and Security",
+        "To apply principles and analytical techniques to Networks and Security problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "EC3451": {
+    "name": "Linear Integrated Circuits",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Linear Integrated Circuits",
+        "To apply principles and analytical techniques to Linear Integrated Circuits problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "EC3492": {
+    "name": "Digital Signal Processing",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Digital Signal Processing",
+        "To apply principles and analytical techniques to Digital Signal Processing problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "EC3491": {
+    "name": "Communication Systems",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Communication Systems",
+        "To apply principles and analytical techniques to Communication Systems problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "ET3491": {
+    "name": "Embedded Systems and IoT Design",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Embedded Systems and IoT Design",
+        "To apply principles and analytical techniques to Embedded Systems and IoT Design problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "EE3401": {
+    "name": "Transmission and Distribution",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Transmission and Distribution",
+        "To apply principles and analytical techniques to Transmission and Distribution problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "EE3402": {
+    "name": "Linear Integrated Circuits",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Linear Integrated Circuits",
+        "To apply principles and analytical techniques to Linear Integrated Circuits problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "EE3403": {
+    "name": "Measurements and Instrumentation",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Measurements and Instrumentation",
+        "To apply principles and analytical techniques to Measurements and Instrumentation problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "EE3404": {
+    "name": "Microprocessor and Microcontroller",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Microprocessor and Microcontroller",
+        "To apply principles and analytical techniques to Microprocessor and Microcontroller problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "EE3405": {
+    "name": "Electrical Machines \u2013 II",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Electrical Machines \u2013 II",
+        "To apply principles and analytical techniques to Electrical Machines \u2013 II problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "EE3601": {
+    "name": "Protection and Switchgear",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Protection and Switchgear",
+        "To apply principles and analytical techniques to Protection and Switchgear problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "EE3602": {
+    "name": "Power System Operation and Control",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Power System Operation and Control",
+        "To apply principles and analytical techniques to Power System Operation and Control problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "IT3401": {
+    "name": "Web Essentials",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Web Essentials",
+        "To apply principles and analytical techniques to Web Essentials problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "MA3151": {
+    "name": "Matrices and Calculus",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Matrices and Calculus",
+        "To apply principles and analytical techniques to Matrices and Calculus problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "HS3152": {
+    "name": "Professional English \u2013 I",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Professional English \u2013 I",
+        "To apply principles and analytical techniques to Professional English \u2013 I problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "DS3301": {
+    "name": "Statistics for Data Science",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Statistics for Data Science",
+        "To apply principles and analytical techniques to Statistics for Data Science problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "DS3401": {
+    "name": "Machine Learning",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Machine Learning",
+        "To apply principles and analytical techniques to Machine Learning problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "DS3501": {
+    "name": "Big Data Analytics",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Big Data Analytics",
+        "To apply principles and analytical techniques to Big Data Analytics problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "DS3601": {
+    "name": "Deep Learning",
+    "regulation": "R2021",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Deep Learning",
+        "To apply principles and analytical techniques to Deep Learning problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "ME25C02": {
+    "name": "Engineering Mechanics",
+    "regulation": "R2025",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Engineering Mechanics",
+        "To apply principles and analytical techniques to Engineering Mechanics problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "PH25C05": {
+    "name": "Applied Physics (ME) \u2013 II",
+    "regulation": "R2025",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Applied Physics (ME) \u2013 II",
+        "To apply principles and analytical techniques to Applied Physics (ME) \u2013 II problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "CY25C03": {
+    "name": "Applied Chemistry (ME) \u2013 II",
+    "regulation": "R2025",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Applied Chemistry (ME) \u2013 II",
+        "To apply principles and analytical techniques to Applied Chemistry (ME) \u2013 II problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "PH25C02": {
+    "name": "Applied Physics (CE) \u2013 II",
+    "regulation": "R2025",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Applied Physics (CE) \u2013 II",
+        "To apply principles and analytical techniques to Applied Physics (CE) \u2013 II problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "CY25C02": {
+    "name": "Applied Chemistry (CE) \u2013 II",
+    "regulation": "R2025",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Applied Chemistry (CE) \u2013 II",
+        "To apply principles and analytical techniques to Applied Chemistry (CE) \u2013 II problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "CE25201": {
+    "name": "Construction Materials and Technology",
+    "regulation": "R2025",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Construction Materials and Technology",
+        "To apply principles and analytical techniques to Construction Materials and Technology problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "EC25C01": {
+    "name": "Electron Devices",
+    "regulation": "R2025",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Electron Devices",
+        "To apply principles and analytical techniques to Electron Devices problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "EC25C02": {
+    "name": "Circuits and Network Analysis",
+    "regulation": "R2025",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Circuits and Network Analysis",
+        "To apply principles and analytical techniques to Circuits and Network Analysis problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "CS25C05": {
+    "name": "Data Structures using C++",
+    "regulation": "R2025",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Data Structures using C++",
+        "To apply principles and analytical techniques to Data Structures using C++ problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "MA25C03": {
+    "name": "Transforms and its Applications",
+    "regulation": "R2025",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Transforms and its Applications",
+        "To apply principles and analytical techniques to Transforms and its Applications problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "GE25C01": {
+    "name": "Basic Civil and Mechanical Engineering",
+    "regulation": "R2025",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Basic Civil and Mechanical Engineering",
+        "To apply principles and analytical techniques to Basic Civil and Mechanical Engineering problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "PH25C04": {
+    "name": "Applied Physics (EE) \u2013 II",
+    "regulation": "R2025",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Applied Physics (EE) \u2013 II",
+        "To apply principles and analytical techniques to Applied Physics (EE) \u2013 II problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "ME25C01": {
+    "name": "Engineering Drawing",
+    "regulation": "R2025",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Engineering Drawing",
+        "To apply principles and analytical techniques to Engineering Drawing problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "CS25C04": {
+    "name": "Data Structures and Algorithms",
+    "regulation": "R2025",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Data Structures and Algorithms",
+        "To apply principles and analytical techniques to Data Structures and Algorithms problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "IT25201": {
+    "name": "Foundations of Data Science Using Python",
+    "regulation": "R2025",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Foundations of Data Science Using Python",
+        "To apply principles and analytical techniques to Foundations of Data Science Using Python problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "IT25202": {
+    "name": "Digital Principles and System Design",
+    "regulation": "R2025",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Digital Principles and System Design",
+        "To apply principles and analytical techniques to Digital Principles and System Design problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+},
+    "ME25C05": {
+    "name": "Re-Engineering for Innovation",
+    "regulation": "R2025",
+    "department": "Common",
+    "credits": 3,
+    "ltp": "3-0-0",
+    "objectives": [
+        "To understand the fundamental concepts of Re-Engineering for Innovation",
+        "To apply principles and analytical techniques to Re-Engineering for Innovation problems",
+        "To develop problem-solving skills in relevant domains",
+        "To analyze complex systems associated with the subject",
+        "To design solutions using state-of-the-art methods"
+    ],
+    "outcomes": [
+        {
+            "id": "CO1",
+            "desc": "Understand the basic concepts and principles."
+        },
+        {
+            "id": "CO2",
+            "desc": "Apply theoretical methods to practical scenarios."
+        },
+        {
+            "id": "CO3",
+            "desc": "Analyze system performance and behavior."
+        },
+        {
+            "id": "CO4",
+            "desc": "Evaluate different implementations and approaches."
+        },
+        {
+            "id": "CO5",
+            "desc": "Design simple models or complete systems."
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "title": "Introduction and Basic Concepts",
+            "topics": [
+                "Definition and scope",
+                "Fundamental theories",
+                "Basic definitions",
+                "Overview of applications"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Analysis and Principles",
+            "topics": [
+                "Analytical methods",
+                "Core principles",
+                "Mathematical modeling",
+                "Key algorithms"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Design and Implementation",
+            "topics": [
+                "Design methodologies",
+                "Architecture overview",
+                "Implementation steps",
+                "Case studies"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Advanced Topics",
+            "topics": [
+                "Complex scenarios",
+                "Advanced techniques",
+                "Performance evaluation",
+                "Optimization"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Applications and Future Trends",
+            "topics": [
+                "Recent advancements",
+                "Industry applications",
+                "Emerging technologies",
+                "Future scope"
+            ]
+        }
+    ]
+}
 };
