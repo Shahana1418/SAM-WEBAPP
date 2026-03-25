@@ -26,11 +26,26 @@ function handleModalBackdropClick(e) {
 /* ══════════════════════════════════════════════════════════
    OVERRIDE updateUserBadge — syncs all header + sidebar buttons
 ══════════════════════════════════════════════════════════ */
+window.toggleRoleDropdown = function(e) {
+    if (e) e.stopPropagation();
+    const drop = document.getElementById('role-dropdown');
+    if (drop) {
+        drop.style.display = drop.style.display === 'none' ? 'block' : 'none';
+    }
+};
+
+document.addEventListener('click', (e) => {
+    const drop = document.getElementById('role-dropdown');
+    if (drop && !e.target.closest('#login-dropdown-container')) {
+        drop.style.display = 'none';
+    }
+});
+
 const _origUpdateUserBadge = window.updateUserBadge;
 window.updateUserBadge = function() {
     const badge        = document.getElementById('user-badge');
-    const facultyBtns  = document.querySelectorAll('#faculty-login-btn, #faculty-login-btn-header');
-    const adminBtns    = document.querySelectorAll('#admin-login-btn, #admin-login-btn-header');
+    const headerDrop   = document.getElementById('login-dropdown-container');
+    const sidebarAuth  = document.getElementById('sidebar-auth-buttons');
     const logoutBtns   = document.querySelectorAll('#logout-btn, #logout-btn-header');
     const userNameEl   = document.getElementById('sidebar-user-name');
     const userRoleEl   = document.getElementById('sidebar-user-role');
@@ -40,22 +55,75 @@ window.updateUserBadge = function() {
             badge.innerHTML = `<span>🔑</span> ${currentUser.role}`;
             badge.style.display = 'inline-flex';
         }
-        facultyBtns.forEach(b => { if(b) b.style.display='none'; });
-        adminBtns.forEach(b =>   { if(b) b.style.display='none'; });
+        if (headerDrop) headerDrop.style.display = 'none';
+        if (sidebarAuth) sidebarAuth.style.display = 'none';
         logoutBtns.forEach(b =>  { if(b) b.style.display='inline-flex'; });
+        
         if (userNameEl) userNameEl.textContent = currentUser.role;
         if (userRoleEl) userRoleEl.textContent = currentUser.dept ? `Dept: ${currentUser.dept}` : 'All Departments';
         const av = document.querySelector('.user-avatar');
         if (av) av.textContent = currentUser.role[0];
     } else {
         if (badge) badge.style.display = 'none';
-        facultyBtns.forEach(b => { if(b) b.style.display='inline-flex'; });
-        adminBtns.forEach(b =>   { if(b) b.style.display='inline-flex'; });
+        if (headerDrop) headerDrop.style.display = 'block';
+        if (sidebarAuth) sidebarAuth.style.display = 'block';
         logoutBtns.forEach(b =>  { if(b) b.style.display='none'; });
+        
         if (userNameEl) userNameEl.textContent = 'Not logged in';
         if (userRoleEl) userRoleEl.textContent = 'Guest';
         const av = document.querySelector('.user-avatar');
         if (av) av.textContent = '?';
+    }
+};
+
+window.attemptLogin = async function() {
+    const pw = document.getElementById('admin-password').value.trim();
+    let roleMatched = false;
+
+    if (selectedLoginRole === 'Admin' && pw === 'admin') {
+        currentUser = { role: 'Admin', dept: null, canGenerate: true, canLock: false };
+        roleMatched = true;
+    } else if (selectedLoginRole === 'Faculty' && pw === 'faculty') {
+        currentUser = { role: 'Faculty', dept: null, canGenerate: true, canLock: true };
+        roleMatched = true;
+    } else if (selectedLoginRole === 'HOD' && (pw === 'hod' || pw === 'default')) {
+        currentUser = { role: 'HOD', dept: 'CSE', canGenerate: true, canLock: true };
+        roleMatched = true;
+    } else if (selectedLoginRole === 'Student' && (pw === 'student' || pw === 'default')) {
+        currentUser = { role: 'Student', dept: 'CSE', canGenerate: false, canLock: false };
+        roleMatched = true;
+    } else if (selectedLoginRole === 'Alumni' && (pw === 'alumni' || pw === 'default')) {
+        currentUser = { role: 'Alumni', dept: 'CSE', canGenerate: false, canLock: false };
+        roleMatched = true;
+    } else if (pw === 'default') {
+        // Ultimate fallback
+        currentUser = { role: selectedLoginRole, dept: 'CSE', canGenerate: ['Admin', 'Faculty', 'HOD'].includes(selectedLoginRole), canLock: false };
+        roleMatched = true;
+    }
+
+    if (!roleMatched && typeof sha256 === 'function') {
+        try {
+            const hash = await sha256(pw);
+            if (selectedLoginRole === 'Admin' && hash === (typeof ADMIN_HASH !== 'undefined' ? ADMIN_HASH : '')) {
+                currentUser = { role: 'Admin', dept: null, canGenerate: true, canLock: false };
+                roleMatched = true;
+            } else if (selectedLoginRole === 'Faculty' && hash === (typeof FACULTY_HASH !== 'undefined' ? FACULTY_HASH : '')) {
+                currentUser = { role: 'Faculty', dept: null, canGenerate: true, canLock: true };
+                roleMatched = true;
+            }
+        } catch(e) {}
+    }
+
+    if (roleMatched) {
+        updateUserBadge();
+        if (typeof closeAdminLogin === 'function') closeAdminLogin();
+        navigateTo('college');
+    } else {
+        const err = document.getElementById('login-error');
+        if (err) {
+            err.textContent = 'Incorrect password for ' + selectedLoginRole + '. Hint: try "default" or the role name in lowercase.';
+            err.style.display = 'block';
+        }
     }
 };
 
