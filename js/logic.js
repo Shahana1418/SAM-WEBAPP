@@ -74,29 +74,60 @@ const BLOOM_LEVELS = {
     5: { label: 'Evaluate', icon: '🔴', desc: 'Judge, justify, critique, defend' }
 };
 
+const PROGRAM_OUTCOMES = [
+    { id: 'PO1', name: 'Engineering Knowledge', icon: '🧠' },
+    { id: 'PO2', name: 'Problem Analysis', icon: '🔍' },
+    { id: 'PO3', name: 'Design/Development of Solutions', icon: '🏗️' },
+    { id: 'PO4', name: 'Conduct Investigations of Complex Problems', icon: '🧪' },
+    { id: 'PO5', name: 'Modern Tool Usage', icon: '🛠️' },
+    { id: 'PO6', name: 'The Engineer and Society', icon: '👥' },
+    { id: 'PO7', name: 'Environment and Sustainability', icon: '🌿' },
+    { id: 'PO8', name: 'Ethics', icon: '⚖️' },
+    { id: 'PO9', name: 'Individual and Team Work', icon: '🤝' },
+    { id: 'PO10', name: 'Communication', icon: '🗣️' },
+    { id: 'PO11', name: 'Project Management and Finance', icon: '💰' },
+    { id: 'PO12', name: 'Life-long Learning', icon: '📚' }
+];
+
 const ASGN_TYPE_ORDER = ['presentation', 'mini_project', 'practical', 'problem_solve'];
 
 // ── Phase 3 Helper Functions ───────────────────────────────────────────────
 
 function buildPhase3Title(aType, unit) {
     const verbs = {
-        presentation: ['Present & Explain:', 'Deliver a Talk on:', 'Demonstrate:', 'Explain with Examples:'],
-        mini_project: ['Mini Project — Design & Build:', 'Prototype Development:', 'Working Implementation of:', 'Build a Solution for:'],
-        practical: ['Conduct a Hands-On Exercise on:', 'Perform and Document:', 'Execute and Analyse:', 'Lab Experiment:'],
-        problem_solve: ['Solve a Problem Set on:', 'Apply Concepts from:', 'Work Through Challenges in:', 'Analyse and Solve:']
+        presentation: [
+            'Present and Explain:', 'Deliver a Technical Seminar on:', 'Critical Overview of:', 
+            'Explain with Real-world Examples:', 'Architectural Breakdown of:', 'Case Study Presentation:'
+        ],
+        mini_project: [
+            'Mini Project — Design & Build:', 'Prototype Development for:', 'Working Implementation of:', 
+            'Build a Smart Solution for:', 'Functional Module Design:', 'Proof-of-Concept Development:'
+        ],
+        practical: [
+            'Experimental Validation of:', 'Perform and Document:', 'Execute and Performance Evaluation:', 
+            'Design and Simulation of:', 'Hardware/Software Interfacing for:', 'System-level Benchmarking:'
+        ],
+        problem_solve: [
+            'Solve a Numerical Problem Set on:', 'Mathematical Modelling of:', 'Analytical Reasoning Challenge:', 
+            'Problem Solving Case on:', 'Troubleshoot and Resolve:', 'Algorithm Optimization Task:'
+        ]
     };
     const pool = verbs[aType] || ['Study and Analyse:'];
     let h = 0; for (let i = 0; i < unit.length; i++) h = (h * 31 + unit.charCodeAt(i)) & 0xffff;
     const verb = pool[h % pool.length];
-    return `${verb} ${unit.length > 50 ? unit.substring(0, 47) + '...' : unit}`;
+    return `${verb} ${unit.length > 60 ? unit.substring(0, 57) + '...' : unit}`;
 }
 
 function buildPhase3Description(aType, topic, code, subject, bloomLevel) {
     const b = BLOOM_LEVELS[bloomLevel];
     const baseTpl = (ASSIGN_TPL[aType] || ASSIGN_TPL.presentation)(topic, subject, code);
+    const poNum = Math.min(12, Math.max(1, bloomLevel + (aType === 'mini_project' ? 2 : 0)));
+    
     return baseTpl +
-        `<br><br><strong>📊 Bloom's Level ${bloomLevel} — ${b.label}:</strong> ` +
-        `Target <em>${b.desc}</em>. Students must operate at the <strong>${b.label}</strong> cognitive level.`;
+        `<br><br><div class="p-3 rounded border border-primary-light bg-primary-light/10">` +
+        `<strong>🎯 Academic Context:</strong> This task requires <strong>${b.label.toUpperCase()}</strong> level cognition. ` +
+        `Students are evaluated on their ability to <em>${b.desc}</em> as per Anna University R2021/2025 standards.` +
+        `<br><strong>🔗 Alignment:</strong> Mapped to <strong>PO${poNum}</strong> (${PROGRAM_OUTCOMES[poNum-1].name}) and PO12 (Life-long Learning).</div>`;
 }
 
 // ── Assignment Generation (Phase 3 Engine) ──────────────────────────────────
@@ -113,10 +144,9 @@ function logicGeneratePhase3Assignments(teams, unitData, cycleNum, config = {}) 
     // Flatten topics from unitData
     let topicPool = [];
     unitData.forEach(u => {
-        const topics = u.topics || [];
+        const topics = (u.topics || []).length > 0 ? u.topics : [u.title];
         topics.forEach(t => topicPool.push({ title: t, unitId: u.id, unitTitle: u.title }));
     });
-    if (!topicPool.length) topicPool = unitData.map(u => ({ title: u.title, unitId: u.id, unitTitle: u.title }));
 
     const assignments = [];
     const usedCombos = new Set();
@@ -134,7 +164,15 @@ function logicGeneratePhase3Assignments(teams, unitData, cycleNum, config = {}) 
             const team = isReserve ? null : teams[assignments.length % teams.length];
             const title = buildPhase3Title(aType, topic.title);
             const bInfo = BLOOM_LEVELS[bloom];
+            const poNum = Math.min(12, Math.max(1, bloom + (aType === 'mini_project' ? 2 : 0)));
             
+            // Map 3 LOs like the old app
+            const los = [
+                `LO1: Students will be able to ${bInfo.desc.split(',')[0].toLowerCase()} the key theoretical concepts of "${topic.title}".`,
+                `LO2: Demonstrate ${bInfo.label}-level analytical capability to interpret scenarios in ${topic.unitTitle}.`,
+                `LO3: Exhibit proficiency in ${aType} techniques aligned with PO${poNum} standards.`
+            ];
+
             assignments.push({
                 id: `A${cycleNum}-${String(assignments.length + 1).padStart(2, '0')}`,
                 teamId: team ? team.id : null,
@@ -145,8 +183,10 @@ function logicGeneratePhase3Assignments(teams, unitData, cycleNum, config = {}) 
                 bloomLevel: bloom,
                 bloomLabel: bInfo.label,
                 cycle: cycleNum,
-                loText: `LO: Students will be able to ${bInfo.desc.split(',')[0].toLowerCase()} concepts from Unit ${topic.unitId}.`,
+                loText: los[0],
+                learningObjectives: los,
                 description: buildPhase3Description(aType, topic.title, courseCode, courseName, bloom),
+                poMapped: [`PO${poNum}`, 'PO12'],
                 isReserve,
                 status: isReserve ? 'reserve' : 'active',
                 approved: false
@@ -156,7 +196,7 @@ function logicGeneratePhase3Assignments(teams, unitData, cycleNum, config = {}) 
         uIdx++;
         if (uIdx % topicPool.length === 0) tIdx++;
         if (tIdx % ASGN_TYPE_ORDER.length === 0) bIdx++;
-        if (uIdx > topicPool.length * 20) usedCombos.clear(); // Safety break
+        if (uIdx > topicPool.length * 40) usedCombos.clear(); // Safety break
     }
     
     return assignments;

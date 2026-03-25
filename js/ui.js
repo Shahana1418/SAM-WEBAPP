@@ -888,7 +888,10 @@ window.renderAssessments = function(container) {
         const matchedSubj = rData.find(s => s.name === cfg.courseName);
         const subjCode = matchedSubj ? matchedSubj.code : '';
         const syl = (typeof SYLLABUS_DETAILS !== 'undefined' && subjCode && SYLLABUS_DETAILS[subjCode]) ? SYLLABUS_DETAILS[subjCode] : null;
-        if (subjCode) cfg.courseCode = subjCode;
+        if (subjCode) {
+            cfg.courseCode = subjCode;
+            cfg.syllabus = syl; // Persist for logic.js
+        }
 
         const objHTML = syl && syl.objectives ? syl.objectives.map((o, i) => `
             <div class="flex gap-3 items-start" style="padding:8px 0; border-bottom:1px solid var(--border-light);">
@@ -954,7 +957,7 @@ window.renderAssessments = function(container) {
             </div>
             <div class="wiz-nav-row">
                 <button class="btn btn-secondary" onclick="moveAssignStep(2)">← Back</button>
-                <button class="btn btn-primary" onclick="moveAssignStep(4)">Configure Assignment →</button>
+                <button class="btn btn-primary" onclick="generateCycleAssignments(1); moveAssignStep(4);">Generate Assignments →</button>
             </div>
         </div>`;
     } else if (step === 4) {
@@ -963,6 +966,38 @@ window.renderAssessments = function(container) {
         const cycleNum = navState.currentCycle || 1;
         const cad = (cfg.cycleData || {})[cycleNum];
         const numTeams = (navState.teams || []).length || 1;
+
+        // --- Course Metadata Header (New from Old App) ---
+        const s = cfg.syllabus || null;
+        let courseInfoHTML = '';
+        if (s) {
+            const cos = (s.outcomes || []).map(o => `<li class="mb-1"><strong>${o.id}:</strong> ${o.desc}</li>`).join('');
+            const poTags = PROGRAM_OUTCOMES.slice(0, 6).map(p => 
+                `<span class="chip chip-xs" style="background:rgba(91,33,182,0.1); color:#5b21b6; border:1px solid rgba(91,33,182,0.2); font-weight:700;" title="${p.name}">${p.icon} ${p.id}</span>`
+            ).join(' ');
+
+            courseInfoHTML = `
+            <div class="card p-4 mb-6" style="background:var(--surface-inset); border-left:4px solid var(--primary);">
+                <div class="flex flex-wrap gap-2 items-center mb-3">
+                    <span class="chip chip-s bg-blue-100 text-blue-800 font-bold">${s.regulation || 'R2021'}</span>
+                    <span class="chip chip-s bg-green-100 text-green-800 font-bold">${cfg.dept} · ${cfg.batch}</span>
+                    <h4 class="text-sm font-bold text-main ml-2">${cfg.courseCode} — ${cfg.courseName}</h4>
+                </div>
+                <div class="grid-2 gap-6">
+                    <div>
+                        <div class="text-[10px] font-bold text-dim uppercase mb-2 tracking-widest">🎯 Course Outcomes (CO)</div>
+                        <ul class="text-[11px] text-main pl-4 list-decimal leading-relaxed">
+                            ${cos || '<li>No COs defined for this subject.</li>'}
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="text-[10px] font-bold text-dim uppercase mb-2 tracking-widest">🔗 Targeted Programme Outcomes (PO)</div>
+                        <div class="flex flex-wrap gap-1.5 mb-2">${poTags}</div>
+                        <p class="text-[10px] text-dim italic">System will intelligently map assignments to POs based on Bloom's levels (L1-4).</p>
+                    </div>
+                </div>
+            </div>`;
+        }
 
         const tabActive = "flex-1 text-xs py-2 px-3 rounded-lg border-2 border-primary bg-primary-light text-primary font-bold";
         const tabInactive = "flex-1 text-xs py-2 px-3 rounded-lg border-2 border-border bg-surface text-dim font-medium hover:bg-surface-inset transition-colors";
@@ -1016,6 +1051,8 @@ window.renderAssessments = function(container) {
         <div class="wiz-panel">
             <h3 class="wiz-panel-title">📚 Configuration — Phase 3 Engine</h3>
             
+            ${courseInfoHTML}
+
             <div class="flex gap-3 mb-6">
                 <button onclick="switchWizardCycle(1)" class="${cycleNum === 1 ? tabActive : tabInactive}">
                     Cycle 1 (S1-6) ${cfg.cycleData && cfg.cycleData[1] ? '✅' : ''}
@@ -1281,6 +1318,42 @@ window.finalizeAcademicSetup = function() {
     saveData();
     showToast('✨ Academic Cycle Finalized & Locked!', 'success');
     navigateTo('department', { dept: navState.dept, batch: navState.batch });
+};
+
+window.generateCycleAssignments = function(cycleNum) {
+    const cfg = navState.assignConfig;
+    if (!cfg) return;
+    const syl = cfg.syllabus || null;
+    const units = syl ? syl.units : (cfg.units || []);
+    
+    cfg.cycleData = cfg.cycleData || {};
+    cfg.cycleData[cycleNum] = {
+        assignments: logicGeneratePhase3Assignments(navState.teams, units, cycleNum, { 
+            courseName: cfg.courseName, 
+            courseCode: cfg.courseCode,
+            syllabus: syl
+        }),
+        approved: false,
+        generatedAt: new Date().toISOString()
+    };
+    render();
+    showToast(`Cycle ${cycleNum} Assignments Generated!`, 'success');
+};
+
+window.switchWizardCycle = function(cycleNum) {
+    navState.currentCycle = cycleNum;
+    render();
+};
+
+window.approveAssignment = function(cycleNum, id) {
+    const cad = (navState.assignConfig.cycleData || {})[cycleNum];
+    if (!cad) return;
+    const a = cad.assignments.find(x => x.id === id);
+    if (a) {
+        a.approved = true;
+        showToast(`Assignment ${id} Approved!`, 'success');
+        render();
+    }
 };
 
 window.exportCycleCSV = function(num) {
