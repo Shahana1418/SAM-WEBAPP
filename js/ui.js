@@ -958,44 +958,362 @@ window.renderAssessments = function(container) {
             </div>
         </div>`;
     } else if (step === 4) {
+        // --- Step 4: Configure & Generate Topics ---
+        const savedType = cfg.assignType || 'auto';
+        const numTeams = (navState.teams || []).length || 12;
+        
+        let resultHTML = '';
+        if (cfg.generatedAssignments && cfg.generatedAssignments.length > 0) {
+            const cards = cfg.generatedAssignments.map((a, i) => `
+            <div class="card p-3" style="border-left:4px solid var(--primary); animation: fadeIn 0.4s ease forwards ${i*0.05}s; opacity:0;">
+                <div class="flex justify-between items-start mb-2">
+                    <span class="chip chip-m" style="font-size:.65rem; background:var(--primary-light); color:var(--primary); font-weight:700;">TEAM ${i+1}</span>
+                    <span class="text-xs font-mono text-dim">${a.type || 'Present'}</span>
+                </div>
+                <div class="font-bold text-sm mb-1" style="color:var(--text-main); line-height:1.4;">${a.title}</div>
+                <div class="text-xs text-dim mb-2">${a.unit || 'Unit 1'} • ${a.co || 'CO1'}</div>
+                <button class="btn btn-sm btn-ghost w-full" style="font-size:.65rem; padding:4px;" onclick="viewAssignmentDetails(${i})">View Details ↓</button>
+            </div>`).join('');
+
+            resultHTML = `
+            <div class="mt-8">
+                <div class="flex justify-between items-center mb-4">
+                    <h4 class="font-bold text-main">✨ Generated Topics (${cfg.generatedAssignments.length})</h4>
+                    <button class="btn btn-sm btn-secondary" onclick="exportAssignmentsToCSV()">💾 Export CSV</button>
+                </div>
+                <div class="grid-3" style="gap:12px;">
+                    ${cards}
+                </div>
+            </div>`;
+        }
+
         panelHTML = `
         <div class="wiz-panel">
-            <h3 class="wiz-panel-title">🚀 Final Configuration & Generation</h3>
-            <div class="grid-2 mb-6">
-                <div class="card p-4 text-center cursor-pointer border-primary" style="border-width: 2px;">
-                    <div class="text-2xl mb-2">📊</div>
-                    <div class="font-bold">Team Presentation</div>
+            <h3 class="wiz-panel-title">⚙️ Configure & Generate Topics</h3>
+            <div class="wiz-form-grid">
+                <div class="wiz-field">
+                    <label>Assignment Strategy</label>
+                    <select class="form-input" id="wiz-assign-strategy" onchange="(navState.assignConfig = navState.assignConfig || {}).assignType = this.value">
+                        <option value="auto" ${savedType === 'auto' ? 'selected' : ''}>Auto-Cycle Types (Multi-modal)</option>
+                        <option value="Mini Project" ${savedType === 'Mini Project' ? 'selected' : ''}>Mini Project (All Teams)</option>
+                        <option value="Case Study" ${savedType === 'Case Study' ? 'selected' : ''}>Case Study (All Teams)</option>
+                        <option value="Research Paper" ${savedType === 'Research Paper' ? 'selected' : ''}>Research Paper (All Teams)</option>
+                        <option value="Problem Solving" ${savedType === 'Problem Solving' ? 'selected' : ''}>Technical Quiz (All Teams)</option>
+                    </select>
                 </div>
-                <div class="card p-4 text-center cursor-pointer">
-                    <div class="text-2xl mb-2">📝</div>
-                    <div class="font-bold">Individual Task</div>
+                <div class="wiz-field">
+                    <label>Complexity Level</label>
+                    <select class="form-input" id="wiz-complexity">
+                        <option value="balanced">Balanced (Sequential)</option>
+                        <option value="Easy">Standard / Foundational</option>
+                        <option value="Medium">Intermediate / Application</option>
+                        <option value="Hard">Advanced / Synthesis</option>
+                    </select>
                 </div>
             </div>
-            <p class="text-sm text-dim text-center mb-6">Click generate to map the selected syllabus topics to your generated teams.</p>
+            
+            <div class="card bg-surface-inset p-4 mb-6" style="border:1px dashed var(--border);">
+                <div class="flex gap-4 items-center">
+                    <div class="text-3xl">🧩</div>
+                    <div>
+                        <div class="font-bold text-main">Ready for ${numTeams} Teams</div>
+                        <div class="text-xs text-dim">Topics will be pulled from unit details and mapped to teams.</div>
+                    </div>
+                    <button class="btn btn-primary ml-auto" onclick="generateWizardAssignments()">Generate Topics</button>
+                </div>
+            </div>
+
+            ${resultHTML}
+
             <div class="wiz-nav-row">
                 <button class="btn btn-secondary" onclick="moveAssignStep(3)">← Back</button>
-                <button class="btn btn-success" onclick="
-                    showToast('🎉 Assignments mapped successfully!', 'success');
-                    setTimeout(() => navigateTo('college'), 1500);
-                ">Finalize & Generate Assignments</button>
+                <button class="btn btn-primary" ${!cfg.generatedAssignments ? 'disabled' : ''} onclick="moveAssignStep(5)">Proceed to Scheduling →</button>
+            </div>
+        </div>`;
+    } else if (step === 5) {
+        // --- Step 5: Schedule Sessions ---
+        const today = new Date().toISOString().split('T')[0];
+        
+        let pairingsHTML = '';
+        if (navState.pairings && navState.pairings.length > 0) {
+            const blocks = navState.pairings.map((b, i) => `
+            <div class="card p-4 mb-4" style="border-left:4px solid var(--secondary);">
+                <div class="flex justify-between items-center mb-3">
+                    <span class="chip chip-m" style="background:var(--secondary-light); color:var(--secondary); font-weight:800;">BLOCK ${i+1}</span>
+                    <span class="text-xs text-dim">3 Sessions • Roles Rotate</span>
+                </div>
+                <div class="grid-3" style="gap:15px;">
+                    ${b.sessions.map((s, si) => `
+                    <div class="p-2 rounded bg-surface-inset">
+                        <div class="text-[0.65rem] font-bold text-dim mb-2 uppercase tracking-wider">Session ${si+1}</div>
+                        <div class="flex flex-col gap-1">
+                            <div class="text-xs"><span class="role-p px-1 rounded text-[10px] mr-1">P</span> <b>T${s.P+1}</b></div>
+                            <div class="text-xs"><span class="role-tr px-1 rounded text-[10px] mr-1">TR</span> <b>T${s.TR+1}</b></div>
+                            <div class="text-xs"><span class="role-fp px-1 rounded text-[10px] mr-1">FP</span> <b>T${s.FP+1}</b></div>
+                        </div>
+                    </div>`).join('')}
+                </div>
+            </div>`).join('');
+
+            pairingsHTML = `
+            <div class="mt-8">
+                <h4 class="font-bold text-main mb-4">📅 Planned Session Blocks</h4>
+                ${blocks}
+            </div>`;
+        }
+
+        panelHTML = `
+        <div class="wiz-panel">
+            <h3 class="wiz-panel-title">🗓️ Session Scheduling</h3>
+            <div class="wiz-form-grid">
+                <div class="wiz-field">
+                    <label>Start Date</label>
+                    <input type="date" class="form-input" id="wiz-start-date" value="${today}">
+                </div>
+                <div class="wiz-field">
+                    <label>Periods per Day</label>
+                    <select class="form-input" id="wiz-periods">
+                        <option value="1">1 Period (3 Sessions)</option>
+                        <option value="2">2 Periods (6 Sessions)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="card bg-surface-inset p-4 mb-6" style="border:1px dashed var(--border);">
+                <div class="flex gap-4 items-center">
+                    <div class="text-3xl">🕐</div>
+                    <div>
+                        <div class="font-bold text-main">Calculate Pairings</div>
+                        <div class="text-xs text-dim">Groups teams into blocks where every team fulfills P, TR, and FP roles.</div>
+                    </div>
+                    <button class="btn btn-secondary ml-auto" onclick="generateWizardPairings()">Compute Schedule</button>
+                </div>
+            </div>
+
+            ${pairingsHTML}
+
+            <div class="wiz-nav-row">
+                <button class="btn btn-secondary" onclick="moveAssignStep(4)">← Back</button>
+                <button class="btn btn-success" ${!navState.pairings ? 'disabled' : ''} onclick="finalizeAcademicSetup()">Finalize & Lock Setup ✨</button>
             </div>
         </div>`;
     }
 
     container.innerHTML = `
-    <div class="page-header">
-        <h2 class="page-title">Assignment Configurations</h2>
-        <p class="page-subtitle">Configure assignments, map syllabus units, and distribute topics automatically to generated teams.</p>
+    <div class="page-header" style="justify-content: flex-start; align-items:flex-start; flex-direction:column; gap:8px;">
+        <h2 class="page-title">Assignment & Schedule Wizard</h2>
+        <p class="page-subtitle">Configure academic sessions, map syllabus topics, and organize team-based peer assessments.</p>
     </div>
     ${stepperHTML}
     ${panelHTML}
     `;
+
+    // Re-highlight active step in wizard bar if needed
+    if (typeof updateWizBar === 'function') updateWizBar('assessments');
 };
+
+/* ══════════════════════════════════════════════════════════
+   WIZARD HELPERS
+   Connects UI to logic.js algorithms
+══════════════════════════════════════════════════════════ */
 
 window.moveAssignStep = function(step) {
     navState.assignStep = step;
     render();
     window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+window.generateWizardAssignments = function() {
+    const teams = navState.teams || [];
+    if (!teams.length) { showToast('⚠️ No teams found. Generate teams first.', 'error'); return; }
+    
+    const cfg = navState.assignConfig || {};
+    const strategy = document.getElementById('wiz-assign-strategy').value;
+    const complexity = document.getElementById('wiz-complexity').value;
+    
+    // Get unit data from Step 3 (or from SYLLABUS_DETAILS lookup)
+    let unitData = [];
+    const reg = navState.batch >= 2029 ? 'R2025' : 'R2021';
+    const rData = (typeof SUBJECTS_DATA !== 'undefined' && SUBJECTS_DATA[reg] && SUBJECTS_DATA[reg][navState.dept]) ? SUBJECTS_DATA[reg][navState.dept] : [];
+    const matchedSubj = rData.find(s => s.name === cfg.courseName);
+    const subjCode = matchedSubj ? matchedSubj.code : '';
+    const syl = (typeof SYLLABUS_DETAILS !== 'undefined' && subjCode && SYLLABUS_DETAILS[subjCode]) ? SYLLABUS_DETAILS[subjCode] : null;
+
+    if (syl && syl.units) {
+        unitData = syl.units.map(u => ({
+            id: u.id,
+            title: u.title,
+            topics: u.topics
+        }));
+    }
+
+    try {
+        const generated = logicGenerateAssignments(teams, unitData, strategy, complexity, {
+            courseName: cfg.courseName,
+            courseCode: subjCode
+        });
+        cfg.generatedAssignments = generated;
+        cfg.assignType = strategy;
+        cfg.courseCode = subjCode;
+        navState.assignConfig = cfg;
+        showToast(`🎉 ${generated.length} topics generated successfully!`, 'success');
+        render();
+    } catch (e) {
+        console.error(e);
+        showToast('❌ Failed to generate assignments. Check console.', 'error');
+    }
+};
+
+window.generateWizardPairings = function() {
+    const teams = navState.teams || [];
+    if (!teams.length) { showToast('⚠️ No teams found.', 'error'); return; }
+    
+    try {
+        // computePairings from logic.js
+        const pairings = logicComputePairings(teams);
+        navState.pairings = pairings;
+        showToast('📅 Schedule blocks computed successfully!', 'success');
+        render();
+    } catch (e) {
+        console.error(e);
+        showToast('❌ Failed to compute schedule.', 'error');
+    }
+};
+
+window.finalizeAcademicSetup = function() {
+    const teams = navState.teams || [];
+    const pairings = navState.pairings || [];
+    if (!pairings.length) { showToast('⚠️ Compute schedule first.', 'error'); return; }
+
+    const startDateInput = document.getElementById('wiz-start-date');
+    const periodsPerDay = parseInt(document.getElementById('wiz-periods')?.value || '1');
+    let currentDate = new Date(startDateInput?.value || new Date().toISOString().split('T')[0]);
+    
+    // Convert logic.js blocks into app.js calendarConfig format
+    const sessions = [];
+    let sessionNum = 1;
+    
+    pairings.forEach((block, bIdx) => {
+        block.sessions.forEach((s, si) => {
+            // Find a working day (Mon-Fri)
+            while (currentDate.getDay() === 0 || currentDate.getDay() === 6) {
+                currentDate.setDate(currentDate.getDate() + 1);
+            }
+            
+            const dateStr = currentDate.toISOString().split('T')[0];
+            const pt = PERIOD_TYPES.morning1; // Default
+            
+            sessions.push({
+                sessNum: sessionNum++,
+                date: new Date(currentDate),
+                dateStr: dateStr,
+                dayName: DAY_NAMES_SHORT[currentDate.getDay()],
+                dayFull: DAY_NAMES_FULL[currentDate.getDay()],
+                periodKey: 'morning1',
+                startTime: pt.startH + ':00',
+                endTime: (pt.startH + 1) + ':30',
+                presenterIdx: teams.indexOf(s.P),
+                reviewerIdx: teams.indexOf(s.TR),
+                feedbackIdx: teams.indexOf(s.FP),
+                revealed: false,
+                slotIndex: si % 3
+            });
+
+            // If we've filled the periods for the day, move to next day
+            if (sessionNum % (3 * periodsPerDay) === 1) {
+                currentDate.setDate(currentDate.getDate() + 1);
+            }
+        });
+    });
+
+    // Save to navState
+    navState.calendarConfig = {
+        startDate: startDateInput?.value,
+        sessions: sessions,
+        periodSlot: 'morning1'
+    };
+
+    // Lock the batch
+    const batchYear = navState.batch;
+    const batchData = appData.batches.find(b => b.year === batchYear);
+    if (batchData) {
+        batchData.isLocked = true;
+        batchData.setupCompleted = true;
+        batchData.assignmentConfig = navState.assignConfig;
+        batchData.calendarConfig = navState.calendarConfig;
+    }
+    
+    showToast('✨ Academic setup finalized and locked!', 'success');
+    
+    setTimeout(() => {
+        navigateTo('batch', navState.dept, navState.batch);
+    }, 1500);
+};
+
+window.viewAssignmentDetails = function(idx) {
+    const a = navState.assignConfig.generatedAssignments[idx];
+    if (!a) return;
+    
+    const detailsHTML = `
+    <div class="p-4" style="max-height: 400px; overflow-y:auto;">
+        <div class="mb-4">
+            <h5 class="text-dim uppercase tracking-tighter text-[10px] font-bold">Goal</h5>
+            <p class="text-sm text-main font-bold">${a.objective}</p>
+        </div>
+        <div class="mb-4">
+            <h5 class="text-dim uppercase tracking-tighter text-[10px] font-bold">Description</h5>
+            <p class="text-sm text-main">${a.description}</p>
+        </div>
+        <div class="grid-2 gap-4">
+            <div>
+                <h5 class="text-dim uppercase tracking-tighter text-[10px] font-bold">Deliverables</h5>
+                <ul class="text-[11px] text-main list-disc pl-3">
+                    ${a.deliverables.map(d => `<li>${d}</li>`).join('')}
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-dim uppercase tracking-tighter text-[10px] font-bold">Evaluation Criteria</h5>
+                <ul class="text-[11px] text-main list-disc pl-3">
+                    ${a.criteria.map(c => `<li>${c}</li>`).join('')}
+                </ul>
+            </div>
+        </div>
+    </div>`;
+
+    // Simple modal-like alert or custom popup
+    const overlay = document.createElement('div');
+    overlay.className = 'modal-backdrop';
+    overlay.style.display = 'flex';
+    overlay.innerHTML = `
+        <div class="modal-box" style="max-width: 600px;">
+            <div class="modal-header">
+                <div class="modal-title">Team ${idx+1} Assignment Details</div>
+                <button class="modal-close" onclick="this.closest('.modal-backdrop').remove()">✕</button>
+            </div>
+            <div class="modal-body">${detailsHTML}</div>
+        </div>
+    `;
+    document.body.appendChild(overlay);
+};
+
+window.exportAssignmentsToCSV = function() {
+    const cfg = navState.assignConfig;
+    if (!cfg || !cfg.generatedAssignments) return;
+    
+    let csv = "Team,Topic,Unit,Type,Objective\n";
+    cfg.generatedAssignments.forEach((a, i) => {
+        csv += `Team ${i+1},"${a.title.replace(/"/g, '""')}","${a.unit}","${a.type}","${a.objective.replace(/"/g, '""')}"\n`;
+    });
+    
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.setAttribute('hidden', '');
+    a.setAttribute('href', url);
+    a.setAttribute('download', `assignments_${navState.dept}_${navState.batch}.csv`);
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
 };
 
 /* ══════════════════════════════════════════════════════════
