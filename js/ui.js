@@ -172,41 +172,28 @@ window.openLoginModal = function(role) {
     const err = document.getElementById('login-error');
     if (err) err.style.display = 'none';
 
-    // DIRECT LOGIN FOR NON-STUDENT ROLES
-    if (role !== 'Student') {
-        const defaultDepts = { 'HOD': 'CSE', 'Alumni': 'CSE', 'Faculty': null, 'Admin': null };
-        const canGen = ['Admin', 'Faculty', 'HOD'].includes(role);
-        
-        currentUser = {
-            role: role,
-            dept: defaultDepts[role] || null,
-            canGenerate: canGen,
-            canLock: role === 'Faculty' || role === 'HOD'
-        };
-        updateUserBadge();
-        
-        if (typeof closeSidebar === 'function') closeSidebar();
-        
-        showToast(`Successfully authenticated as ${role}`, 'success');
-        navigateTo('college');
-        return;
+    const unGroup = document.getElementById('username-group');
+    const pwField = document.getElementById('admin-password');
+    const unField = document.getElementById('admin-username');
+    const modal   = document.getElementById('admin-modal');
+
+    if (role === 'Student') {
+        // STUDENT: username (Roll No) + password (DOB)
+        document.getElementById('login-modal-title').textContent = 'Student Login';
+        document.getElementById('login-modal-subtitle').textContent = 'Enter your Roll No and Date of Birth';
+        if (unGroup) unGroup.style.display = 'block';
+        if (unField) { unField.value = ''; unField.placeholder = 'e.g. 23CSE12'; }
+        if (pwField) { pwField.value = ''; pwField.placeholder = 'Date of Birth (DD-MM-YYYY)'; }
+    } else {
+        // ALL OTHER ROLES: password only
+        document.getElementById('login-modal-title').textContent = role + ' Login';
+        document.getElementById('login-modal-subtitle').textContent = 'Enter ' + role + ' password to continue';
+        if (unGroup) unGroup.style.display = 'none';
+        if (pwField) { pwField.value = ''; pwField.placeholder = 'Enter password'; }
     }
 
-    // STUDENT LOGIN MODAL
-    document.getElementById('login-modal-title').textContent = 'Student Login';
-    document.getElementById('login-modal-subtitle').textContent = 'Enter Roll No and DOB';
-
-    const unGroup = document.getElementById('username-group');
-    if (unGroup) unGroup.style.display = 'block';
-
-    const modal = document.getElementById('admin-modal');
+    if (typeof closeSidebar === 'function') closeSidebar();
     if (modal) modal.style.display = 'flex';
-    
-    const pwField = document.getElementById('admin-password');
-    if (pwField) pwField.value = '';
-    
-    const unField = document.getElementById('admin-username');
-    if (unField) unField.value = '';
 };
 
 /* ══════════════════════════════════════════════════════════
