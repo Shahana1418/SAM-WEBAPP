@@ -730,7 +730,7 @@ function renderCollege(container) {
     container.innerHTML = `
         <div class="py-4">
             <!-- ── Role-switcher / Institution Panel ─────────────────────── -->
-            <div id="home-role-panel" style="background:linear-gradient(135deg,#7B1C1C 0%,#3D0E0E 100%);border-radius:12px;padding:16px 20px;margin-bottom:16px;box-shadow:0 4px 20px rgba(0,0,0,.25)">
+            <div id="home-role-panel" style="background:linear-gradient(135deg,var(--primary) 0%,#3D0E0E 100%);border-radius:12px;padding:16px 20px;margin-bottom:16px;box-shadow:0 4px 20px rgba(0,0,0,.25)">
                 <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
                 <div>
                     <div style="color:#f8fafc;font-size:1.05rem;font-weight:800;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
@@ -760,8 +760,8 @@ function renderCollege(container) {
 
             <!-- Stats -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
-                <div class="card text-center py-3" style="border-top:3px solid #7B1C1C">
-                <div style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:800;color:#7B1C1C">${totalStudents}</div>
+                <div class="card text-center py-3" style="border-top:3px solid var(--primary)">
+                <div style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:800;color:var(--primary)">${totalStudents}</div>
                 <div style="font-size:.72rem;color:#8C7B6B;margin-top:4px;text-transform:uppercase;letter-spacing:.06em">Students</div>
                 </div>
                 <div class="card text-center py-3" style="border-top:3px solid #2D6A4F">
@@ -772,8 +772,8 @@ function renderCollege(container) {
                 <div style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:800;color:#C9A84C">${totalSacs}</div>
                 <div style="font-size:.72rem;color:#8C7B6B;margin-top:4px;text-transform:uppercase;letter-spacing:.06em">SAC Members</div>
                 </div>
-                <div class="card text-center py-3" style="border-top:3px solid #7B1C1C">
-                <div style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:800;color:#7B1C1C">${totalFaculty}</div>
+                <div class="card text-center py-3" style="border-top:3px solid var(--primary)">
+                <div style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:800;color:var(--primary)">${totalFaculty}</div>
                 <div style="font-size:.72rem;color:#8C7B6B;margin-top:4px;text-transform:uppercase;letter-spacing:.06em">Faculty</div>
                 </div>
             </div>
@@ -799,9 +799,9 @@ function renderCollege(container) {
             <h2 style="font-size:.7rem;font-weight:700;color:#8C7B6B;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;font-family:'Source Sans 3',sans-serif">— Select Department —</h2>
             <div id="home-dept-cards" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px;">
                 ${activeDepts.map(d => `
-                    <div class="dept-card" onclick="navigateTo('department', '${d.code}')" style="cursor:pointer;border:1.5px solid #D9CFC3;border-radius:10px;padding:16px 12px;background:#fff;text-align:center;transition:all .15s;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:hidden;" onmouseover="this.style.boxShadow='0 4px 12px rgba(123,28,28,.12)';this.style.borderColor='#7B1C1C'" onmouseout="this.style.boxShadow='0 1px 3px rgba(0,0,0,.06)';this.style.borderColor='#D9CFC3'">
+                    <div class="dept-card" onclick="navigateTo('department', '${d.code}')" style="cursor:pointer;border:1.5px solid var(--border-strong);border-radius:10px;padding:16px 12px;background:#fff;text-align:center;transition:all .15s;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:hidden;" onmouseover="this.style.boxShadow='0 4px 12px rgba(123,28,28,.12)';this.style.borderColor='var(--primary)'" onmouseout="this.style.boxShadow='0 1px 3px rgba(0,0,0,.06)';this.style.borderColor='var(--border-strong)'">
                         <div style="font-size:2rem;margin-bottom:6px;">${getDeptIcon(d.code)}</div>
-                        <div style="font-size:11px;font-weight:700;color:#7B1C1C;letter-spacing:.05em;text-transform:uppercase;">${d.code}</div>
+                        <div style="font-size:11px;font-weight:700;color:var(--primary);letter-spacing:.05em;text-transform:uppercase;">${d.code}</div>
                         <div style="font-size:11px;color:#5C4F3D;margin:4px 0 6px;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${d.name}">${d.name}</div>
                         <div style="font-size:11px;color:#8C7B6B;">👥 ${d.students} students</div>
                     </div>
@@ -847,13 +847,13 @@ function switchRole(role) {
         btnData.style.display = 'none';
     } else if (role === 'hod') {
         badge.innerText = 'HOD';
-        badge.style.background = '#F5ECEC';
-        badge.style.color = '#7B1C1C';
+        badge.style.background = 'var(--bg-main)';
+        badge.style.color = 'var(--primary)';
         desc.innerText = 'Departmental oversight, performance metrics, and faculty coordination.';
         btnData.style.display = 'none';
     } else if (role === 'principal') {
         badge.innerText = 'PRINCIPAL';
-        badge.style.background = '#7B1C1C';
+        badge.style.background = 'var(--primary)';
         badge.style.color = '#fff';
         desc.innerText = 'Institutional dashboard, global session monitoring, and data management.';
         btnData.style.display = 'inline-flex';
@@ -1062,13 +1062,13 @@ function renderBatch(container) {
     const batchInfo = getBatchAcademicInfo(batchYear);
 
     const adminActions = `
-        <div class="admin-actions" style="border-top: 3px solid #7B1C1C; background: #fdfaf7;">
+        <div class="admin-actions" style="border-top: 3px solid var(--primary); background: #fdfaf7;">
             <div style="display:flex; justify-content:space-between; align-items:center;">
                 <div>
-                    <h3 class="section-title" style="margin-bottom:4px; color:#7B1C1C;">🛠️ Team & Session Management</h3>
+                    <h3 class="section-title" style="margin-bottom:4px; color:var(--primary);">🛠️ Team & Session Management</h3>
                     <p style="font-size:0.75rem; color:#8C7B6B;">Map students to teams, schedule sessions, and generate assignments.</p>
                 </div>
-                <button class="btn btn-primary" style="width:auto; padding:12px 24px; background:#7B1C1C;" 
+                <button class="btn btn-primary" style="width:auto; padding:12px 24px; background:var(--primary);" 
                     onclick="if(!navState.teams) { generateAndShowTeams('${deptCode}',${batchYear}, 4, 'random'); } else { navigateTo('teams'); }">
                     Enter Management Flow &rarr;
                 </button>
@@ -3425,33 +3425,33 @@ function renderSacList(sacs) {
     depts.forEach(dept => {
         const deptSacs = grouped[dept];
         html += `
-                    <div class="card" style="margin-bottom:2rem; overflow:hidden; border-top:4px solid #7B1C1C;">
-                        <div style="background:#F5ECEC; padding:12px 18px; border-bottom:1px solid #D9CFC3; display:flex; justify-content:space-between; align-items:center;">
-                            <h3 style="margin:0; font-size:1.1rem; color:#7B1C1C; font-family:'Playfair Display', serif;">${getDeptName(dept)} (${dept})</h3>
+                    <div class="card" style="margin-bottom:2rem; overflow:hidden; border-top:4px solid var(--primary);">
+                        <div style="background:var(--bg-main); padding:12px 18px; border-bottom:1px solid var(--border-strong); display:flex; justify-content:space-between; align-items:center;">
+                            <h3 style="margin:0; font-size:1.1rem; color:var(--primary); font-family:'Playfair Display', serif;">${getDeptName(dept)} (${dept})</h3>
                             <span class="chip chip-sac" style="background:#E8F5EE; color:#2D6A4F;">${deptSacs.length} SACs</span>
                         </div>
                         <div class="grade-matrix-wrap">
                             <table class="dt" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th style="background:#7B1C1C; color:#fff;">Name</th>
-                                        <th style="background:#7B1C1C; color:#fff;">Batch</th>
-                                        <th style="background:#7B1C1C; color:#fff;">Gender</th>
-                                        <th style="background:#7B1C1C; color:#fff;">WhatsApp</th>
-                                        <th style="background:#7B1C1C; color:#fff;">Email</th>
-                                        <th style="background:#7B1C1C; color:#fff;">Status</th>
+                                        <th style="background:var(--primary); color:#fff;">Name</th>
+                                        <th style="background:var(--primary); color:#fff;">Batch</th>
+                                        <th style="background:var(--primary); color:#fff;">Gender</th>
+                                        <th style="background:var(--primary); color:#fff;">WhatsApp</th>
+                                        <th style="background:var(--primary); color:#fff;">Email</th>
+                                        <th style="background:var(--primary); color:#fff;">Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     ${deptSacs.map(s => `
                                         <tr>
-                                            <td style="font-weight:700; color:#7B1C1C">${s.student_name}</td>
+                                            <td style="font-weight:700; color:var(--primary)">${s.student_name}</td>
                                             <td>${s.passing_year}</td>
                                             <td>
                                                 <span class="chip ${s.gender === 'M' ? 'chip-m' : 'chip-f'}">${s.gender}</span>
                                             </td>
                                             <td>
-                                                <a href="${s.whatsapp_link}" target="_blank" class="btn btn-ghost" style="color:#2D6A4F; font-size:.7rem; padding:4px 8px; border:1px solid #D9CFC3;">
+                                                <a href="${s.whatsapp_link}" target="_blank" class="btn btn-ghost" style="color:#2D6A4F; font-size:.7rem; padding:4px 8px; border:1px solid var(--border-strong);">
                                                     🟢 WhatsApp
                                                 </a>
                                             </td>

@@ -540,6 +540,86 @@ window.closeCycleModal = function() {
 };
 
 /* ══════════════════════════════════════════════════════════
+   OVERRIDE SAC RENDER
+══════════════════════════════════════════════════════════ */
+window.renderSac = async function(container) {
+    container.innerHTML = `
+    <div class="page-header">
+        <div class="page-title">🤝 Student Alumni Coordinators</div>
+        <div class="page-subtitle">Department representatives and activity facilitators.</div>
+    </div>
+    <div id="sac-content"></div>`;
+    
+    // We already loaded data/sac_data.js in index.html which defines SAC_DATA
+    if (typeof SAC_DATA !== 'undefined' && SAC_DATA.length > 0) {
+        window.renderSacList(SAC_DATA);
+    } else {
+        document.getElementById('sac-content').innerHTML = `
+        <div class="card text-center p-6">
+            <div class="text-muted text-sm my-4">No SAC data found.</div>
+        </div>`;
+    }
+};
+
+window.renderSacList = function(sacs) {
+    const content = document.getElementById('sac-content');
+    if (!content) return;
+
+    // Group sacs by department
+    const grouped = {};
+    sacs.forEach(s => {
+        // Map data/sac_data.js format
+        const d = s.dept || s.department || 'Other';
+        if (!grouped[d]) grouped[d] = [];
+        grouped[d].push(s);
+    });
+
+    const depts = Object.keys(grouped).sort();
+    
+    const html = depts.map(dept => {
+        const deptSacs = grouped[dept];
+        return `
+        <div class="card mb-6" style="padding:0; overflow:hidden;">
+            <div class="flex items-center justify-between" style="padding: 16px 20px; background: var(--surface-inset); border-bottom: 1px solid var(--border);">
+                <div class="flex items-center gap-3">
+                    <h3 class="font-bold" style="color:var(--text-main); font-family:'Playfair Display', serif; font-size:1.1rem;">${window.getDeptName ? window.getDeptName(dept) : dept} (${dept})</h3>
+                    <span class="chip chip-m" style="background:#e0e7ff; color:#4338ca;">${deptSacs.length} Co-ords</span>
+                </div>
+            </div>
+            
+            <div style="overflow-x:auto;">
+                <table class="dt">
+                    <thead>
+                        <tr>
+                            <th>Roll No</th>
+                            <th>Name</th>
+                            <th>Batch</th>
+                            <th>Gender</th>
+                            <th>Contact</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${deptSacs.map(s => `
+                        <tr>
+                            <td class="font-mono text-sm text-dim">${s.roll || '—'}</td>
+                            <td class="font-bold" style="color:var(--text-main);">${s.name || s.student_name}</td>
+                            <td>${s.batch || s.passing_year}</td>
+                            <td><span class="chip ${s.gender === 'M' ? 'chip-m' : 'chip-f'}">${s.gender}</span></td>
+                            <td class="font-mono text-xs">${s.phone || '—'}</td>
+                            <td class="text-sm text-muted">${s.email || s.email_id || '—'}</td>
+                        </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            </div>
+        </div>`;
+    }).join('');
+
+    content.innerHTML = html;
+};
+
+/* ══════════════════════════════════════════════════════════
    INIT
 ══════════════════════════════════════════════════════════ */
 document.addEventListener('DOMContentLoaded', () => {
