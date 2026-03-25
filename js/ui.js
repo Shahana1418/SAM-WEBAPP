@@ -103,20 +103,33 @@ window.attemptLogin = async function() {
             sDept = match[2];
             sBatch = 2000 + parseInt(match[1]) + 4;
         } else if (!isTest) {
-            // Invalid username format and not a test
             const err = document.getElementById('login-error');
             if (err) { err.textContent = 'Invalid Roll No format. Use e.g. 23CSE12'; err.style.display = 'block'; }
             return;
         }
         
-        currentUser = { role: 'Student', dept: sDept, batch: sBatch, canGenerate: false, canLock: false };
+        // Try backend authentication first
+        if (typeof SAM_API !== 'undefined' && SAM_API.isConnected() && match) {
+            try {
+                const result = await SAM_API.authenticateStudent(un, pw);
+                if (result.success && result.student) {
+                    sDept = result.student.department;
+                    sBatch = result.student.batch;
+                    showToast(`Welcome, ${result.student.name}!`, 'success');
+                }
+            } catch (e) {
+                console.log('[SAM] Backend auth failed, using local parsing');
+            }
+        }
+        
+        currentUser = { role: 'Student', dept: sDept, batch: sBatch, rollNo: un, canGenerate: false, canLock: false };
         roleMatched = true;
         
         // Navigate directly to their batch
         navState.dept = sDept;
         navState.batch = sBatch;
         navState.level = 'batch';
-        fallbackNav = null; // don't override
+        fallbackNav = null;
         
     } else if (selectedLoginRole === 'Alumni' && (pw === 'alumni' || pw === 'default')) {
         currentUser = { role: 'Alumni', dept: 'CSE', canGenerate: false, canLock: false };
@@ -159,18 +172,38 @@ window.openLoginModal = function(role) {
     const err = document.getElementById('login-error');
     if (err) err.style.display = 'none';
 
-    document.getElementById('login-modal-title').textContent = role + ' Login';
-    
-    const subtitle = role === 'Student' ? 'Enter Roll No and DOB' : 'Enter ' + role + ' password to continue';
-    document.getElementById('login-modal-subtitle').textContent = subtitle;
-
-    const unGroup = document.getElementById('username-group');
-    if (unGroup) {
-        unGroup.style.display = role === 'Student' ? 'block' : 'none';
+    // DIRECT LOGIN FOR NON-STUDENT ROLES
+    if (role !== 'Student') {
+        const defaultDepts = { 'HOD': 'CSE', 'Alumni': 'CSE', 'Faculty': null, 'Admin': null };
+        const canGen = ['Admin', 'Faculty', 'HOD'].includes(role);
+        
+        currentUser = {
+            role: role,
+            dept: defaultDepts[role] || null,
+            canGenerate: canGen,
+            canLock: role === 'Faculty' || role === 'HOD'
+        };
+        updateUserBadge();
+        
+        if (typeof closeSidebar === 'function') closeSidebar();
+        
+        showToast(`Successfully authenticated as ${role}`, 'success');
+        navigateTo('college');
+        return;
     }
 
-    document.getElementById('admin-modal').style.display = 'flex';
-    document.getElementById('admin-password').value = '';
+    // STUDENT LOGIN MODAL
+    document.getElementById('login-modal-title').textContent = 'Student Login';
+    document.getElementById('login-modal-subtitle').textContent = 'Enter Roll No and DOB';
+
+    const unGroup = document.getElementById('username-group');
+    if (unGroup) unGroup.style.display = 'block';
+
+    const modal = document.getElementById('admin-modal');
+    if (modal) modal.style.display = 'flex';
+    
+    const pwField = document.getElementById('admin-password');
+    if (pwField) pwField.value = '';
     
     const unField = document.getElementById('admin-username');
     if (unField) unField.value = '';
