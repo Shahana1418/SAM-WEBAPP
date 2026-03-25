@@ -366,6 +366,28 @@ window.renderDepartment = function(container) {
         </div>`;
     }).join('');
 
+    const facList = (typeof FACULTY_DATA !== 'undefined' ? FACULTY_DATA : []).filter(f => f.dept === deptCode && f.name !== 'TBD');
+    const facCards = facList.map(f => {
+        const cls = f.role === 'HOD' ? 'role-hod' : 'role-staff';
+        const icon = f.role === 'HOD' ? `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>` 
+                                      : `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`;
+        return `
+        <div class="profile-card ${cls}">
+            <div class="profile-card-top">
+                <div class="profile-avatar">${f.name.charAt(0)}</div>
+                <div class="profile-info">
+                    <div class="profile-name">${f.name}</div>
+                    <div class="profile-role">${icon} ${f.role}</div>
+                </div>
+                <div class="profile-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="9 18 15 12 9 6"/></svg></div>
+            </div>
+            <div class="profile-card-bottom">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                ${f.email || 'No email provided'}
+            </div>
+        </div>`;
+    }).join('');
+
     container.innerHTML = `
     <div class="page-header">
         <div class="page-header-row">
@@ -383,7 +405,10 @@ window.renderDepartment = function(container) {
         </div>
     </div>
     <div class="section-divider">Select Batch</div>
-    <div class="flex flex-wrap gap-3">${batchCards || '<div class="text-sm text-muted">No batches found.</div>'}</div>
+    <div class="flex flex-wrap gap-3 mb-6">${batchCards || '<div class="text-sm text-muted">No batches found.</div>'}</div>
+    
+    <div class="section-divider mt-8">Faculty — Select A Profile To Continue</div>
+    <div class="grid-2 mt-4">${facCards || '<div class="text-sm text-muted">No faculty profiles found.</div>'}</div>
     `;
 };
 
@@ -439,6 +464,29 @@ window.renderBatch = function(container) {
             <div class="stat-label">Semester</div>
         </div>
     </div>
+
+    ${(() => {
+        const sacList = (typeof SAC_DATA !== 'undefined' ? SAC_DATA : []).filter(s => s.dept === deptCode && s.batch == batchYear && s.name !== 'TBD');
+        if (!sacList.length) return '';
+        const sacCards = sacList.map(s => `
+        <div class="profile-card role-sac">
+            <div class="profile-card-top">
+                <div class="profile-avatar">${s.name.charAt(0)}</div>
+                <div class="profile-info">
+                    <div class="profile-name">${s.name}</div>
+                    <div class="profile-role">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        SAC Coordinator
+                    </div>
+                </div>
+            </div>
+            <div class="profile-card-bottom">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                ${s.email || 'No email provided'}
+            </div>
+        </div>`).join('');
+        return `<div class="section-divider mt-4">SAC Coordinators</div><div class="grid-2 mt-4 mb-6">${sacCards}</div>`;
+    })()}
 
     ${canGenerate ? `
     <!-- Team Generation -->
