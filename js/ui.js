@@ -620,6 +620,137 @@ window.renderSacList = function(sacs) {
 };
 
 /* ══════════════════════════════════════════════════════════
+   OVERRIDE renderAssessments - New Assignment Wizard UI
+══════════════════════════════════════════════════════════ */
+window.renderAssessments = function(container) {
+    const deptCode = navState.dept;
+    const batchYear = navState.batch;
+    const step = navState.assignStep || 1;
+    const cfg = navState.assignConfig || {};
+
+    const steps = [
+        { n: 1, label: 'Step 1', title: 'Course Selection' },
+        { n: 2, label: 'Step 2', title: 'Regulation Setup' },
+        { n: 3, label: 'Step 3', title: 'Syllabus Prep' },
+        { n: 4, label: 'Step 4', title: 'Assignment Config' }
+    ];
+
+    const stepperHTML = '<div class="wiz-stepper">' + steps.map(s => {
+        const cls = s.n < step ? 'done' : s.n === step ? 'active' : '';
+        const icon = s.n < step ? '✓' : s.n;
+        return `
+        <div class="wiz-step ${cls}" ${s.n < step ? 'onclick="moveAssignStep('+s.n+')"' : ''}>
+            <div class="wiz-step-num">${icon}</div>
+            <div class="wiz-step-text">
+                <span class="wiz-step-label">${s.label}</span>
+                <span class="wiz-step-title">${s.title}</span>
+            </div>
+        </div>`;
+    }).join('') + '</div>';
+
+    let panelHTML = '';
+
+    if (step === 1) {
+        panelHTML = `
+        <div class="wiz-panel">
+            <h3 class="wiz-panel-title">📚 Course Selection</h3>
+            <div class="wiz-form-grid">
+                <div class="wiz-field">
+                    <label>Department</label>
+                    <input type="text" class="wiz-prefill" value="${window.getDeptName ? window.getDeptName(deptCode) : deptCode}" readonly>
+                </div>
+                <div class="wiz-field">
+                    <label>Batch Year</label>
+                    <input type="text" class="wiz-prefill" value="${batchYear}" readonly>
+                </div>
+                <div class="wiz-field full">
+                    <label>Core Subject for Assignment</label>
+                    <input type="text" class="form-input" id="course-name-input" placeholder="e.g. Design and Analysis of Algorithms" value="${cfg.courseName || ''}" oninput="(navState.assignConfig = navState.assignConfig || {}).courseName = this.value">
+                </div>
+            </div>
+            <div class="wiz-nav-row" style="justify-content: flex-end;">
+                <button class="btn btn-primary" onclick="if(!navState.assignConfig.courseName) navState.assignConfig.courseName='Mock Subject'; moveAssignStep(2)">Next Step →</button>
+            </div>
+        </div>`;
+    } else if (step === 2) {
+        const reg = batchYear >= 2029 ? 'R2025' : 'R2021';
+        panelHTML = `
+        <div class="wiz-panel">
+            <h3 class="wiz-panel-title">⚙️ Regulation & Target</h3>
+            <p class="text-muted text-sm mb-4">Current course is aligned with <strong>${reg}</strong> standards for the ${batchYear} passing batch.</p>
+            <div class="card bg-surface-inset mb-4">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <div class="text-sm font-bold text-main">Selected Course</div>
+                        <div class="text-primary font-bold">${cfg.courseName}</div>
+                    </div>
+                    <span class="chip chip-m">${reg}</span>
+                </div>
+            </div>
+            <div class="wiz-nav-row">
+                <button class="btn btn-secondary" onclick="moveAssignStep(1)">← Back</button>
+                <button class="btn btn-primary" onclick="moveAssignStep(3)">Proceed to Syllabus →</button>
+            </div>
+        </div>`;
+    } else if (step === 3) {
+        panelHTML = `
+        <div class="wiz-panel">
+            <h3 class="wiz-panel-title">📑 Syllabus & Units</h3>
+            <p class="text-muted text-sm mb-4">Verify the core learning units for <strong>${cfg.courseName}</strong>.</p>
+            <div class="grid gap-3 mb-6">
+                ${[1,2,3,4,5].map(u => `
+                <div class="card p-3 flex gap-3 items-center" style="padding:16px;">
+                    <div class="w-8 h-8 rounded-full bg-primary-light text-primary flex items-center justify-center font-bold">U${u}</div>
+                    <input type="text" class="form-input flex-1" value="Unit ${u} Details" style="margin:0;">
+                </div>`).join('')}
+            </div>
+            <div class="wiz-nav-row">
+                <button class="btn btn-secondary" onclick="moveAssignStep(2)">← Back</button>
+                <button class="btn btn-primary" onclick="moveAssignStep(4)">Configure Assignment →</button>
+            </div>
+        </div>`;
+    } else if (step === 4) {
+        panelHTML = `
+        <div class="wiz-panel">
+            <h3 class="wiz-panel-title">🚀 Final Configuration & Generation</h3>
+            <div class="grid-2 mb-6">
+                <div class="card p-4 text-center cursor-pointer border-primary" style="border-width: 2px;">
+                    <div class="text-2xl mb-2">📊</div>
+                    <div class="font-bold">Team Presentation</div>
+                </div>
+                <div class="card p-4 text-center cursor-pointer">
+                    <div class="text-2xl mb-2">📝</div>
+                    <div class="font-bold">Individual Task</div>
+                </div>
+            </div>
+            <p class="text-sm text-dim text-center mb-6">Click generate to map the selected syllabus topics to your generated teams.</p>
+            <div class="wiz-nav-row">
+                <button class="btn btn-secondary" onclick="moveAssignStep(3)">← Back</button>
+                <button class="btn btn-success" onclick="
+                    showToast('🎉 Assignments mapped successfully!', 'success');
+                    setTimeout(() => navigateTo('college'), 1500);
+                ">Finalize & Generate Assignments</button>
+            </div>
+        </div>`;
+    }
+
+    container.innerHTML = `
+    <div class="page-header">
+        <h2 class="page-title">Assignment Configurations</h2>
+        <p class="page-subtitle">Configure assignments, map syllabus units, and distribute topics automatically to generated teams.</p>
+    </div>
+    ${stepperHTML}
+    ${panelHTML}
+    `;
+};
+
+window.moveAssignStep = function(step) {
+    navState.assignStep = step;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+/* ══════════════════════════════════════════════════════════
    INIT
 ══════════════════════════════════════════════════════════ */
 document.addEventListener('DOMContentLoaded', () => {
