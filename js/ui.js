@@ -856,12 +856,16 @@ window.renderAssessments = function(container) {
                     <label>Core Subject for Assignment</label>
                     ${(() => {
                         const r = batchYear >= 2029 ? 'R2025' : 'R2021';
-                        const sList = (typeof SUBJECTS_DATA !== 'undefined' && SUBJECTS_DATA[r] && SUBJECTS_DATA[r][deptCode]) ? SUBJECTS_DATA[r][deptCode] : [];
+                        const info = getBatchAcademicInfo(batchYear);
+                        const sem = info.semester;
+                        const sList = (typeof SUBJECTS_DATA !== 'undefined' && SUBJECTS_DATA[r] && SUBJECTS_DATA[r][deptCode]) 
+                            ? SUBJECTS_DATA[r][deptCode].filter(s => s.sem === sem) 
+                            : [];
                         const opts = sList.map(s => `<option value="${s.name}" ${cfg.courseName === s.name ? 'selected' : ''}>${s.code} — ${s.name}</option>`).join('');
                         
                         return `
                         <select class="form-input" style="padding-right: 32px;" id="course-name-input" onchange="(navState.assignConfig = navState.assignConfig || {}).courseName = this.value">
-                            <option value="">-- Select a true core subject --</option>
+                            <option value="">-- Select ${info.yearSuffix} Year (Sem ${sem}) Subject --</option>
                             ${opts}
                             <option value="Custom Subject" ${cfg.courseName === 'Custom Subject' ? 'selected' : ''}>+ Other / Custom Subject</option>
                         </select>
