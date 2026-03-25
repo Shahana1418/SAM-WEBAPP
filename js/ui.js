@@ -581,7 +581,7 @@ window.renderTeams = function(container) {
         <div class="team-card">
             <div class="team-card-header">
                 <div>
-                    <div class="team-name">${t.name || deptCode + '-T' + (i+1)}</div>
+                    <div class="team-name" style="font-size:1.15rem;">${t.name || getTeamName(deptCode, i)}</div>
                     <div style="font-size:.65rem;color:var(--text-muted);margin-top:2px">${members.length} members</div>
                 </div>
                 <span class="team-badge">${deptCode}-${i+1}</span>
@@ -608,23 +608,23 @@ window.renderTeams = function(container) {
                 </div>
                 <div class="page-sub">${teams.length} teams · ${totalStudents} students · Formation: ${navState.formationMode || 'random'}</div>
             </div>
-            <div class="flex gap-2 flex-wrap">
-                ${isLocked ? `<span class="chip chip-locked">🔒 Locked</span>` : ''}
-                ${currentUser && currentUser.canGenerate ? `
-                <button class="btn btn-secondary" onclick="navigateTo('batch','${deptCode}',${batchYear})">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="1" y1="4" x2="1" y2="19"/><line x1="23" y1="4" x2="23" y2="19"/><path d="M4 4h16a2 2 0 012 2v6a10 10 0 01-10 10A10 10 0 012 12V6a2 2 0 012-2z"/></svg>
-                    Regenerate
-                </button>
-                <button class="btn btn-primary" onclick="navigateToAssessments()">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                    Assign Topics
-                </button>
-                <button class="btn btn-secondary" onclick="navigateToSessions()">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                    Schedule Sessions
-                </button>` : ''}
-            </div>
+            ${isLocked ? `<span class="chip chip-locked">🔒 Locked</span>` : ''}
         </div>
+        ${currentUser && currentUser.canGenerate ? `
+        <div class="flex gap-3 flex-wrap mt-4">
+            <button class="btn btn-secondary" style="background:#fff; border-color:var(--border-strong);" onclick="navigateTo('batch','${deptCode}',${batchYear})">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                Regenerate
+            </button>
+            <button class="btn btn-primary" onclick="navigateToAssessments()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Assign Topics
+            </button>
+            <button class="btn btn-secondary" style="background:#fff; border-color:var(--border-strong);" onclick="navigateToSessions()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Schedule Sessions
+            </button>
+        </div>` : ''}
     </div>
     <div class="teams-grid">${teamCards}</div>`;
 };

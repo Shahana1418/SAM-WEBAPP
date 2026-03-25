@@ -257,6 +257,10 @@ const TEAM_NAMES = {
 };
 
 function getTeamName(deptCode, teamIndex) {
+    const names = TEAM_NAMES[deptCode];
+    if (names && teamIndex < names.length) {
+        return `${names[teamIndex]}`;
+    }
     return `${deptCode}-T${teamIndex + 1}`;
 }
 
