@@ -78,7 +78,10 @@ window.updateUserBadge = function() {
 
 window.attemptLogin = async function() {
     const pw = document.getElementById('admin-password').value.trim();
+    const unField = document.getElementById('admin-username');
+    const un = unField ? unField.value.trim().toUpperCase() : '';
     let roleMatched = false;
+    let fallbackNav = 'college';
 
     if (selectedLoginRole === 'Admin' && pw === 'admin') {
         currentUser = { role: 'Admin', dept: null, canGenerate: true, canLock: false };
@@ -89,9 +92,32 @@ window.attemptLogin = async function() {
     } else if (selectedLoginRole === 'HOD' && (pw === 'hod' || pw === 'default')) {
         currentUser = { role: 'HOD', dept: 'CSE', canGenerate: true, canLock: true };
         roleMatched = true;
-    } else if (selectedLoginRole === 'Student' && (pw === 'student' || pw === 'default')) {
-        currentUser = { role: 'Student', dept: 'CSE', canGenerate: false, canLock: false };
+    } else if (selectedLoginRole === 'Student' && (un || pw === 'student' || pw === 'default')) {
+        const isTest = (pw === 'student' || pw === 'default');
+        const match = un.match(/^(\d{2})([A-Z]+)(\d+)$/);
+        
+        let sDept = 'CSE';
+        let sBatch = 2027;
+        
+        if (match) {
+            sDept = match[2];
+            sBatch = 2000 + parseInt(match[1]) + 4;
+        } else if (!isTest) {
+            // Invalid username format and not a test
+            const err = document.getElementById('login-error');
+            if (err) { err.textContent = 'Invalid Roll No format. Use e.g. 23CSE12'; err.style.display = 'block'; }
+            return;
+        }
+        
+        currentUser = { role: 'Student', dept: sDept, batch: sBatch, canGenerate: false, canLock: false };
         roleMatched = true;
+        
+        // Navigate directly to their batch
+        navState.dept = sDept;
+        navState.batch = sBatch;
+        navState.level = 'batch';
+        fallbackNav = null; // don't override
+        
     } else if (selectedLoginRole === 'Alumni' && (pw === 'alumni' || pw === 'default')) {
         currentUser = { role: 'Alumni', dept: 'CSE', canGenerate: false, canLock: false };
         roleMatched = true;
@@ -117,14 +143,37 @@ window.attemptLogin = async function() {
     if (roleMatched) {
         updateUserBadge();
         if (typeof closeAdminLogin === 'function') closeAdminLogin();
-        navigateTo('college');
+        if (fallbackNav) navigateTo(fallbackNav);
+        else render();
     } else {
         const err = document.getElementById('login-error');
         if (err) {
-            err.textContent = 'Incorrect password for ' + selectedLoginRole + '. Hint: try "default" or the role name in lowercase.';
+            err.textContent = 'Incorrect credentials. Students: use Roll No (e.g. 23CSE12) and DOB.';
             err.style.display = 'block';
         }
     }
+};
+
+window.openLoginModal = function(role) {
+    window.selectedLoginRole = role;
+    const err = document.getElementById('login-error');
+    if (err) err.style.display = 'none';
+
+    document.getElementById('login-modal-title').textContent = role + ' Login';
+    
+    const subtitle = role === 'Student' ? 'Enter Roll No and DOB' : 'Enter ' + role + ' password to continue';
+    document.getElementById('login-modal-subtitle').textContent = subtitle;
+
+    const unGroup = document.getElementById('username-group');
+    if (unGroup) {
+        unGroup.style.display = role === 'Student' ? 'block' : 'none';
+    }
+
+    document.getElementById('admin-modal').style.display = 'flex';
+    document.getElementById('admin-password').value = '';
+    
+    const unField = document.getElementById('admin-username');
+    if (unField) unField.value = '';
 };
 
 /* ══════════════════════════════════════════════════════════
@@ -464,10 +513,10 @@ window.renderTeams = function(container) {
         <div class="team-card">
             <div class="team-card-header">
                 <div>
-                    <div class="team-name">${t.name || 'Team ' + (i+1)}</div>
+                    <div class="team-name">${t.name || deptCode + '-T' + (i+1)}</div>
                     <div style="font-size:.65rem;color:var(--text-muted);margin-top:2px">${members.length} members</div>
                 </div>
-                <span class="team-badge">T-${i+1}</span>
+                <span class="team-badge">${deptCode}-${i+1}</span>
             </div>
             <div class="team-card-body">
                 ${members.map(m => `

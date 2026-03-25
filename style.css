@@ -240,6 +240,7 @@ a { text-decoration: none; color: inherit; cursor: pointer; }
     border: 1px solid var(--border); background: #fff;
     color: var(--text-main); font-size: 0.8rem; font-weight: 600;
     cursor: pointer; transition: var(--transition); box-shadow: var(--shadow-sm);
+    white-space: nowrap;
 }
 .header-btn:hover { background: var(--surface-hover); border-color: var(--border-strong); }
 .header-btn-primary { background: var(--text-main); color: #fff; border-color: transparent; }
