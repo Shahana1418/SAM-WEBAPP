@@ -884,35 +884,73 @@ window.renderAssessments = function(container) {
         </div>`;
     } else if (step === 2) {
         const reg = batchYear >= 2029 ? 'R2025' : 'R2021';
+        const rData = (typeof SUBJECTS_DATA !== 'undefined' && SUBJECTS_DATA[reg] && SUBJECTS_DATA[reg][deptCode]) ? SUBJECTS_DATA[reg][deptCode] : [];
+        const matchedSubj = rData.find(s => s.name === cfg.courseName);
+        const subjCode = matchedSubj ? matchedSubj.code : '';
+        const syl = (typeof SYLLABUS_DETAILS !== 'undefined' && subjCode && SYLLABUS_DETAILS[subjCode]) ? SYLLABUS_DETAILS[subjCode] : null;
+        if (subjCode) cfg.courseCode = subjCode;
+
+        const objHTML = syl && syl.objectives ? syl.objectives.map((o, i) => `
+            <div class="flex gap-3 items-start" style="padding:8px 0; border-bottom:1px solid var(--border-light);">
+                <span class="w-6 h-6 rounded-full flex items-center justify-center font-bold" style="background:var(--primary-light); color:var(--primary); font-size:.7rem; min-width:24px;">O${i+1}</span>
+                <span class="text-sm" style="color:var(--text-main);">${o}</span>
+            </div>`).join('') : '<p class="text-muted text-sm">Objectives not available for this subject.</p>';
+
+        const coHTML = syl && syl.outcomes ? syl.outcomes.map(co => `
+            <div class="flex gap-3 items-start" style="padding:8px 0; border-bottom:1px solid var(--border-light);">
+                <span class="chip chip-m" style="font-size:.65rem; min-width:36px; text-align:center;">${co.id}</span>
+                <span class="text-sm" style="color:var(--text-main);">${co.desc}</span>
+            </div>`).join('') : '<p class="text-muted text-sm">Course Outcomes not available for this subject.</p>';
+
         panelHTML = `
         <div class="wiz-panel">
-            <h3 class="wiz-panel-title">⚙️ Regulation & Target</h3>
-            <p class="text-muted text-sm mb-4">Current course is aligned with <strong>${reg}</strong> standards for the ${batchYear} passing batch.</p>
-            <div class="card bg-surface-inset mb-4">
+            <h3 class="wiz-panel-title">⚙️ Regulation & Course Info</h3>
+            <div class="card bg-surface-inset mb-4" style="padding:16px;">
                 <div class="flex justify-between items-center">
                     <div>
-                        <div class="text-sm font-bold text-main">Selected Course</div>
-                        <div class="text-primary font-bold">${cfg.courseName}</div>
+                        <div class="text-sm font-bold text-main">${subjCode ? subjCode + ' — ' : ''}${cfg.courseName}</div>
+                        <div class="text-muted text-sm">${syl ? 'Credits: ' + syl.credits + ' | L-T-P: ' + syl.ltp : ''}</div>
                     </div>
                     <span class="chip chip-m">${reg}</span>
                 </div>
             </div>
+            <h4 style="font-size:.9rem; font-weight:700; color:var(--primary); margin-bottom:8px;">🎯 Course Objectives</h4>
+            <div class="card mb-4" style="padding:12px 16px;">${objHTML}</div>
+            <h4 style="font-size:.9rem; font-weight:700; color:var(--primary); margin-bottom:8px;">🎓 Course Outcomes (COs)</h4>
+            <div class="card mb-4" style="padding:12px 16px;">${coHTML}</div>
             <div class="wiz-nav-row">
                 <button class="btn btn-secondary" onclick="moveAssignStep(1)">← Back</button>
                 <button class="btn btn-primary" onclick="moveAssignStep(3)">Proceed to Syllabus →</button>
             </div>
         </div>`;
     } else if (step === 3) {
+        const reg3 = batchYear >= 2029 ? 'R2025' : 'R2021';
+        const rData3 = (typeof SUBJECTS_DATA !== 'undefined' && SUBJECTS_DATA[reg3] && SUBJECTS_DATA[reg3][deptCode]) ? SUBJECTS_DATA[reg3][deptCode] : [];
+        const matchedSubj3 = rData3.find(s => s.name === cfg.courseName);
+        const subjCode3 = matchedSubj3 ? matchedSubj3.code : '';
+        const syl3 = (typeof SYLLABUS_DETAILS !== 'undefined' && subjCode3 && SYLLABUS_DETAILS[subjCode3]) ? SYLLABUS_DETAILS[subjCode3] : null;
+
+        const unitsHTML = syl3 && syl3.units ? syl3.units.map(u => `
+            <div class="card mb-3" style="padding:16px; border-left:4px solid var(--primary);">
+                <div class="flex gap-3 items-center mb-2">
+                    <span class="w-8 h-8 rounded-full flex items-center justify-center font-bold" style="background:var(--primary); color:#fff; font-size:.8rem;">U${u.id}</span>
+                    <strong style="font-size:1rem; color:var(--text-main);">${u.title}</strong>
+                </div>
+                <ul style="margin:0; padding-left:24px; list-style:disc;">
+                    ${u.topics.map(t => `<li style="font-size:.85rem; color:var(--text-muted); padding:2px 0;">${t}</li>`).join('')}
+                </ul>
+            </div>`).join('') : [1,2,3,4,5].map(u => `
+            <div class="card p-3 flex gap-3 items-center" style="padding:16px;">
+                <div class="w-8 h-8 rounded-full bg-primary-light text-primary flex items-center justify-center font-bold">U${u}</div>
+                <input type="text" class="form-input flex-1" value="Unit ${u} Details" style="margin:0;">
+            </div>`).join('');
+
         panelHTML = `
         <div class="wiz-panel">
-            <h3 class="wiz-panel-title">📑 Syllabus & Units</h3>
-            <p class="text-muted text-sm mb-4">Verify the core learning units for <strong>${cfg.courseName}</strong>.</p>
-            <div class="grid gap-3 mb-6">
-                ${[1,2,3,4,5].map(u => `
-                <div class="card p-3 flex gap-3 items-center" style="padding:16px;">
-                    <div class="w-8 h-8 rounded-full bg-primary-light text-primary flex items-center justify-center font-bold">U${u}</div>
-                    <input type="text" class="form-input flex-1" value="Unit ${u} Details" style="margin:0;">
-                </div>`).join('')}
+            <h3 class="wiz-panel-title">📚 Syllabus & Units</h3>
+            <p class="text-muted text-sm mb-4">Detailed syllabus units for <strong>${subjCode3 ? subjCode3 + ' — ' : ''}${cfg.courseName}</strong></p>
+            <div style="max-height:420px; overflow-y:auto; padding-right:8px;">
+                ${unitsHTML}
             </div>
             <div class="wiz-nav-row">
                 <button class="btn btn-secondary" onclick="moveAssignStep(2)">← Back</button>
