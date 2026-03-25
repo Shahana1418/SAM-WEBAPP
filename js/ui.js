@@ -161,7 +161,11 @@ window.attemptLogin = async function() {
     } else {
         const err = document.getElementById('login-error');
         if (err) {
-            err.textContent = 'Incorrect credentials. Students: use Roll No (e.g. 23CSE12) and DOB.';
+            if (selectedLoginRole === 'Student') {
+                err.textContent = 'Incorrect credentials. Students: use Roll No (e.g. 23CSE12) and DOB.';
+            } else {
+                err.textContent = 'Incorrect password. Please try again.';
+            }
             err.style.display = 'block';
         }
     }
