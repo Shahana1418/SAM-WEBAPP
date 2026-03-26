@@ -2,8 +2,8 @@
  * SYLLABUS_DETAILS — Automatically generated from PDF transcripts
  */
 const SYLLABUS_DETAILS = {
-
-    "AD3351": "name": "DESIGN AND ANALYSIS OF ALGORITHMS LT P C",
+    "AD3351": {
+        "name": "DESIGN AND ANALYSIS OF ALGORITHMS LT P C",
         "regulation": "R2025",
         "department": "CSE(Data Science)",
         "credits": 3,
@@ -123,9 +123,10 @@ const SYLLABUS_DETAILS = {
                                 "Branch and Bound - Assignment problem, Traveling Salesman Problem  PERIODS"
                         ]
                 }
-        ],
-
-    "AG3601": "name": "ENGINEERING GEOLOGY LTPC",
+        ]
+    },
+    "AG3601": {
+        "name": "ENGINEERING GEOLOGY LTPC",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -236,9 +237,10 @@ const SYLLABUS_DETAILS = {
                                 "Road cuttings and Coastal protection; Landslides: Causes and mitigation; Earthquakes & Tsunamis: Causes and mitigation; Case studies for the above topics. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AI3021": "name": "IT IN AGRICULTURAL SYSTEM L T P C",
+        ]
+    },
+    "AI3021": {
+        "name": "IT IN AGRICULTURAL SYSTEM L T P C",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -352,9 +354,10 @@ const SYLLABUS_DETAILS = {
                                 "Realisation of various stability criterion techniques for economical operation of process"
                         ]
                 }
-        ],
-
-    "AI3404": "name": "CO1 Course Outcome",
+        ]
+    },
+    "AI3404": {
+        "name": "CO1 Course Outcome",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -486,9 +489,10 @@ const SYLLABUS_DETAILS = {
                                 "Origin - Classification and types - Properties of aquifers - Governing equations \u2013 Steady and unsteady flow - Artificial recharge - RWH in rural and urban areas. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AL3391": "name": "ARTIFICIAL INTELLIGENCE LTPC",
+        ]
+    },
+    "AL3391": {
+        "name": "ARTIFICIAL INTELLIGENCE LTPC",
         "regulation": "R2025",
         "department": "CSE(Data Science)",
         "credits": 3,
@@ -569,9 +573,10 @@ const SYLLABUS_DETAILS = {
                                 "Probabilistic reasoning \u2013 Bayesian networks \u2013 exact inference in BN \u2013 approximate inference in BN \u2013 causal networks"
                         ]
                 }
-        ],
-
-    "AL3452": "name": "OPERATING SYSTEMS L T P C",
+        ]
+    },
+    "AL3452": {
+        "name": "OPERATING SYSTEMS L T P C",
         "regulation": "R2025",
         "department": "CSE(Data Science)",
         "credits": 3,
@@ -695,9 +700,10 @@ const SYLLABUS_DETAILS = {
                                 "Write C programs for the implementation of various disk scheduling algorithms"
                         ]
                 }
-        ],
-
-    "AU3001": "name": "ELECTRIC TWO AND THREE WHEELERS LTPC",
+        ]
+    },
+    "AU3001": {
+        "name": "ELECTRIC TWO AND THREE WHEELERS LTPC",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -783,9 +789,10 @@ const SYLLABUS_DETAILS = {
                                 "Emadi, Modern Electric, Hybrid Electric, and Fuel Cell Vehicles, CRC Press, 2005"
                         ]
                 }
-        ],
-
-    "AU3002": "name": "BATTERIES AND MANAGEMENT SYSTEM L T PC",
+        ]
+    },
+    "AU3002": {
+        "name": "BATTERIES AND MANAGEMENT SYSTEM L T PC",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -883,9 +890,10 @@ const SYLLABUS_DETAILS = {
                                 "BMS Development with Modeling software and ModelBased Design"
                         ]
                 }
-        ],
-
-    "AU3003": "name": "TRACTION MOTORS PSO",
+        ]
+    },
+    "AU3003": {
+        "name": "TRACTION MOTORS PSO",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -1003,9 +1011,10 @@ const SYLLABUS_DETAILS = {
                                 "D.C. generator fed d.c. series motor, Alternator fed d.c. series motor, Alternator fed squirrel cage induction motor, Locomotive and axle codes. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3004": "name": "2.2 2.2",
+        ]
+    },
+    "AU3004": {
+        "name": "2.2 2.2",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -1103,9 +1112,10 @@ const SYLLABUS_DETAILS = {
                                 "Simulation Packages overview- SPICE, EMTP and PSIM"
                         ]
                 }
-        ],
-
-    "AU3005": "name": "AUTOMOTIVE FUNCTIONAL SAFETY LTPC",
+        ]
+    },
+    "AU3005": {
+        "name": "AUTOMOTIVE FUNCTIONAL SAFETY LTPC",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -1198,9 +1208,10 @@ const SYLLABUS_DETAILS = {
                                 "etc) & V-model. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3006": "name": "FUEL CELL TECHNOLOGIES PSO",
+        ]
+    },
+    "AU3006": {
+        "name": "FUEL CELL TECHNOLOGIES PSO",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -1303,9 +1314,10 @@ const SYLLABUS_DETAILS = {
                                 "MCFC systems)- Coal fuelled fuel cell system-Combined fuel cell and Gas turbine system- Hybrid fuel cell systems- Electric vehicles"
                         ]
                 }
-        ],
-
-    "AU3007": "name": "AUTONOMOUS AND CONNECTED VEHICLES PSO",
+        ]
+    },
+    "AU3007": {
+        "name": "AUTONOMOUS AND CONNECTED VEHICLES PSO",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -1437,9 +1449,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3008": "name": "SENSORS AND ACTUATORS L T P C",
+        ]
+    },
+    "AU3008": {
+        "name": "SENSORS AND ACTUATORS L T P C",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -1520,9 +1533,10 @@ const SYLLABUS_DETAILS = {
                                 "Different types of actuators used in automatic temperature control\u2010 Fixed and variable displacement temperature control\u2010 Semi Automatic\u2010 Controller design for Fixed and variable displacement type air conditioning system. TOTAL: PERIODS"
                         ]
                 }
-        ],
-
-    "AU3009": "name": "COMPUTER AIDED DESIGN AND MANUFACTURING LTPC",
+        ]
+    },
+    "AU3009": {
+        "name": "COMPUTER AIDED DESIGN AND MANUFACTURING LTPC",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -1608,9 +1622,10 @@ const SYLLABUS_DETAILS = {
                                 "Working Principle, Application, Advantages & disadvantages: of Stereolithography Apparatus (SLA) Selective Laser Sintering (SLS), 3D Printing, Fused Deposition Modeling (FDM), and Laminated Object Manufacturing (LOM) TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3010": "name": "PSO INTEGRATED COMPUTATIONAL MATERIALS ENGINEERING",
+        ]
+    },
+    "AU3010": {
+        "name": "PSO INTEGRATED COMPUTATIONAL MATERIALS ENGINEERING",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -1732,9 +1747,10 @@ const SYLLABUS_DETAILS = {
                                 "Discrete and continuous simulation approaches TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3011": "name": "1.6 PO9",
+        ]
+    },
+    "AU3011": {
+        "name": "1.6 PO9",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -1830,9 +1846,10 @@ const SYLLABUS_DETAILS = {
                                 "Statistically Indeterminate Structures."
                         ]
                 }
-        ],
-
-    "AU3012": "name": "1.8 1.6",
+        ]
+    },
+    "AU3012": {
+        "name": "1.8 1.6",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -1954,9 +1971,10 @@ const SYLLABUS_DETAILS = {
                                 "D \u2013 Multiple Dimensions \u2013 Trees \u2013 Web Works \u2013 Data Mapping: Document Visualization \u2013 Workspaces. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3013": "name": "COMPUTER INTEGRATED MANUFACTURING IN AUTOMOTIVE SECTOR",
+        ]
+    },
+    "AU3013": {
+        "name": "COMPUTER INTEGRATED MANUFACTURING IN AUTOMOTIVE SECTOR",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -2088,9 +2106,10 @@ const SYLLABUS_DETAILS = {
                                 "Robot Anatomy and Related Attributes \u2013 Classification - Control systems \u2013 End Effectors \u2013 Sensors \u2013 Applications \u2013 Basics of Robot Part Programming \u2013 Robot Accuracy and Repeatability \u2013 Simple Problems. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3014": "name": "1.2 COMPUTATIONAL AERODYNAMICS",
+        ]
+    },
+    "AU3014": {
+        "name": "1.2 COMPUTATIONAL AERODYNAMICS",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -2199,9 +2218,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3015": "name": "CFD AND HEAT TRANSFER LTPC",
+        ]
+    },
+    "AU3015": {
+        "name": "CFD AND HEAT TRANSFER LTPC",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -2287,9 +2307,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3016": "name": "2.8 2.8",
+        ]
+    },
+    "AU3016": {
+        "name": "2.8 2.8",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -2390,9 +2411,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL: PERIODS"
                         ]
                 }
-        ],
-
-    "AU3017": "name": "ADVANCED AUTOMOTIVE MATERIALS LTPC",
+        ]
+    },
+    "AU3017": {
+        "name": "ADVANCED AUTOMOTIVE MATERIALS LTPC",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -2478,9 +2500,10 @@ const SYLLABUS_DETAILS = {
                                 "Ultrasonic Sensor and Dew Sensor. Sensor Materials and Technologies TOTAL: PERIODS"
                         ]
                 }
-        ],
-
-    "AU3018": "name": "NOISE, VIBRATION AND HARSHNESS PSO",
+        ]
+    },
+    "AU3018": {
+        "name": "NOISE, VIBRATION AND HARSHNESS PSO",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -2606,9 +2629,10 @@ const SYLLABUS_DETAILS = {
                                 "Metrology and Traceability of Vibration and Shock Measurements. TOTAL:  PERIODS COURSE"
                         ]
                 }
-        ],
-
-    "AU3019": "name": "PSO COMBUSTION THERMODYNAMICS AND HEAT TRANSFER",
+        ]
+    },
+    "AU3019": {
+        "name": "PSO COMBUSTION THERMODYNAMICS AND HEAT TRANSFER",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -2699,9 +2723,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS COURSE"
                         ]
                 }
-        ],
-
-    "AU3020": "name": "ALTERNATIVE FUELS AND ENERGY SYSTEMS PSO",
+        ]
+    },
+    "AU3020": {
+        "name": "ALTERNATIVE FUELS AND ENERGY SYSTEMS PSO",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -2849,9 +2874,10 @@ const SYLLABUS_DETAILS = {
                                 "High energy and power density batteries \u2013 Basics of Fuel cell vehicles"
                         ]
                 }
-        ],
-
-    "AU3021": "name": "AUTOMOTIVE INSTRUMENTATION PSO",
+        ]
+    },
+    "AU3021": {
+        "name": "AUTOMOTIVE INSTRUMENTATION PSO",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -2942,9 +2968,10 @@ const SYLLABUS_DETAILS = {
                                 "bending moment and radial load calculations. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3022": "name": "TESTING AND MEASUREMENT SYSTEMS LTPC",
+        ]
+    },
+    "AU3022": {
+        "name": "TESTING AND MEASUREMENT SYSTEMS LTPC",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -3025,9 +3052,10 @@ const SYLLABUS_DETAILS = {
                                 "Laboratory tests \u2013 Study of chassis dynamometer \u2013 test tracks \u2013 Endurance Tests \u2013 crash tests \u2013 Vehicle performance test \u2013 Brake tests. TOTAL: PERIODS"
                         ]
                 }
-        ],
-
-    "AU3023": "name": "HOMOLOGATION PSO",
+        ]
+    },
+    "AU3023": {
+        "name": "HOMOLOGATION PSO",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -3155,9 +3183,10 @@ const SYLLABUS_DETAILS = {
                                 "Understanding of some AIS Standards: AIS-008 (Installation requirements of lighting and light-signaling devices for motor vehicles having more than three wheels, trailer and semiTrailer excluding agricultural tractor and special purpose vehicles), AIS-018:2001 (Automotive Vehicles - Speed limitation Devices \u2013 Specifications), AIS-037 (Procedure for Type Approval and establishing conformity of production for safety of critical components), AIS093 (Code of practice for construction and approval of truck cabs & truck bodies), AIS-003 (Automotive Vehicles - Starting Gradeability -Method of Measurement and Requirements), AIS-038 (Battery Operated Vehicles \u2013 Requirements for Construction and Functional Safety)"
                         ]
                 }
-        ],
-
-    "AU3024": "name": "IC ENGINE PROCESS MODELING LTPC",
+        ]
+    },
+    "AU3024": {
+        "name": "IC ENGINE PROCESS MODELING LTPC",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -3256,9 +3285,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3025": "name": "AGRICULTURAL VEHICLES LTPC",
+        ]
+    },
+    "AU3025": {
+        "name": "AGRICULTURAL VEHICLES LTPC",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -3427,9 +3457,10 @@ const SYLLABUS_DETAILS = {
                                 "layout and installation of drip and fertigation \u2013 georeferencing and photometric correction \u2013 Sensors for information gathering \u2013 UAV - geostatistics \u2013 robotics in horticulture - postharvest process management (PPM) \u2013 remote sensing"
                         ]
                 }
-        ],
-
-    "AU3026": "name": "1.2 DEFENCE VEHICLES",
+        ]
+    },
+    "AU3026": {
+        "name": "1.2 DEFENCE VEHICLES",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -3592,9 +3623,10 @@ const SYLLABUS_DETAILS = {
                                 "High energy materials physics and chemistry. Molecular energetic of the high energy materials molecule including molecular orbital and valence bonding and resonance stabilization"
                         ]
                 }
-        ],
-
-    "AU3027": "name": "1.6 CONSTRUCTION VEHICLES",
+        ]
+    },
+    "AU3027": {
+        "name": "1.6 CONSTRUCTION VEHICLES",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -3684,9 +3716,10 @@ const SYLLABUS_DETAILS = {
                                 "Marine gas turbines \u2013 Practical cycles and shaft arrangements - Power turbine \u2013 Applications"
                         ]
                 }
-        ],
-
-    "AU3028": "name": "1.4 MARINE VEHICLES",
+        ]
+    },
+    "AU3028": {
+        "name": "1.4 MARINE VEHICLES",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -3793,9 +3826,10 @@ const SYLLABUS_DETAILS = {
                                 "Marine gas turbines \u2013 Practical cycles and shaft arrangements - Power turbine \u2013 Applications"
                         ]
                 }
-        ],
-
-    "AU3029": "name": "1.8 1.6",
+        ]
+    },
+    "AU3029": {
+        "name": "1.8 1.6",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -3901,9 +3935,10 @@ const SYLLABUS_DETAILS = {
                                 "Inter-planetary travel vehicles TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3030": "name": "AUTOMOTIVE PRODUCT DESIGN LT P C",
+        ]
+    },
+    "AU3030": {
+        "name": "AUTOMOTIVE PRODUCT DESIGN LT P C",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -3976,9 +4011,10 @@ const SYLLABUS_DETAILS = {
                                 "Manufacturing Tooling readiness \u2013 Pilot Production \u2013CFT Sign-off for SOP \u2013 Start of Production \u2013 Production Ramp-up TOTAL: PERIODS"
                         ]
                 }
-        ],
-
-    "AU3031": "name": "ERGONOMICS IN AUTOMOTIVE DESIGN PSO",
+        ]
+    },
+    "AU3031": {
+        "name": "ERGONOMICS IN AUTOMOTIVE DESIGN PSO",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -4067,9 +4103,10 @@ const SYLLABUS_DETAILS = {
                                 "head on impact. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3032": "name": "VEHICLE CONTROL SYSTEMS LTPC",
+        ]
+    },
+    "AU3032": {
+        "name": "VEHICLE CONTROL SYSTEMS LTPC",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -4146,9 +4183,10 @@ const SYLLABUS_DETAILS = {
                                 "Human factors in vehicle automation\u2010 cross over model principle\u2010 Risk\u2010 Homeostatic Theory\u2010 Driving simulators\u2010 percentage of road departure Advanced traffic management system\u2010 Advanced traveller information system\u2010 commercial vehicle operation\u2010 Advanced vehicle control system\u2010 Preventing collisions\u2010 Longitudinal motion control and platoons\u2010 Site specific information comparison of longitudinal control approaches\u2010 String stability\u2010 Automated steering and lateral control \u2013 Lane sensing\u2010 automated lane change and follow control. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3033": "name": "FINITE ELEMENT ANALYSIS LTPC",
+        ]
+    },
+    "AU3033": {
+        "name": "FINITE ELEMENT ANALYSIS LTPC",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -4250,9 +4288,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3034": "name": "NEW PRODUCT DEVELOPMENT PROCESS PSO",
+        ]
+    },
+    "AU3034": {
+        "name": "NEW PRODUCT DEVELOPMENT PROCESS PSO",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -4327,9 +4366,10 @@ const SYLLABUS_DETAILS = {
                                 "Industrial design \u2013 human factors design \u2013user friendly design \u2013 design for serviceability \u2013design for environment \u2013 prototyping and testing \u2013 cost evaluation \u2013categories of cost \u2013 overhead costs \u2013 activity based costing \u2013methods of developing cost estimates \u2013 manufacturing cost \u2013value analysis in costing. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3035": "name": "AUTOMOTIVE PRODUCT LIFE CYCLE MANAGEMENT PSO",
+        ]
+    },
+    "AU3035": {
+        "name": "AUTOMOTIVE PRODUCT LIFE CYCLE MANAGEMENT PSO",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -4409,9 +4449,10 @@ const SYLLABUS_DETAILS = {
                                 "basics on customization and implementation of automotive PDM/PLM software. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3036": "name": "PSO\u2019s ADVANCE THEORY OF IC ENGINES",
+        ]
+    },
+    "AU3036": {
+        "name": "PSO\u2019s ADVANCE THEORY OF IC ENGINES",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -4524,9 +4565,10 @@ const SYLLABUS_DETAILS = {
                                 "\u2013 Hot wire and laser Doppler anemometry and velocimetry for flow and combustion analysis in IC engines"
                         ]
                 }
-        ],
-
-    "AU3037": "name": "ROAD VEHICLE AERODYNAMICS L TPC",
+        ]
+    },
+    "AU3037": {
+        "name": "ROAD VEHICLE AERODYNAMICS L TPC",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -4612,9 +4654,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3038": "name": "RENEWABLE SOURCES OF ENERGY PSO",
+        ]
+    },
+    "AU3038": {
+        "name": "RENEWABLE SOURCES OF ENERGY PSO",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -4690,9 +4733,10 @@ const SYLLABUS_DETAILS = {
                                 "Tidal energy \u2013 Wave Energy \u2013 Open and Closed OTEC Cycles \u2013 Small Hydro-Geothermal Energy Hydrogen and Storage - Fuel Cell Systems \u2013 Hybrid Systems."
                         ]
                 }
-        ],
-
-    "AU3039": "name": "VEHICLE AIR-CONDITIONING PSO",
+        ]
+    },
+    "AU3039": {
+        "name": "VEHICLE AIR-CONDITIONING PSO",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -4773,9 +4817,10 @@ const SYLLABUS_DETAILS = {
                                 "Special tools for servicing vehicle air conditioning \u2013 Diagnosing components and air conditioning systems- Diagnosing cooling system- Air delivery system- Automatic temperature Control system diagnosis and service"
                         ]
                 }
-        ],
-
-    "AU3040": "name": "SOLAR ENERGY TECHNOLOGY LT PC",
+        ]
+    },
+    "AU3040": {
+        "name": "SOLAR ENERGY TECHNOLOGY LT PC",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -4856,9 +4901,10 @@ const SYLLABUS_DETAILS = {
                                 "water and earth for cooling; shading - paints and cavity walls for cooling roof radiation traps - earth air-tunnel \u2013 energy efficient landscape design - thermal comfort"
                         ]
                 }
-        ],
-
-    "AU3301": "name": "THERMODYNAMICS AND HEAT TRANSFER LTPC",
+        ]
+    },
+    "AU3301": {
+        "name": "THERMODYNAMICS AND HEAT TRANSFER LTPC",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -4954,9 +5000,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3302": "name": "AUTOMOTIVE HYDRAULICS AND MACHINERY LTPC",
+        ]
+    },
+    "AU3302": {
+        "name": "AUTOMOTIVE HYDRAULICS AND MACHINERY LTPC",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -5187,9 +5234,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3303": "name": "AUTOMOTIVE ENGINES PSO",
+        ]
+    },
+    "AU3303": {
+        "name": "AUTOMOTIVE ENGINES PSO",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -5297,9 +5345,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3311": "name": "MECHANICAL SCIENCES LABORATORY PSO",
+        ]
+    },
+    "AU3311": {
+        "name": "MECHANICAL SCIENCES LABORATORY PSO",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -5614,9 +5663,10 @@ const SYLLABUS_DETAILS = {
                                 "Aniline point apparatus -Ash content testing equipment - specifications of fuels. ASTM and SAE standards - FTIR- GCMS analysers TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3401": "name": "FUELS AND LUBRICANTS L TPC",
+        ]
+    },
+    "AU3401": {
+        "name": "FUELS AND LUBRICANTS L TPC",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -5724,9 +5774,10 @@ const SYLLABUS_DETAILS = {
                                 "Aniline point apparatus -Ash content testing equipment - specifications of fuels. ASTM and SAE standards - FTIR- GCMS analysers TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3402": "name": "AUTOMOTIVE CHASSIS PSO",
+        ]
+    },
+    "AU3402": {
+        "name": "AUTOMOTIVE CHASSIS PSO",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -5819,9 +5870,10 @@ const SYLLABUS_DETAILS = {
                                 "Constructional Details."
                         ]
                 }
-        ],
-
-    "AU3403": "name": "VEHICLE BODY ENGINEERING LTPC",
+        ]
+    },
+    "AU3403": {
+        "name": "VEHICLE BODY ENGINEERING LTPC",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -5927,9 +5979,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL: PERIODS"
                         ]
                 }
-        ],
-
-    "AU3404": "name": "AUTOMOTIVE TRANSMISSION L T P C",
+        ]
+    },
+    "AU3404": {
+        "name": "AUTOMOTIVE TRANSMISSION L T P C",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -6028,9 +6081,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL=  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3411": "name": "VEHICLE COMPONENTS LABORATORY LTPC",
+        ]
+    },
+    "AU3411": {
+        "name": "VEHICLE COMPONENTS LABORATORY LTPC",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -6212,9 +6266,10 @@ const SYLLABUS_DETAILS = {
                                 "Static and dynamic balancing \u2013 single and several masses in different planes \u2013 primary and secondary balancing of reciprocating masses \u2013 Balancing of single and multi-cylinder engines \u2013 Governors and Gyroscopic effects. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3412": "name": "FUELS AND LUBRICANTS LABORATORY PSO",
+        ]
+    },
+    "AU3412": {
+        "name": "FUELS AND LUBRICANTS LABORATORY PSO",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -6294,9 +6349,10 @@ const SYLLABUS_DETAILS = {
                                 "Static and dynamic balancing \u2013 single and several masses in different planes \u2013 primary and secondary balancing of reciprocating masses \u2013 Balancing of single and multi-cylinder engines \u2013 Governors and Gyroscopic effects. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3501": "name": "MECHANICS OF MACHINES PSO",
+        ]
+    },
+    "AU3501": {
+        "name": "MECHANICS OF MACHINES PSO",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -6376,9 +6432,10 @@ const SYLLABUS_DETAILS = {
                                 "Static and dynamic balancing \u2013 single and several masses in different planes \u2013 primary and secondary balancing of reciprocating masses \u2013 Balancing of single and multi-cylinder engines \u2013 Governors and Gyroscopic effects. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3502": "name": "AUTOMOTIVE ELECTRICAL AND ELECTRONICS PSO",
+        ]
+    },
+    "AU3502": {
+        "name": "AUTOMOTIVE ELECTRICAL AND ELECTRONICS PSO",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -6506,9 +6563,10 @@ const SYLLABUS_DETAILS = {
                                 "Flexray \u2013 MOST etc. TOTAL: PERIODS"
                         ]
                 }
-        ],
-
-    "AU3511": "name": "PSO AUTOMOTIVE ELECTRICAL AND ELECTRONICS LABORATORY",
+        ]
+    },
+    "AU3511": {
+        "name": "PSO AUTOMOTIVE ELECTRICAL AND ELECTRONICS LABORATORY",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -6639,9 +6697,10 @@ const SYLLABUS_DETAILS = {
                                 "NDIR, FID, Chemiluminesecent, Smoke meters, Dilution Tunnel, SHED Test, Sound level meters. Particle counter TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3601": "name": "AUTOMOTIVE POLLUTION AND CONTROL LTPC",
+        ]
+    },
+    "AU3601": {
+        "name": "AUTOMOTIVE POLLUTION AND CONTROL LTPC",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -6741,9 +6800,10 @@ const SYLLABUS_DETAILS = {
                                 "NDIR, FID, Chemiluminesecent, Smoke meters, Dilution Tunnel, SHED Test, Sound level meters. Particle counter TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3611": "name": "COMPUTER AIDED VEHICLE DESIGN AND ANALYSIS LABORATORY PSO",
+        ]
+    },
+    "AU3611": {
+        "name": "COMPUTER AIDED VEHICLE DESIGN AND ANALYSIS LABORATORY PSO",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -6907,9 +6967,10 @@ const SYLLABUS_DETAILS = {
                                 "Design details of full floating, semifloating and three quarter floating rear shafts and rear axle housings and design aspects of final drive"
                         ]
                 }
-        ],
-
-    "AU3701": "name": "ENGINE AND CHASSIS COMPONENTS DESIGN LTPC",
+        ]
+    },
+    "AU3701": {
+        "name": "ENGINE AND CHASSIS COMPONENTS DESIGN LTPC",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -7022,9 +7083,10 @@ const SYLLABUS_DETAILS = {
                                 "Design details of full floating, semifloating and three quarter floating rear shafts and rear axle housings and design aspects of final drive"
                         ]
                 }
-        ],
-
-    "AU3711": "name": "VEHICLE MAINTENANCE AND TESTING LABORATORY PSO",
+        ]
+    },
+    "AU3711": {
+        "name": "VEHICLE MAINTENANCE AND TESTING LABORATORY PSO",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -7189,9 +7251,10 @@ const SYLLABUS_DETAILS = {
                                 "Emadi, Modern Electric, Hybrid Electric, and Fuel Cell Vehicles, CRC Press, 2005"
                         ]
                 }
-        ],
-
-    "AU3712": "name": "SUMMER INTERNSHIP PSO",
+        ]
+    },
+    "AU3712": {
+        "name": "SUMMER INTERNSHIP PSO",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -7289,9 +7352,10 @@ const SYLLABUS_DETAILS = {
                                 "Emadi, Modern Electric, Hybrid Electric, and Fuel Cell Vehicles, CRC Press, 2005"
                         ]
                 }
-        ],
-
-    "AU3791": "name": "ELECTRIC AND HYBRID VEHICLES LT PC",
+        ]
+    },
+    "AU3791": {
+        "name": "ELECTRIC AND HYBRID VEHICLES LT PC",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -7390,9 +7454,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "AU3811": "name": "PROJECT WORK LTPC",
+        ]
+    },
+    "AU3811": {
+        "name": "PROJECT WORK LTPC",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -7478,9 +7543,10 @@ const SYLLABUS_DETAILS = {
                                 "Emadi, Modern Electric, Hybrid Electric, and Fuel Cell Vehicles, CRC Press, 2005"
                         ]
                 }
-        ],
-
-    "AU5612": "name": "ENGINE TESTING AND EMISSION MEASUREMENT LABORATORY PSO",
+        ]
+    },
+    "AU5612": {
+        "name": "ENGINE TESTING AND EMISSION MEASUREMENT LABORATORY PSO",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -7611,9 +7677,10 @@ const SYLLABUS_DETAILS = {
                                 "Design details of full floating, semifloating and three quarter floating rear shafts and rear axle housings and design aspects of final drive"
                         ]
                 }
-        ],
-
-    "BE3251": "name": "BASIC ELECTRICAL AND ELECTRONICS ENGINEERING L T P C",
+        ]
+    },
+    "BE3251": {
+        "name": "BASIC ELECTRICAL AND ELECTRONICS ENGINEERING L T P C",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -7710,9 +7777,10 @@ const SYLLABUS_DETAILS = {
                                 "DSO- Block diagram- Data acquisition. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "BE3252": "name": "BASIC ELECTRICAL, ELECTRONICS AND INSTRUMENTATION ENGINEERING",
+        ]
+    },
+    "BE3252": {
+        "name": "BASIC ELECTRICAL, ELECTRONICS AND INSTRUMENTATION ENGINEERING",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -7849,9 +7917,10 @@ const SYLLABUS_DETAILS = {
                                 "Thermal Imagers. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "BE3254": "name": "ELECTRICAL AND INSTRUMENTATION ENGINEERING L T P C",
+        ]
+    },
+    "BE3254": {
+        "name": "ELECTRICAL AND INSTRUMENTATION ENGINEERING L T P C",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -7946,9 +8015,10 @@ const SYLLABUS_DETAILS = {
                                 "safety precautions and First Aid TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "BE3255": "name": "BASIC CIVIL AND MECHANICAL ENGINEERING LT PC",
+        ]
+    },
+    "BE3255": {
+        "name": "BASIC CIVIL AND MECHANICAL ENGINEERING LT PC",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -8040,9 +8110,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "BE3271": "name": "BASIC ELECTRICAL AND ELECTRONICS ENGINEERING LABORATORY L T P C",
+        ]
+    },
+    "BE3271": {
+        "name": "BASIC ELECTRICAL AND ELECTRONICS ENGINEERING LABORATORY L T P C",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -8148,9 +8219,10 @@ const SYLLABUS_DETAILS = {
                                 "Speaking: describing things relatively-describing clothing-discussing safety issues( making recommendations) talking about electrical devices-describing controlling actions- Writing: job application( Cover letter + Curriculum vitae)-writing recommendations. TOTAL:  PERIODS LEARNING"
                         ]
                 }
-        ],
-
-    "BE3272": "name": "2 3 4 5 Medium (2) ;",
+        ]
+    },
+    "BE3272": {
+        "name": "2 3 4 5 Medium (2) ;",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -8256,9 +8328,10 @@ const SYLLABUS_DETAILS = {
                                 "Speaking: describing things relatively-describing clothing-discussing safety issues( making recommendations) talking about electrical devices-describing controlling actions- Writing: job application( Cover letter + Curriculum vitae)-writing recommendations. TOTAL:  PERIODS  LEARNING"
                         ]
                 }
-        ],
-
-    "BS3171": "name": "PHYSICS AND CHEMISTRY LABORATORY L T P C",
+        ]
+    },
+    "BS3171": {
+        "name": "PHYSICS AND CHEMISTRY LABORATORY L T P C",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -8417,9 +8490,10 @@ const SYLLABUS_DETAILS = {
                                 "Listening \u2013 Listening to debates/ discussions; different viewpoints on an issue; and panel discussions. Speaking \u2013making predictions- talking about a given topic-giving opinionsunderstanding a website-describing processes"
                         ]
                 }
-        ],
-
-    "CB3491": "name": "PSO\u2019s 2.60 2.00 1.60 2.40 1.80 1.80 2.00",
+        ]
+    },
+    "CB3491": {
+        "name": "PSO\u2019s 2.60 2.00 1.60 2.40 1.80 1.80 2.00",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -8502,9 +8576,10 @@ const SYLLABUS_DETAILS = {
                                 "SQL Injection \u2013 Network Access Control \u2013 Cloud Security \u2013 Web Security \u2013 Wireless Security TOTAL: PERIODS"
                         ]
                 }
-        ],
-
-    "CB3591": "name": "2.4 1.4",
+        ]
+    },
+    "CB3591": {
+        "name": "2.4 1.4",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -8596,9 +8671,10 @@ const SYLLABUS_DETAILS = {
                                 "Penetration test using kali Linux  PERIODS"
                         ]
                 }
-        ],
-
-    "CD3281": "name": "PSO\u2019s DATA STRUCTURES AND ALGORITHMS LABORATORY",
+        ]
+    },
+    "CD3281": {
+        "name": "PSO\u2019s DATA STRUCTURES AND ALGORITHMS LABORATORY",
         "regulation": "R2025",
         "department": "CSE(Data Science)",
         "credits": 3,
@@ -8777,9 +8853,10 @@ const SYLLABUS_DETAILS = {
                                 "Singular Vectors - Singular Value Decomposition (SVD)- Best Rank-k Approximations -Left Singular Vectors-Power Method for Singular Value Decomposition- Applications of Singular Value Decomposition Suggested Activities Exploring the Singular Value Decomposition Application of Singular Value Decomposition Suggested Evaluation Methods Assignments on Singular Value Decomposition Tutorials on Best Rank-k Approximations TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CD3291": "name": "DATA STRUCTURES AND ALGORITHMS PSO\u2019s",
+        ]
+    },
+    "CD3291": {
+        "name": "DATA STRUCTURES AND ALGORITHMS PSO\u2019s",
         "regulation": "R2025",
         "department": "IT",
         "credits": 3,
@@ -8908,9 +8985,10 @@ const SYLLABUS_DETAILS = {
                                 "Graph ADT \u2013 representations of graph \u2013 graph traversals \u2013 DAG \u2013 topological ordering \u2013 greedy algorithms \u2013 dynamic programming \u2013 shortest paths \u2013 minimum spanning trees \u2013 introduction to complexity classes and intractability TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3001": "name": "CONCRETE STRUCTURES L T PC",
+        ]
+    },
+    "CE3001": {
+        "name": "CONCRETE STRUCTURES L T PC",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -9142,9 +9220,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3002": "name": "STEEL STRUCTURES CO5",
+        ]
+    },
+    "CE3002": {
+        "name": "STEEL STRUCTURES CO5",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -9254,9 +9333,10 @@ const SYLLABUS_DETAILS = {
                                 "Flange Curling \u2013 Design of wall panels"
                         ]
                 }
-        ],
-
-    "CE3017": "name": "Overall Correlation of",
+        ]
+    },
+    "CE3017": {
+        "name": "Overall Correlation of",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -9578,9 +9658,10 @@ const SYLLABUS_DETAILS = {
                                 "Vibration isolation \u2013 Types of isolation \u2013 Transmissibility \u2013 Passive and active isolation \u2013 Methods of isolation \u2013 Use of springs and damping materials \u2013 Properties of isolating materials \u2013 Vibration control of existing machine foundation. TOTAL: PERIODS"
                         ]
                 }
-        ],
-
-    "CE3018": "name": "ROCK MECHANICS LTPC",
+        ]
+    },
+    "CE3018": {
+        "name": "ROCK MECHANICS LTPC",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -9934,9 +10015,10 @@ const SYLLABUS_DETAILS = {
                                 "Stabilization of rocks-rock support and rock reinforcement-active and passive supports-ground response curve-support reaction curve-reinforcement of fractured and joined rocks-Shotcretingbolting-anchoring-installation methods. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3019": "name": "CO2 CO3",
+        ]
+    },
+    "CE3019": {
+        "name": "CO2 CO3",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -10157,9 +10239,10 @@ const SYLLABUS_DETAILS = {
                                 "Slurry supported trenches-basic principles-slurry characteristics-specifications-diaphragm wallsbored pile walls-contiguous pile wall-secant piles-stability analysis. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3020": "name": "Course Outcome CO2 CO3 CO4",
+        ]
+    },
+    "CE3020": {
+        "name": "Course Outcome CO2 CO3 CO4",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -10390,9 +10473,10 @@ const SYLLABUS_DETAILS = {
                                 "Necessity of caisson \u2013 type and shape - Stability of caissons \u2013 principles of analysis and design \u2013 tilting of caisson \u2013 construction - seismic influences. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3021": "name": "Engineer and Society Environment and Sustainability",
+        ]
+    },
+    "CE3021": {
+        "name": "Engineer and Society Environment and Sustainability",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -10565,9 +10649,10 @@ const SYLLABUS_DETAILS = {
                                 "COs- PO\u2019s & PSO\u2019s MAPPING PO/PSO PO1 PO2 PO3 PO4 PO5 PO6 PO7 PO8 PO9 PO10 PO11 PO12 PSO1 PSO2 PSO3 Knowledge of Engineering Sciences Problem analysis Design / development of solutions Investigation Modern Tool Usage Individual and Team work Communication Engineer and Society Ethics Environment and Sustainability Project Management and Finance Life Long Learning Knowledge of Geotechnical Engineering discipline Critical analysis of Geotechnical Engineering problems and innovation Conceptualization and evaluation of engineering solutions to geotechnical engineering issues Course Outcome Overall CO1 CO2 CO3 CO4 CO5 Correlation of COs to POs VERTICAL IV: GEO-INFORMATICS GI3492"
                         ]
                 }
-        ],
-
-    "CE3022": "name": "Conduct Investigations of Complex Problems",
+        ]
+    },
+    "CE3022": {
+        "name": "Conduct Investigations of Complex Problems",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -10813,9 +10898,10 @@ const SYLLABUS_DETAILS = {
                                 "Image enhancement and Image classification TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3023": "name": "SATELLITE IMAGE PROCESSING LTPC",
+        ]
+    },
+    "CE3023": {
+        "name": "SATELLITE IMAGE PROCESSING LTPC",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -11101,9 +11187,10 @@ const SYLLABUS_DETAILS = {
                                 "types and examples \u2013 Knowledge systems."
                         ]
                 }
-        ],
-
-    "CE3024": "name": "Engineering Knowledge Problem Analysis",
+        ]
+    },
+    "CE3024": {
+        "name": "Engineering Knowledge Problem Analysis",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -11213,9 +11300,10 @@ const SYLLABUS_DETAILS = {
                                 "suspension - Case Studies (The role of the hydrographic surveyor on different marine projects) TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3032": "name": "CLIMATE CHANGE ADAPTATION AND MITIGATION COURSE OBJECTIVE:",
+        ]
+    },
+    "CE3032": {
+        "name": "CLIMATE CHANGE ADAPTATION AND MITIGATION COURSE OBJECTIVE:",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -11601,9 +11689,10 @@ const SYLLABUS_DETAILS = {
                                 "geothermal energy \u2013 biofuels \u2013 Energy policies for a cool future - Energy Audit. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3033": "name": "SOLID AND HAZARDOUS WASTE MANAGEMENT LT PC",
+        ]
+    },
+    "CE3033": {
+        "name": "SOLID AND HAZARDOUS WASTE MANAGEMENT LT PC",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -12031,9 +12120,10 @@ const SYLLABUS_DETAILS = {
                                 "treatment and landfill gas management \u2013 landfill construction and operational controls - landfill closure and environmental monitoring \u2013 landfill bioreactors \u2013 rehabilitation of open dumps and biomining of dumpsites-remediation of contaminated sites- Case studies TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3034": "name": "Course Outcome CO1 CO2 CO3 CO4 CO5",
+        ]
+    },
+    "CE3034": {
+        "name": "Course Outcome CO1 CO2 CO3 CO4 CO5",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -12333,9 +12423,10 @@ const SYLLABUS_DETAILS = {
                                 "Kamalnath (1997) I SCC 388) TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3036": "name": "Overall Correlation of",
+        ]
+    },
+    "CE3036": {
+        "name": "Overall Correlation of",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -12697,9 +12788,10 @@ const SYLLABUS_DETAILS = {
                                 "Contamination source inventory and remediation schemes TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3037": "name": "WATER RESOURCES SYSTEMS ENGINEERING LTPC",
+        ]
+    },
+    "CE3037": {
+        "name": "WATER RESOURCES SYSTEMS ENGINEERING LTPC",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -12876,9 +12968,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3038": "name": "Knowledge of Engineering Sciences Problem analysis",
+        ]
+    },
+    "CE3038": {
+        "name": "Knowledge of Engineering Sciences Problem analysis",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -12958,9 +13051,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3039": "name": "INTEGRATED WATER RESOURCES MANAGEMENT LT PC",
+        ]
+    },
+    "CE3039": {
+        "name": "INTEGRATED WATER RESOURCES MANAGEMENT LT PC",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -13306,9 +13400,10 @@ const SYLLABUS_DETAILS = {
                                 "Water for food production: \u2018blue\u2019 versus \u2018green\u2019 water debate \u2013 Water foot print - Virtual water trade for achieving global water and food security - Climate Smart Agriculture - Current water pricing policy\u2013 Scope to relook pricing. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3040": "name": "CO4 Overall",
+        ]
+    },
+    "CE3040": {
+        "name": "CO4 Overall",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -13392,9 +13487,10 @@ const SYLLABUS_DETAILS = {
                                 "financial resource management \u2013 case studies of best practices in cities across the world. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3041": "name": "WATER QUALITY AND MANAGEMENT L TPC",
+        ]
+    },
+    "CE3041": {
+        "name": "WATER QUALITY AND MANAGEMENT L TPC",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -13711,9 +13807,10 @@ const SYLLABUS_DETAILS = {
                                 "restoration and management. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3042": "name": "OCEAN WAVE DYNAMICS LT PC",
+        ]
+    },
+    "CE3042": {
+        "name": "OCEAN WAVE DYNAMICS LT PC",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -13813,9 +13910,10 @@ const SYLLABUS_DETAILS = {
                                 "Short term wave analysis- Short term wave Height Distribution \u2013 Wave period Distribution - Time and Frequency domain Analysis of Wave Records - Long term wave analysis \u2013 Gumbel Distribution \u2013 Weibull Distribution - Statistics analysis of grouped wave data. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3043": "name": "MARINE GEOTECHNICAL ENGINEERING LTPC",
+        ]
+    },
+    "CE3043": {
+        "name": "MARINE GEOTECHNICAL ENGINEERING LTPC",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -13914,9 +14012,10 @@ const SYLLABUS_DETAILS = {
                                 "FEM analysis of marine foundations subjected to wave loading. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3044": "name": "COASTAL ENGINEERING LTPC",
+        ]
+    },
+    "CE3044": {
+        "name": "COASTAL ENGINEERING LTPC",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -14056,9 +14155,10 @@ const SYLLABUS_DETAILS = {
                                 "UNIT V ACCIDENTAL LOADS AND CORROSION Fire, Blast and Collision- Behaviour of steel at elevated temperature- Fire rating for Hydrocarbon fire, Blast Mitigation-Blast walls- Collision of boats and energy absorption - Corrosion- Corrosion 190 mechanism- Types of corrosion- Offshore structure corrosion zones- Biological corrosionPreventive measures of corrosion- Online corrosion monitoring- Corrosion fatigue TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3045": "name": "Knowledge of Engineering Sciences Problem analysis",
+        ]
+    },
+    "CE3045": {
+        "name": "Knowledge of Engineering Sciences Problem analysis",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -14160,9 +14260,10 @@ const SYLLABUS_DETAILS = {
                                 "Blast Mitigation-Blast walls- Collision of boats and energy absorption - Corrosion- Corrosion 190 mechanism- Types of corrosion- Offshore structure corrosion zones- Biological corrosionPreventive measures of corrosion- Online corrosion monitoring- Corrosion fatigue TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3046": "name": "PO PO PO 10 11 12",
+        ]
+    },
+    "CE3046": {
+        "name": "PO PO PO 10 11 12",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -14481,9 +14582,10 @@ const SYLLABUS_DETAILS = {
                                 "Smart application for ports. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3047": "name": "COASTAL HAZARDS AND MITIGATION LTPC",
+        ]
+    },
+    "CE3047": {
+        "name": "COASTAL HAZARDS AND MITIGATION LTPC",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -14818,9 +14920,10 @@ const SYLLABUS_DETAILS = {
                                 "nuclear disasters \u2013 vulnerability of coastal megacities - lessons from building back better. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3048": "name": "Course Outcome CO1 CO2 CO3 CO4 CO5",
+        ]
+    },
+    "CE3048": {
+        "name": "Course Outcome CO1 CO2 CO3 CO4 CO5",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -14915,9 +15018,10 @@ const SYLLABUS_DETAILS = {
                                 "Mangrove and Wetlands \u2013 Coastal Landuse / Land Cover Mapping \u2013 Coastal Regulation Zone Mapping \u2013 Case studies. TOTAL: PERIODS"
                         ]
                 }
-        ],
-
-    "CE3050": "name": "Knowledge of Engineering Sciences Problem analysis",
+        ]
+    },
+    "CE3050": {
+        "name": "Knowledge of Engineering Sciences Problem analysis",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -15017,9 +15121,10 @@ const SYLLABUS_DETAILS = {
                                 "Mortgage Financing - International financial management- foreign currency management - Applications of valuation concepts to real-world cases & examples."
                         ]
                 }
-        ],
-
-    "CE3051": "name": "EARTH AND ROCK FILL DAMS LT PC",
+        ]
+    },
+    "CE3051": {
+        "name": "EARTH AND ROCK FILL DAMS LT PC",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -15434,9 +15539,10 @@ const SYLLABUS_DETAILS = {
                                 "Quality control and performance measurement TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3052": "name": "COMPUTATIONAL FLUID DYNAMICS CO5",
+        ]
+    },
+    "CE3052": {
+        "name": "COMPUTATIONAL FLUID DYNAMICS CO5",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -15534,9 +15640,10 @@ const SYLLABUS_DETAILS = {
                                 "Mesh Generation and refinement Techniques-software tools."
                         ]
                 }
-        ],
-
-    "CE3053": "name": "Critical analysis of Civil Engineering problems and innovation",
+        ]
+    },
+    "CE3053": {
+        "name": "Critical analysis of Civil Engineering problems and innovation",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -15619,9 +15726,10 @@ const SYLLABUS_DETAILS = {
                                 "Difficulties in RWH - At catchment level - At household level - Evaluation of RWH systems \u2013 Maintenance of RWH structures - Modernisation of RWH system - Case studies on best practice of RWH in urban - Success stories of Contemporary practices of RWH in India. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3054": "name": "TRANSPORT AND ENVIRONMENT CO4 CO5",
+        ]
+    },
+    "CE3054": {
+        "name": "TRANSPORT AND ENVIRONMENT CO4 CO5",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -15962,9 +16070,10 @@ const SYLLABUS_DETAILS = {
                                 "Non-Motorised Transport (NMT) TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3055": "name": "ENVIRONMENTAL QUALITY MONITORING LTPC",
+        ]
+    },
+    "CE3055": {
+        "name": "ENVIRONMENTAL QUALITY MONITORING LTPC",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -16462,9 +16571,10 @@ const SYLLABUS_DETAILS = {
                                 "Analysis of leachate. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3301": "name": "5 6 7 8 9 10 11 Low (1); Medium (2); High (3)",
+        ]
+    },
+    "CE3301": {
+        "name": "5 6 7 8 9 10 11 Low (1); Medium (2); High (3)",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -16799,9 +16909,10 @@ const SYLLABUS_DETAILS = {
                                 "momentum and energy thickness \u2013 Momentum integral equation \u2013 Applications \u2013 Separation of boundary layer \u2013 Drag and Lift forces. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3302": "name": "Knowledge of Civil Engineering discipline",
+        ]
+    },
+    "CE3302": {
+        "name": "Knowledge of Civil Engineering discipline",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -17016,9 +17127,10 @@ const SYLLABUS_DETAILS = {
                                 "Introduction to construction planning \u2013 Scheduling for activities \u2013 Critical path method (CPM) and PERT network modelling and time analysis \u2013 Case illustrations. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3303": "name": "CO2 CO3",
+        ]
+    },
+    "CE3303": {
+        "name": "CO2 CO3",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -17161,9 +17273,10 @@ const SYLLABUS_DETAILS = {
                                 "Operation and Maintenance aspects. - Discharge standards-sludge treatment -Disposal of sludge TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3311": "name": "Knowledge of Engineering Sciences",
+        ]
+    },
+    "CE3311": {
+        "name": "Knowledge of Engineering Sciences",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -17620,9 +17733,10 @@ const SYLLABUS_DETAILS = {
                                 "+ Centrifugal pumps - Minimum speed to start the pump - NPSH - Cavitation\u2019s in pumps - Operating characteristics - Multistage pumps - Reciprocating pumps - Negative slip - Indicator diagrams and its variations - Air vessels - Savings in work done. TOTAL: (L: + T: )  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3351": "name": "SURVEYING AND LEVELLING Overall",
+        ]
+    },
+    "CE3351": {
+        "name": "SURVEYING AND LEVELLING Overall",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -17829,9 +17943,10 @@ const SYLLABUS_DETAILS = {
                                 "GPS: Advantages \u2013 System components \u2013 Signal structure \u2013 Selective availability and antispoofing receiver components and antenna \u2013 Planning and data acquisition \u2013 Data processing \u2013 Errors inGPS \u2013 Field procedure and applications"
                         ]
                 }
-        ],
-
-    "CE3401": "name": "APPLIED HYDRAULICS ENGINEERING LTPC",
+        ]
+    },
+    "CE3401": {
+        "name": "APPLIED HYDRAULICS ENGINEERING LTPC",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -17924,9 +18039,10 @@ const SYLLABUS_DETAILS = {
                                 "+ Centrifugal pumps - Minimum speed to start the pump - NPSH - Cavitation\u2019s in pumps - Operating characteristics - Multistage pumps - Reciprocating pumps - Negative slip - Indicator diagrams and its variations - Air vessels - Savings in work done. TOTAL: (L: + T: )  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3402": "name": "Overall Correlation of",
+        ]
+    },
+    "CE3402": {
+        "name": "Overall Correlation of",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -18066,9 +18182,10 @@ const SYLLABUS_DETAILS = {
                                 "strain energy and distortion energy theories \u2013 application problems. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3403": "name": "Course Outcome Overall",
+        ]
+    },
+    "CE3403": {
+        "name": "Course Outcome Overall",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -18463,9 +18580,10 @@ const SYLLABUS_DETAILS = {
                                 "Light weight concretes - High strength concrete - Fibre reinforced concrete \u2013 Ferrocement - Ready mix concrete - SIFCON - Shotcrete \u2013 Polymer concrete - High performance concrete- self compacting concrete - Geopolymer Concrete."
                         ]
                 }
-        ],
-
-    "CE3404": "name": "SOIL MECHANICS LTPC",
+        ]
+    },
+    "CE3404": {
+        "name": "SOIL MECHANICS LTPC",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -18711,9 +18829,10 @@ const SYLLABUS_DETAILS = {
                                 "Stability Analysis - Infinite slopes and finite slopes \u2013 Total stress analysis for saturated clay \u2013 Friction circle method \u2013 Use of stability number \u2013 Method of slices \u2013 Fellenious and Bishop\u2019s method - Slope protection measures. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3405": "name": "CO2 CO3",
+        ]
+    },
+    "CE3405": {
+        "name": "CO2 CO3",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -18873,9 +18992,10 @@ const SYLLABUS_DETAILS = {
                                 "Planning and construction. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3411": "name": "HYDRAULIC ENGINEERING LABORATORY L T P C",
+        ]
+    },
+    "CE3411": {
+        "name": "HYDRAULIC ENGINEERING LABORATORY L T P C",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -19395,9 +19515,10 @@ const SYLLABUS_DETAILS = {
                                 "Analysis and design of cantilever"
                         ]
                 }
-        ],
-
-    "CE3412": "name": "MATERIALS TESTING LABORATORY LTPC",
+        ]
+    },
+    "CE3412": {
+        "name": "MATERIALS TESTING LABORATORY LTPC",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -19781,9 +19902,10 @@ const SYLLABUS_DETAILS = {
                                 "Design of wall footing \u2013 Design of axially and eccentrically loaded rectangular pad and sloped footings \u2013 Design of combined rectangular footing for two columns only. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3413": "name": "SOIL MECHANICS LABORATORY L T P C",
+        ]
+    },
+    "CE3413": {
+        "name": "SOIL MECHANICS LABORATORY L T P C",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -19930,9 +20052,10 @@ const SYLLABUS_DETAILS = {
                                 "Design of wall footing \u2013 Design of axially and eccentrically loaded rectangular pad and sloped footings \u2013 Design of combined rectangular footing for two columns only. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3503": "name": "FOUNDATION ENGINEERING LTPC",
+        ]
+    },
+    "CE3503": {
+        "name": "FOUNDATION ENGINEERING LTPC",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -20184,9 +20307,10 @@ const SYLLABUS_DETAILS = {
                                 "Plastic equilibrium in soils \u2013 Active and passive states \u2013 Rankine\u2019s theory \u2013 Cohesionless and cohesive soil \u2013 Coulomb\u2019s wedge theory \u2013 Condition for critical failure plane \u2013 Earth pressure on retaining walls of simple configurations \u2013 Culmann Graphical method \u2013 Pressure on the wall due to line load \u2013 Stability analysis of retaining walls \u2013 Codal provision. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3511": "name": "Course Outcome CO2 CO3 CO4",
+        ]
+    },
+    "CE3511": {
+        "name": "Course Outcome CO2 CO3 CO4",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -20373,9 +20497,10 @@ const SYLLABUS_DETAILS = {
                                 "Introduction to plastic analysis - Theory of plastic Analysis - Design of continuous beams and portal frames using plastic design approach TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3512": "name": "SURVEY CAMP (2 weeks) LTPC",
+        ]
+    },
+    "CE3512": {
+        "name": "SURVEY CAMP (2 weeks) LTPC",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -20518,9 +20643,10 @@ const SYLLABUS_DETAILS = {
                                 "Introduction to plastic analysis - Theory of plastic Analysis - Design of continuous beams and portal frames using plastic design approach TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3601": "name": "DESIGN OF STEEL STRUCTURAL ELEMENTS LTPC",
+        ]
+    },
+    "CE3601": {
+        "name": "DESIGN OF STEEL STRUCTURAL ELEMENTS LTPC",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -20607,9 +20733,10 @@ const SYLLABUS_DETAILS = {
                                 "Introduction to plastic analysis - Theory of plastic Analysis - Design of continuous beams and portal frames using plastic design approach TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3602": "name": "Course Outcome CO1 CO2 CO3 CO4",
+        ]
+    },
+    "CE3602": {
+        "name": "Course Outcome CO1 CO2 CO3 CO4",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -20746,9 +20873,10 @@ const SYLLABUS_DETAILS = {
                                 "shearing force and bending moment diagrams. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CE3611": "name": "BUILDING DRAWING AND DETAILING LABORATORY LTPC",
+        ]
+    },
+    "CE3611": {
+        "name": "BUILDING DRAWING AND DETAILING LABORATORY LTPC",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -20895,9 +21023,10 @@ const SYLLABUS_DETAILS = {
                                 "Definitions \u2013 Various types of valuations \u2013 Valuation methods - Necessity \u2013Year\u2019s purchase-sinking fund- Capitalised value \u2013 Depreciation \u2013 Escalation \u2013 Valuation of land \u2013 Buildings \u2013 Calculation of Standard rent \u2013 Mortgage \u2013 Lease - Types of lease"
                         ]
                 }
-        ],
-
-    "CE3701": "name": "ESTIMATION, COSTING AND VALUATION ENGINEERING LTPC",
+        ]
+    },
+    "CE3701": {
+        "name": "ESTIMATION, COSTING AND VALUATION ENGINEERING LTPC",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -21128,9 +21257,10 @@ const SYLLABUS_DETAILS = {
                                 "Definitions \u2013 Various types of valuations \u2013 Valuation methods - Necessity \u2013Year\u2019s purchase-sinking fund- Capitalised value \u2013 Depreciation \u2013 Escalation \u2013 Valuation of land \u2013 Buildings \u2013 Calculation of Standard rent \u2013 Mortgage \u2013 Lease - Types of lease"
                         ]
                 }
-        ],
-
-    "CE3811": "name": "PO\u2019s 2.5",
+        ]
+    },
+    "CE3811": {
+        "name": "PO\u2019s 2.5",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -21450,9 +21580,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CS3251": "name": "PROGRAMMING IN C L T P C",
+        ]
+    },
+    "CS3251": {
+        "name": "PROGRAMMING IN C L T P C",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -21545,9 +21676,10 @@ const SYLLABUS_DETAILS = {
                                 "Random access \u2013 Sequential access file Random access file - Command line arguments."
                         ]
                 }
-        ],
-
-    "CS3271": "name": "PROGRAMMING IN C LABORATORY LT P C",
+        ]
+    },
+    "CS3271": {
+        "name": "PROGRAMMING IN C LABORATORY LT P C",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -21678,9 +21810,10 @@ const SYLLABUS_DETAILS = {
                                 "Speaking: describing things relatively-describing clothing-discussing safety issues (making recommendations) talking about electrical devices-describing controlling actions- Writing: job application( Cover letter + Curriculum vitae)-writing recommendations. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CS3301": "name": "DATA STRUCTURES PSO\u2019s",
+        ]
+    },
+    "CS3301": {
+        "name": "DATA STRUCTURES PSO\u2019s",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -21760,9 +21893,10 @@ const SYLLABUS_DETAILS = {
                                 "Merge Sort \u2013 Hashing \u2013 Hash Functions \u2013 Separate Chaining \u2013 Open Addressing \u2013Rehashing \u2013 Extendible Hashing"
                         ]
                 }
-        ],
-
-    "CS3351": "name": "DIGITAL PRINCIPLES AND COMPUTER ORGANIZATION L T PC",
+        ]
+    },
+    "CS3351": {
+        "name": "DIGITAL PRINCIPLES AND COMPUTER ORGANIZATION L T PC",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -21862,9 +21996,10 @@ const SYLLABUS_DETAILS = {
                                 "Simulator based study of Computer Architecture"
                         ]
                 }
-        ],
-
-    "CS3352": "name": "FOUNDATIONS OF DATA SCIENCE L T P C",
+        ]
+    },
+    "CS3352": {
+        "name": "FOUNDATIONS OF DATA SCIENCE L T P C",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -21940,9 +22075,10 @@ const SYLLABUS_DETAILS = {
                                 "Importing Matplotlib \u2013 Line plots \u2013 Scatter plots \u2013 visualizing errors \u2013 density and contour plots \u2013 Histograms \u2013 legends \u2013 colors \u2013 subplots \u2013 text and annotation \u2013 customization \u2013 three dimensional plotting - Geographic Data with Basemap - Visualization with Seaborn."
                         ]
                 }
-        ],
-
-    "CS3353": "name": "C PROGRAMMING AND DATA STRUCTURES L T PC",
+        ]
+    },
+    "CS3353": {
+        "name": "C PROGRAMMING AND DATA STRUCTURES L T PC",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -22024,9 +22160,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS SKILL DEVELOPMENT ACTIVITIES (Group Seminar/Mini Project/Assignment/Content Preparation / Quiz/ Surprise Test / Solving GATE questions/ etc)"
                         ]
                 }
-        ],
-
-    "CS3361": "name": "DATA SCIENCE LABORATORY PSO\u2019s",
+        ]
+    },
+    "CS3361": {
+        "name": "DATA SCIENCE LABORATORY PSO\u2019s",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -22197,9 +22334,10 @@ const SYLLABUS_DETAILS = {
                                 "Unsolvable Problems and Computable Functions \u2013PCP-MPCP- Recursive and recursively enumerable languages \u2013 Properties - Universal Turing machine -Tractable and Intractable problems  - P and NP completeness \u2013 Kruskal\u2019s algorithm \u2013 Travelling Salesman Problem- -CNF SAT problems."
                         ]
                 }
-        ],
-
-    "CS3362": "name": "PO4 C PROGRAMMING AND DATA STRUCTURES LABORATORY",
+        ]
+    },
+    "CS3362": {
+        "name": "PO4 C PROGRAMMING AND DATA STRUCTURES LABORATORY",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -22458,9 +22596,10 @@ const SYLLABUS_DETAILS = {
                                 "Normal incidence at a plane dielectric boundary"
                         ]
                 }
-        ],
-
-    "CS3381": "name": "PSO\u2019s OBJECT ORIENTED PROGRAMMING LABORATORY",
+        ]
+    },
+    "CS3381": {
+        "name": "PSO\u2019s OBJECT ORIENTED PROGRAMMING LABORATORY",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -22670,9 +22809,10 @@ const SYLLABUS_DETAILS = {
                                 "Unsolva"
                         ]
                 }
-        ],
-
-    "CS3391": "name": "OBJECT ORIENTED PROGRAMMING PSO\u2019s",
+        ]
+    },
+    "CS3391": {
+        "name": "OBJECT ORIENTED PROGRAMMING PSO\u2019s",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -22771,9 +22911,10 @@ const SYLLABUS_DETAILS = {
                                 "Menus \u2013 Basics \u2013 Menu \u2013 Menu bars \u2013 MenuItem"
                         ]
                 }
-        ],
-
-    "CS3401": "name": "ALGORITHMS PSO\u2019s",
+        ]
+    },
+    "CS3401": {
+        "name": "ALGORITHMS PSO\u2019s",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -22924,9 +23065,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL: PERIODS"
                         ]
                 }
-        ],
-
-    "CS3451": "name": "PSO\u2019s INTRODUCTION TO OPERATING SYSTEMS",
+        ]
+    },
+    "CS3451": {
+        "name": "PSO\u2019s INTRODUCTION TO OPERATING SYSTEMS",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -23010,9 +23152,10 @@ const SYLLABUS_DETAILS = {
                                 "Virtualization and Operating-System Components; Mobile OS - iOS and Android. TOTAL: PERIODS"
                         ]
                 }
-        ],
-
-    "CS3452": "name": "THEORY OF COMPUTATION L T P C",
+        ]
+    },
+    "CS3452": {
+        "name": "THEORY OF COMPUTATION L T P C",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -23090,9 +23233,10 @@ const SYLLABUS_DETAILS = {
                                 "Unsolvable Problems and Computable Functions \u2013PCP-MPCP- Recursive and recursively enumerable languages \u2013 Properties - Universal Turing machine -Tractable and Intractable problems  - P and NP completeness \u2013 Kruskal\u2019s algorithm \u2013 Travelling Salesman Problem- -CNF SAT problems."
                         ]
                 }
-        ],
-
-    "CS3461": "name": "OPERATING SYSTEMS LABORATORY COURSE OBJECTIVES:",
+        ]
+    },
+    "CS3461": {
+        "name": "OPERATING SYSTEMS LABORATORY COURSE OBJECTIVES:",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -23283,9 +23427,10 @@ const SYLLABUS_DETAILS = {
                                 "Simulation of an error correction code (like CRC)"
                         ]
                 }
-        ],
-
-    "CS3481": "name": "DATABASE MANAGEMENT SYSTEMS LABORATORY L T P C",
+        ]
+    },
+    "CS3481": {
+        "name": "DATABASE MANAGEMENT SYSTEMS LABORATORY L T P C",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -23440,9 +23585,10 @@ const SYLLABUS_DETAILS = {
                                 "Simulation of an error correction code (like CRC)"
                         ]
                 }
-        ],
-
-    "CS3491": "name": "PSO\u2019s ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING",
+        ]
+    },
+    "CS3491": {
+        "name": "PSO\u2019s ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -23561,9 +23707,10 @@ const SYLLABUS_DETAILS = {
                                 "Build deep learning NN models"
                         ]
                 }
-        ],
-
-    "CS3492": "name": "DATABASE MANAGEMENT SYSTEMS PSO\u2019s",
+        ]
+    },
+    "CS3492": {
+        "name": "DATABASE MANAGEMENT SYSTEMS PSO\u2019s",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -23658,9 +23805,10 @@ const SYLLABUS_DETAILS = {
                                 "Query processing and optimization \u2013 NOSQL Databases: Introduction \u2013 CAP Theorem \u2013 Document Based systems \u2013 Key value Stores \u2013 Column Based Systems \u2013 Graph Databases. Database Security: Security issues \u2013 Access control based on privileges \u2013 Role Based access control \u2013 SQL Injection \u2013 Statistical Database security \u2013 Flow control \u2013 Encryption and Public Key infrastructures \u2013 Challenges"
                         ]
                 }
-        ],
-
-    "CS3501": "name": "COMPILER DESIGN LTPC",
+        ]
+    },
+    "CS3501": {
+        "name": "COMPILER DESIGN LTPC",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -23818,9 +23966,10 @@ const SYLLABUS_DETAILS = {
                                 "PERIODS TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "CS3551": "name": "DISTRIBUTED COMPUTING L T P C",
+        ]
+    },
+    "CS3551": {
+        "name": "DISTRIBUTED COMPUTING L T P C",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -23896,9 +24045,10 @@ const SYLLABUS_DETAILS = {
                                 "Definition of Cloud Computing \u2013 Characteristics of Cloud \u2013 Cloud Deployment Models \u2013 Cloud Service Models \u2013 Driving Factors and Challenges of Cloud \u2013 Virtualization \u2013 Load Balancing \u2013 Scalability and Elasticity \u2013 Replication \u2013 Monitoring \u2013 Cloud Services and Platforms: Compute Services \u2013 Storage Services \u2013 Application Services"
                         ]
                 }
-        ],
-
-    "CS3591": "name": "PSO\u2019s COMPUTER NETWORKS",
+        ]
+    },
+    "CS3591": {
+        "name": "PSO\u2019s COMPUTER NETWORKS",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -23982,9 +24132,10 @@ const SYLLABUS_DETAILS = {
                                 "Simulation of an error correction code (like CRC)"
                         ]
                 }
-        ],
-
-    "CS3691": "name": "EMBEDDED SYSTEMS AND IOT PSO\u2019s",
+        ]
+    },
+    "CS3691": {
+        "name": "EMBEDDED SYSTEMS AND IOT PSO\u2019s",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -24112,9 +24263,10 @@ const SYLLABUS_DETAILS = {
                                 "Design an IOT based system"
                         ]
                 }
-        ],
-
-    "CS3711": "name": "SUMMER INTERNSHIP LTPC",
+        ]
+    },
+    "CS3711": {
+        "name": "SUMMER INTERNSHIP LTPC",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -24345,9 +24497,10 @@ const SYLLABUS_DETAILS = {
                                 "Use a case study on a data set and apply the various EDA and visualization techniques and present an analysis report"
                         ]
                 }
-        ],
-
-    "CS3811": "name": "PROJECT WORK/ INTERNSHIP# L T P C",
+        ]
+    },
+    "CS3811": {
+        "name": "PROJECT WORK/ INTERNSHIP# L T P C",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -24676,9 +24829,10 @@ const SYLLABUS_DETAILS = {
                                 "Use a case study on a data set and apply the various EDA and visualization techniques and present an analysis report"
                         ]
                 }
-        ],
-
-    "CY3151": "name": "ENGINEERING CHEMISTRY L T P C",
+        ]
+    },
+    "CY3151": {
+        "name": "ENGINEERING CHEMISTRY L T P C",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -24798,9 +24952,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "DA3301": "name": "DIGITAL PRINCIPLES AND SYSTEM DESIGN L T P C",
+        ]
+    },
+    "DA3301": {
+        "name": "DIGITAL PRINCIPLES AND SYSTEM DESIGN L T P C",
         "regulation": "R2025",
         "department": "CSE(Data Science)",
         "credits": 3,
@@ -24906,9 +25061,10 @@ const SYLLABUS_DETAILS = {
                                 "Design and implementation of shift registers"
                         ]
                 }
-        ],
-
-    "DA3401": "name": "DATABASE MANAGEMENT SYSTEMS LT PC",
+        ]
+    },
+    "DA3401": {
+        "name": "DATABASE MANAGEMENT SYSTEMS LT PC",
         "regulation": "R2025",
         "department": "CSE(Data Science)",
         "credits": 3,
@@ -25014,9 +25170,10 @@ const SYLLABUS_DETAILS = {
                                 "Key-Value and Graph Types \u2013 Applications \u2013 Current Trends. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "EC3251": "name": "CIRCUIT ANALYSIS L T P C",
+        ]
+    },
+    "EC3251": {
+        "name": "CIRCUIT ANALYSIS L T P C",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -25112,9 +25269,10 @@ const SYLLABUS_DETAILS = {
                                 "Links and Loop analysis. SUGGESTED ACTIVITIES: \uf0b7 Practice solving variety of problems"
                         ]
                 }
-        ],
-
-    "EC3271": "name": "CIRCUIT ANALYSIS LABORATORY L T P C",
+        ]
+    },
+    "EC3271": {
+        "name": "CIRCUIT ANALYSIS LABORATORY L T P C",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -25215,9 +25373,10 @@ const SYLLABUS_DETAILS = {
                                 "Speaking: describing things relatively-describing clothing-discussing safety issues( making recommendations) talking about electrical devices-describing controlling actions- Writing: job application( Cover letter + Curriculum vitae)-writing recommendations. TOTAL:  PERIODS  LEARNING"
                         ]
                 }
-        ],
-
-    "EC3301": "name": "PSOs PO8",
+        ]
+    },
+    "EC3301": {
+        "name": "PSOs PO8",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -25312,9 +25471,10 @@ const SYLLABUS_DETAILS = {
                                 "Colpitts and Crystal oscillators. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "EC3351": "name": "CONTROL SYSTEMS L T PC",
+        ]
+    },
+    "EC3351": {
+        "name": "CONTROL SYSTEMS L T PC",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -25430,9 +25590,10 @@ const SYLLABUS_DETAILS = {
                                 "State variable representation-Conversion of state variable models to transfer functions-Conversion of transfer functions to state variable models-Solution of state equations-Concepts of Controllability and Observability-Stability of linear systems-Equivalence between transfer function and state variable representations-State variable analysis of digital control system-Digital control design using state feedback. TOTAL: PERIODS"
                         ]
                 }
-        ],
-
-    "EC3352": "name": "DIGITAL SYSTEMS DESIGN L T P C",
+        ]
+    },
+    "EC3352": {
+        "name": "DIGITAL SYSTEMS DESIGN L T P C",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -25563,9 +25724,10 @@ const SYLLABUS_DETAILS = {
                                 "Design and implementation of shift registers"
                         ]
                 }
-        ],
-
-    "EC3353": "name": "ELECTRONIC DEVICES AND CIRCUITS L T P C",
+        ]
+    },
+    "EC3353": {
+        "name": "ELECTRONIC DEVICES AND CIRCUITS L T P C",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -25656,9 +25818,10 @@ const SYLLABUS_DETAILS = {
                                 "Buck-Boost analysis and design. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "EC3354": "name": "SIGNALS AND SYSTEMS L T P C",
+        ]
+    },
+    "EC3354": {
+        "name": "SIGNALS AND SYSTEMS L T P C",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -25739,9 +25902,10 @@ const SYLLABUS_DETAILS = {
                                 "+ Impulse response\u2013Difference equations-Convolution sum- Discrete Fourier Transform and Z Transform Analysis of Recursive & Non-Recursive systems-DT systems connected in series and parallel. TOTAL: + PERIODS"
                         ]
                 }
-        ],
-
-    "EC3361": "name": "ELECTRONIC DEVICES AND CIRCUITS LABORATORY L T P C",
+        ]
+    },
+    "EC3361": {
+        "name": "ELECTRONIC DEVICES AND CIRCUITS LABORATORY L T P C",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -26014,9 +26178,10 @@ const SYLLABUS_DETAILS = {
                                 "Normal incidence at a plane dielectric boundary"
                         ]
                 }
-        ],
-
-    "EC3401": "name": "NETWORKS AND SECURITY PO 10 PO 11",
+        ]
+    },
+    "EC3401": {
+        "name": "NETWORKS AND SECURITY PO 10 PO 11",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -26124,9 +26289,10 @@ const SYLLABUS_DETAILS = {
                                 "Implement and perform the operation of CSMA/CD and CSMA/CA using NS2"
                         ]
                 }
-        ],
-
-    "EC3451": "name": "LINEAR INTEGRATED CIRCUITS L T P C",
+        ]
+    },
+    "EC3451": {
+        "name": "LINEAR INTEGRATED CIRCUITS L T P C",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -26268,9 +26434,10 @@ const SYLLABUS_DETAILS = {
                                 "Optocouplers and fibre optic IC"
                         ]
                 }
-        ],
-
-    "EC3452": "name": "ELECTROMAGNETIC FIELDS L T P C",
+        ]
+    },
+    "EC3452": {
+        "name": "ELECTROMAGNETIC FIELDS L T P C",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -26441,9 +26608,10 @@ const SYLLABUS_DETAILS = {
                                 "Normal incidence at a plane dielectric boundary"
                         ]
                 }
-        ],
-
-    "EC3462": "name": "LINEAR INTEGRATED CIRCUITS LABORATORY L T P C",
+        ]
+    },
+    "EC3462": {
+        "name": "LINEAR INTEGRATED CIRCUITS LABORATORY L T P C",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -26648,9 +26816,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "EC3491": "name": "COMMUNICATION SYSTEMS LT P C",
+        ]
+    },
+    "EC3491": {
+        "name": "COMMUNICATION SYSTEMS LT P C",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -26799,9 +26968,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "EC3492": "name": "DIGITAL SIGNAL PROCESSING L T P C",
+        ]
+    },
+    "EC3492": {
+        "name": "DIGITAL SIGNAL PROCESSING L T P C",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -26918,9 +27088,10 @@ const SYLLABUS_DETAILS = {
                                 "Implement an Up-sampling and Down-sampling operation in DSP Processor"
                         ]
                 }
-        ],
-
-    "EC3501": "name": "WIRELESS COMMUNICATION PO10 PO11 PO12",
+        ]
+    },
+    "EC3501": {
+        "name": "WIRELESS COMMUNICATION PO10 PO11 PO12",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -27121,9 +27292,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "EC3551": "name": "TRANSMISSION LINES AND RF SYSTEMS L T PC",
+        ]
+    },
+    "EC3551": {
+        "name": "TRANSMISSION LINES AND RF SYSTEMS L T PC",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -27211,9 +27383,10 @@ const SYLLABUS_DETAILS = {
                                 "Power amplifiers."
                         ]
                 }
-        ],
-
-    "EC3552": "name": "VLSI AND CHIP DESIGN L T P C",
+        ]
+    },
+    "EC3552": {
+        "name": "VLSI AND CHIP DESIGN L T P C",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -27367,9 +27540,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "EC3561": "name": "VLSI LABORATORY LT PC",
+        ]
+    },
+    "EC3561": {
+        "name": "VLSI LABORATORY LT PC",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -27503,9 +27677,10 @@ const SYLLABUS_DETAILS = {
                                 "Miniprojects for IoT Garbage Segregator and Bin Level Indicator Colour based Product Sorting Image Processing based Fire Detection Vehicle Number Plate Detection Smart Lock System TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "EC3711": "name": "SUMMER INTERNSHIP LTPC",
+        ]
+    },
+    "EC3711": {
+        "name": "SUMMER INTERNSHIP LTPC",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -27738,9 +27913,10 @@ const SYLLABUS_DETAILS = {
                                 "Current Probes to measure drain current \u2013 30A with 120Mz BW - #"
                         ]
                 }
-        ],
-
-    "EC3811": "name": "PROJECT WORK/ INTERNSHIP L T P C",
+        ]
+    },
+    "EC3811": {
+        "name": "PROJECT WORK/ INTERNSHIP L T P C",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -28077,9 +28253,10 @@ const SYLLABUS_DETAILS = {
                                 "Current Probes to measure drain current \u2013 30A with 120Mz BW - #"
                         ]
                 }
-        ],
-
-    "EE3001": "name": "UTILIZATION AND CONSERVATION OF ELECTRICAL ENERGY LT P C",
+        ]
+    },
+    "EE3001": {
+        "name": "UTILIZATION AND CONSERVATION OF ELECTRICAL ENERGY LT P C",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -28180,9 +28357,10 @@ const SYLLABUS_DETAILS = {
                                 "Power requirement for different domestic appliances"
                         ]
                 }
-        ],
-
-    "EE3002": "name": "2.6 PO4 PO5",
+        ]
+    },
+    "EE3002": {
+        "name": "2.6 PO4 PO5",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -28274,9 +28452,10 @@ const SYLLABUS_DETAILS = {
                                 "and Accessories - Sheath Bonding and Grounding-Testing of Transmission Cable Systems - Underground System Fault Locating - Field Assessment of Power Cable Systems- Condition monitoring tests \u2013 PD measurements."
                         ]
                 }
-        ],
-
-    "EE3003": "name": "PSOs PO5",
+        ]
+    },
+    "EE3003": {
+        "name": "PSOs PO5",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -28363,9 +28542,10 @@ const SYLLABUS_DETAILS = {
                                 "Ventilation and Air-conditioning (HVAC) for Substation."
                         ]
                 }
-        ],
-
-    "EE3004": "name": "1.6 2.6",
+        ]
+    },
+    "EE3004": {
+        "name": "1.6 2.6",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -28469,9 +28649,10 @@ const SYLLABUS_DETAILS = {
                                 "Realization of four quadrant operation of VSC in open loop mode in simulation"
                         ]
                 }
-        ],
-
-    "EE3005": "name": "ENERGY MANAGEMENT AND AUDITING LTPC",
+        ]
+    },
+    "EE3005": {
+        "name": "ENERGY MANAGEMENT AND AUDITING LTPC",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -28524,9 +28705,10 @@ const SYLLABUS_DETAILS = {
                                 "luminance requirements \u2013 ballast - occupancy sensors - energy efficient lighting controls - energy conservation avenues - Case Study."
                         ]
                 }
-        ],
-
-    "EE3006": "name": "POWER QUALITY LTPC",
+        ]
+    },
+    "EE3006": {
+        "name": "POWER QUALITY LTPC",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -28776,9 +28958,10 @@ const SYLLABUS_DETAILS = {
                                 "(+ Skill)  Rectifier supported DVR \u2013 DC Capacitor supported DVR \u2013 DVR Structure \u2013 Voltage Restoration \u2013 Series Active Filter \u2013 Unified Power Quality Conditioner."
                         ]
                 }
-        ],
-
-    "EE3007": "name": "PO5 PSOs",
+        ]
+    },
+    "EE3007": {
+        "name": "PO5 PSOs",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -28868,9 +29051,10 @@ const SYLLABUS_DETAILS = {
                                 "Simulation of IoT based digital communication system for smart grid applications"
                         ]
                 }
-        ],
-
-    "EE3008": "name": "RESTRUCTURED POWER MARKET L T P C",
+        ]
+    },
+    "EE3008": {
+        "name": "RESTRUCTURED POWER MARKET L T P C",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -28968,9 +29152,10 @@ const SYLLABUS_DETAILS = {
                                 "Analysis of ABT components"
                         ]
                 }
-        ],
-
-    "EE3009": "name": "SPECIAL ELECTRICAL MACHINES LT PC",
+        ]
+    },
+    "EE3009": {
+        "name": "SPECIAL ELECTRICAL MACHINES LT PC",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -29241,9 +29426,10 @@ const SYLLABUS_DETAILS = {
                                 "Principle of operation and characteristics of Hysteresis motor \u2013 AC series motors \u2013 Linear motor \u2013 Applications.  PERIODS LAB COMPONENT:  PERIODS Using electromagnetic software ) Simulation of BLDC motor ) Simulation of SRM motor ) Simulation of stepper motor ) Simulation of PMSM motor ) Simulation of any other special machines TOTAL: + =  PERIODS OURSE"
                         ]
                 }
-        ],
-
-    "EE3010": "name": "ANALYSIS OF ELECTRICAL MACHINES LT P C",
+        ]
+    },
+    "EE3010": {
+        "name": "ANALYSIS OF ELECTRICAL MACHINES LT P C",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -29528,9 +29714,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL: + =  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3011": "name": "PO4 PO5",
+        ]
+    },
+    "EE3011": {
+        "name": "PO4 PO5",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -29639,9 +29826,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL: + =  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3012": "name": "PO5 PO6",
+        ]
+    },
+    "EE3012": {
+        "name": "PO5 PO6",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -29927,9 +30115,10 @@ const SYLLABUS_DETAILS = {
                                 "Simulation of synchronous motor drive TOTAL: + =  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3013": "name": "SMPS AND UPS LTPC",
+        ]
+    },
+    "EE3013": {
+        "name": "SMPS AND UPS LTPC",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -30037,9 +30226,10 @@ const SYLLABUS_DETAILS = {
                                 "42 TOTAL: + =  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3014": "name": "2.5 POWER ELECTRONICS FOR RENEWABLE",
+        ]
+    },
+    "EE3014": {
+        "name": "2.5 POWER ELECTRONICS FOR RENEWABLE",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -30327,9 +30517,10 @@ const SYLLABUS_DETAILS = {
                                 "PERIODS TOTAL: + =  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3015": "name": "CONTROL OF POWER ELECTRONICS CIRCUITS L T",
+        ]
+    },
+    "EE3015": {
+        "name": "CONTROL OF POWER ELECTRONICS CIRCUITS L T",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -30431,9 +30622,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL: + =  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3016": "name": "EMBEDDED SYSTEM DESIGN LT P C",
+        ]
+    },
+    "EE3016": {
+        "name": "EMBEDDED SYSTEM DESIGN LT P C",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -30794,9 +30986,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL: + =  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3017": "name": "EMBEDDED C- PROGRAMMING LT P C",
+        ]
+    },
+    "EE3017": {
+        "name": "EMBEDDED C- PROGRAMMING LT P C",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -31147,9 +31340,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL: + =  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3018": "name": "EMBEDDED PROCESSORS LT P C",
+        ]
+    },
+    "EE3018": {
+        "name": "EMBEDDED PROCESSORS LT P C",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -31463,9 +31657,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL: + =  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3019": "name": "EMBEDDED CONTROL FOR ELECTRIC DRIVES L T P C",
+        ]
+    },
+    "EE3019": {
+        "name": "EMBEDDED CONTROL FOR ELECTRIC DRIVES L T P C",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -31565,9 +31760,10 @@ const SYLLABUS_DETAILS = {
                                 ": Any Suitable Embedded processor-based speed control of Motors (DC/IM/BLDC/PMSM/SRM) TOTAL: + =  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3020": "name": "SMART SYSTEM AUTOMATION LT P C",
+        ]
+    },
+    "EE3020": {
+        "name": "SMART SYSTEM AUTOMATION LT P C",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -31885,9 +32081,10 @@ const SYLLABUS_DETAILS = {
                                 "Mini project: Design of a Smart Automation system ( for any application of students choice) TOTAL: + =  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3021": "name": "EMBEDDED SYSTEM FOR AUTOMOTIVE APPLICATIONS LT P C",
+        ]
+    },
+    "EE3021": {
+        "name": "EMBEDDED SYSTEM FOR AUTOMOTIVE APPLICATIONS LT P C",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -32208,9 +32405,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL: + =  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3022": "name": "VLSI DESIGN LT P C",
+        ]
+    },
+    "EE3022": {
+        "name": "VLSI DESIGN LT P C",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -32518,9 +32716,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL: + =  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3023": "name": "MEMS AND NEMS LT P C",
+        ]
+    },
+    "EE3023": {
+        "name": "MEMS AND NEMS LT P C",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -32877,9 +33076,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL: + =  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3024": "name": "DIGITAL SIGNAL PROCESSING SYSTEM DESIGN L T PC",
+        ]
+    },
+    "EE3024": {
+        "name": "DIGITAL SIGNAL PROCESSING SYSTEM DESIGN L T PC",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -33298,9 +33498,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL: + =  PERIODS 163"
                         ]
                 }
-        ],
-
-    "EE3025": "name": "ELECTRIC VEHICLE ARCHITECTURE COURSE OBJECTIVES:",
+        ]
+    },
+    "EE3025": {
+        "name": "ELECTRIC VEHICLE ARCHITECTURE COURSE OBJECTIVES:",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -33435,9 +33636,10 @@ const SYLLABUS_DETAILS = {
                                 "(+ Skill)  Introduction-History-Comparison with electrical and hybrid electrical vehicle-Construction and working of PHEV-Block diagram and components-Charging mechanisms-Advantages of PHEVs."
                         ]
                 }
-        ],
-
-    "EE3026": "name": "DESIGN OF MOTOR AND POWER CONVERTERS FOR ELECTRIC VEHICLES",
+        ]
+    },
+    "EE3026": {
+        "name": "DESIGN OF MOTOR AND POWER CONVERTERS FOR ELECTRIC VEHICLES",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -33751,9 +33953,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL: + =  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3027": "name": "COs PO2",
+        ]
+    },
+    "EE3027": {
+        "name": "COs PO2",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -34048,9 +34251,10 @@ const SYLLABUS_DETAILS = {
                                 "Simulation of vector control of induction motor TOTAL: + =  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3028": "name": "DESIGN OF ELECTRIC VEHICLE CHARGING SYSTEM COURSE OBJECTIVES:",
+        ]
+    },
+    "EE3028": {
+        "name": "DESIGN OF ELECTRIC VEHICLE CHARGING SYSTEM COURSE OBJECTIVES:",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -34349,9 +34553,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL: + =  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3029": "name": "PSOs PO6",
+        ]
+    },
+    "EE3029": {
+        "name": "PSOs PO6",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -34421,9 +34626,10 @@ const SYLLABUS_DETAILS = {
                                 "Design and simulation of EMI filter TOTAL: + =  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3030": "name": "GRID INTEGRATION OF ELECTRIC VEHICLES COURSE OBJECTIVES:",
+        ]
+    },
+    "EE3030": {
+        "name": "GRID INTEGRATION OF ELECTRIC VEHICLES COURSE OBJECTIVES:",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -34692,9 +34898,10 @@ const SYLLABUS_DETAILS = {
                                 "(+ Skill)  Introduction - Machine to Machine (M2M) in distributed energy management systems - M2M communication for EVs - M2M communication architecture (3GPP) - Electric vehicle data logging Scalability of electric vehicles -M2M communication with scheduling."
                         ]
                 }
-        ],
-
-    "EE3031": "name": "INTELLIGENT CONTROL OF ELECTRIC VEHICLES COURSE OBJECTIVES:",
+        ]
+    },
+    "EE3031": {
+        "name": "INTELLIGENT CONTROL OF ELECTRIC VEHICLES COURSE OBJECTIVES:",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -35067,9 +35274,10 @@ const SYLLABUS_DETAILS = {
                                 "Fuzzy logic control of BLDC motor using FPGA in real time TOTAL: + =  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3032": "name": "ENERGY STORAGE SYSTEMS LT P C",
+        ]
+    },
+    "EE3032": {
+        "name": "ENERGY STORAGE SYSTEMS LT P C",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -35160,9 +35368,10 @@ const SYLLABUS_DETAILS = {
                                 "techno-economic analysis of different types of storage systems"
                         ]
                 }
-        ],
-
-    "EE3033": "name": "HYBRID ENERGY TECHNOLOGY LT P C",
+        ]
+    },
+    "EE3033": {
+        "name": "HYBRID ENERGY TECHNOLOGY LT P C",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -35578,9 +35787,10 @@ const SYLLABUS_DETAILS = {
                                 "Biomass-Diesel-Fuel-cell systems."
                         ]
                 }
-        ],
-
-    "EE3034": "name": "DESIGN AND MODELLING OF RENEWABLE ENERGY SYSTEMS",
+        ]
+    },
+    "EE3034": {
+        "name": "DESIGN AND MODELLING OF RENEWABLE ENERGY SYSTEMS",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -35662,9 +35872,10 @@ const SYLLABUS_DETAILS = {
                                 "modelling of Doubly-fed Induction Generator."
                         ]
                 }
-        ],
-
-    "EE3035": "name": "GRID INTEGRATING TECHNIQUES AND CHALLENGES LTPC",
+        ]
+    },
+    "EE3035": {
+        "name": "GRID INTEGRATING TECHNIQUES AND CHALLENGES LTPC",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -35759,9 +35970,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL: + =  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3036": "name": "PO6 PO7",
+        ]
+    },
+    "EE3036": {
+        "name": "PO6 PO7",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -36045,9 +36257,10 @@ const SYLLABUS_DETAILS = {
                                 "Major applications and standards 201"
                         ]
                 }
-        ],
-
-    "EE3037": "name": "PO4 PO5",
+        ]
+    },
+    "EE3037": {
+        "name": "PO4 PO5",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -36135,9 +36348,10 @@ const SYLLABUS_DETAILS = {
                                 "The short line and kilometric fault - distribution of voltages in a power system - Line dropping and load rejection - voltage transients on closing and reclosing lines - overvoltage induced by faults switching surges on integrated system Qualitative application of EMTP for transient computation."
                         ]
                 }
-        ],
-
-    "EE3251": "name": "ELECTRIC CIRCUIT ANALYSIS COURSE OBJECTIVES:",
+        ]
+    },
+    "EE3251": {
+        "name": "ELECTRIC CIRCUIT ANALYSIS COURSE OBJECTIVES:",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -36230,9 +36444,10 @@ const SYLLABUS_DETAILS = {
                                 "balanced and unbalanced \u2013 phasor diagram of voltages and currents \u2013 power measurement in three phase circuits\u2013 Power Factor Calculations. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3271": "name": "PO2 PO3",
+        ]
+    },
+    "EE3271": {
+        "name": "PO2 PO3",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -36382,9 +36597,10 @@ const SYLLABUS_DETAILS = {
                                 "recommendations) talking about electrical devices-describing controlling actions- Writing: job application( Cover letter + Curriculum vitae)-writing recommendations.  making TOTAL:  PERIODS LEARNING"
                         ]
                 }
-        ],
-
-    "EE3301": "name": "ELECTROMAGNETIC FIELDS LTPC",
+        ]
+    },
+    "EE3301": {
+        "name": "ELECTROMAGNETIC FIELDS LTPC",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -36479,9 +36695,10 @@ const SYLLABUS_DETAILS = {
                                 "conductors- skin depth Poynting vector \u2013 Plane wave reflection and refraction. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3302": "name": "1.4 DIGITAL LOGIC CIRCUITS",
+        ]
+    },
+    "EE3302": {
+        "name": "1.4 DIGITAL LOGIC CIRCUITS",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -36714,9 +36931,10 @@ const SYLLABUS_DETAILS = {
                                 "(Simulation /Tutorial Examples: adders, counters, flip flops, Multiplexers & De multiplexers)"
                         ]
                 }
-        ],
-
-    "EE3303": "name": "PO2 PO3",
+        ]
+    },
+    "EE3303": {
+        "name": "PO2 PO3",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -36909,9 +37127,10 @@ const SYLLABUS_DETAILS = {
                                 "Three Phase Transformer- Construction, types of connections and their comparative features, Scott connection, applications of Scott connection"
                         ]
                 }
-        ],
-
-    "EE3311": "name": "2.7 1.5",
+        ]
+    },
+    "EE3311": {
+        "name": "2.7 1.5",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -37229,9 +37448,10 @@ const SYLLABUS_DETAILS = {
                         "title": "Zero waste and R concept, Circul",
                         "topics": []
                 }
-        ],
-
-    "EE3401": "name": "PS03 1.8",
+        ]
+    },
+    "EE3401": {
+        "name": "PS03 1.8",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -37492,9 +37712,10 @@ const SYLLABUS_DETAILS = {
                                 "HVDC and FACTS (Qualitative treatment only). TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3402": "name": "PO3 PO4 PO5 P06 P07 PSOs",
+        ]
+    },
+    "EE3402": {
+        "name": "PO3 PO4 PO5 P06 P07 PSOs",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -37597,9 +37818,10 @@ const SYLLABUS_DETAILS = {
                                 "switching regulator- SMPS - ICL 8038 function generator IC."
                         ]
                 }
-        ],
-
-    "EE3403": "name": "PO2 PO3",
+        ]
+    },
+    "EE3403": {
+        "name": "PO2 PO3",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -37687,9 +37909,10 @@ const SYLLABUS_DETAILS = {
                                 "frequency and phase - D/A converters: types and characteristics- DSO- Data Loggers \u2013 Basics of PLC programming and Introduction to Virtual Instrumentation - Instrument standards.  TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3404": "name": "PO2 PO3",
+        ]
+    },
+    "EE3404": {
+        "name": "PO2 PO3",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -37960,9 +38183,10 @@ const SYLLABUS_DETAILS = {
                                 "Memory organization \u2013 Addressing modes \u2013 Instruction set Programming techniques \u2013 Timers \u2013 I/O ports \u2013 Interrupt programming. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3405": "name": "PO5 P06",
+        ]
+    },
+    "EE3405": {
+        "name": "PO5 P06",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -38046,9 +38270,10 @@ const SYLLABUS_DETAILS = {
                                 "Constructional details of single phase induction motor \u2013 Double field revolving theory and operation \u2013 Equivalent circuit \u2013 No load and blocked rotor test \u2013 Performance analysis \u2013 Starting methods of single-phase induction motors \u2013 Capacitor-start capacitor run Induction motor- Shaded pole induction motor - Linear induction motor \u2013 Repulsion motor - Hysteresis motor - AC series motor- Servo motorsStepper motors - introduction to magnetic levitation systems. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3411": "name": "ELECTRICAL MACHINES LABORATORY - II LTPC",
+        ]
+    },
+    "EE3411": {
+        "name": "ELECTRICAL MACHINES LABORATORY - II LTPC",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -38287,9 +38512,10 @@ const SYLLABUS_DETAILS = {
                                 "Multi-machine stability analysis \u2013 modified Euler method."
                         ]
                 }
-        ],
-
-    "EE3412": "name": "LINEAR AND DIGITAL CIRCUITS LABORATORY LTPC",
+        ]
+    },
+    "EE3412": {
+        "name": "LINEAR AND DIGITAL CIRCUITS LABORATORY LTPC",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -38782,9 +39008,10 @@ const SYLLABUS_DETAILS = {
                                 "Multi-machine stability analysis \u2013 modified Euler method."
                         ]
                 }
-        ],
-
-    "EE3413": "name": "MICROPROCESSOR AND MICROCONTROLLER LABORATORY LTPC",
+        ]
+    },
+    "EE3413": {
+        "name": "MICROPROCESSOR AND MICROCONTROLLER LABORATORY LTPC",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -39082,9 +39309,10 @@ const SYLLABUS_DETAILS = {
                                 "Multi-machine stability analysis \u2013 modified Euler method."
                         ]
                 }
-        ],
-
-    "EE3501": "name": "PO2 PO3",
+        ]
+    },
+    "EE3501": {
+        "name": "PO2 PO3",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -39167,9 +39395,10 @@ const SYLLABUS_DETAILS = {
                                 "Multi-machine stability analysis \u2013 modified Euler method."
                         ]
                 }
-        ],
-
-    "EE3503": "name": "PO5 PSOs",
+        ]
+    },
+    "EE3503": {
+        "name": "PO5 PSOs",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -39252,9 +39481,10 @@ const SYLLABUS_DETAILS = {
                                 "Lag and Lag-lead compensators using Root locus and Bode plot techniques \u2013PID controller - Design using reaction curve and Ziegler-Nichols technique- PID control in State Feedback form. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3511": "name": "POWER ELECTRONICS LABORATORY LTPC",
+        ]
+    },
+    "EE3511": {
+        "name": "POWER ELECTRONICS LABORATORY LTPC",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -39730,9 +39960,10 @@ const SYLLABUS_DETAILS = {
                                 "SF6 and vacuum circuit breakers \u2013 comparison of different circuit breakers \u2013 HVDC Breaker."
                         ]
                 }
-        ],
-
-    "EE3512": "name": "CONTROL AND INSTRUMENTATION LABORATORY LT P C",
+        ]
+    },
+    "EE3512": {
+        "name": "CONTROL AND INSTRUMENTATION LABORATORY LT P C",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -40016,9 +40247,10 @@ const SYLLABUS_DETAILS = {
                                 "SF6 and vacuum circuit breakers \u2013 comparison of different circuit breakers \u2013 HVDC Breaker."
                         ]
                 }
-        ],
-
-    "EE3591": "name": "POWER ELECTRONICS LT P C",
+        ]
+    },
+    "EE3591": {
+        "name": "POWER ELECTRONICS LT P C",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -40117,9 +40349,10 @@ const SYLLABUS_DETAILS = {
                                 "TRIAC based phase controllers - various configurations for SCR based single and three phase controllers. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3601": "name": "PROTECTION AND SWITCHGEAR T P",
+        ]
+    },
+    "EE3601": {
+        "name": "PROTECTION AND SWITCHGEAR T P",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -40208,9 +40441,10 @@ const SYLLABUS_DETAILS = {
                                 "SF6 and vacuum circuit breakers \u2013 comparison of different circuit breakers \u2013 HVDC Breaker."
                         ]
                 }
-        ],
-
-    "EE3602": "name": "POWER SYSTEM OPERATION AND CONTROL LTPC",
+        ]
+    },
+    "EE3602": {
+        "name": "POWER SYSTEM OPERATION AND CONTROL LTPC",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -40360,9 +40594,10 @@ const SYLLABUS_DETAILS = {
                                 "Data acquisition and controls \u2013 System hardware configurations \u2013 SCADA and EMS functions \u2013 State estimation \u2013 Measurements and errors \u2013 Weighted least square estimation \u2013 Various operating states \u2013 State transition diagram. TOTAL:  PERIODS 107"
                         ]
                 }
-        ],
-
-    "EE3611": "name": "POWER SYSTEM LABORATORY 1.5",
+        ]
+    },
+    "EE3611": {
+        "name": "POWER SYSTEM LABORATORY 1.5",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -40596,9 +40831,10 @@ const SYLLABUS_DETAILS = {
                                 "propulsion \u2013 Ozone generation \u2013 Biomedical applications. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3701": "name": "HIGH VOLTAGE ENGINEERING L T P C",
+        ]
+    },
+    "EE3701": {
+        "name": "HIGH VOLTAGE ENGINEERING L T P C",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -40688,9 +40924,10 @@ const SYLLABUS_DETAILS = {
                                 "propulsion \u2013 Ozone generation \u2013 Biomedical applications. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "EE3811": "name": "PROJECT WORK / INTERNSHIP COURSE OBJECTIVES:",
+        ]
+    },
+    "EE3811": {
+        "name": "PROJECT WORK / INTERNSHIP COURSE OBJECTIVES:",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -40853,9 +41090,10 @@ const SYLLABUS_DETAILS = {
                                 "Power requirement for different domestic appliances"
                         ]
                 }
-        ],
-
-    "ET3491": "name": "EMBEDDED SYSTEMS AND IOT DESIGN LTPC",
+        ]
+    },
+    "ET3491": {
+        "name": "EMBEDDED SYSTEMS AND IOT DESIGN LTPC",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -40997,9 +41235,10 @@ const SYLLABUS_DETAILS = {
                                 "Miniprojects for IoT Garbage Segregator and Bin Level Indicator Colour based Product Sorting Image Processing based Fire Detection Vehicle Number Plate Detection Smart Lock System TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "FT3201": "name": "Knitting and nonwove",
+        ]
+    },
+    "FT3201": {
+        "name": "Knitting and nonwove",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -41074,9 +41313,10 @@ const SYLLABUS_DETAILS = {
                                 "metallic fibres \u2013 Gold and Silver coated."
                         ]
                 }
-        ],
-
-    "GE3151": "name": "PROBLEM SOLVING AND PYTHON PROGRAMMING L T P C",
+        ]
+    },
+    "GE3151": {
+        "name": "PROBLEM SOLVING AND PYTHON PROGRAMMING L T P C",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -41167,9 +41407,10 @@ const SYLLABUS_DETAILS = {
                                 "Marks range validation (-100)."
                         ]
                 }
-        ],
-
-    "GE3152": "name": "HERITAGE OF TAMILS L T P C",
+        ]
+    },
+    "GE3152": {
+        "name": "HERITAGE OF TAMILS L T P C",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -41245,9 +41486,10 @@ const SYLLABUS_DETAILS = {
                                 "CULTURE Contribution of Tamils to Indian Freedom Struggle - The Cultural Influence of Tamils over the other parts of India \u2013 Self-Respect Movement - Role of Siddha Medicine in Indigenous Systems of Medicine \u2013 Inscriptions & Manuscripts \u2013 Print History of Tamil Books."
                         ]
                 }
-        ],
-
-    "GE3171": "name": "PROBLEM SOLVING AND PYTHON PROGRAMMING LABORATORY L T PC",
+        ]
+    },
+    "GE3171": {
+        "name": "PROBLEM SOLVING AND PYTHON PROGRAMMING LABORATORY L T PC",
         "regulation": "R2025",
         "department": "CSE(Data Science)",
         "credits": 3,
@@ -41394,9 +41636,10 @@ const SYLLABUS_DETAILS = {
                                 "Speaking: describing things relatively-describing clothing-discussing safety issues( making recommendations) talking about electrical devices-describing controlling actions- Writing: job application( Cover letter + Curriculum vitae)-writing recommendations. TOTAL:  PERIODS LEARNING"
                         ]
                 }
-        ],
-
-    "GE3172": "name": "ENGLISH LABORATORY L T P C",
+        ]
+    },
+    "GE3172": {
+        "name": "ENGLISH LABORATORY L T P C",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -41487,9 +41730,10 @@ const SYLLABUS_DETAILS = {
                                 "Listening \u2013 Listening to debates/ discussions; different viewpoints on an issue; and panel discussions. Speaking \u2013making predictions- talking about a given topic-giving opinionsunderstanding a website-describing processes"
                         ]
                 }
-        ],
-
-    "GE3251": "name": "ENGINEERING GRAPHICS L T P C",
+        ]
+    },
+    "GE3251": {
+        "name": "ENGINEERING GRAPHICS L T P C",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -41700,9 +41944,10 @@ const SYLLABUS_DETAILS = {
                                 "isometric projections of simple solids and truncated solids - Prisms, pyramids, cylinders, cones- combination of two solid objects in simple vertical positions - Perspective projection of simple solids - Prisms, pyramids and cylinders by visual ray method.  Practicing three dimensional modeling of isometric projection of simple objects by CAD Software (Not for examination) TOTAL: (L=+P=)  PERIODS"
                         ]
                 }
-        ],
-
-    "GE3252": "name": "TAMILS AND TECHNOLOGY L T PC",
+        ]
+    },
+    "GE3252": {
+        "name": "TAMILS AND TECHNOLOGY L T PC",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -41749,9 +41994,10 @@ const SYLLABUS_DETAILS = {
                                 "Development of Scientific Tamil - Tamil computing \u2013 Digitalization of Tamil Books \u2013 Development of Tamil Software \u2013 Tamil Virtual Academy \u2013 Tamil Digital Library \u2013 Online Tamil Dictionaries \u2013 Sorkuvai Project."
                         ]
                 }
-        ],
-
-    "GE3271": "name": "ENGINEERING PRACTICES LABORATORY LTPC",
+        ]
+    },
+    "GE3271": {
+        "name": "ENGINEERING PRACTICES LABORATORY LTPC",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -41964,9 +42210,10 @@ const SYLLABUS_DETAILS = {
                                 "Speaking: describing things relatively-describing clothing-discussing safety issues (making recommendations) talking about electrical devices-describing controlling actions- Writing: job application( Cover letter + Curriculum vitae)-writing recommendations. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "GE3272": "name": "COMMUNICATION LABORATORY LT P C",
+        ]
+    },
+    "GE3272": {
+        "name": "COMMUNICATION LABORATORY LT P C",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -42058,9 +42305,10 @@ const SYLLABUS_DETAILS = {
                                 "Speaking: describing things relatively-describing clothing-discussing safety issues (making recommendations) talking about electrical devices-describing controlling actions- Writing: job application( Cover letter + Curriculum vitae)-writing recommendations. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "GE3361": "name": "PROFESSIONAL DEVELOPMENT PSO\u2019s",
+        ]
+    },
+    "GE3361": {
+        "name": "PROFESSIONAL DEVELOPMENT PSO\u2019s",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -42354,9 +42602,10 @@ const SYLLABUS_DETAILS = {
                                 "Unsolvable Problems and Computable Functions \u2013PCP-MPCP- Recursive and recursively enumerable languages \u2013 Properties - Universal Turing machine -Tractable and Intractable problems  - P and NP completeness \u2013 Kruskal\u2019s algorithm \u2013 Travelling Salesman Problem- -CNF SAT problems."
                         ]
                 }
-        ],
-
-    "GE3451": "name": "PSO\u2019s ENVIRONMENTAL SCIENCES AND SUSTAINABILITY",
+        ]
+    },
+    "GE3451": {
+        "name": "PSO\u2019s ENVIRONMENTAL SCIENCES AND SUSTAINABILITY",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -42480,9 +42729,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "GE3751": "name": "PRINCIPLES OF MANAGEMENT L T P C",
+        ]
+    },
+    "GE3751": {
+        "name": "PRINCIPLES OF MANAGEMENT L T P C",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -42560,9 +42810,10 @@ const SYLLABUS_DETAILS = {
                                 "System and process of controlling \u2013 Budgetary and non - Budgetary control techniques \u2013 Use of computers and IT in Management control \u2013 Productivity problems and management \u2013 Control and performance \u2013 Direct and preventive control \u2013 Reporting. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "GE3752": "name": "TOTAL QUALITY MANAGEMENT PSO\u2019s",
+        ]
+    },
+    "GE3752": {
+        "name": "TOTAL QUALITY MANAGEMENT PSO\u2019s",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -42651,9 +42902,10 @@ const SYLLABUS_DETAILS = {
                                 "Requirements of ISO 14001-Benefits of EMS. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "GE3753": "name": "ENGINEERING ECONOMICS AND FINANCIAL ACCOUNTING LTPC",
+        ]
+    },
+    "GE3753": {
+        "name": "ENGINEERING ECONOMICS AND FINANCIAL ACCOUNTING LTPC",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -42743,9 +42995,10 @@ const SYLLABUS_DETAILS = {
                                 "Investments - Risks and return evaluation of investment decision - Average rate of return - Payback Period - Net Present Value - Internal rate of return. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "GE3754": "name": "HUMAN RESOURCE MANAGEMENT PSO\u2019s",
+        ]
+    },
+    "GE3754": {
+        "name": "HUMAN RESOURCE MANAGEMENT PSO\u2019s",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -42823,9 +43076,10 @@ const SYLLABUS_DETAILS = {
                                 "Performance evaluation \u2013 Feedback - The control process \u2013 Importance \u2013 Methods \u2013 grievances \u2013 Causes \u2013 Redressal methods. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "GE3755": "name": "KNOWLEDGE MANAGEMENT COURSE OBJECTIVES:",
+        ]
+    },
+    "GE3755": {
+        "name": "KNOWLEDGE MANAGEMENT COURSE OBJECTIVES:",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -42906,9 +43160,10 @@ const SYLLABUS_DETAILS = {
                                 "Advanced topics and case studies in knowledge management - Development of a knowledge management map/plan that is integrated with an organization's strategic and business plan - A case study on Corporate Memories for supporting various aspects in the process life -cycles of an organization. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "GE3791": "name": "HUMAN VALUES AND ETHICS LT P C",
+        ]
+    },
+    "GE3791": {
+        "name": "HUMAN VALUES AND ETHICS LT P C",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -43175,9 +43430,10 @@ const SYLLABUS_DETAILS = {
                                 "Almond and Sidney Verba, Princeton University Press, Research Methodology for Natural Sciences by Soumitro Banerjee, IISc Press, January 2022"
                         ]
                 }
-        ],
-
-    "GE3792": "name": "INDUSTRIAL MANAGEMENT COURSE OBJECTIVES",
+        ]
+    },
+    "GE3792": {
+        "name": "INDUSTRIAL MANAGEMENT COURSE OBJECTIVES",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -43335,9 +43591,10 @@ const SYLLABUS_DETAILS = {
                                 "Gender and social media"
                         ]
                 }
-        ],
-
-    "GI3391": "name": "Modern Tool Usage The Engineer and Society",
+        ]
+    },
+    "GI3391": {
+        "name": "Modern Tool Usage The Engineer and Society",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -43462,9 +43719,10 @@ const SYLLABUS_DETAILS = {
                                 "feature based matching - DEM and DSM - Satellite photogrammetry principles TOTAL: PERIODS"
                         ]
                 }
-        ],
-
-    "GI3491": "name": "CO2 CO3",
+        ]
+    },
+    "GI3491": {
+        "name": "CO2 CO3",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -43644,9 +43902,10 @@ const SYLLABUS_DETAILS = {
                                 "Thematic Accuracy and Lineage \u2013 Metadata \u2013 GIS Standards \u2013 Interoperability \u2013 OGC - Spatial Data Infrastructure \u2013 Data Output \u2013 Map Compilation \u2013 Chart / Graphs. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "GI3492": "name": "TOTAL STATION AND GPS SURVEYING LTPC",
+        ]
+    },
+    "GI3492": {
+        "name": "TOTAL STATION AND GPS SURVEYING LTPC",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -43975,9 +44234,10 @@ const SYLLABUS_DETAILS = {
                                 "Observation by Radiation, Lee frog and Trilateration measurement and processing -Topography mapping using PPK and RTK methods Total Station and GNSS applications TOTAL: PERIODS"
                         ]
                 }
-        ],
-
-    "GI3691": "name": "Graduate Attribute Engineering Knowledge",
+        ]
+    },
+    "GI3691": {
+        "name": "Graduate Attribute Engineering Knowledge",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -44284,9 +44544,10 @@ const SYLLABUS_DETAILS = {
                                 "Open Cast Mine Surveying TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "HS3152": "name": "PROFESSIONAL ENGLISH I LTPC",
+        ]
+    },
+    "HS3152": {
+        "name": "PROFESSIONAL ENGLISH I LTPC",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -44387,9 +44648,10 @@ const SYLLABUS_DETAILS = {
                                 "Vocabulary - Cause & Effect Expressions \u2013 Content vs Function words"
                         ]
                 }
-        ],
-
-    "HS3252": "name": "PROFESSIONAL ENGLISH - II L T P C",
+        ]
+    },
+    "HS3252": {
+        "name": "PROFESSIONAL ENGLISH - II L T P C",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -44489,9 +44751,10 @@ const SYLLABUS_DETAILS = {
                                 "Relative Clauses."
                         ]
                 }
-        ],
-
-    "ICL8038": "name": "adjustable voltage regulators - IC 723 general purpose regulator - Monolithic switching regulator, Low Drop \u2013 Out(LDO) Regulators - Switched capacitor filter IC MF10, Frequency to Voltage and",
+        ]
+    },
+    "ICL8038": {
+        "name": "adjustable voltage regulators - IC 723 general purpose regulator - Monolithic switching regulator, Low Drop \u2013 Out(LDO) Regulators - Switched capacitor filter IC MF10, Frequency to Voltage and",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -44608,9 +44871,10 @@ const SYLLABUS_DETAILS = {
                                 "Implement an Up-sampling and Down-sampling operation in DSP Processor"
                         ]
                 }
-        ],
-
-    "IE3491": "name": "OPERATIONS RESEARCH COURSE OBJECTIVES:",
+        ]
+    },
+    "IE3491": {
+        "name": "OPERATIONS RESEARCH COURSE OBJECTIVES:",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -44703,9 +44967,10 @@ const SYLLABUS_DETAILS = {
                                 "multi server- limited and unlimited queue capacity- limited and unlimited population \u2013limited and infinite queue length. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "IP3151": "name": "INDUCTION PROGRAMME This is a mandatory 2 week programme to be conducted as soon as the students enter the institution.",
+        ]
+    },
+    "IP3151": {
+        "name": "INDUCTION PROGRAMME This is a mandatory 2 week programme to be conducted as soon as the students enter the institution.",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -44806,9 +45071,10 @@ const SYLLABUS_DETAILS = {
                                 "Vocabulary - Cause & Effect Expressions \u2013 Content vs Function words"
                         ]
                 }
-        ],
-
-    "IS2500": "name": "standards. TOTAL: 45 PERIODS",
+        ]
+    },
+    "IS2500": {
+        "name": "standards. TOTAL: 45 PERIODS",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -44891,9 +45157,10 @@ const SYLLABUS_DETAILS = {
                                 "Safe Access - Requirement for Safe Work Platforms- Stairways - Gangways and Ramps-Fall Prevention & Fall Protection - Safety Belts - Safety nets - Fall Arrestors- Working on Fragile Roofs Work Permit Systems-Accident Case Studies."
                         ]
                 }
-        ],
-
-    "IT3401": "name": "WEB ESSENTIALS PSO\u2019s",
+        ]
+    },
+    "IT3401": {
+        "name": "WEB ESSENTIALS PSO\u2019s",
         "regulation": "R2025",
         "department": "IT",
         "credits": 3,
@@ -44975,9 +45242,10 @@ const SYLLABUS_DETAILS = {
                                 "Creation of personal Information System"
                         ]
                 }
-        ],
-
-    "IT3501": "name": "L T P C 3 0 0 3",
+        ]
+    },
+    "IT3501": {
+        "name": "L T P C 3 0 0 3",
         "regulation": "R2025",
         "department": "IT",
         "credits": 3,
@@ -45057,9 +45325,10 @@ const SYLLABUS_DETAILS = {
                                 "MERN STACK \u2013 Basic React applications \u2013 React Components \u2013 React State \u2013 Express REST APIs - Modularization and Webpack - Routing with React Router \u2013 Server-side rendering"
                         ]
                 }
-        ],
-
-    "IT3511": "name": "2.2 2.2",
+        ]
+    },
+    "IT3511": {
+        "name": "2.2 2.2",
         "regulation": "R2025",
         "department": "IT",
         "credits": 3,
@@ -45172,9 +45441,10 @@ const SYLLABUS_DETAILS = {
                                 "Software Project Management- Software Configuration Management - Project SchedulingDevOps: Motivation-Cloud as a platform-Operations- Deployment Pipeline:Overall Architecture Building and Testing-Deployment- Tools- Case Study"
                         ]
                 }
-        ],
-
-    "IT3681": "name": "MOBILE APPLICATIONS DEVELOPMENT LABORATORY COURSE OBJECTIVES:",
+        ]
+    },
+    "IT3681": {
+        "name": "MOBILE APPLICATIONS DEVELOPMENT LABORATORY COURSE OBJECTIVES:",
         "regulation": "R2025",
         "department": "IT",
         "credits": 3,
@@ -45385,9 +45655,10 @@ const SYLLABUS_DETAILS = {
                                 "Research Methodology for Natural Sciences by Soumitro Banerjee, IISc Press, January 2022"
                         ]
                 }
-        ],
-
-    "IT3711": "name": "SUMMER INTERNSHIP LTPC",
+        ]
+    },
+    "IT3711": {
+        "name": "SUMMER INTERNSHIP LTPC",
         "regulation": "R2025",
         "department": "IT",
         "credits": 3,
@@ -45618,9 +45889,10 @@ const SYLLABUS_DETAILS = {
                                 "Use a case study on a data set and apply the various EDA and visualization techniques and present an analysis report"
                         ]
                 }
-        ],
-
-    "IT3811": "name": "PROJECT WORK / INTERNSHIP L T P C",
+        ]
+    },
+    "IT3811": {
+        "name": "PROJECT WORK / INTERNSHIP L T P C",
         "regulation": "R2025",
         "department": "IT",
         "credits": 3,
@@ -45949,9 +46221,10 @@ const SYLLABUS_DETAILS = {
                                 "Use a case study on a data set and apply the various EDA and visualization techniques and present an analysis report"
                         ]
                 }
-        ],
-
-    "MA3151": "name": "MATRICES AND CALCULUS L T",
+        ]
+    },
+    "MA3151": {
+        "name": "MATRICES AND CALCULUS L T",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -46033,9 +46306,10 @@ const SYLLABUS_DETAILS = {
                                 "moment of inertia. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "MA3251": "name": "STATISTICS AND NUMERICAL METHODS L T P C",
+        ]
+    },
+    "MA3251": {
+        "name": "STATISTICS AND NUMERICAL METHODS L T P C",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -46131,9 +46405,10 @@ const SYLLABUS_DETAILS = {
                                 "+ Single step methods: Taylor\u2019s series method - Euler\u2019s method - Modified Euler\u2019s method - Fourth order Runge-Kutta method for solving first order differential equations - Multi step methods: Milne\u2019s and Adams - Bash forth predictor corrector methods for solving first order differential equations. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "MA3303": "name": "PROBABILITY AND COMPLEX FUNCTIONS L T P C",
+        ]
+    },
+    "MA3303": {
+        "name": "PROBABILITY AND COMPLEX FUNCTIONS L T P C",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -46234,9 +46509,10 @@ const SYLLABUS_DETAILS = {
                                 "+ Higher order linear differential equations with constant coefficients - Method of variation of parameters \u2013 Homogenous equation of Euler\u2019s and Legendre\u2019s type \u2013 System of simultaneous linear first order differential equations with constant coefficients - Method of undetermined coefficients. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "MA3351": "name": "TRANSFORMS AND PARTIAL DIFFERENTIAL EQUATIONS L T P C",
+        ]
+    },
+    "MA3351": {
+        "name": "TRANSFORMS AND PARTIAL DIFFERENTIAL EQUATIONS L T P C",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -46329,9 +46605,10 @@ const SYLLABUS_DETAILS = {
                                 "+ Z-transforms - Elementary properties \u2013 Convergence of Z-transforms - \u2013 Initial and final value theorems - Inverse Z-transform using partial fraction and convolution theorem - Formation of difference equations \u2013 Solution of difference equations using Z - transforms. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "MA3354": "name": "DISCRETE MATHEMATICS L T P C",
+        ]
+    },
+    "MA3354": {
+        "name": "DISCRETE MATHEMATICS L T P C",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -46416,9 +46693,10 @@ const SYLLABUS_DETAILS = {
                                 "Partial ordering \u2013 Posets \u2013 Lattices as posets \u2013 Properties of lattices - Lattices as algebraic systems \u2013 Sub lattices \u2013 Direct product and homomorphism \u2013 Some special lattices \u2013 Boolean algebra \u2013 Sub Boolean Algebra \u2013 Boolean Homomorphism. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "MA3355": "name": "RANDOM PROCESSES AND LINEAR ALGEBRA L T PC",
+        ]
+    },
+    "MA3355": {
+        "name": "RANDOM PROCESSES AND LINEAR ALGEBRA L T PC",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -46648,9 +46926,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS SKILL DEVELOPMENT ACTIVITIES (Group Seminar/Mini Project/Assignment/Content Preparation / Quiz/ Surprise Test / Solving GATE questions/ etc)"
                         ]
                 }
-        ],
-
-    "MA3391": "name": "PROBABILITY AND STATISTICS LTPC",
+        ]
+    },
+    "MA3391": {
+        "name": "PROBABILITY AND STATISTICS LTPC",
         "regulation": "R2025",
         "department": "CSE(Data Science)",
         "credits": 3,
@@ -46751,9 +47030,10 @@ const SYLLABUS_DETAILS = {
                                 "c and np charts) \u2013 Tolerance limits - Acceptance sampling. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "MA3402": "name": "MATHEMATICAL FOUNDATIONS FOR DATA SCIENCE L T P C",
+        ]
+    },
+    "MA3402": {
+        "name": "MATHEMATICAL FOUNDATIONS FOR DATA SCIENCE L T P C",
         "regulation": "R2025",
         "department": "CSE(Data Science)",
         "credits": 3,
@@ -46836,9 +47116,10 @@ const SYLLABUS_DETAILS = {
                                 "Singular Vectors - Singular Value Decomposition (SVD)- Best Rank-k Approximations -Left Singular Vectors-Power Method for Singular Value Decomposition- Applications of Singular Value Decomposition Suggested Activities Exploring the Singular Value Decomposition Application of Singular Value Decomposition Suggested Evaluation Methods Assignments on Singular Value Decomposition Tutorials on Best Rank-k Approximations TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "ME3351": "name": "ENGINEERING MECHANICS PSO",
+        ]
+    },
+    "ME3351": {
+        "name": "ENGINEERING MECHANICS PSO",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -46980,9 +47261,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "ME3382": "name": "MANUFACTURING TECHNOLOGY LABORATORY PSO",
+        ]
+    },
+    "ME3382": {
+        "name": "MANUFACTURING TECHNOLOGY LABORATORY PSO",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -47180,9 +47462,10 @@ const SYLLABUS_DETAILS = {
                                 "Aniline point apparatus -Ash content testing equipment - specifications of fuels. ASTM and SAE standards - FTIR- GCMS analysers TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "ME3393": "name": "MANUFACTURING PROCESSES COURSE OBJECTIVES:",
+        ]
+    },
+    "ME3393": {
+        "name": "MANUFACTURING PROCESSES COURSE OBJECTIVES:",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -47270,9 +47553,10 @@ const SYLLABUS_DETAILS = {
                                 "Transfer Molding \u2013 Typical industrial applications \u2013 introduction to blow molding \u2013 Rotational molding \u2013 Film blowing \u2013 Extrusion \u2013 Thermoforming \u2013 Bonding of Thermoplastics- duff moulding."
                         ]
                 }
-        ],
-
-    "ME3492": "name": "HYDRAULICS AND PNEUMATICS COURSE OBJECTIVES:",
+        ]
+    },
+    "ME3492": {
+        "name": "HYDRAULICS AND PNEUMATICS COURSE OBJECTIVES:",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -47354,9 +47638,10 @@ const SYLLABUS_DETAILS = {
                                 "Nano indentation \u2013 Types of nanoindenter \u2013 Force actuation-Displacement measurement- factors affecting nanoindentation- Different models for calculation of E and hardness- Atomic force microscope (AFM) cantilever dynamics\u2013Electrostatic force mode (EFM) \u2013 Magnetic force mode (MFM) TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "MF3003": "name": "REVERSE ENGINEERING LTPC",
+        ]
+    },
+    "MF3003": {
+        "name": "REVERSE ENGINEERING LTPC",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -47464,9 +47749,10 @@ const SYLLABUS_DETAILS = {
                                 "Legality: Patent \u2013 Copyrights \u2013Trade Secret \u2013 Third-Party Materials"
                         ]
                 }
-        ],
-
-    "MF3010": "name": "MICRO AND PRECISION ENGINEERING COURSE OBJECTIVES:",
+        ]
+    },
+    "MF3010": {
+        "name": "MICRO AND PRECISION ENGINEERING COURSE OBJECTIVES:",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -47548,9 +47834,10 @@ const SYLLABUS_DETAILS = {
                                 "Metrology for micro systems - Surface integrity and its characterization."
                         ]
                 }
-        ],
-
-    "ML3391": "name": "MECHANICS OF SOLIDS PSO",
+        ]
+    },
+    "ML3391": {
+        "name": "MECHANICS OF SOLIDS PSO",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -47652,9 +47939,10 @@ const SYLLABUS_DETAILS = {
                                 "circumferential and longitudinal stresses and deformation in thin cylinders \u2013 spherical shells subjected to internal pressure \u2013 Deformation in spherical shells \u2013 Lame\u2019s theory \u2013 Application of theories of failure \u2013 Stresses on inclined planes \u2013principal stresses and principal planes \u2013 Mohr\u2019s circle of stress. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "MV3501": "name": "MARINE PROPULSION LT PC",
+        ]
+    },
+    "MV3501": {
+        "name": "MARINE PROPULSION LT PC",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -47745,9 +48033,10 @@ const SYLLABUS_DETAILS = {
                                 "Basic construction of Rudder TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "MX3081": "name": "INTRODUCTION TO WOMEN AND GENDER STUDIES LTPC",
+        ]
+    },
+    "MX3081": {
+        "name": "INTRODUCTION TO WOMEN AND GENDER STUDIES LTPC",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -47809,9 +48098,10 @@ const SYLLABUS_DETAILS = {
                                 "Gender and social media"
                         ]
                 }
-        ],
-
-    "MX3082": "name": "ELEMENTS OF LITERATURE LTPC",
+        ]
+    },
+    "MX3082": {
+        "name": "ELEMENTS OF LITERATURE LTPC",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -47883,9 +48173,10 @@ const SYLLABUS_DETAILS = {
                                 "Space Based Inputs for Disaster Mitigation and Management and field works related to disaster management.- Field work-Mock drill"
                         ]
                 }
-        ],
-
-    "MX3083": "name": "FILM APPRECIATION LT PC",
+        ]
+    },
+    "MX3083": {
+        "name": "FILM APPRECIATION LT PC",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -47957,9 +48248,10 @@ const SYLLABUS_DETAILS = {
                                 "Space Based Inputs for Disaster Mitigation and Management and field works related to disaster management.- Field work-Mock drill"
                         ]
                 }
-        ],
-
-    "MX3084": "name": "DISASTER RISK REDUCTION AND MANAGEMENT LTPC",
+        ]
+    },
+    "MX3084": {
+        "name": "DISASTER RISK REDUCTION AND MANAGEMENT LTPC",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -48031,9 +48323,10 @@ const SYLLABUS_DETAILS = {
                                 "Space Based Inputs for Disaster Mitigation and Management and field works related to disaster management.- Field work-Mock drill"
                         ]
                 }
-        ],
-
-    "MX3085": "name": "WELL-BEING WITH TRADITIONAL PRACTICES-YOGA, AYURVEDA AND SIDDHA",
+        ]
+    },
+    "MX3085": {
+        "name": "WELL-BEING WITH TRADITIONAL PRACTICES-YOGA, AYURVEDA AND SIDDHA",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -48100,9 +48393,10 @@ const SYLLABUS_DETAILS = {
                                 "+ Types of yoga How to Choose the Right Kind for individuals Definition and importance of yoga according to their age - The Eight Limbs of Yoga - Simple yogasanas for cure and prevention of health disorders - What yoga can bring to our life."
                         ]
                 }
-        ],
-
-    "MX3086": "name": "HISTORY OF SCIENCE AND TECHNOLOGY IN INDIA LT PC",
+        ]
+    },
+    "MX3086": {
+        "name": "HISTORY OF SCIENCE AND TECHNOLOGY IN INDIA LT PC",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -48244,9 +48538,10 @@ const SYLLABUS_DETAILS = {
                                 "Technology and Development discourse Shaping of the Science and Technology Policy Developments in the field of Science and Technology Science and technology in globalizing India Social implications of new technologies like the Information Technology and Biotechnology"
                         ]
                 }
-        ],
-
-    "MX3087": "name": "POLITICAL AND ECONOMIC THOUGHT FOR A HUMANE SOCIETY Pre-Requisite: None. (Desirable: Universal Human Values 1, Universal Human Values 2)",
+        ]
+    },
+    "MX3087": {
+        "name": "POLITICAL AND ECONOMIC THOUGHT FOR A HUMANE SOCIETY Pre-Requisite: None. (Desirable: Universal Human Values 1, Universal Human Values 2)",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -48476,9 +48771,10 @@ const SYLLABUS_DETAILS = {
                                 "Job Safety Analysis-Preliminary Hazard Analysis-Failure mode and Effects Analysis- Hazard and Operability- Fault Tree Analysis- Event Tree Analysis Qualitative and Quantitative Risk AssessmentChecklist Analysis- Root cause analysis- What-If Analysis- and Hazard Identification and Risk Assessment"
                         ]
                 }
-        ],
-
-    "MX3088": "name": "STATE, NATION BUILDING AND POLITICS IN INDIA LT PC",
+        ]
+    },
+    "MX3088": {
+        "name": "STATE, NATION BUILDING AND POLITICS IN INDIA LT PC",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -48629,9 +48925,10 @@ const SYLLABUS_DETAILS = {
                                 "Job Safety Analysis-Preliminary Hazard Analysis-Failure mode and Effects Analysis- Hazard and Operability- Fault Tree Analysis- Event Tree Analysis Qualitative and Quantitative Risk AssessmentChecklist Analysis- Root cause analysis- What-If Analysis- and Hazard Identification and Risk Assessment"
                         ]
                 }
-        ],
-
-    "MX3089": "name": "INDUSTRIAL SAFETY L T PC",
+        ]
+    },
+    "MX3089": {
+        "name": "INDUSTRIAL SAFETY L T PC",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -48782,9 +49079,10 @@ const SYLLABUS_DETAILS = {
                                 "Job Safety Analysis-Preliminary Hazard Analysis-Failure mode and Effects Analysis- Hazard and Operability- Fault Tree Analysis- Event Tree Analysis Qualitative and Quantitative Risk AssessmentChecklist Analysis- Root cause analysis- What-If Analysis- and Hazard Identification and Risk Assessment"
                         ]
                 }
-        ],
-
-    "NX3251": "name": "(ARMY WING) NCC Credit Course Level - I NCC GENERAL",
+        ]
+    },
+    "NX3251": {
+        "name": "(ARMY WING) NCC Credit Course Level - I NCC GENERAL",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -48910,9 +49208,10 @@ const SYLLABUS_DETAILS = {
                                 "Development of Scientific Tamil - Tamil computing \u2013 Digitalization of Tamil Books \u2013 Development of Tamil Software \u2013 Tamil Virtual Academy \u2013 Tamil Digital Library \u2013 Online Tamil Dictionaries \u2013 Sorkuvai Project."
                         ]
                 }
-        ],
-
-    "NX3252": "name": "NCC GENERAL NCC 1",
+        ]
+    },
+    "NX3252": {
+        "name": "NCC GENERAL NCC 1",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -49153,9 +49452,10 @@ const SYLLABUS_DETAILS = {
                                 "Speaking: describing things relatively-describing clothing-discussing safety issues( making recommendations) talking about electrical devices-describing controlling actions- Writing: job application( Cover letter + Curriculum vitae)-writing recommendations. TOTAL:  PERIODS LEARNING"
                         ]
                 }
-        ],
-
-    "NX3253": "name": "NCC Credit Course Level 1* (AIR FORCE WING)",
+        ]
+    },
+    "NX3253": {
+        "name": "NCC Credit Course Level 1* (AIR FORCE WING)",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -49393,9 +49693,10 @@ const SYLLABUS_DETAILS = {
                                 "Speaking: describing things relatively-describing clothing-discussing safety issues (making recommendations) talking about electrical devices-describing controlling actions- Writing: job application( Cover letter + Curriculum vitae)-writing recommendations. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "NX3451": "name": "1.8 NCC Credit Course Level 2*",
+        ]
+    },
+    "NX3451": {
+        "name": "1.8 NCC Credit Course Level 2*",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -49560,9 +49861,10 @@ const SYLLABUS_DETAILS = {
                                 "Data Link Layer \u2013 Framing \u2013 Flow control \u2013 Error control \u2013 Data-Link Layer Protocols \u2013 HDLC \u2013 PPP - Media Access Control \u2013 Ethernet Basics \u2013 CSMA/CD \u2013 Virtual LAN \u2013 Wireless LAN (802."
                         ]
                 }
-        ],
-
-    "NX3452": "name": "(NAVAL WING) NCC Credit Course Level - II LTPC",
+        ]
+    },
+    "NX3452": {
+        "name": "(NAVAL WING) NCC Credit Course Level - II LTPC",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -49753,9 +50055,10 @@ const SYLLABUS_DETAILS = {
                                 "Simulation of an error correction code (like CRC)"
                         ]
                 }
-        ],
-
-    "NX3453": "name": "NCC Credit Course Level 2* (AIR FORCE WING) NCC Credit Course Level - II",
+        ]
+    },
+    "NX3453": {
+        "name": "NCC Credit Course Level 2* (AIR FORCE WING) NCC Credit Course Level - II",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -49946,9 +50249,10 @@ const SYLLABUS_DETAILS = {
                                 "Simulation of an error correction code (like CRC)"
                         ]
                 }
-        ],
-
-    "NX3651": "name": "NCC Credit Course Level 3* (ARMY WING) NCC Credit Course - III",
+        ]
+    },
+    "NX3651": {
+        "name": "NCC Credit Course Level 3* (ARMY WING) NCC Credit Course - III",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -50215,9 +50519,10 @@ const SYLLABUS_DETAILS = {
                                 "Almond and Sidney Verba, Princeton University Press, Research Methodology for Natural Sciences by Soumitro Banerjee, IISc Press, January 2022"
                         ]
                 }
-        ],
-
-    "NX3652": "name": "NCC Credit Course Level 3* (NAVAL WING) NCC Credit Course - III",
+        ]
+    },
+    "NX3652": {
+        "name": "NCC Credit Course Level 3* (NAVAL WING) NCC Credit Course - III",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -50484,9 +50789,10 @@ const SYLLABUS_DETAILS = {
                                 "Almond and Sidney Verba, Princeton University Press, Research Methodology for Natural Sciences by Soumitro Banerjee, IISc Press, January 2022"
                         ]
                 }
-        ],
-
-    "NX3653": "name": "(AIR FORCE WING) NCC Credit Course Level - III LTPC",
+        ]
+    },
+    "NX3653": {
+        "name": "(AIR FORCE WING) NCC Credit Course Level - III LTPC",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -50753,9 +51059,10 @@ const SYLLABUS_DETAILS = {
                                 "Almond and Sidney Verba, Princeton University Press, Research Methodology for Natural Sciences by Soumitro Banerjee, IISc Press, January 2022"
                         ]
                 }
-        ],
-
-    "PH3151": "name": "ENGINEERING PHYSICS L T P C",
+        ]
+    },
+    "PH3151": {
+        "name": "ENGINEERING PHYSICS L T P C",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -50842,9 +51149,10 @@ const SYLLABUS_DETAILS = {
                                 "The harmonic oscillator(qualitative)- Barrier penetration and quantum tunneling(qualitative)Tunneling microscope - Resonant diode - Finite potential wells (qualitative)- Bloch\u2019s theorem for particles in a periodic potential \u2013Basics of Kronig-Penney model and origin of energy bands."
                         ]
                 }
-        ],
-
-    "PH3201": "name": "PHYSICS FOR CIVIL ENGINEERING L T PC",
+        ]
+    },
+    "PH3201": {
+        "name": "PHYSICS FOR CIVIL ENGINEERING L T PC",
         "regulation": "R2021",
         "department": "BE.Civil.pdf regulation 2021",
         "credits": 3,
@@ -50937,9 +51245,10 @@ const SYLLABUS_DETAILS = {
                                 "fire safety regulations and firefighting equipment - Prevention and safety measures. TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "PH3202": "name": "PHYSICS FOR ELECTRICAL ENGINEERING COURSE OBJECTIVES:",
+        ]
+    },
+    "PH3202": {
+        "name": "PHYSICS FOR ELECTRICAL ENGINEERING COURSE OBJECTIVES:",
         "regulation": "R2021",
         "department": "BE-EEE (21 reg)",
         "credits": 3,
@@ -51028,9 +51337,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "PH3251": "name": "MATERIALS SCIENCE L T P C",
+        ]
+    },
+    "PH3251": {
+        "name": "MATERIALS SCIENCE L T P C",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -51122,9 +51432,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "PH3254": "name": "PHYSICS FOR ELECTRONICS ENGINEERING COURSE OBJECTIVES:",
+        ]
+    },
+    "PH3254": {
+        "name": "PHYSICS FOR ELECTRONICS ENGINEERING COURSE OBJECTIVES:",
         "regulation": "R2025",
         "department": "ECE",
         "credits": 3,
@@ -51214,9 +51525,10 @@ const SYLLABUS_DETAILS = {
                                 "TOTAL:  PERIODS"
                         ]
                 }
-        ],
-
-    "PH3256": "name": "PHYSICS FOR INFORMATION SCIENCE COURSE OBJECTIVES:",
+        ]
+    },
+    "PH3256": {
+        "name": "PHYSICS FOR INFORMATION SCIENCE COURSE OBJECTIVES:",
         "regulation": "R2021",
         "department": "CSE(R-2021)",
         "credits": 3,
@@ -51302,9 +51614,10 @@ const SYLLABUS_DETAILS = {
                                 "Tunneling \u2013 Single electron phenomena: Coulomb blockade - resonanttunneling diode \u2013 single electron transistor \u2013 quantum cellular automata - Quantum system for information processing - quantum states \u2013 classical bits \u2013 quantum bits or qubits \u2013CNOT gate multiple qubits \u2013 Bloch sphere \u2013 quantum gates \u2013 advantage of quantum computing over classical computing"
                         ]
                 }
-        ],
-
-    "TS5083": "name": "UNIT III FUNCTIONAL SAFETY ASSESSMENT METHODS",
+        ]
+    },
+    "TS5083": {
+        "name": "UNIT III FUNCTIONAL SAFETY ASSESSMENT METHODS",
         "regulation": "R2021",
         "department": "AU_R2021",
         "credits": 3,
@@ -51412,7 +51725,8 @@ const SYLLABUS_DETAILS = {
                                 "etc) & V-model. TOTAL:  PERIODS"
                         ]
                 }
-        ],
+        ]
+    }
 };
 
 if (typeof module !== "undefined") module.exports = SYLLABUS_DETAILS;

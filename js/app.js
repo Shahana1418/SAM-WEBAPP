@@ -210,10 +210,43 @@ function getSubjectSpec(code) {
         typeof MCE_SUBJECTS !== 'undefined' ? MCE_SUBJECTS : null,
         typeof CDS_SUBJECTS !== 'undefined' ? CDS_SUBJECTS : null
     ];
+    let spec = null;
     for (const db of dbs) {
-        if (db && db[code]) return db[code];
+        if (db && db[code]) { 
+            spec = db[code]; 
+            break; 
+        }
     }
-    return null;
+    
+    // If not found in primary subject array, create a dummy object
+    if (!spec) spec = { name: code };
+
+    // Merge rich syllabus details if available
+    if (typeof SYLLABUS_DETAILS !== 'undefined' && SYLLABUS_DETAILS[code]) {
+        const details = SYLLABUS_DETAILS[code];
+        if (details.objectives && details.objectives.length > 0) {
+            spec.objective = details.objectives.join(' ');
+        }
+        if (details.outcomes && details.outcomes.length > 0) {
+            spec.cos = {};
+            details.outcomes.forEach((co, idx) => {
+                let coName = co.id || ('CO' + (idx+1));
+                if (co.desc) spec.cos[coName] = co.desc;
+            });
+        }
+        if (details.units && details.units.length > 0) {
+            spec.unit_descs = true;
+            spec.units = {};
+            details.units.forEach(u => {
+                spec.units[u.id] = {
+                    title: u.title,
+                    desc: (u.topics || []).join(', ')
+                };
+            });
+        }
+    }
+
+    return Object.keys(spec).length > 1 ? spec : null;
 }
 
 function getLabsGen(deptCode) {
