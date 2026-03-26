@@ -1,0 +1,11 @@
+# Source files (too large for GitHub Pages)
+data/syllabus_source/
+*.txt
+!data/*.js
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1504,7 +1504,7 @@ function renderSessions(container) {
         const defEnd = new Date(); defEnd.setMonth(defEnd.getMonth() + 3);
         const defEndStr = defEnd.toISOString().slice(0, 10);
         const savedSlot = cal ? (cal.periodSlot || 'morning1') : 'morning1';
-        
+
         configPanel = `<div class="cal-config-panel">
             <div class="cal-config-title">⚙️ Quick Auto-Schedule (Standard)</div>
             <div class="cal-config-grid">
@@ -1546,9 +1546,9 @@ function renderSessions(container) {
         const dayCards = cal.blocks.map((b, bi) => {
             const isToday = b.date === todayStr, isPast = b.date < todayStr;
             const dl = new Date(b.date).toLocaleDateString('en-IN', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' });
-            
+
             const sItems = b.sessions.map((s, si) => {
-                const cycleNum = s.sid <= 15 ? 1 : 2; 
+                const cycleNum = s.sid <= 15 ? 1 : 2;
                 const cad = (genAssign?.cycleData || {})[cycleNum];
                 const asgn = cad?.assignments?.find(a => a.teamId === s.P.id) || null;
                 const bloom = asgn ? BLOOM_LEVELS[asgn.bloomLevel] : null;
@@ -1557,7 +1557,7 @@ function renderSessions(container) {
                 return `
                 <div class="sched-sess-item" style="border-left:3px solid ${isPast ? 'var(--border)' : (bloom ? (bloom.icon === '🔵' ? '#3B82F6' : '#10B981') : 'var(--primary)')};">
                     <div class="flex justify-between items-center mb-2">
-                        <div class="text-[10px] font-bold text-dim uppercase tracking-tighter">Session S${s.sid} · P${b.period} · ${s.sessNumInBlock || (si+1)}/3</div>
+                        <div class="text-[10px] font-bold text-dim uppercase tracking-tighter">Session S${s.sid} · P${b.period} · ${s.sessNumInBlock || (si + 1)}/3</div>
                         <div class="flex gap-1 items-center">
                             ${bloom ? `<span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-surface border border-border">${bloom.icon} ${bloom.label}</span>` : ''}
                             ${!isRevealed ? `<button class="btn btn-xs btn-ghost text-[9px] p-0 px-1" onclick="toggleSessionReveal(${bi}, ${si})">🔒 Reveal</button>` : '<span class="text-[9px] opacity-40">🔓</span>'}
@@ -1624,7 +1624,7 @@ function renderSessions(container) {
             const first = daySess[0];
             const isToday = dateStr === todayStr, isPast = dateStr < todayStr;
             const dl2 = first.date.toLocaleDateString('en-IN', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' });
-            
+
             const sItems = daySess.map(s => {
                 const dayTopicObj = genAssignFlat && genAssignFlat[s.presenterIdx] ? genAssignFlat[s.presenterIdx] : null;
                 const dayTopicHTML = dayTopicObj ? `<div style="margin-top:4px;font-size:.78rem;color:var(--accent-blue);font-weight:600;padding-left:4px;">📝 Topic: ${dayTopicObj.title}</div>` : '';
@@ -1734,20 +1734,20 @@ function toggleSessionReveal(blockIdx, sessIdx) {
 function exportFullScheduleCSV() {
     const cal = navState.calendarConfig;
     if (!cal || (!cal.blocks && !cal.sessions)) { showToast('No schedule to export', 'error'); return; }
-    
+
     let csv = "Session,Date,Period,Presenter,Reviewer,Feedback,Status\n";
     if (cal.blocks) {
         cal.blocks.forEach(b => {
             b.sessions.forEach(s => {
-                csv += `S${s.sid},${b.date},P${b.period},"${s.P.name || s.P.id}","${s.TR.name || s.TR.id}","${s.FP.name || s.FP.id}",${s.revealed?'Revealed':'Locked'}\n`;
+                csv += `S${s.sid},${b.date},P${b.period},"${s.P.name || s.P.id}","${s.TR.name || s.TR.id}","${s.FP.name || s.FP.id}",${s.revealed ? 'Revealed' : 'Locked'}\n`;
             });
         });
     } else {
         cal.sessions.forEach(s => {
-            csv += `S${s.sessNum},${s.dateStr},P${s.periodKey},"${getTeamName(navState.dept, s.presenterIdx)}","${getTeamName(navState.dept, s.reviewerIdx)}","${getTeamName(navState.dept, s.feedbackIdx)}",${s.revealed?'Revealed':'Locked'}\n`;
+            csv += `S${s.sessNum},${s.dateStr},P${s.periodKey},"${getTeamName(navState.dept, s.presenterIdx)}","${getTeamName(navState.dept, s.reviewerIdx)}","${getTeamName(navState.dept, s.feedbackIdx)}",${s.revealed ? 'Revealed' : 'Locked'}\n`;
         });
     }
-    
+
     const blob = new Blob([csv], { type: 'text/csv' });
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement('a');
