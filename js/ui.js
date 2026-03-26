@@ -967,37 +967,8 @@ window.renderAssessments = function(container) {
         const cad = (cfg.cycleData || {})[cycleNum];
         const numTeams = (navState.teams || []).length || 1;
 
-        // --- Course Metadata Header (New from Old App) ---
-        const s = cfg.syllabus || null;
+        // --- Course Metadata Header (Removed as per user request) ---
         let courseInfoHTML = '';
-        if (s) {
-            const cos = (s.outcomes || []).map(o => `<li class="mb-1"><strong>${o.id}:</strong> ${o.desc}</li>`).join('');
-            const poTags = PROGRAM_OUTCOMES.slice(0, 6).map(p => 
-                `<span class="chip chip-xs" style="background:rgba(91,33,182,0.1); color:#5b21b6; border:1px solid rgba(91,33,182,0.2); font-weight:700;" title="${p.name}">${p.icon} ${p.id}</span>`
-            ).join(' ');
-
-            courseInfoHTML = `
-            <div class="card p-4 mb-6" style="background:var(--surface-inset); border-left:4px solid var(--primary);">
-                <div class="flex flex-wrap gap-2 items-center mb-3">
-                    <span class="chip chip-s bg-blue-100 text-blue-800 font-bold">${s.regulation || 'R2021'}</span>
-                    <span class="chip chip-s bg-green-100 text-green-800 font-bold">${cfg.dept} · ${cfg.batch}</span>
-                    <h4 class="text-sm font-bold text-main ml-2">${cfg.courseCode} — ${cfg.courseName}</h4>
-                </div>
-                <div class="grid-2 gap-6">
-                    <div>
-                        <div class="text-[10px] font-bold text-dim uppercase mb-2 tracking-widest">🎯 Course Outcomes (CO)</div>
-                        <ul class="text-[11px] text-main pl-4 list-decimal leading-relaxed">
-                            ${cos || '<li>No COs defined for this subject.</li>'}
-                        </ul>
-                    </div>
-                    <div>
-                        <div class="text-[10px] font-bold text-dim uppercase mb-2 tracking-widest">🔗 Targeted Programme Outcomes (PO)</div>
-                        <div class="flex flex-wrap gap-1.5 mb-2">${poTags}</div>
-                        <p class="text-[10px] text-dim italic">System will intelligently map assignments to POs based on Bloom's levels (L1-4).</p>
-                    </div>
-                </div>
-            </div>`;
-        }
 
         const tabActive = "flex-1 text-xs py-2 px-3 rounded-lg border-2 border-primary bg-primary-light text-primary font-bold";
         const tabInactive = "flex-1 text-xs py-2 px-3 rounded-lg border-2 border-border bg-surface text-dim font-medium hover:bg-surface-inset transition-colors";
