@@ -1,6 +1,24 @@
 const express = require('express');
 const router  = express.Router();
 const { Student, Team, Cycle, Session, Assignment, Grade, Sac, AuthLog } = require('./models');
+const axios = require('axios'); // For calling external AI APIs securely
+
+/* ═══════════════════════════════════════════════════
+   AI SECURITY GUARD (Input Check)
+═══════════════════════════════════════════════════ */
+const securityGuard = async (req, res, next) => {
+    const userInput = JSON.stringify(req.body);
+    // 1. Rule-based security (Fast)
+    const maliciousPatterns = [/<script>/i, /javascript:/i, /SELECT \* FROM/i, /UNION ALL/i];
+    if (maliciousPatterns.some(pattern => pattern.test(userInput))) {
+        return res.status(403).json({ error: 'AI Security Guard: Malicious input detected and blocked.' });
+    }
+    
+    // 2. AI-based context check (placeholder logic for now)
+    // Could call a classification model here
+    next();
+};
+
 
 /* ═══════════════════════════════════════════════════
    STUDENTS
@@ -46,7 +64,7 @@ router.get('/students/:rollNo', async (req, res) => {
 });
 
 // PUT /api/students/:rollNo
-router.put('/students/:rollNo', async (req, res) => {
+router.put('/students/:rollNo', securityGuard, async (req, res) => {
     try {
         const s = await Student.findOneAndUpdate(
             { rollNo: req.params.rollNo.toUpperCase() },
@@ -63,7 +81,7 @@ router.put('/students/:rollNo', async (req, res) => {
 /* ═══════════════════════════════════════════════════
    STUDENT AUTH (Roll No + DOB)
 ═══════════════════════════════════════════════════ */
-router.post('/auth/student', async (req, res) => {
+router.post('/auth/student', securityGuard, async (req, res) => {
     try {
         const { rollNo, dob } = req.body;
         if (!rollNo) return res.status(400).json({ error: 'Roll number required' });
@@ -116,7 +134,7 @@ router.get('/teams', async (req, res) => {
     }
 });
 
-router.post('/teams', async (req, res) => {
+router.post('/teams', securityGuard, async (req, res) => {
     try {
         const data = Array.isArray(req.body) ? req.body : [req.body];
         const result = await Team.insertMany(data);
@@ -339,6 +357,30 @@ router.get('/stats', async (req, res) => {
         });
     } catch (e) {
         res.status(500).json({ error: e.message });
+    }
+});
+
+/* ═══════════════════════════════════════════════════
+   SECURE AI CHATBOT (Backend Proxy)
+═══════════════════════════════════════════════════ */
+router.post('/ai/chat', async (req, res) => {
+    try {
+        const { message, history } = req.body;
+        const apiKey = process.env.GEMINI_API_KEY;
+
+        if (!apiKey || apiKey === 'PLACEHOLDER') {
+             return res.json({ response: "I'm in safe-mode! Add a GEMINI_API_KEY to the backend .env file to enable my full brain." });
+        }
+
+        // Calling Google Gemini API (or similar) securely from the backend
+        const response = await axios.post(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+            contents: [{ parts: [{ text: `You are SAM-AI, a helpful security-aware academic assistant for GCE Erode. User says: ${message}` }] }]
+        });
+
+        const aiText = response.data?.candidates?.[0]?.content?.parts?.[0]?.text || "I'm thinking... but couldn't find an answer.";
+        res.json({ response: aiText });
+    } catch (e) {
+        res.status(500).json({ error: 'AI Backend Error: ' + e.message });
     }
 });
 
