@@ -579,9 +579,524 @@ const CAREER_RESOURCES = {
         }
     ],
 
-    'MCE': [{ domain: 'Robotics & CAD', roles: [{ title: 'Robotics Engineer', companies: ['Boston Dynamics'], growth: 'Very High', salaryRange: '₹7L-₹18L', skills: ['ROS', 'Mechatronics'] }] }],
-    'CVE': [{ domain: 'BIM & Structures', roles: [{ title: 'BIM Coordinator', companies: ['L&T'], growth: 'High', salaryRange: '₹5L-₹18L', skills: ['Revit', 'Navisworks'] }] }],
-    'ATE': [{ domain: 'EV Diagnostics', roles: [{ title: 'EV Calibration Engineer', companies: ['Bosch'], growth: 'Very High', salaryRange: '₹6L-₹18L', skills: ['BMS', 'OBD'] }] }],
-    'CDS': [{ domain: 'Analytics', roles: [{ title: 'BI Developer', companies: ['Deloitte'], growth: 'High', salaryRange: '₹6L-₹18L', skills: ['Power BI', 'SQL'] }] }],
+    'MCE': [
+        {
+            domain: 'Design & Simulation',
+            description: 'Computer-aided product design and engineering analysis.',
+            roles: [
+                { title: 'CAD Design & Modeling', steps: [
+                    { week: '1-4', topic: 'Sketching & Part Modeling', details: 'SolidWorks/CATIA basics and parametric design.' },
+                    { week: '5-8', topic: 'Assembly & Sheet Metal', details: 'Multi-body parts and flat patterns.' },
+                    { week: '9-12', topic: 'Surface Modeling', details: 'Complex geometry and A-class surfaces.' },
+                    { week: '13-16', topic: 'GD&T', details: 'Geometric Dimensioning and Tolerancing (ASME Y14.5).' },
+                    { week: '17-20', topic: 'Drafting Standards', details: 'Production drawings and BOMs.' },
+                    { week: '21-24', topic: 'PLM Integration', details: 'Teamcenter/Windchill workflows.' }
+                ], companies: ['Bosch', 'Siemens', 'Dassault', 'Tata Motors', 'Mahindra'], growth: 'High', salaryRange: '₹5L-₹18L', complexity: 'Moderate', skills: ['SolidWorks', 'CATIA', 'AutoCAD', 'GD&T'], freeResources: ['GrabCAD Tutorials'], paidCourses: ['Skill-Lync CAD'] },
+                { title: 'CAE (Computer Aided Engineering)', steps: [
+                    { week: '1-4', topic: 'FEA Concepts', details: 'Meshing, boundary conditions, and solvers.' },
+                    { week: '5-8', topic: 'Structural Analysis', details: 'Static, dynamic, and fatigue in ANSYS/Abaqus.' },
+                    { week: '9-12', topic: 'Thermal Analysis', details: 'Heat transfer and conjugate simulations.' },
+                    { week: '13-16', topic: 'CFD Basics', details: 'Fluid flow, turbulence models, and meshing.' },
+                    { week: '17-20', topic: 'Optimization', details: 'Topology and shape optimization.' },
+                    { week: '21-24', topic: 'Correlation & Validation', details: 'Test vs simulation comparison.' }
+                ], companies: ['Altair', 'ANSYS', 'Siemens', 'L&T', 'TATA Tech'], growth: 'High', salaryRange: '₹7L-₹25L', complexity: 'High', skills: ['ANSYS', 'Abaqus', 'HyperMesh', 'FEA'], freeResources: ['SimScale'], paidCourses: ['Skill-Lync CAE'] }
+            ]
+        },
+        {
+            domain: 'Manufacturing & Production',
+            description: 'Core manufacturing processes and quality engineering.',
+            roles: [
+                { title: 'Manufacturing Engineering', steps: [
+                    { week: '1-4', topic: 'Machining', details: 'Turning, Milling, Drilling, and CNC programming.' },
+                    { week: '5-8', topic: 'Casting & Forming', details: 'Sand casting, Die casting, and Forging.' },
+                    { week: '9-12', topic: 'Welding & Joining', details: 'TIG, MIG, Laser welding, and NDT.' },
+                    { week: '13-16', topic: 'Additive Mfg', details: '3D Printing: FDM, SLA, SLS technologies.' },
+                    { week: '17-20', topic: 'Process Planning', details: 'Routing, Cycle time, and Cost estimation.' },
+                    { week: '21-24', topic: 'Industry 4.0', details: 'Digital twin and smart factory concepts.' }
+                ], companies: ['Bosch', 'Tata Motors', 'L&T', 'Toyota', 'Caterpillar'], growth: 'Steady', salaryRange: '₹5L-₹18L', complexity: 'Moderate', skills: ['CNC', 'GD&T', 'Lean', '3D Printing'], freeResources: ['MIT OCW Mfg'], paidCourses: ['NPTEL Manufacturing'] },
+                { title: 'Production Engineering', steps: [
+                    { week: '1-4', topic: 'Production Planning', details: 'MRP, MPS, and Capacity planning.' },
+                    { week: '5-8', topic: 'Lean Manufacturing', details: '5S, Kaizen, Value Stream Mapping.' },
+                    { week: '9-12', topic: 'Six Sigma', details: 'DMAIC methodology and statistical tools.' },
+                    { week: '13-16', topic: 'ERP Systems', details: 'SAP/Oracle for production management.' },
+                    { week: '17-20', topic: 'Automation', details: 'PLC, Robotics in production lines.' },
+                    { week: '21-24', topic: 'Supply Chain', details: 'Logistics and inventory optimization.' }
+                ], companies: ['Toyota', 'Ford', 'Hyundai', 'Samsung', 'ABB'], growth: 'Steady', salaryRange: '₹5L-₹16L', complexity: 'Moderate', skills: ['Lean', 'Six Sigma', 'SAP', 'ERP'], freeResources: ['Lean.org'], paidCourses: ['ASQ Six Sigma'] },
+                { title: 'Quality Control & Assurance', steps: [
+                    { week: '1-4', topic: 'QC Fundamentals', details: 'SPC, Control charts, and Sampling.' },
+                    { week: '5-8', topic: 'Metrology', details: 'CMM, Gauges, and Calibration.' },
+                    { week: '9-12', topic: 'ISO Standards', details: 'ISO 9001, IATF 16949 compliance.' },
+                    { week: '13-16', topic: 'FMEA & PPAP', details: 'Risk analysis and process validation.' },
+                    { week: '17-20', topic: 'Auditing', details: 'Internal and supplier auditing.' },
+                    { week: '21-24', topic: 'Root Cause Analysis', details: '8D, Fishbone, and 5-Why methods.' }
+                ], companies: ['Bosch', 'TUV', 'Bureau Veritas', 'SKF'], growth: 'Steady', salaryRange: '₹5L-₹20L', complexity: 'Moderate', skills: ['Six Sigma', 'ISO', 'FMEA', 'SPC'], freeResources: ['ASQ Resources'], paidCourses: ['ASQ CQE'] },
+                { title: 'Tool Design', steps: [
+                    { week: '1-4', topic: 'Press Tool Basics', details: 'Blanking, Piercing, and Bending dies.' },
+                    { week: '5-8', topic: 'Injection Molding', details: 'Mold design, Runner systems, and Cooling.' },
+                    { week: '9-12', topic: 'Jigs & Fixtures', details: 'Locating and clamping principles.' },
+                    { week: '13-16', topic: 'Die Casting Tools', details: 'Core/cavity, Ejection, and Gating.' },
+                    { week: '17-20', topic: 'Simulation', details: 'Moldflow and AutoForm analysis.' },
+                    { week: '21-24', topic: 'CNC Tooling', details: 'Tool paths and fixture design for CNC.' }
+                ], companies: ['Godrej', 'Bharat Forge', 'Sundaram Clayton', 'JBM'], growth: 'Steady', salaryRange: '₹5L-₹16L', complexity: 'High', skills: ['CATIA', 'Moldflow', 'Die Design'], freeResources: ['MiTech Tutorials'], paidCourses: ['Skill-Lync Tool'] },
+                { title: 'Maintenance Engineering', steps: [
+                    { week: '1-4', topic: 'Preventive Maintenance', details: 'PM schedules and checklists.' },
+                    { week: '5-8', topic: 'Predictive Maintenance', details: 'Vibration analysis and thermography.' },
+                    { week: '9-12', topic: 'CMMS', details: 'Computerized maintenance management.' },
+                    { week: '13-16', topic: 'Reliability', details: 'MTBF, MTTR, and Weibull analysis.' },
+                    { week: '17-20', topic: 'TPM', details: 'Total Productive Maintenance pillars.' },
+                    { week: '21-24', topic: 'Root Cause', details: 'RCA for equipment failures.' }
+                ], companies: ['Siemens', 'ABB', 'GE', 'TATA Steel'], growth: 'Steady', salaryRange: '₹4L-₹14L', complexity: 'Moderate', skills: ['CMMS', 'Vibration Analysis', 'TPM'], freeResources: ['Reliabilityweb'], paidCourses: ['SMRP Cert'] }
+            ]
+        },
+        {
+            domain: 'Thermal, Fluids & Energy',
+            description: 'Heat transfer, fluid mechanics, and sustainable energy.',
+            roles: [
+                { title: 'Thermal Engineering', steps: [
+                    { week: '1-4', topic: 'Thermodynamics', details: 'Laws, Cycles (Carnot, Rankine, Brayton).' },
+                    { week: '5-8', topic: 'Heat Transfer', details: 'Conduction, Convection, and Radiation.' },
+                    { week: '9-12', topic: 'IC Engines', details: 'Combustion, Performance, and Emissions.' },
+                    { week: '13-16', topic: 'Refrigeration & AC', details: 'VCR, VAR, and Psychrometry.' },
+                    { week: '17-20', topic: 'Simulation', details: 'Thermal CFD in ANSYS Fluent.' },
+                    { week: '21-24', topic: 'Power Plant', details: 'Steam/Gas turbine design.' }
+                ], companies: ['GE', 'Honeywell', 'Daikin', 'Carrier', 'Thermax'], growth: 'Steady', salaryRange: '₹6L-₹22L', complexity: 'High', skills: ['ANSYS Fluent', 'HVAC', 'Thermo'], freeResources: ['LearnThermo'], paidCourses: ['NPTEL Thermal'] },
+                { title: 'Fluid Mechanics & CFD', steps: [
+                    { week: '1-4', topic: 'Fluid Statics & Dynamics', details: 'Bernoulli, Navier-Stokes equations.' },
+                    { week: '5-8', topic: 'Turbulence Modeling', details: 'k-epsilon, k-omega, and LES models.' },
+                    { week: '9-12', topic: 'CFD Software', details: 'ANSYS Fluent/CFX and OpenFOAM.' },
+                    { week: '13-16', topic: 'Meshing', details: 'Structured/unstructured meshes and quality.' },
+                    { week: '17-20', topic: 'Aerodynamics', details: 'External flow, Drag, and Lift.' },
+                    { week: '21-24', topic: 'Multiphase Flow', details: 'VOF, Lagrangian, and cavitation.' }
+                ], companies: ['Airbus', 'Boeing', 'Rolls-Royce', 'ANSYS'], growth: 'High', salaryRange: '₹8L-₹30L', complexity: 'Very High', skills: ['ANSYS Fluent', 'OpenFOAM', 'MATLAB'], freeResources: ['CFD Online'], paidCourses: ['Skill-Lync CFD'] },
+                { title: 'HVAC Engineering', steps: [
+                    { week: '1-4', topic: 'Load Calculation', details: 'Cooling/Heating load estimation.' },
+                    { week: '5-8', topic: 'Duct Design', details: 'Equal friction and static regain.' },
+                    { week: '9-12', topic: 'Piping Design', details: 'Chilled water and refrigerant piping.' },
+                    { week: '13-16', topic: 'Equipment Selection', details: 'AHU, Chiller, and FCU sizing.' },
+                    { week: '17-20', topic: 'BMS Integration', details: 'Building automation and DDC.' },
+                    { week: '21-24', topic: 'Green Buildings', details: 'LEED and IGBC standards.' }
+                ], companies: ['Daikin', 'Carrier', 'Johnson Controls', 'Voltas'], growth: 'High', salaryRange: '₹5L-₹20L', complexity: 'Moderate', skills: ['HAP', 'Revit MEP', 'AutoCAD'], freeResources: ['ASHRAE Learning'], paidCourses: ['ASHRAE Cert'] },
+                { title: 'Energy & Renewable Systems', steps: [
+                    { week: '1-4', topic: 'Solar PV', details: 'Cell physics and System sizing.' },
+                    { week: '5-8', topic: 'Wind Energy', details: 'Turbine aerodynamics and controls.' },
+                    { week: '9-12', topic: 'Energy Storage', details: 'Battery tech and Compressed air.' },
+                    { week: '13-16', topic: 'Grid Integration', details: 'Net metering and Inverters.' },
+                    { week: '17-20', topic: 'Energy Auditing', details: 'Industrial & commercial audits.' },
+                    { week: '21-24', topic: 'Policy & Carbon', details: 'Carbon credits and ESG.' }
+                ], companies: ['Vestas', 'First Solar', 'Adani Green', 'Siemens Gamesa'], growth: 'Exponential', salaryRange: '₹7L-₹28L', complexity: 'Moderate', skills: ['PVSyst', 'Homer Pro', 'Sustainability'], freeResources: ['NREL Learning'], paidCourses: ['Coursera Renewables'] }
+            ]
+        },
+        {
+            domain: 'Robotics & Mechatronics',
+            description: 'Intelligent mechanical systems with integrated electronics and software.',
+            roles: [
+                { title: 'Robotics & Automation', steps: [
+                    { week: '1-4', topic: 'Kinematics', details: 'DH parameters and forward/inverse kinematics.' },
+                    { week: '5-8', topic: 'Actuators & Sensors', details: 'Servo motors, encoders, and LIDAR.' },
+                    { week: '9-12', topic: 'ROS 2', details: 'Nodes, Topics, and Nav2 stack.' },
+                    { week: '13-16', topic: 'Path Planning', details: 'A*, Dijkstra, and RRT algorithms.' },
+                    { week: '17-20', topic: 'Computer Vision', details: 'OpenCV and object detection for robots.' },
+                    { week: '21-24', topic: 'Integration', details: 'Full robot build and deployment.' }
+                ], companies: ['Boston Dynamics', 'Fanuc', 'ABB', 'KUKA', 'Tesla Bot'], growth: 'Very High', salaryRange: '₹8L-₹30L', complexity: 'High', skills: ['ROS', 'Python', 'C++', 'MATLAB'], freeResources: ['The Construct'], paidCourses: ['Udacity Robotics'] },
+                { title: 'Mechatronics', steps: [
+                    { week: '1-4', topic: 'Sensors & Transducers', details: 'Types, signal conditioning, and DAQ.' },
+                    { week: '5-8', topic: 'Microcontrollers', details: 'Arduino/STM32 and Embedded C.' },
+                    { week: '9-12', topic: 'Control Systems', details: 'PID, State-space, and MATLAB/Simulink.' },
+                    { week: '13-16', topic: 'Pneumatics', details: 'Cylinders, valves, and circuit design.' },
+                    { week: '17-20', topic: 'PLC Programming', details: 'Ladder logic and HMI design.' },
+                    { week: '21-24', topic: 'System Integration', details: 'Complete mechatronic system project.' }
+                ], companies: ['Siemens', 'Bosch Rexroth', 'Festo', 'Rockwell'], growth: 'High', salaryRange: '₹6L-₹24L', complexity: 'High', skills: ['PLC', 'Simulink', 'Embedded C', 'Pneumatics'], freeResources: ['Festo Didactic'], paidCourses: ['Udemy Mechatronics'] },
+                { title: 'Industrial Engineering', steps: [
+                    { week: '1-4', topic: 'Work Study', details: 'Time study and method study.' },
+                    { week: '5-8', topic: 'Operations Research', details: 'LP, Queuing, and Simulation.' },
+                    { week: '9-12', topic: 'Facility Layout', details: 'SLP and material handling design.' },
+                    { week: '13-16', topic: 'Ergonomics', details: 'Human factors and workplace design.' },
+                    { week: '17-20', topic: 'Scheduling', details: 'Job shop, Flow shop, and ERP.' },
+                    { week: '21-24', topic: 'Lean & Six Sigma', details: 'Green/Black belt methodologies.' }
+                ], companies: ['Amazon', 'Toyota', 'Samsung', 'Deloitte'], growth: 'High', salaryRange: '₹6L-₹24L', complexity: 'Moderate', skills: ['Lean', 'Six Sigma', 'SAP', 'OR'], freeResources: ['IIE Resources'], paidCourses: ['ASQ Green Belt'] }
+            ]
+        },
+        {
+            domain: 'Software & Modern Tech',
+            description: 'Cross-functional software roles for mechanical engineers.',
+            roles: [
+                { title: 'Software Development', companies: ['Google', 'Microsoft'], growth: 'Steady', salaryRange: '₹12L-₹50L', skills: ['C++', 'DSA'] },
+                { title: 'Web Development', companies: ['Netflix', 'Meta'], growth: 'High', salaryRange: '₹8L-₹35L', skills: ['React', 'Node.js'] },
+                { title: 'Mobile App Development', companies: ['Google', 'Uber'], growth: 'High', salaryRange: '₹7L-₹28L', skills: ['Flutter', 'Kotlin'] },
+                { title: 'AI & Machine Learning', companies: ['OpenAI', 'NVIDIA'], growth: 'Very High', salaryRange: '₹15L-₹60L', skills: ['Python', 'TensorFlow'] },
+                { title: 'Data Science & Analytics', companies: ['Amazon', 'Spotify'], growth: 'High', salaryRange: '₹10L-₹38L', skills: ['SQL', 'Python'] },
+                { title: 'Cybersecurity', companies: ['CrowdStrike', 'Cisco'], growth: 'High', salaryRange: '₹9L-₹32L', skills: ['Linux', 'SIEM'] },
+                { title: 'Cloud Computing & DevOps', companies: ['GCP', 'AWS'], growth: 'Very High', salaryRange: '₹12L-₹48L', skills: ['K8s', 'Docker'] },
+                { title: 'UI/UX Design', companies: ['Google', 'Adobe'], growth: 'High', salaryRange: '₹6L-₹22L', skills: ['Figma'] },
+                { title: 'Blockchain Development', companies: ['Coinbase', 'Polygon'], growth: 'High', salaryRange: '₹12L-₹40L', skills: ['Solidity'] },
+                { title: 'AR/VR Development', companies: ['Meta', 'Unity'], growth: 'Medium', salaryRange: '₹8L-₹26L', skills: ['Unity', 'C#'] },
+                { title: 'Game Development', companies: ['Epic', 'EA'], growth: 'Medium', salaryRange: '₹6L-₹24L', skills: ['Unity', 'C#'] }
+            ]
+        }
+    ],
+    'ATE': [
+        {
+            domain: 'Vehicle Design & Engineering',
+            description: 'Core automotive design from concept to production.',
+            roles: [
+                { title: 'Automobile Design', steps: [
+                    { week: '1-4', topic: 'Sketching & Concept', details: 'Proportion, Perspective, and Ideation.' },
+                    { week: '5-8', topic: 'Surface Modeling', details: 'CATIA/Alias A-class surfaces.' },
+                    { week: '9-12', topic: 'Packaging', details: 'Ergonomic layout and component placement.' },
+                    { week: '13-16', topic: 'Aero Styling', details: 'Wind tunnel concepts and Cd optimization.' },
+                    { week: '17-20', topic: 'Color & Trim', details: 'Material selection and CMF.' },
+                    { week: '21-24', topic: 'Clay & Digital', details: 'Physical and VR model review.' }
+                ], companies: ['BMW', 'Mercedes-Benz', 'Tata Design', 'Mahindra'], growth: 'High', salaryRange: '₹8L-₹30L', complexity: 'High', skills: ['CATIA', 'Alias', 'Blender', 'Clay Modeling'], freeResources: ['Car Design News'], paidCourses: ['SPD Milano Online'] },
+                { title: 'Vehicle Dynamics', steps: [
+                    { week: '1-4', topic: 'Tire Mechanics', details: 'Pacejka model and slip angles.' },
+                    { week: '5-8', topic: 'Suspension', details: 'MacPherson, Double Wishbone, and Multi-link.' },
+                    { week: '9-12', topic: 'Ride & Handling', details: 'Roll stiffness and understeer gradient.' },
+                    { week: '13-16', topic: 'Steering Systems', details: 'EPS, rack geometry, and Ackermann.' },
+                    { week: '17-20', topic: 'Simulation', details: 'Adams/Car and CarSim models.' },
+                    { week: '21-24', topic: 'Testing', details: 'Track testing and data acquisition.' }
+                ], companies: ['Ferrari', 'Porsche', 'Tesla', 'Toyota', 'Mahindra'], growth: 'Steady', salaryRange: '₹7L-₹28L', complexity: 'Very High', skills: ['Adams', 'CarSim', 'MATLAB'], freeResources: ['SAE Papers'], paidCourses: ['Skill-Lync VD'] },
+                { title: 'Powertrain Engineering', steps: [
+                    { week: '1-4', topic: 'Engine Fundamentals', details: 'SI & CI combustion and thermodynamics.' },
+                    { week: '5-8', topic: 'Transmission', details: 'Manual, AT, DCT, and CVT design.' },
+                    { week: '9-12', topic: 'Drivetrain', details: 'Differential, Axles, and 4WD systems.' },
+                    { week: '13-16', topic: 'Calibration', details: 'ECU mapping and emissions compliance.' },
+                    { week: '17-20', topic: 'NVH', details: 'Vibration, Noise, and Harshness reduction.' },
+                    { week: '21-24', topic: 'Electrification', details: 'Hybrid architectures and e-axles.' }
+                ], companies: ['Cummins', 'Dana', 'ZF', 'BorgWarner', 'Ashok Leyland'], growth: 'Steady', salaryRange: '₹7L-₹26L', complexity: 'High', skills: ['GT-Suite', 'Simulink', 'ETAS INCA'], freeResources: ['SAE International'], paidCourses: ['NPTEL IC Engines'] },
+                { title: 'Automotive Manufacturing', steps: [
+                    { week: '1-4', topic: 'Body Shop', details: 'Spot welding, hemming, and BIW.' },
+                    { week: '5-8', topic: 'Paint Shop', details: 'E-coating, primer, and clear coat.' },
+                    { week: '9-12', topic: 'Trim & Final', details: 'Assembly line balancing and torque tools.' },
+                    { week: '13-16', topic: 'Quality', details: 'APQP, PPAP, and Audit processes.' },
+                    { week: '17-20', topic: 'Lean Systems', details: 'TPS, Kanban, and Andon systems.' },
+                    { week: '21-24', topic: 'Automation', details: 'Robotic cells and AGV integration.' }
+                ], companies: ['Toyota', 'Hyundai', 'Maruti Suzuki', 'Ford'], growth: 'Steady', salaryRange: '₹5L-₹18L', complexity: 'Moderate', skills: ['TPS', 'Lean', 'Robotics', 'APQP'], freeResources: ['Lean.org'], paidCourses: ['ASQ Automotive'] }
+            ]
+        },
+        {
+            domain: 'EV, Hybrid & Future Mobility',
+            description: 'Electric, hybrid, and autonomous vehicle technologies.',
+            roles: [
+                { title: 'Electric Vehicles (EV Technology)', steps: [
+                    { week: '1-4', topic: 'EV Architecture', details: 'BEV, HEV, PHEV configurations.' },
+                    { week: '5-8', topic: 'Battery Systems', details: 'Li-ion chemistry, SOC/SOH, and BMS.' },
+                    { week: '9-12', topic: 'Motors & Drives', details: 'BLDC, PMSM, and Inverter design.' },
+                    { week: '13-16', topic: 'Charging', details: 'AC/DC charging, CCS, and standards.' },
+                    { week: '17-20', topic: 'Regen Braking', details: 'Energy recovery and control strategy.' },
+                    { week: '21-24', topic: 'Testing & Safety', details: 'ECE R100 and crash norms.' }
+                ], companies: ['Tesla', 'Rivian', 'Ola Electric', 'Tata Motors', 'Lucid'], growth: 'Exponential', salaryRange: '₹10L-₹40L', complexity: 'High', skills: ['BMS', 'Simulink', 'Power Electronics'], freeResources: ['EV Academy'], paidCourses: ['Skill-Lync EV'] },
+                { title: 'Hybrid Vehicle Systems', steps: [
+                    { week: '1-4', topic: 'Hybrid Architectures', details: 'Series, Parallel, and Series-Parallel.' },
+                    { week: '5-8', topic: 'Energy Management', details: 'Rule-based and DP controllers.' },
+                    { week: '9-12', topic: 'Component Sizing', details: 'Motor and battery pack optimization.' },
+                    { week: '13-16', topic: 'Simulation', details: 'ADVISOR and Autonomie tools.' },
+                    { week: '17-20', topic: 'Integration', details: 'Coupling ICE with e-motor.' },
+                    { week: '21-24', topic: 'Emissions', details: 'BS-VI/Euro 7 compliance.' }
+                ], companies: ['Toyota', 'Honda', 'Volvo', 'BMW', 'Hyundai'], growth: 'High', salaryRange: '₹8L-₹30L', complexity: 'High', skills: ['Simulink', 'MATLAB', 'Controls'], freeResources: ['Argonne GREET'], paidCourses: ['Coursera HEV'] },
+                { title: 'Autonomous Vehicles', steps: [
+                    { week: '1-4', topic: 'Perception', details: 'Camera, LiDAR, and Radar fusion.' },
+                    { week: '5-8', topic: 'Localization', details: 'GPS, HD Maps, and SLAM.' },
+                    { week: '9-12', topic: 'Planning', details: 'Path & Motion planning algorithms.' },
+                    { week: '13-16', topic: 'Control', details: 'Lateral/Longitudinal vehicle control.' },
+                    { week: '17-20', topic: 'Simulation', details: 'CARLA, Autoware, and LGSVL.' },
+                    { week: '21-24', topic: 'Safety & Ethics', details: 'SAE Levels, V2X, and regulations.' }
+                ], companies: ['Waymo', 'Tesla Autopilot', 'Argo AI', 'Cruise', 'Mobileye'], growth: 'Exponential', salaryRange: '₹15L-₹60L+', complexity: 'Extreme', skills: ['Python', 'ROS', 'Deep Learning', 'LiDAR'], freeResources: ['Udacity OpenSource'], paidCourses: ['Udacity Self-Driving'] },
+                { title: 'Automotive Electronics', steps: [
+                    { week: '1-4', topic: 'Vehicle Bus', details: 'CAN, LIN, FlexRay protocols.' },
+                    { week: '5-8', topic: 'ECU Design', details: 'Microcontrollers and firmware.' },
+                    { week: '9-12', topic: 'ADAS', details: 'Sensors and driver-assistance algorithms.' },
+                    { week: '13-16', topic: 'Infotainment', details: 'Android Auto, CarPlay, and QNX.' },
+                    { week: '17-20', topic: 'Safety (ISO 26262)', details: 'Functional safety and ASIL levels.' },
+                    { week: '21-24', topic: 'OTA Updates', details: 'Over-the-air software deployment.' }
+                ], companies: ['Bosch', 'Continental', 'Aptiv', 'Visteon', 'HARMAN'], growth: 'High', salaryRange: '₹8L-₹32L', complexity: 'High', skills: ['CAN', 'AUTOSAR', 'Embedded C', 'Simulink'], freeResources: ['Vector Academy'], paidCourses: ['Udemy Automotive'] },
+                { title: 'Motorsports Engineering', steps: [
+                    { week: '1-4', topic: 'Race Car Design', details: 'Chassis, Aero packages, and Weight.' },
+                    { week: '5-8', topic: 'Data Acquisition', details: 'Sensors, Lap time analysis, and Telemetry.' },
+                    { week: '9-12', topic: 'Suspension Tuning', details: 'Spring/Damper setup and anti-roll.' },
+                    { week: '13-16', topic: 'Aero (CFD)', details: 'Wings, diffusers, and ground effect.' },
+                    { week: '17-20', topic: 'Engine Tuning', details: 'ECU calibration and dyno testing.' },
+                    { week: '21-24', topic: 'Race Strategy', details: 'Tire strategy and pit stop optimization.' }
+                ], companies: ['Red Bull Racing', 'McLaren', 'Mercedes AMG', 'Mahindra Racing'], growth: 'Medium', salaryRange: '₹10L-₹45L', complexity: 'Extreme', skills: ['CFD', 'Adams', 'MATLAB', 'Telemetry'], freeResources: ['F1 Technical'], paidCourses: ['Cranfield Motorsport'] }
+            ]
+        },
+        {
+            domain: 'Software & Modern Tech',
+            description: 'Cross-functional software roles for automobile engineers.',
+            roles: [
+                { title: 'Software Development', companies: ['Google', 'Microsoft'], growth: 'Steady', salaryRange: '₹12L-₹50L', skills: ['C++', 'DSA'] },
+                { title: 'Web Development', companies: ['Netflix', 'Meta'], growth: 'High', salaryRange: '₹8L-₹35L', skills: ['React', 'Node.js'] },
+                { title: 'Mobile App Development', companies: ['Google', 'Uber'], growth: 'High', salaryRange: '₹7L-₹28L', skills: ['Flutter', 'Kotlin'] },
+                { title: 'AI & Machine Learning', companies: ['OpenAI', 'NVIDIA'], growth: 'Very High', salaryRange: '₹15L-₹60L', skills: ['Python', 'TensorFlow'] },
+                { title: 'Data Science & Analytics', companies: ['Amazon', 'Spotify'], growth: 'High', salaryRange: '₹10L-₹38L', skills: ['SQL', 'Python'] },
+                { title: 'Cybersecurity', companies: ['CrowdStrike', 'Cisco'], growth: 'High', salaryRange: '₹9L-₹32L', skills: ['Linux', 'SIEM'] },
+                { title: 'Cloud Computing & DevOps', companies: ['GCP', 'AWS'], growth: 'Very High', salaryRange: '₹12L-₹48L', skills: ['K8s', 'Docker'] },
+                { title: 'UI/UX Design', companies: ['Google', 'Adobe'], growth: 'High', salaryRange: '₹6L-₹22L', skills: ['Figma'] },
+                { title: 'Blockchain Development', companies: ['Coinbase', 'Polygon'], growth: 'High', salaryRange: '₹12L-₹40L', skills: ['Solidity'] },
+                { title: 'AR/VR Development', companies: ['Meta', 'Unity'], growth: 'Medium', salaryRange: '₹8L-₹26L', skills: ['Unity', 'C#'] },
+                { title: 'Game Development', companies: ['Epic', 'EA'], growth: 'Medium', salaryRange: '₹6L-₹24L', skills: ['Unity', 'C#'] }
+            ]
+        }
+    ],
+    'CVE': [
+        {
+            domain: 'Structural & Geotechnical',
+            description: 'The science of building safe and durable structures.',
+            roles: [
+                { title: 'Structural Engineering', steps: [
+                    { week: '1-4', topic: 'Structural Mechanics', details: 'Bending, Shear, and Axial loads.' },
+                    { week: '5-8', topic: 'RCC Design', details: 'IS 456 code, Beam/Column/Slab design.' },
+                    { week: '9-12', topic: 'Steel Design', details: 'IS 800 connections and trusses.' },
+                    { week: '13-16', topic: 'Analysis Software', details: 'STAAD Pro, ETABS, and SAP2000.' },
+                    { week: '17-20', topic: 'Seismic Design', details: 'Response spectrum and base isolation.' },
+                    { week: '21-24', topic: 'Pre-stressed Concrete', details: 'Tendon profiles and losses.' }
+                ], companies: ['L&T', 'Arup', 'WSP', 'Jacobs', 'Shapoorji'], growth: 'Steady', salaryRange: '₹6L-₹24L', complexity: 'High', skills: ['STAAD', 'ETABS', 'AutoCAD', 'IS Codes'], freeResources: ['NPTEL Structures'], paidCourses: ['Skillcivil'] },
+                { title: 'Geotechnical Engineering', steps: [
+                    { week: '1-4', topic: 'Soil Mechanics', details: 'Classification, Permeability, and Shear.' },
+                    { week: '5-8', topic: 'Foundation Design', details: 'Shallow and Deep foundations.' },
+                    { week: '9-12', topic: 'Slope Stability', details: 'Limit equilibrium and FEM.' },
+                    { week: '13-16', topic: 'Earth Retention', details: 'Sheet piles and Diaphragm walls.' },
+                    { week: '17-20', topic: 'Ground Improvement', details: 'Grouting, Compaction, and Geosynthetics.' },
+                    { week: '21-24', topic: 'Software', details: 'PLAXIS and GeoStudio analysis.' }
+                ], companies: ['Mott MacDonald', 'Fugro', 'AECOM', 'SMEC'], growth: 'Steady', salaryRange: '₹5L-₹20L', complexity: 'High', skills: ['PLAXIS', 'GeoStudio', 'Soil Testing'], freeResources: ['Geoengineer.org'], paidCourses: ['NPTEL Geotech'] }
+            ]
+        },
+        {
+            domain: 'Construction & Project Mgmt',
+            description: 'Planning, executing, and managing construction projects.',
+            roles: [
+                { title: 'Construction Management', steps: [
+                    { week: '1-4', topic: 'Project Lifecycle', details: 'Initiation, Planning, Execution, and Closure.' },
+                    { week: '5-8', topic: 'Scheduling', details: 'CPM, PERT, and MS Project/Primavera.' },
+                    { week: '9-12', topic: 'Cost Estimation', details: 'BOQ, Rate analysis, and Tendering.' },
+                    { week: '13-16', topic: 'Contracts', details: 'FIDIC, EPC, and Claims management.' },
+                    { week: '17-20', topic: 'Quality & Safety', details: 'ISO 9001, Safety audits, and PPE.' },
+                    { week: '21-24', topic: 'Lean Construction', details: 'Last Planner System and IPD.' }
+                ], companies: ['L&T', 'Shapoorji', 'Tata Projects', 'Bechtel'], growth: 'High', salaryRange: '₹6L-₹28L', complexity: 'Moderate', skills: ['Primavera', 'MS Project', 'Contracts'], freeResources: ['PMI.org'], paidCourses: ['PMP Certification'] },
+                { title: 'Construction Technology', steps: [
+                    { week: '1-4', topic: 'Concrete Tech', details: 'Mix design, admixtures, and curing.' },
+                    { week: '5-8', topic: 'Formwork & Scaffolding', details: 'Mivan, slip-form, and safety.' },
+                    { week: '9-12', topic: 'Pre-fabrication', details: 'Precast elements and modular construction.' },
+                    { week: '13-16', topic: 'Heavy Equipment', details: 'Cranes, Excavators, and TBMs.' },
+                    { week: '17-20', topic: '3D Printing', details: 'Additive manufacturing in construction.' },
+                    { week: '21-24', topic: 'Green Building', details: 'LEED, IGBC, and sustainable materials.' }
+                ], companies: ['Ultratech', 'ACC', 'Godrej Construction', 'Afcons'], growth: 'Steady', salaryRange: '₹5L-₹18L', complexity: 'Moderate', skills: ['Concrete', 'Formwork', 'Green Build'], freeResources: ['ConstructionManual'], paidCourses: ['LEED GA'] },
+                { title: 'Project Management', steps: [
+                    { week: '1-4', topic: 'PM Fundamentals', details: 'Scope, Time, Cost, and Quality.' },
+                    { week: '5-8', topic: 'Risk Management', details: 'Risk identification and Monte Carlo.' },
+                    { week: '9-12', topic: 'Stakeholder Mgmt', details: 'Communication and conflict resolution.' },
+                    { week: '13-16', topic: 'EVM', details: 'Earned Value Management and KPIs.' },
+                    { week: '17-20', topic: 'Digital PM', details: 'Procore, Aconex, and dashboards.' },
+                    { week: '21-24', topic: 'PMP Prep', details: 'Practice exams and PMBOK study.' }
+                ], companies: ['Bechtel', 'Fluor', 'AECOM', 'Turner'], growth: 'High', salaryRange: '₹8L-₹35L', complexity: 'Moderate', skills: ['Primavera', 'EVM', 'Procore'], freeResources: ['PMI MOOC'], paidCourses: ['PMP/CAPM'] },
+                { title: 'Quantity Surveying', steps: [
+                    { week: '1-4', topic: 'Measurement', details: 'IS 1200 and Modes of measurement.' },
+                    { week: '5-8', topic: 'Rate Analysis', details: 'Material, Labour, and Overhead costing.' },
+                    { week: '9-12', topic: 'BOQ Preparation', details: 'Detailed and abstract estimates.' },
+                    { week: '13-16', topic: 'Valuation', details: 'Running bills and Final accounts.' },
+                    { week: '17-20', topic: 'Claims & Variations', details: 'Change orders and dispute resolution.' },
+                    { week: '21-24', topic: 'Cost Control', details: 'Budget tracking and variance analysis.' }
+                ], companies: ['Turner & Townsend', 'Currie Brown', 'Mace', 'L&T'], growth: 'Steady', salaryRange: '₹5L-₹22L', complexity: 'Moderate', skills: ['BOQ', 'Estimation', 'Contracts'], freeResources: ['RICS Learning'], paidCourses: ['RICS Certification'] },
+                { title: 'Building Information Modeling (BIM)', steps: [
+                    { week: '1-4', topic: 'BIM Fundamentals', details: 'LOD, CDE, and BIM Execution Plan.' },
+                    { week: '5-8', topic: 'Revit Architecture', details: 'Modeling walls, floors, and roofs.' },
+                    { week: '9-12', topic: 'Revit Structure', details: 'Structural framing and rebar.' },
+                    { week: '13-16', topic: 'Revit MEP', details: 'HVAC, Plumbing, and Electrical.' },
+                    { week: '17-20', topic: 'Clash Detection', details: 'Navisworks and coordination.' },
+                    { week: '21-24', topic: '4D/5D BIM', details: 'Scheduling and cost integration.' }
+                ], companies: ['Autodesk', 'Arup', 'Bechtel', 'HOK', 'Gensler'], growth: 'Exponential', salaryRange: '₹7L-₹30L', complexity: 'Moderate', skills: ['Revit', 'Navisworks', 'Dynamo'], freeResources: ['Autodesk Academy'], paidCourses: ['BIM Manager Cert'] }
+            ]
+        },
+        {
+            domain: 'Transport, Water & Environment',
+            description: 'Infrastructure for transportation, water, and sustainability.',
+            roles: [
+                { title: 'Transportation Engineering', steps: [
+                    { week: '1-4', topic: 'Highway Design', details: 'Geometric design and IRC codes.' },
+                    { week: '5-8', topic: 'Pavement Design', details: 'Flexible/Rigid pavements and CBR.' },
+                    { week: '9-12', topic: 'Traffic Engineering', details: 'Signal design and LOS analysis.' },
+                    { week: '13-16', topic: 'Rail Systems', details: 'Metro, HSR, and track geometry.' },
+                    { week: '17-20', topic: 'Simulation', details: 'VISSIM and TransCAD.' },
+                    { week: '21-24', topic: 'Urban Mobility', details: 'TOD, NMT, and ITS.' }
+                ], companies: ['NHAI', 'IRB Infra', 'Cube Highways', 'DMRC'], growth: 'High', salaryRange: '₹5L-₹22L', complexity: 'High', skills: ['AutoCAD Civil 3D', 'VISSIM', 'IRC Codes'], freeResources: ['FHWA Courses'], paidCourses: ['NPTEL Transport'] },
+                { title: 'Environmental Engineering', steps: [
+                    { week: '1-4', topic: 'Water Treatment', details: 'Coagulation, Filtration, and Disinfection.' },
+                    { week: '5-8', topic: 'Wastewater', details: 'Activated sludge, UASB, and SBR.' },
+                    { week: '9-12', topic: 'Air Pollution', details: 'Emission control and AQI monitoring.' },
+                    { week: '13-16', topic: 'Solid Waste', details: 'SWM rules, Composting, and Landfill.' },
+                    { week: '17-20', topic: 'EIA', details: 'Environmental Impact Assessment process.' },
+                    { week: '21-24', topic: 'Climate Change', details: 'Carbon footprint and Adaptation.' }
+                ], companies: ['VA Tech WABAG', 'Suez', 'Veolia', 'L&T Water'], growth: 'High', salaryRange: '₹5L-₹22L', complexity: 'Moderate', skills: ['EIA', 'Water Treatment', 'GIS'], freeResources: ['EPA Resources'], paidCourses: ['Coursera Environment'] },
+                { title: 'Water Resources Engineering', steps: [
+                    { week: '1-4', topic: 'Hydrology', details: 'Rainfall analysis and Runoff estimation.' },
+                    { week: '5-8', topic: 'Open Channel Flow', details: 'Mannings equation and Hydraulic jump.' },
+                    { week: '9-12', topic: 'Dam Engineering', details: 'Gravity and Arch dam design.' },
+                    { week: '13-16', topic: 'Irrigation Design', details: 'Canal design and crop water need.' },
+                    { week: '17-20', topic: 'Flood Management', details: 'Flood routing and levee design.' },
+                    { week: '21-24', topic: 'HEC-RAS', details: 'River modeling and GIS integration.' }
+                ], companies: ['Central Water Commission', 'WAPCOS', 'NHPC', 'SJVN'], growth: 'Steady', salaryRange: '₹5L-₹18L', complexity: 'High', skills: ['HEC-RAS', 'GIS', 'Hydrology'], freeResources: ['USACE Learning'], paidCourses: ['NPTEL Water Resources'] },
+                { title: 'Surveying & Geomatics', steps: [
+                    { week: '1-4', topic: 'Chain & Compass Survey', details: 'Bearing, Traversing and errors.' },
+                    { week: '5-8', topic: 'Total Station', details: 'Coordinate geometry and stake-out.' },
+                    { week: '9-12', topic: 'GPS/GNSS', details: 'RTK, DGPS, and Network solutions.' },
+                    { week: '13-16', topic: 'GIS & Remote Sensing', details: 'ArcGIS, QGIS, and Satellite imagery.' },
+                    { week: '17-20', topic: 'Drone Surveying', details: 'Photogrammetry and LiDAR mapping.' },
+                    { week: '21-24', topic: '3D Modeling', details: 'Point clouds and Digital Terrain Models.' }
+                ], companies: ['Trimble', 'Leica', 'Survey of India', 'NRSC'], growth: 'High', salaryRange: '₹5L-₹20L', complexity: 'Moderate', skills: ['Total Station', 'ArcGIS', 'AutoCAD'], freeResources: ['ESRI MOOC'], paidCourses: ['ArcGIS Pro Cert'] },
+                { title: 'Urban Planning', steps: [
+                    { week: '1-4', topic: 'Planning Concepts', details: 'Zoning, Land use, and Master plans.' },
+                    { week: '5-8', topic: 'Policy & Bye-laws', details: 'UDPFI guidelines and DCR.' },
+                    { week: '9-12', topic: 'GIS for Planning', details: 'Spatial analysis and suitability mapping.' },
+                    { week: '13-16', topic: 'Smart Cities', details: 'ICT, IoT, and Urban analytics.' },
+                    { week: '17-20', topic: 'Sustainable Mobility', details: 'TOD, NMT corridors, and ITS.' },
+                    { week: '21-24', topic: 'Housing & Infrastr', details: 'PMAY, Smart city projects.' }
+                ], companies: ['CEPT', 'TERI', 'WRI India', 'Smart Cities Mission'], growth: 'High', salaryRange: '₹5L-₹22L', complexity: 'Moderate', skills: ['ArcGIS', 'SketchUp', 'AutoCAD'], freeResources: ['WRI Ross Center'], paidCourses: ['AITP Cert'] },
+                { title: 'Smart Cities Development', companies: ['Cisco', 'IBM', 'Siemens', 'Schneider'], growth: 'Exponential', salaryRange: '₹8L-₹30L', skills: ['IoT', 'GIS', 'Data Analytics'] },
+                { title: 'Disaster Management Engineering', companies: ['NDMA', 'UNDP', 'UNICEF', 'Red Cross'], growth: 'High', salaryRange: '₹6L-₹24L', skills: ['Risk Assessment', 'GIS', 'Remote Sensing'] }
+            ]
+        },
+        {
+            domain: 'Software & Modern Tech',
+            description: 'Cross-functional software roles for civil engineers.',
+            roles: [
+                { title: 'Software Development', companies: ['Google', 'Microsoft'], growth: 'Steady', salaryRange: '₹12L-₹50L', skills: ['C++', 'DSA'] },
+                { title: 'Web Development', companies: ['Netflix', 'Meta'], growth: 'High', salaryRange: '₹8L-₹35L', skills: ['React', 'Node.js'] },
+                { title: 'Mobile App Development', companies: ['Google', 'Uber'], growth: 'High', salaryRange: '₹7L-₹28L', skills: ['Flutter', 'Kotlin'] },
+                { title: 'AI & Machine Learning', companies: ['OpenAI', 'NVIDIA'], growth: 'Very High', salaryRange: '₹15L-₹60L', skills: ['Python', 'TensorFlow'] },
+                { title: 'Data Science & Analytics', companies: ['Amazon', 'Spotify'], growth: 'High', salaryRange: '₹10L-₹38L', skills: ['SQL', 'Python'] },
+                { title: 'Cybersecurity', companies: ['CrowdStrike', 'Cisco'], growth: 'High', salaryRange: '₹9L-₹32L', skills: ['Linux', 'SIEM'] },
+                { title: 'Cloud Computing & DevOps', companies: ['GCP', 'AWS'], growth: 'Very High', salaryRange: '₹12L-₹48L', skills: ['K8s', 'Docker'] },
+                { title: 'UI/UX Design', companies: ['Google', 'Adobe'], growth: 'High', salaryRange: '₹6L-₹22L', skills: ['Figma'] },
+                { title: 'Blockchain Development', companies: ['Coinbase', 'Polygon'], growth: 'High', salaryRange: '₹12L-₹40L', skills: ['Solidity'] },
+                { title: 'AR/VR Development', companies: ['Meta', 'Unity'], growth: 'Medium', salaryRange: '₹8L-₹26L', skills: ['Unity', 'C#'] },
+                { title: 'Game Development', companies: ['Epic', 'EA'], growth: 'Medium', salaryRange: '₹6L-₹24L', skills: ['Unity', 'C#'] }
+            ]
+        }
+    ],
+    'CDS': [
+        {
+            domain: 'Data Science & ML',
+            description: 'Extracting insights from data using statistics and machine learning.',
+            roles: [
+                { title: 'Data Science', steps: [
+                    { week: '1-4', topic: 'Statistics & Probability', details: 'Distributions, Bayes, and Hypothesis Testing.' },
+                    { week: '5-8', topic: 'Python for Data', details: 'Pandas, NumPy, and EDA best practices.' },
+                    { week: '9-12', topic: 'Machine Learning', details: 'Sklearn: Regression, Classification, Clustering.' },
+                    { week: '13-16', topic: 'Feature Engineering', details: 'Encoding, Scaling, and Selection.' },
+                    { week: '17-20', topic: 'Model Evaluation', details: 'Cross-validation, AUC, and Bias-Variance.' },
+                    { week: '21-24', topic: 'Case Studies', details: 'End-to-end business projects.' }
+                ], companies: ['Google', 'Netflix', 'Amazon', 'McKinsey', 'Tiger Analytics'], growth: 'Exponential', salaryRange: '₹10L-₹40L', complexity: 'High', skills: ['Python', 'Statistics', 'Sklearn', 'SQL'], freeResources: ['Kaggle Learn'], paidCourses: ['DataCamp'] },
+                { title: 'Data Analytics', steps: [
+                    { week: '1-4', topic: 'Excel Advanced', details: 'Pivot, VLOOKUP, and Power Query.' },
+                    { week: '5-8', topic: 'SQL Mastery', details: 'Joins, Window Functions, and CTEs.' },
+                    { week: '9-12', topic: 'Visualization', details: 'Tableau, Power BI dashboards.' },
+                    { week: '13-16', topic: 'Statistical Analysis', details: 'Descriptive/Inferential stats.' },
+                    { week: '17-20', topic: 'A/B Testing', details: 'Experimental design and p-values.' },
+                    { week: '21-24', topic: 'Business Strategy', details: 'Storytelling with data.' }
+                ], companies: ['Google', 'Uber', 'Flipkart', 'Accenture'], growth: 'High', salaryRange: '₹6L-₹28L', complexity: 'Moderate', skills: ['SQL', 'Tableau', 'Excel', 'Power BI'], freeResources: ['Google Data Analytics'], paidCourses: ['Coursera DA'] },
+                { title: 'Business Analytics', steps: [
+                    { week: '1-4', topic: 'Business Fundamentals', details: 'KPIs, Metrics, and Dashboards.' },
+                    { week: '5-8', topic: 'SQL for Business', details: 'Revenue, Retention, and Cohort analysis.' },
+                    { week: '9-12', topic: 'Forecasting', details: 'Time Series and Regression models.' },
+                    { week: '13-16', topic: 'Optimization', details: 'Linear Programming and Simulation.' },
+                    { week: '17-20', topic: 'BI Tools', details: 'Looker, Power BI, and Sisense.' },
+                    { week: '21-24', topic: 'Consulting Skills', details: 'Frameworks and Case interviews.' }
+                ], companies: ['McKinsey', 'BCG', 'Deloitte', 'EY', 'KPMG'], growth: 'High', salaryRange: '₹8L-₹35L', complexity: 'Moderate', skills: ['SQL', 'Excel', 'Power BI', 'Python'], freeResources: ['HBR Analytics'], paidCourses: ['ISB BAi'] },
+                { title: 'Statistical Analysis', steps: [
+                    { week: '1-4', topic: 'Descriptive Stats', details: 'Central tendency and Dispersion.' },
+                    { week: '5-8', topic: 'Inferential Stats', details: 'Confidence intervals and Hypothesis tests.' },
+                    { week: '9-12', topic: 'Regression', details: 'Linear, Logistic, and Multivariate.' },
+                    { week: '13-16', topic: 'Bayesian Methods', details: 'Prior, Posterior, and MCMC.' },
+                    { week: '17-20', topic: 'R Programming', details: 'tidyverse, ggplot2, and Shiny.' },
+                    { week: '21-24', topic: 'Experimental Design', details: 'DOE and Randomized trials.' }
+                ], companies: ['Pfizer', 'IQVIA', 'SAS Institute', 'Nielsen'], growth: 'Steady', salaryRange: '₹8L-₹30L', complexity: 'High', skills: ['R', 'SAS', 'Python', 'Statistics'], freeResources: ['Khan Academy Stats'], paidCourses: ['Coursera Statistical Learning'] },
+                { title: 'Data Visualization', companies: ['Tableau', 'Google', 'Spotify', 'Adobe'], growth: 'High', salaryRange: '₹7L-₹25L', skills: ['Tableau', 'D3.js', 'Power BI'] }
+            ]
+        },
+        {
+            domain: 'AI, Deep Learning & Research',
+            description: 'Cutting-edge AI research and deployment.',
+            roles: [
+                { title: 'Machine Learning', steps: [
+                    { week: '1-4', topic: 'Math for ML', details: 'Linear Algebra, Calculus, and Optimization.' },
+                    { week: '5-8', topic: 'Classical ML', details: 'SVM, Random Forest, and XGBoost.' },
+                    { week: '9-12', topic: 'Feature Engineering', details: 'PCA, Embeddings, and Pipeline design.' },
+                    { week: '13-16', topic: 'Model Tuning', details: 'Grid/Bayesian search and Regularization.' },
+                    { week: '17-20', topic: 'End-to-End Pipelines', details: 'Sklearn pipelines and MLflow.' },
+                    { week: '21-24', topic: 'Deployment', details: 'FastAPI and Docker containerization.' }
+                ], companies: ['Google', 'Meta', 'NVIDIA', 'Amazon'], growth: 'Very High', salaryRange: '₹12L-₹50L', complexity: 'High', skills: ['Python', 'Sklearn', 'XGBoost', 'MLflow'], freeResources: ['Fast.ai'], paidCourses: ['Andrew Ng ML'] },
+                { title: 'Deep Learning', steps: [
+                    { week: '1-4', topic: 'Neural Networks', details: 'Perceptrons, Backpropagation, and Activations.' },
+                    { week: '5-8', topic: 'CNNs', details: 'Image classification and Object detection.' },
+                    { week: '9-12', topic: 'RNNs & Sequence', details: 'LSTM, GRU, and Seq2Seq models.' },
+                    { week: '13-16', topic: 'Transformers', details: 'Attention, BERT, and GPT architectures.' },
+                    { week: '17-20', topic: 'GANs', details: 'Image generation and Style transfer.' },
+                    { week: '21-24', topic: 'Deployment', details: 'ONNX, TensorRT, and Edge AI.' }
+                ], companies: ['OpenAI', 'Google DeepMind', 'Meta FAIR', 'NVIDIA'], growth: 'Exponential', salaryRange: '₹15L-₹60L+', complexity: 'Very High', skills: ['PyTorch', 'TensorFlow', 'CUDA'], freeResources: ['d2l.ai'], paidCourses: ['DeepLearning.AI'] },
+                { title: 'Natural Language Processing (NLP)', steps: [
+                    { week: '1-4', topic: 'Text Preprocessing', details: 'Tokenization, Stemming, and TF-IDF.' },
+                    { week: '5-8', topic: 'Word Embeddings', details: 'Word2Vec, GloVe, and FastText.' },
+                    { week: '9-12', topic: 'Sequence Models', details: 'RNNs and Attention for NLP.' },
+                    { week: '13-16', topic: 'Transformers', details: 'BERT, GPT, and T5 fine-tuning.' },
+                    { week: '17-20', topic: 'RAG & LLMs', details: 'Retrieval Augmented Generation and prompting.' },
+                    { week: '21-24', topic: 'Production NLP', details: 'Hugging Face and LangChain.' }
+                ], companies: ['Google', 'OpenAI', 'Cohere', 'Anthropic'], growth: 'Exponential', salaryRange: '₹15L-₹60L+', complexity: 'Very High', skills: ['Python', 'Transformers', 'Hugging Face'], freeResources: ['Hugging Face Course'], paidCourses: ['Stanford NLP'] },
+                { title: 'Computer Vision', steps: [
+                    { week: '1-4', topic: 'Image Basics', details: 'Pixels, Color spaces, and Filters.' },
+                    { week: '5-8', topic: 'Feature Detection', details: 'SIFT, HOG, and Contour analysis.' },
+                    { week: '9-12', topic: 'Deep Vision', details: 'ResNet, EfficientNet, and YOLO.' },
+                    { week: '13-16', topic: 'Segmentation', details: 'U-Net and Mask R-CNN.' },
+                    { week: '17-20', topic: 'Video Analysis', details: 'Tracking, Action recognition.' },
+                    { week: '21-24', topic: 'Deployment', details: 'TensorRT and OpenCV DNN.' }
+                ], companies: ['Tesla', 'Google (Photos)', 'Snap', 'Adobe'], growth: 'Very High', salaryRange: '₹12L-₹50L', complexity: 'High', skills: ['OpenCV', 'PyTorch', 'TensorFlow'], freeResources: ['PyImageSearch'], paidCourses: ['Udacity CV'] },
+                { title: 'AI Research', companies: ['Google DeepMind', 'OpenAI', 'Meta FAIR', 'Microsoft Research'], growth: 'Very High', salaryRange: '₹20L-₹80L+', skills: ['Math', 'PyTorch', 'Papers'] },
+                { title: 'Artificial Intelligence', companies: ['Google', 'IBM Watson', 'Amazon AI'], growth: 'Exponential', salaryRange: '₹15L-₹55L', skills: ['Python', 'ML', 'Deep Learning'] }
+            ]
+        },
+        {
+            domain: 'Data Engineering & MLOps',
+            description: 'Building and scaling data infrastructure.',
+            roles: [
+                { title: 'Data Engineering', steps: [
+                    { week: '1-4', topic: 'SQL Mastery', details: 'Advanced queries and Database design.' },
+                    { week: '5-8', topic: 'Python for Data', details: 'ETL scripting and API integration.' },
+                    { week: '9-12', topic: 'Big Data', details: 'Apache Spark, Kafka, and Hive.' },
+                    { week: '13-16', topic: 'Cloud Warehousing', details: 'BigQuery, Snowflake, and Redshift.' },
+                    { week: '17-20', topic: 'Orchestration', details: 'Apache Airflow and dbt.' },
+                    { week: '21-24', topic: 'Data Governance', details: 'Lineage, Quality, and Security.' }
+                ], companies: ['Google', 'Meta', 'Netflix', 'Snowflake', 'Databricks'], growth: 'Very High', salaryRange: '₹12L-₹50L', complexity: 'High', skills: ['Spark', 'Airflow', 'SQL', 'Python'], freeResources: ['DataEngineering.wiki'], paidCourses: ['Udacity DE'] },
+                { title: 'Big Data Engineering', steps: [
+                    { week: '1-4', topic: 'Hadoop Ecosystem', details: 'HDFS, MapReduce, and YARN.' },
+                    { week: '5-8', topic: 'Spark Deep Dive', details: 'RDDs, DataFrames, and Spark SQL.' },
+                    { week: '9-12', topic: 'Stream Processing', details: 'Kafka Streams and Flink.' },
+                    { week: '13-16', topic: 'NoSQL', details: 'MongoDB, Cassandra, and HBase.' },
+                    { week: '17-20', topic: 'Data Lakes', details: 'Delta Lake and Iceberg tables.' },
+                    { week: '21-24', topic: 'Performance', details: 'Partitioning, Caching, and Tuning.' }
+                ], companies: ['Cloudera', 'Databricks', 'Palantir', 'LinkedIn'], growth: 'High', salaryRange: '₹12L-₹45L', complexity: 'High', skills: ['Spark', 'Hadoop', 'Kafka', 'Scala'], freeResources: ['Spark Docs'], paidCourses: ['Databricks Academy'] },
+                { title: 'MLOps', steps: [
+                    { week: '1-4', topic: 'Version Control', details: 'Git, DVC, and experiment tracking.' },
+                    { week: '5-8', topic: 'CI/CD for ML', details: 'GitHub Actions and automated testing.' },
+                    { week: '9-12', topic: 'Model Registry', details: 'MLflow and Weights & Biases.' },
+                    { week: '13-16', topic: 'Serving', details: 'TFServing, Seldon, and BentoML.' },
+                    { week: '17-20', topic: 'Monitoring', details: 'Data drift and Model degradation.' },
+                    { week: '21-24', topic: 'Cloud ML Platforms', details: 'Vertex AI and SageMaker.' }
+                ], companies: ['Google', 'Amazon', 'DataRobot', 'Weights & Biases'], growth: 'Exponential', salaryRange: '₹15L-₹55L', complexity: 'High', skills: ['MLflow', 'Docker', 'Kubernetes', 'Python'], freeResources: ['Made With ML'], paidCourses: ['Coursera MLOps'] }
+            ]
+        },
+        {
+            domain: 'Software & Modern Tech',
+            description: 'Cross-functional software roles for data science graduates.',
+            roles: [
+                { title: 'Software Development', companies: ['Google', 'Microsoft'], growth: 'Steady', salaryRange: '₹12L-₹50L', skills: ['C++', 'DSA'] },
+                { title: 'Web Development', companies: ['Netflix', 'Meta'], growth: 'High', salaryRange: '₹8L-₹35L', skills: ['React', 'Node.js'] },
+                { title: 'Mobile App Development', companies: ['Google', 'Uber'], growth: 'High', salaryRange: '₹7L-₹28L', skills: ['Flutter', 'Kotlin'] },
+                { title: 'Cybersecurity', companies: ['CrowdStrike', 'Cisco'], growth: 'High', salaryRange: '₹9L-₹32L', skills: ['Linux', 'SIEM'] },
+                { title: 'Cloud Computing & DevOps', companies: ['GCP', 'AWS'], growth: 'Very High', salaryRange: '₹12L-₹48L', skills: ['K8s', 'Docker'] },
+                { title: 'UI/UX Design', companies: ['Google', 'Adobe'], growth: 'High', salaryRange: '₹6L-₹22L', skills: ['Figma'] },
+                { title: 'Blockchain Development', companies: ['Coinbase', 'Polygon'], growth: 'High', salaryRange: '₹12L-₹40L', skills: ['Solidity'] },
+                { title: 'AR/VR Development', companies: ['Meta', 'Unity'], growth: 'Medium', salaryRange: '₹8L-₹26L', skills: ['Unity', 'C#'] },
+                { title: 'Game Development', companies: ['Epic', 'EA'], growth: 'Medium', salaryRange: '₹6L-₹24L', skills: ['Unity', 'C#'] }
+            ]
+        }
+    ],
     'IMT': [{ domain: 'Cloud', roles: [{ title: 'Cloud Architect', companies: ['Google Cloud'], growth: 'Very High', salaryRange: '₹12L-₹45L+', skills: ['AWS/GCP', 'K8s'] }] }]
 };
