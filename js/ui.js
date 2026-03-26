@@ -1299,14 +1299,26 @@ window.autoScheduleAllBlocks = function() {
     const scheduled = [];
 
     pairings.forEach((p, i) => {
-        // Skip Sundays
-        if (date.getDay() === 0) date.setDate(date.getDate() + 1);
-        scheduled.push({ ...p, date: date.toISOString().split('T')[0], period: 1 });
-        date.setDate(date.getDate() + 1);
+        // Core Logic: 1 Week per Assignment Block
+        // We move by 7 days for every new block to ensure subjects don't overlap
+        if (i > 0) {
+            date.setDate(date.getDate() + 7);
+        }
+        
+        // Skip Sunday — if the weekly date lands on Sunday, move to Monday
+        if (date.getDay() === 0) {
+            date.setDate(date.getDate() + 1);
+        }
+
+        scheduled.push({ 
+            ...p, 
+            date: date.toISOString().split('T')[0], 
+            period: 1 
+        });
     });
 
     navState.scheduledBlocks = scheduled;
-    showToast(`⚡ All ${scheduled.length} blocks scheduled!`, 'success');
+    showToast(`⚡ Weekly staggered schedule generated (${scheduled.length} blocks)!`, 'success');
     render();
 };
 
