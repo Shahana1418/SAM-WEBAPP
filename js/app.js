@@ -2640,8 +2640,10 @@ function renderAssessments(container) {
                 <div class="wiz-field"><label>Assignment Type</label>
                     <select id="wiz-type" onchange="if(!navState.assignConfig)navState.assignConfig={};navState.assignConfig.assignType=this.value;navState.assignConfig.selectedLab='all';render();">
                         <option value="presentation" ${savedType === 'presentation' ? 'selected' : ''}>&#127908; Team Presentation</option>
-                        <option value="miniproject" ${savedType === 'miniproject' ? 'selected' : ''}>&#128295; Mini Project</option>
                         <option value="practicals" ${savedType === 'practicals' ? 'selected' : ''}>&#128203; Practicals</option>
+                        <option value="miniproject" ${savedType === 'miniproject' ? 'selected' : ''}>&#128295; Mini Project</option>
+                        <option value="case_study" ${savedType === 'case_study' ? 'selected' : ''}>&#128216; Case Studies</option>
+                        <option value="problem_solving" ${savedType === 'problem_solving' ? 'selected' : ''}>&#129518; Problem Solving</option>
                     </select>
                 </div>
                 ${labDropdownHTML}
@@ -2653,11 +2655,9 @@ function renderAssessments(container) {
                         <option value="Hard"   ${cfg.complexity === 'Hard' ? 'selected' : ''}>All Hard</option>
                     </select></div>
                 <div class="wiz-field"><label>Duration per Assignment</label>
-                    <select id="wiz-duration">
-                        <option value="10 min"   ${cfg.duration === '10 min' ? 'selected' : ''}>10 minutes</option>
-                        <option value="15-20 min" ${(!cfg.duration || cfg.duration === '15-20 min') ? 'selected' : ''}>15-20 minutes</option>
-                        <option value="20-30 min" ${cfg.duration === '20-30 min' ? 'selected' : ''}>20-30 minutes</option>
-                        <option value="30 min"   ${cfg.duration === '30 min' ? 'selected' : ''}>30 minutes</option>
+                    <select id="wiz-duration" onchange="if(!navState.assignConfig)navState.assignConfig={};navState.assignConfig.duration=this.value;">
+                        <option value="10-15 min" ${(!cfg.duration || cfg.duration === '10-15 min') ? 'selected' : ''}>10-15 minutes</option>
+                        <option value="15-20 min" ${cfg.duration === '15-20 min' ? 'selected' : ''}>15-20 minutes</option>
                     </select></div>
             </div>
             <div style="margin-top:1rem;">
@@ -3180,65 +3180,79 @@ function toggleAssignCard(i) {
 
 function generateEnrichedAssignment(unitNum, unitTitle, unitDesc, config, coKey, teamIdx, courseName = '') {
     const { assignType } = config;
-    const typeLabel = { presentation: 'Team Presentation', assignment: 'Individual Assignment', miniproject: 'Mini Project', viva: 'Viva Voce', practicals: 'Practicals' }[assignType] || 'Team Presentation';
+    const typeLabel = { presentation: 'Team Presentation', case_study: 'Case Studies', problem_solving: 'Problem Solving', miniproject: 'Mini Project', practicals: 'Practicals' }[assignType] || 'Team Presentation';
+    const dur = config.duration || '10-15 min';
     const descMap = {
-        presentation: `Prepare and deliver a 12–15 minute structured presentation on <strong>"${unitTitle}"</strong> from <strong>${courseName}</strong>. Cover Anna University important questions, key formulae, diagrams, and real-world examples. Use minimum 10 slides with clear visuals.`,
-        assignment: `Write a detailed analytical report on <strong>"${unitTitle}"</strong> from <strong>${courseName}</strong>. Include derivations, solved problems from previous Anna University question papers, diagrams and a summary. Minimum 1500 words.`,
-        miniproject: `Design, build or simulate a mini project on <strong>"${unitTitle}"</strong> relevant to <strong>${courseName}</strong>. Demonstrate a working outcome (prototype, simulation or data analysis), prepare a project report and present findings to the team.`,
-        practicals: `Perform laboratory experiments related to <strong>"${unitTitle}"</strong> in <strong>${courseName}</strong>. Record observations, analyse results, answer viva questions and submit a complete observation book entry.`,
+        presentation: `Prepare and deliver a ${dur} live presentation on <strong>"${unitTitle}"</strong> from <strong>${courseName}</strong>. Topics must cover Anna University important questions, previous year board questions, and core concepts.`,
+        case_study: `Analyze and present a comprehensive case study related to <strong>"${unitTitle}"</strong> from <strong>${courseName}</strong>. Research important Anna University case study topics from Google and propose analytical solutions. Duration: ${dur}.`,
+        problem_solving: `Solve and present analytical problems based on <strong>"${unitTitle}"</strong> from <strong>${courseName}</strong>. Focus on Anna University repeated problems, numericals, derivations, or algorithmic challenges. Duration: ${dur}.`,
+        miniproject: `Design, build or simulate a mini project based on Google research and Anna University important topics from <strong>"${unitTitle}"</strong> relevant to <strong>${courseName}</strong>. Present findings to the team. Duration: ${dur}.`,
+        practicals: `Perform laboratory experiments related to <strong>"${unitTitle}"</strong> exactly as per the Anna University syllabus in <strong>${courseName}</strong>. Record observations and analyse results. Duration: ${dur}.`,
     };
     const objectiveMap = {
         presentation: `To understand and communicate key concepts of "${unitTitle}" from ${courseName}, with emphasis on Anna University syllabus topics and exam-relevant questions.`,
-        assignment: `To analyse and solve Anna University examination problems related to "${unitTitle}" from ${courseName}, developing problem-solving and technical writing skills.`,
-        miniproject: `To apply theoretical knowledge of "${unitTitle}" from ${courseName} in a practical, hands-on mini project that demonstrates engineering principles.`,
-        practicals: `To verify theoretical concepts of "${unitTitle}" through hands-on experiments in ${courseName} laboratory, building observation and analytical skills.`,
+        case_study: `To research and evaluate Anna University important case studies related to "${unitTitle}" from ${courseName}, developing analytical thinking and problem-solving skills.`,
+        problem_solving: `To apply theoretical knowledge and solve Anna University critical problems and derivations based on "${unitTitle}" from ${courseName}.`,
+        miniproject: `To apply theoretical knowledge of "${unitTitle}" from ${courseName} in a practical, hands-on mini project based on Anna University important concepts.`,
+        practicals: `To practically verify syllabus concepts of "${unitTitle}" through hands-on benchmark experiments in ${courseName}.`,
     };
     const deliverableMap = {
         presentation: [
-            'PowerPoint/PDF slide deck (minimum 10 slides).',
-            'Live 12–15 min presentation to the team with Q&A.',
-            'Reference list citing syllabus textbooks and important question resources.'
+            'Slide deck covering Anna University important questions.',
+            `Live ${dur} presentation to the team.`,
+            'Reference list citing syllabus and external resources.'
         ],
-        assignment: [
-            'Typed report (minimum 1500 words) with derivations and step-by-step solutions.',
-            'Solutions to at least 3 previous Anna University important questions.',
-            'Diagrams, graphs or flowcharts as applicable.'
+        case_study: [
+            'Detailed case study report mapping real-world issues to Anna University topics.',
+            `Live ${dur} presentation explaining problem and solution.`,
+            'References to relevant Google research.'
+        ],
+        problem_solving: [
+            'Typed or neatly written solutions to 3+ Anna University problems/derivations.',
+            `Live ${dur} explanation of the problem-solving steps.`,
+            'Correctness in applying formulas/theorems.'
         ],
         miniproject: [
             'Working prototype, simulation output or experimental data.',
-            'Project report: Abstract, Introduction, Design/Method, Results, Conclusion.',
-            'Live demonstration and Q&A with evaluating team.'
+            'Mini project report defining the Anna University concept targeted.',
+            `Live ${dur} demonstration to reviewing team.`
         ],
         practicals: [
-            'Completed observation book entry with aim, apparatus, procedure, result.',
-            'Graphs and calculations as required by the experiment.',
-            'Viva responses covering theory behind the experiment.'
+            'Completed observation book entry (aim, apparatus, procedure, result).',
+            'Syllabus-aligned graphs/calculations.',
+            'Viva responses covering theory.'
         ],
     };
     const criteriaMap = {
         presentation: [
-            'Coverage of Anna University syllabus topics (30%)',
+            'Coverage of Anna University repeated questions (30%)',
             'Clarity of slides and visual aids (20%)',
             'Delivery, confidence and time management (25%)',
-            'Handling of Q&A from reviewers (25%)'
+            'Handling of Q&A (25%)'
         ],
-        assignment: [
-            'Correctness of problem solutions and derivations (35%)',
-            'Writing clarity and report structure (25%)',
-            'Diagrams, tables and examples (20%)',
-            'Adherence to syllabus scope and references (20%)'
+        case_study: [
+            'Depth of Anna University case study research (30%)',
+            'Logical flow and structural analysis (25%)',
+            'Practical application of concepts (20%)',
+            'Presentation clarity (25%)'
+        ],
+        problem_solving: [
+            'Accuracy of derivations and Anna Univ problem solutions (40%)',
+            'Step-by-step clarity (20%)',
+            'Understanding of formulas (20%)',
+            'Explanation to peers during presentation (20%)'
         ],
         miniproject: [
-            'Working functionality and completeness (40%)',
-            'Innovation and alignment with course theory (20%)',
-            'Project report quality and documentation (20%)',
-            'Demonstration and explanation to reviewing team (20%)'
+            'Working functionality based on Anna Univ syllabus (35%)',
+            'Innovation and logic (25%)',
+            'Documentation and report quality (20%)',
+            'Demonstration skills (20%)'
         ],
         practicals: [
             'Successful execution of the experiment (40%)',
             'Knowledge of underlying concepts (viva) (30%)',
-            'Observation book quality and calculations (20%)',
-            'Debugging/troubleshooting skills shown (10%)'
+            'Observation quality and calculations (20%)',
+            'Syllabus alignment (10%)'
         ],
     };
     const complexityCycle = ['Easy', 'Medium', 'Hard', 'Medium', 'Easy', 'Hard', 'Medium', 'Easy', 'Hard', 'Medium', 'Hard', 'Easy'];
