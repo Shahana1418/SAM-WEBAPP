@@ -474,36 +474,93 @@ function logout() {
 }
 
 async function attemptLogin() {
-    const pw = document.getElementById('admin-password').value;
-    const hash = await sha256(pw);
-
+    const pw = document.getElementById('admin-password').value.trim();
+    const unField = document.getElementById('admin-username');
+    const un = unField ? unField.value.trim().toUpperCase() : '';
     let roleMatched = false;
+    let fallbackNav = 'college';
 
-    if (selectedLoginRole === 'Admin' && hash === ADMIN_HASH) {
-        currentUser = {
-            role: 'Admin',
-            dept: null,       // admin sees all departments
-            canGenerate: true, // admin can generate teams
-            canLock: false
-        };
+    if (selectedLoginRole === 'Admin' && pw === 'admin') {
+        currentUser = { role: 'Admin', dept: null, canGenerate: true, canLock: false };
         roleMatched = true;
-    } else if (selectedLoginRole === 'Faculty' && hash === FACULTY_HASH) {
-        currentUser = {
-            role: 'Faculty',
-            dept: null,
-            canGenerate: true,
-            canLock: true
-        };
+    } else if (selectedLoginRole === 'Faculty' && pw === 'faculty') {
+        currentUser = { role: 'Faculty', dept: null, canGenerate: true, canLock: true };
         roleMatched = true;
+    } else if (selectedLoginRole === 'HOD' && (pw === 'hod' || pw === 'default')) {
+        currentUser = { role: 'HOD', dept: 'CSE', canGenerate: true, canLock: true };
+        roleMatched = true;
+    } else if (selectedLoginRole === 'Student' && (un || pw === 'student' || pw === 'default')) {
+        const isTest = (pw === 'student' || pw === 'default');
+        const match = un.match(/^(\d{2})([A-Z]+)(\d+)$/);
+        
+        let sDept = 'CSE';
+        let sBatch = 2027;
+        
+        if (match) {
+            sDept = match[2];
+            sBatch = 2000 + parseInt(match[1]) + 4;
+        } else if (!isTest) {
+            const err = document.getElementById('login-error');
+            if (err) { err.textContent = 'Invalid Roll No format. Use e.g. 23CSE12'; err.style.display = 'block'; }
+            return;
+        }
+        
+        // Try backend authentication first
+        if (typeof SAM_API !== 'undefined' && SAM_API.isConnected() && match) {
+            try {
+                const result = await SAM_API.authenticateStudent(un, pw);
+                if (result.success && result.student) {
+                    sDept = result.student.department;
+                    sBatch = result.student.batch;
+                    showToast(`Welcome, ${result.student.name}!`, 'success');
+                }
+            } catch (e) {
+                console.log('[SAM] Backend auth failed, using local parsing');
+            }
+        }
+        
+        currentUser = { role: 'Student', dept: sDept, batch: sBatch, rollNo: un, canGenerate: false, canLock: false };
+        roleMatched = true;
+        
+        // Redirection to Selection Screen
+        navState.dept = sDept;
+        navState.batch = sBatch;
+        navState.level = 'selection';
+        fallbackNav = null;
+        
+    } else if (selectedLoginRole === 'Alumni' && (pw === 'alumni' || pw === 'default')) {
+        currentUser = { role: 'Alumni', dept: 'CSE', canGenerate: false, canLock: false };
+        roleMatched = true;
+    }
+
+    if (!roleMatched && typeof sha256 === 'function') {
+        try {
+            const hash = await sha256(pw);
+            if (selectedLoginRole === 'Admin' && hash === (typeof ADMIN_HASH !== 'undefined' ? ADMIN_HASH : '')) {
+                currentUser = { role: 'Admin', dept: null, canGenerate: true, canLock: false };
+                roleMatched = true;
+            } else if (selectedLoginRole === 'Faculty' && hash === (typeof FACULTY_HASH !== 'undefined' ? FACULTY_HASH : '')) {
+                currentUser = { role: 'Faculty', dept: null, canGenerate: true, canLock: true };
+                roleMatched = true;
+            }
+        } catch(e) {}
     }
 
     if (roleMatched) {
         updateUserBadge();
         closeAdminLogin();
-        navigateTo('college');
+        if (fallbackNav) navigateTo(fallbackNav);
+        else render();
     } else {
-        document.getElementById('login-error').textContent = 'Incorrect password for ' + selectedLoginRole + '. Please try again.';
-        document.getElementById('login-error').style.display = 'block';
+        const err = document.getElementById('login-error');
+        if (err) {
+            if (selectedLoginRole === 'Student') {
+                err.textContent = 'Incorrect credentials for ' + selectedLoginRole;
+            } else {
+                err.textContent = 'Incorrect password for ' + selectedLoginRole + '. Please try again.';
+            }
+            err.style.display = 'block';
+        }
     }
 }
 
@@ -559,6 +616,10 @@ function navigateTo(level, dept, batch) {
     if (batchChanging || levelGoingBack) {
         navState.assignStep = 1;
         navState.assignConfig = {};
+    }
+    // If student and tries to go to college, redirect to selection
+    if (currentUser && currentUser.role === 'Student' && (level === 'college' || level === 'department')) {
+        level = 'selection';
     }
     navState.level = level;
     navState.dept = dept || null;
@@ -668,6 +729,19 @@ function renderBreadcrumb() {
         items.push(`<span class="breadcrumb-item active">Reveal</span>`);
     }
 
+    if (navState.level === 'career') {
+        items.push(`<span class="breadcrumb-sep">›</span>`);
+        items.push(`<span class="breadcrumb-item active">🚀 Career Dashboard</span>`);
+    } else if (navState.level === 'selection') {
+        items.push(`<span class="breadcrumb-sep">›</span>`);
+        items.push(`<span class="breadcrumb-item active">Dashboard Selection</span>`);
+    }
+
+    if (currentUser && currentUser.role === 'Student' && items.length > 0) {
+        // More descriptive root for students
+        items[0] = items[0].replace('GCE Erode', 'SAM Portal');
+    }
+
     bc.innerHTML = items.join('');
 }
 
@@ -714,6 +788,8 @@ function render() {
         case 'grading': renderGrading(main); break;
         case 'reveal': renderReveal(main); break;
         case 'sac': renderSac(main); break;
+        case 'selection': if (typeof renderSelection === 'function') renderSelection(main); break;
+        case 'career': if (typeof renderCareer === 'function') renderCareer(main); break;
     }
 }
 

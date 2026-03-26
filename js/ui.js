@@ -76,100 +76,7 @@ window.updateUserBadge = function() {
     }
 };
 
-window.attemptLogin = async function() {
-    const pw = document.getElementById('admin-password').value.trim();
-    const unField = document.getElementById('admin-username');
-    const un = unField ? unField.value.trim().toUpperCase() : '';
-    let roleMatched = false;
-    let fallbackNav = 'college';
 
-    if (selectedLoginRole === 'Admin' && pw === 'admin') {
-        currentUser = { role: 'Admin', dept: null, canGenerate: true, canLock: false };
-        roleMatched = true;
-    } else if (selectedLoginRole === 'Faculty' && pw === 'faculty') {
-        currentUser = { role: 'Faculty', dept: null, canGenerate: true, canLock: true };
-        roleMatched = true;
-    } else if (selectedLoginRole === 'HOD' && (pw === 'hod' || pw === 'default')) {
-        currentUser = { role: 'HOD', dept: 'CSE', canGenerate: true, canLock: true };
-        roleMatched = true;
-    } else if (selectedLoginRole === 'Student' && (un || pw === 'student' || pw === 'default')) {
-        const isTest = (pw === 'student' || pw === 'default');
-        const match = un.match(/^(\d{2})([A-Z]+)(\d+)$/);
-        
-        let sDept = 'CSE';
-        let sBatch = 2027;
-        
-        if (match) {
-            sDept = match[2];
-            sBatch = 2000 + parseInt(match[1]) + 4;
-        } else if (!isTest) {
-            const err = document.getElementById('login-error');
-            if (err) { err.textContent = 'Invalid Roll No format. Use e.g. 23CSE12'; err.style.display = 'block'; }
-            return;
-        }
-        
-        // Try backend authentication first
-        if (typeof SAM_API !== 'undefined' && SAM_API.isConnected() && match) {
-            try {
-                const result = await SAM_API.authenticateStudent(un, pw);
-                if (result.success && result.student) {
-                    sDept = result.student.department;
-                    sBatch = result.student.batch;
-                    showToast(`Welcome, ${result.student.name}!`, 'success');
-                }
-            } catch (e) {
-                console.log('[SAM] Backend auth failed, using local parsing');
-            }
-        }
-        
-        currentUser = { role: 'Student', dept: sDept, batch: sBatch, rollNo: un, canGenerate: false, canLock: false };
-        roleMatched = true;
-        
-        // Navigate directly to their batch
-        navState.dept = sDept;
-        navState.batch = sBatch;
-        navState.level = 'batch';
-        fallbackNav = null;
-        
-    } else if (selectedLoginRole === 'Alumni' && (pw === 'alumni' || pw === 'default')) {
-        currentUser = { role: 'Alumni', dept: 'CSE', canGenerate: false, canLock: false };
-        roleMatched = true;
-    } else if (pw === 'default') {
-        // Ultimate fallback
-        currentUser = { role: selectedLoginRole, dept: 'CSE', canGenerate: ['Admin', 'Faculty', 'HOD'].includes(selectedLoginRole), canLock: false };
-        roleMatched = true;
-    }
-
-    if (!roleMatched && typeof sha256 === 'function') {
-        try {
-            const hash = await sha256(pw);
-            if (selectedLoginRole === 'Admin' && hash === (typeof ADMIN_HASH !== 'undefined' ? ADMIN_HASH : '')) {
-                currentUser = { role: 'Admin', dept: null, canGenerate: true, canLock: false };
-                roleMatched = true;
-            } else if (selectedLoginRole === 'Faculty' && hash === (typeof FACULTY_HASH !== 'undefined' ? FACULTY_HASH : '')) {
-                currentUser = { role: 'Faculty', dept: null, canGenerate: true, canLock: true };
-                roleMatched = true;
-            }
-        } catch(e) {}
-    }
-
-    if (roleMatched) {
-        updateUserBadge();
-        if (typeof closeAdminLogin === 'function') closeAdminLogin();
-        if (fallbackNav) navigateTo(fallbackNav);
-        else render();
-    } else {
-        const err = document.getElementById('login-error');
-        if (err) {
-            if (selectedLoginRole === 'Student') {
-                err.textContent = 'Incorrect credentials. Students: use Roll No (e.g. 23CSE12) and DOB.';
-            } else {
-                err.textContent = 'Incorrect password. Please try again.';
-            }
-            err.style.display = 'block';
-        }
-    }
-};
 
 window.openLoginModal = function(role) {
     selectedLoginRole = role;
@@ -442,7 +349,7 @@ window.renderBatch = function(container) {
                 </div>
                 <div class="page-sub">${info.yearSuffix} Year · Semester ${info.semester} · ${students.length} students enrolled</div>
             </div>
-            <button class="btn btn-secondary" onclick="navigateTo('department','${deptCode}')">
+            <button class="btn btn-secondary" onclick="${currentUser && currentUser.role === 'Student' ? 'navigateTo(\'selection\')' : `navigateTo('department','${deptCode}')`}">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
                 Back
             </button>
@@ -1530,8 +1437,211 @@ window.exportAssignmentsToCSV = function() {
 };
 
 /* ══════════════════════════════════════════════════════════
-   INIT
+   STUDENT DASHBOARD SELECTION
+   Allows student to choose between Academic and Career dashboards
 ══════════════════════════════════════════════════════════ */
+window.renderSelection = function(container) {
+    const sDept = navState.dept;
+    const sBatch = navState.batch;
+    const rollNo = currentUser ? (currentUser.rollNo || 'Student') : 'Student';
+    
+    // Aesthetic Gradient & Glass Cards
+    container.innerHTML = `
+    <div class="selection-container" style="min-height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem;">
+        <div class="selection-header" style="text-align: center; margin-bottom: 3rem; animation: fadeInDown 0.8s ease;">
+            <div style="font-size: 0.9rem; color: var(--primary); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem;">Welcome back, ${rollNo}</div>
+            <h1 style="font-size: 2.5rem; color: var(--text-main); font-family: 'Playfair Display', serif; margin-bottom: 1rem;">Choose Your Journey</h1>
+            <p style="color: var(--text-muted); max-width: 500px;">Select the portal you'd like to access today. Both systems co-exist to support your academic and professional growth.</p>
+        </div>
+        
+        <div class="selection-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; width: 100%; max-width: 900px;">
+            <!-- Academic Dashboard Card -->
+            <div class="select-card group" onclick="navigateTo('batch', '${sDept}', ${sBatch})" 
+                style="background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; cursor: pointer; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center;"
+                onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='var(--primary)'; this.style.boxShadow='0 20px 40px rgba(123, 28, 28, 0.15)';"
+                onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--border)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.05)';">
+                
+                <div class="card-glow" style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(123, 28, 28, 0.03) 0%, transparent 70%); transition: 0.5s;"></div>
+                
+                <div class="card-icon" style="font-size: 4rem; margin-bottom: 1.5rem; display: inline-block; transition: 0.5s;">🎓</div>
+                <h3 style="font-size: 1.5rem; color: var(--text-main); font-weight: 700; margin-bottom: 1rem;">Academic Dashboard</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 2rem;">Access your curriculum, assignments, team activities, and academic performance metrics.</p>
+                
+                <div class="btn-select" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); font-weight: 700; font-size: 0.9rem;">
+                    Enter Portal
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </div>
+            </div>
+            
+            <!-- Career Dashboard Card -->
+            <div class="select-card group" onclick="navigateTo('career', '${sDept}', ${sBatch})" 
+                style="background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; cursor: pointer; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center;"
+                onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='#06b6d4'; this.style.boxShadow='0 20px 40px rgba(6, 182, 212, 0.15)';"
+                onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--border)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.05)';">
+                
+                <div class="card-glow" style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(6, 182, 212, 0.03) 0%, transparent 70%); transition: 0.5s;"></div>
+                
+                <div class="card-icon" style="font-size: 4rem; margin-bottom: 1.5rem; display: inline-block; transition: 0.5s;">🚀</div>
+                <h3 style="font-size: 1.5rem; color: var(--text-main); font-weight: 700; margin-bottom: 1rem;">Career Dashboard</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 2rem;">Explore placement opportunities, build your portfolio, connect with mentors, and track industry readiness.</p>
+                
+                <div class="btn-select" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #06b6d4; font-weight: 700; font-size: 0.9rem;">
+                    Launch Career
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </div>
+                
+                <div style="position: absolute; top: 1rem; right: 1rem; background: #06b6d4; color: white; font-size: 0.65rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 10px; letter-spacing: 0.05em; text-transform: uppercase;">New Feature</div>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    `;
+};
+
+/* ══════════════════════════════════════════════════════════
+   CAREER DASHBOARD SCREEN
+══════════════════════════════════════════════════════════ */
+window.renderCareer = function(container) {
+    const sDept = navState.dept || 'CSE';
+    const deptInfo = (typeof CAREER_RESOURCES !== 'undefined' ? CAREER_RESOURCES[sDept] : null) || [];
+    
+    // Header
+    let content = `
+    <div class="career-container" style="padding: 1.5rem; animation: fadeIn 0.5s ease; max-width: 1200px; margin: 0 auto; min-height: 100vh; background: #fff;">
+        <div class="page-header" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; border-bottom: 1.5px solid var(--border); padding-bottom: 2rem;">
+            <div style="flex: 1;">
+                <div class="hero-badge" style="background: rgba(30, 64, 175, 0.08); color: var(--primary); display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.5rem 1rem; border-radius: 30px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.2rem;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+                    Future Ready Portal — ${sDept} Department
+                </div>
+                <h1 style="font-size: 2.8rem; color: var(--text-main); font-family: 'Playfair Display', serif; margin: 0; line-height: 1.1;">Blueprint Your<br>Industry Journey</h1>
+                <p style="color: var(--text-muted); margin-top: 0.8rem; font-size: 1.05rem; max-width: 600px;">Compare job roles, identify critical skills, and access curated resources for your academic department.</p>
+            </div>
+            <button class="btn btn-secondary" onclick="navigateTo('selection')" style="white-space:nowrap; padding: 12px 24px; border-radius: 12px; height: fit-content; font-weight: 700;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" style="margin-right:0.4rem;"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                Switch Portal
+            </button>
+        </div>
+
+        <div class="career-content">
+            <!-- Domain Selection -->
+            <div class="section-divider" style="margin-bottom: 24px;">Explore Career Domains</div>
+            <div class="domain-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+                ${deptInfo.map((domainObj, idx) => `
+                    <div class="domain-card card" style="border-left: 4px solid var(--primary); border-radius: 12px; transition: transform 0.3s; cursor:pointer;" onclick="scrollToDomain('domain-${idx}')">
+                        <div style="font-size: 1.25rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem;">${domainObj.domain}</div>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">${domainObj.description}</p>
+                        <div style="margin-top: 1rem; color: var(--primary); font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; gap: 4px;">
+                            View ${domainObj.roles.length} roles <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+
+            <!-- Role Comparison Table -->
+            <div class="section-divider" style="margin-bottom: 24px;">Market Comparison Matrix</div>
+            <div class="card" style="padding: 0; overflow: hidden; margin-bottom: 3rem; border: 1px solid var(--border-strong);">
+                <table class="dt" style="width: 100%; border: none; border-radius: 0;">
+                    <thead style="background: var(--surface-inset);">
+                        <tr>
+                            <th style="padding: 1.25rem;">Industry Role</th>
+                            <th>Growth Trajectory</th>
+                            <th>Starting Salary</th>
+                            <th>Complexity</th>
+                            <th>Primary Skills</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${deptInfo.flatMap(d => d.roles).map(role => `
+                            <tr style="border-bottom: 1px solid var(--border-light);">
+                                <td style="padding: 1rem 1.25rem; font-weight: 700; color: var(--primary);">${role.title}</td>
+                                <td><span class="chip" style="background: var(--success-light); color: var(--success); font-weight: 800;">${role.growth}</span></td>
+                                <td class="mono-text" style="font-size: 0.85rem;">${role.salaryRange}</td>
+                                <td><span class="chip" style="background: #fff; border: 1px solid var(--border-strong); color: var(--text-main);">${role.complexity}</span></td>
+                                <td style="font-size: 0.75rem; color: var(--text-dim); max-width: 200px;">${role.skills.slice(0,2).join(', ')}...</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Detailed Breakdowns -->
+            ${deptInfo.map((domainObj, dIdx) => `
+                <div id="domain-${dIdx}" style="margin-bottom: 3rem; animation: slideInUp 0.6s ease both;">
+                    <h2 class="serif-title" style="font-size: 1.8rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 12px; color: var(--text-main);">
+                        ${domainObj.domain}
+                        <div style="flex:1; height:1px; background: linear-gradient(to right, var(--border-strong), transparent);"></div>
+                    </h2>
+                    
+                    <div class="roles-breakdown" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem;">
+                        ${domainObj.roles.map(role => `
+                            <div class="role-detail-card card" style="padding: 0; display: flex; flex-direction: column; height: 100%; overflow: hidden;">
+                                <div style="background: var(--surface-inset); padding: 1.5rem; border-bottom: 1.5px solid var(--border);">
+                                    <h3 style="margin: 0; font-size: 1.2rem; color: var(--text-main);">${role.title}</h3>
+                                    <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">Skill Matrix & Learning Pathways</div>
+                                </div>
+                                
+                                <div style="padding: 1.5rem; flex: 1;">
+                                    <div style="margin-bottom: 1.5rem;">
+                                        <div style="font-size: 0.7rem; font-weight: 900; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 1rem; border-left: 2px solid var(--primary); padding-left: 8px;">Core Competencies</div>
+                                        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                            ${role.skills.map(skill => `<span class="chip" style="background: #eff6ff; color: #1e40af; border: 1px solid #dbeafe; font-size: 0.7rem;">${skill}</span>`).join('')}
+                                        </div>
+                                    </div>
+
+                                    <div style="display: grid; grid-cols: 2; gap: 1.5rem; margin-top: 2rem;">
+                                        <div>
+                                            <div style="font-size: 0.7rem; font-weight: 900; color: #0f766e; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem;">Free Learning (Open Source)</div>
+                                            <ul style="padding-left: 1.2rem; font-size: 0.85rem; color: var(--text-muted); display: grid; gap: 6px;">
+                                                ${role.freeResources.map(r => `<li>${r}</li>`).join('')}
+                                            </ul>
+                                        </div>
+                                        <div style="margin-top: 1.5rem;">
+                                            <div style="font-size: 0.7rem; font-weight: 900; color: #b45309; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem;">Premium Courses (Certification)</div>
+                                            <ul style="padding-left: 1.2rem; font-size: 0.85rem; color: var(--text-muted); display: grid; gap: 6px;">
+                                                ${role.paidCourses.map(r => `<li>${r}</li>`).join('')}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 1rem 1.5rem; background: #fff; border-top: 1px dashed var(--border);">
+                                    <button class="btn btn-primary w-full" style="border-radius: 8px;" onclick="showToast('Loading learning path for ${role.title}...', 'info')">Begin Journey Map</button>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('')}
+        </div>
+    </div>
+    
+    <style>
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .career-container { font-family: 'Inter', sans-serif !important; }
+        .hero-badge { box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
+        .domain-card:hover { transform: translateY(-5px); border-color: var(--secondary); box-shadow: var(--shadow-lg); }
+        .role-detail-card:hover { border-color: var(--primary); box-shadow: var(--shadow-lg); }
+    </style>
+    `;
+    
+    container.innerHTML = content;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+window.scrollToDomain = function(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     // keyboard close
     document.addEventListener('keydown', (e) => {
