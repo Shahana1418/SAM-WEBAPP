@@ -125,61 +125,154 @@ window.showRoadmapAI = function(roleTitle) {
     const modal = document.createElement('div');
     modal.className = 'modal-backdrop';
     modal.style.zIndex = '9999';
-    
-    const stepsHTML = (targetRole.steps || []).map(step => `
-        <div style="display: flex; gap: 20px; padding: 1.25rem; background: #fff; border-radius: 12px; border: 1px solid var(--border-light); margin-bottom: 1rem; position: relative;">
-            <div style="flex-shrink: 0; width: 60px; text-align: center;">
-                <div style="font-size: 0.65rem; font-weight: 800; color: var(--text-dim); text-transform: uppercase;">Week</div>
-                <div style="font-size: 1.2rem; font-weight: 800; color: var(--primary);">${step.week}</div>
-            </div>
-            <div style="flex: 1;">
-                <h4 style="margin: 0; font-size: 1rem; color: var(--text-main); font-weight: 700;">${step.topic}</h4>
-                <p style="margin: 0.5rem 0 0 0; font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">${step.details}</p>
-            </div>
-        </div>
-    `).join('');
 
-    const companiesHTML = (targetRole.companies || []).map(c => `
-        <span class="chip" style="background: var(--surface-inset); color: var(--text-main); border: 1px solid var(--border); font-size: 0.75rem; padding: 8px 16px; border-radius: 8px;">${c}</span>
-    `).join('');
+    // Advanced Fallback Logic
+    const strategy = targetRole.studyStrategy || {
+        daily: "• 2 Hours: Intense Technical Concepts\n• 1 Hour: Prototyping & Lab Tasks\n• 30 Minutes: Retrospective Review",
+        weekly: "• 20+ Hours targeted study\n• Weekend: Complete 1 mini-project",
+        practice: "Leverage Spaced Repetition and Feynman Technique for complex concepts.",
+        projectBased: "Convert every theoretical module into a functional code/hardware prototype."
+    };
+    const projects = targetRole.projects || {
+        beginner: ["Portfolio Concept", "Module Logic Build", "CLI/UI Utility"],
+        intermediate: ["Integrated System", "Database Driven Tool", "Automation Script"],
+        finalYear: ["End-to-end Enterprise Solution", "Research Driven Innovation", "Industry Prototype"]
+    };
 
     modal.innerHTML = `
-        <div class="modal-box" style="width: 100%; max-width: 800px; height: 90vh; display: flex; flex-direction: column; overflow: hidden; animation: zoomIn 0.3s ease;">
-            <div class="modal-header" style="flex-shrink: 0; padding: 2rem; background: linear-gradient(to right, var(--primary), #1e1b4b); color: #fff; position: relative;">
-                <button class="modal-close" style="color: #fff; top: 1.5rem; right: 1.5rem;" onclick="this.closest('.modal-backdrop').remove()">✕</button>
-                <div style="font-size: 0.7rem; font-weight: 800; opacity: 0.8; letter-spacing: 0.1em; text-transform: uppercase;">Ultimate Career Roadmap (AI Verified)</div>
-                <h2 style="margin: 4px 0 0 0; font-size: 1.8rem; font-weight: 800; font-family: 'Playfair Display', serif;">${targetRole.title}</h2>
-                <div style="margin-top: 1rem; display: flex; gap: 1rem; font-size: 0.8rem; opacity: 0.9;">
-                    <div style="display: flex; align-items: center; gap: 6px;">
-                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-                        ${targetRole.salaryRange}
-                    </div>
+        <div class="modal-box" style="width: 100%; max-width: 1000px; height: 95vh; display: flex; flex-direction: column; overflow: hidden; border-radius: 24px; animation: zoomIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
+            <div class="modal-header" style="flex-shrink: 0; padding: 2.5rem; background: #0f172a; color: #fff; position: relative;">
+                <button class="modal-close" style="color:#fff;" onclick="this.closest('.modal-backdrop').remove()">✕</button>
+                <div style="font-size: 0.7rem; font-weight: 800; opacity: 0.5; text-transform: uppercase;">Professional Blueprint</div>
+                <h2 style="margin: 4px 0 0 0; font-size: 2.2rem; font-weight: 900;">${targetRole.title}</h2>
+                <div style="margin-top: 1.2rem; display: flex; gap: 1rem; font-size: 0.8rem;">
+                    <span style="background: rgba(255,255,255,0.1); padding: 6px 14px; border-radius: 12px;">Est. Salary: ${targetRole.salaryRange}</span>
+                    <span style="background: rgba(16, 185, 129, 0.2); color: #10b981; padding: 6px 14px; border-radius: 12px; font-weight: 800;">High Growth</span>
                 </div>
             </div>
-            <div class="modal-body" style="flex: 1; overflow-y: auto; padding: 2rem; background: var(--bg-main);">
-                <section style="margin-bottom: 3rem;">
-                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1.5rem;">
-                        <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em;">Week-by-Week Mastery</span>
-                        <div style="flex:1; height:1px; background: var(--border);"></div>
-                    </div>
-                    ${stepsHTML}
-                </section>
-                <section style="background: var(--surface-inset); padding: 2rem; border-radius: 16px; border: 1px dashed var(--border-strong);">
-                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1.5rem;">
-                        <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em;">Top Hiring Companies</span>
-                        <div style="flex:1; height:1px; background: var(--border-strong);"></div>
-                    </div>
-                    <div style="display: flex; flex-wrap: wrap; gap: 12px;">
-                        ${companiesHTML}
-                    </div>
-                </section>
+
+            <div style="background: #fff; border-bottom: 1px solid #e2e8f0; display: flex; gap: 2rem; padding: 0 2.5rem; overflow-x: auto; flex-shrink: 0;" id="roadmap-tabs">
+                ${['Mastery Journey', 'Study Strategy', 'Projects Lab', 'Resources', 'Career Path'].map((tab, i) => `
+                    <button class="roadmap-tab ${i === 0 ? 'active' : ''}" 
+                            onclick="switchRoadmapTab(this, '${tab.toLowerCase().replace(/ /g, '-')}')"
+                            style="padding: 1.2rem 0; border: none; background: none; font-size: 0.85rem; font-weight: 700; color: #64748b; cursor: pointer; border-bottom: 3px solid transparent;">
+                        ${tab}
+                    </button>
+                `).join('')}
             </div>
-            <div style="flex-shrink: 0; padding: 1.5rem 2rem; background: #fff; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; gap: 1rem;">
-                <button class="btn btn-secondary" onclick="this.closest('.modal-backdrop').remove()">Close Viewer</button>
+
+            <div class="modal-body" style="flex: 1; overflow-y: auto; padding: 2.5rem; background: #f8fafc;">
+                
+                <div id="tab-mastery-journey" class="roadmap-pane active">
+                    <h3 style="font-size: 1.2rem; font-weight: 800; color: #1e293b; margin-bottom: 1.5rem;">24-Week Skill Roadmap</h3>
+                    ${(targetRole.steps || []).map(step => `
+                        <div style="display: flex; gap: 1.5rem; background: #fff; padding: 1.5rem; border-radius: 16px; border: 1px solid #e2e8f0; margin-bottom: 1rem;">
+                            <div style="flex-shrink: 0; width: 70px; text-align: center; border-right: 1px solid #f1f5f9;">
+                                <div style="font-size: 0.6rem; color: #94a3b8; font-weight: 900;">WEEK</div>
+                                <div style="font-size: 1.5rem; font-weight: 900; color: var(--primary);">${step.week}</div>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0; font-size: 1.1rem; color: #0f172a;">${step.topic}</h4>
+                                <p style="margin: 8px 0 0 0; font-size: 0.9rem; color: #475569; line-height: 1.6;">${step.details}</p>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+
+                <div id="tab-study-strategy" class="roadmap-pane" style="display:none;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                        <div style="padding: 1.5rem; background: #fff; border-radius: 16px; border: 1px solid #e2e8f0;">
+                            <h4 style="color: #6366f1; font-size: 0.75rem; font-weight: 900; text-transform: uppercase;">Daily Protocol</h4>
+                            <div style="white-space: pre-line; margin-top: 10px; font-size:0.95rem; line-height:1.7;">${strategy.daily}</div>
+                        </div>
+                        <div style="padding: 1.5rem; background: #fff; border-radius: 16px; border: 1px solid #e2e8f0;">
+                            <h4 style="color: #ec4899; font-size: 0.75rem; font-weight: 900; text-transform: uppercase;">Weekly Milestones</h4>
+                            <div style="white-space: pre-line; margin-top: 10px; font-size:0.95rem; line-height:1.7;">${strategy.weekly}</div>
+                        </div>
+                        <div style="padding: 1.5rem; background: #fff; border-radius: 16px; border: 1px solid #e2e8f0;">
+                            <h4 style="color: #f59e0b; font-size: 0.75rem; font-weight: 900; text-transform: uppercase;">Practice Logic</h4>
+                            <p style="margin-top: 10px; font-size:0.95rem; line-height:1.7;">${strategy.practice}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-projects-lab" class="roadmap-pane" style="display:none;">
+                    <div style="display: grid; gap: 2rem;">
+                        <section>
+                            <h4 style="font-size: 0.7rem; color: #94a3b8; font-weight: 900; text-transform: uppercase;">Beginner Tracks</h4>
+                            <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem;">
+                                ${projects.beginner.map(p => `<div style="background: rgba(99,102,241,0.05); color: #4338ca; padding: 12px 20px; border-radius: 12px; font-weight: 700;">🌱 ${p}</div>`).join('')}
+                            </div>
+                        </section>
+                        <section>
+                            <h4 style="font-size: 0.7rem; color: #94a3b8; font-weight: 900; text-transform: uppercase;">Intermediate Lab</h4>
+                            <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem;">
+                                ${projects.intermediate.map(p => `<div style="background: rgba(16,185,129,0.05); color: #059669; padding: 12px 20px; border-radius: 12px; font-weight: 700;">⚡ ${p}</div>`).join('')}
+                            </div>
+                        </section>
+                        <section>
+                            <h4 style="font-size: 0.7rem; color: #94a3b8; font-weight: 900; text-transform: uppercase;">Capstone Ideas</h4>
+                            <div style="display: grid; gap: 1rem; margin-top: 1rem;">
+                                ${projects.finalYear.map(p => `<div style="background: #1e293b; color: #fff; padding: 20px; border-radius: 16px; font-weight: 800;">🏆 ${p}</div>`).join('')}
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <div id="tab-resources" class="roadmap-pane" style="display:none;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+                        <div>
+                            <h4 style="color: #059669; font-weight: 900; margin-bottom: 1.5rem;">📚 Verified Free Content</h4>
+                            ${(targetRole.freeResources || []).map(r => `<div style="background: #fff; padding: 15px; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 10px; font-weight: 700;">${r}</div>`).join('')}
+                        </div>
+                        <div>
+                            <h4 style="color: #7c3aed; font-weight: 900; margin-bottom: 1.5rem;">🎓 Paid Specializations</h4>
+                             ${(targetRole.paidCourses || []).map(r => `<div style="background: #fff; padding: 15px; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 10px; font-weight: 700;">${r}</div>`).join('')}
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-career-path" class="roadmap-pane" style="display:none;">
+                    <h4 style="font-size: 0.7rem; color: #94a3b8; font-weight: 900; text-transform: uppercase;">Market Leaders</h4>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1rem; margin-bottom: 3rem;">
+                        ${(targetRole.companies || []).map(c => `<div style="background: #fff; padding: 12px 20px; border: 1.5px solid #e2e8f0; border-radius: 12px; font-weight: 800;">${c}</div>`).join('')}
+                    </div>
+                    <div style="background: linear-gradient(135deg, #1e293b, #0f172a); color: #fff; padding: 2rem; border-radius: 20px;">
+                        <h4 style="margin: 0; font-size: 1.2rem;">Mentor Consultation</h4>
+                        <p style="margin: 10px 0 0 0; opacity: 0.7; line-height: 1.6;">Contact your **Department Coordinators** or reach out to Alumni via the SAM network for targeted placement training and mock interviews in ${targetRole.title}.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="flex-shrink: 0; padding: 1.5rem 2.5rem; background: #fff; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center;">
+                 <div style="display:flex; align-items:center; gap:12px;">
+                    <div style="width: 250px; height:10px; background:#f1f5f9; border-radius:20px; overflow:hidden;">
+                        <div style="width: 20%; height:100%; background:var(--primary);"></div>
+                    </div>
+                    <span style="font-size: 0.8rem; font-weight: 800; color: #64748b;">Progress: 20%</span>
+                 </div>
+                 <div style="display:flex; gap:12px;">
+                    <button class="btn btn-secondary" onclick="this.closest('.modal-backdrop').remove()">Close</button>
+                    <button class="btn btn-primary" onclick="showToast('Progress Tracked Successfully!')" style="padding: 10px 30px;">Track Journey</button>
+                 </div>
             </div>
         </div>
+
+        <style>
+            .roadmap-tab { transition: all 0.2s; border-bottom-width: 3px !important; }
+            .roadmap-tab.active { color: var(--primary) !important; border-bottom-color: var(--primary) !important; opacity: 1; }
+        </style>
     `;
+
     document.body.appendChild(modal);
+};
+
+window.switchRoadmapTab = function(btn, tabId) {
+    document.querySelectorAll('.roadmap-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.roadmap-pane').forEach(p => p.style.display = 'none');
+    document.getElementById('tab-' + tabId).style.display = 'block';
 };
 
 

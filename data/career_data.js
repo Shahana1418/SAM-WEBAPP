@@ -24,7 +24,18 @@ const CAREER_RESOURCES = {
                     companies: ['Google', 'Meta', 'Amazon', 'Netflix', 'Airbnb', 'Zomato'],
                     growth: 'Exponential', salaryRange: '₹8L - ₹35L+', complexity: 'Moderate',
                     skills: ['TypeScript', 'React', 'Node.js', 'Next.js', 'PostgreSQL'],
-                    freeResources: ['web.dev (Google)', 'The Odin Project'], paidCourses: ['Zero To Mastery']
+                    studyStrategy: {
+                        daily: "• 2h: Core Logic (JS/TS)\n• 1h: UI/UX Building (CSS/React)\n• 30m: Open Source Code Review",
+                        weekly: "• Build 1 feature-complete module\n• Write technical documentation\n• 20 High-Quality LeetCode problems",
+                        practice: "Build clones of popular apps (Uber, Slack) to master complex state and real-time features.",
+                        projectBased: "Focus on Full-Stack CRUD apps initially, then move to highly distributed systems."
+                    },
+                    projects: {
+                        beginner: ["Task Management Dashboard", "Weather App with API", "Personal Branding Portfolio"],
+                        intermediate: ["E-Commerce Site with Stripe", "Real-time Chat via Socket.io", "SaaS Landing Page"],
+                        finalYear: ["AI-Powered Learning Management System", "Blockchain Based Voting Portal", "Microservices E-Marketplace"]
+                    },
+                    freeResources: ['web.dev (Google)', 'The Odin Project', 'FreeCodeCamp YouTube'], paidCourses: ['Udemy: Zero To Mastery', 'Coursera: Meta Full Stack Certificate']
                 }
             ]
         },
