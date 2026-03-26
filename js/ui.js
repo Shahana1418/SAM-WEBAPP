@@ -89,14 +89,12 @@ window.openLoginModal = function(role) {
     const modal   = document.getElementById('admin-modal');
 
     if (role === 'Student') {
-        // STUDENT: username (Roll No) + password (DOB)
         document.getElementById('login-modal-title').textContent = 'Student Login';
         document.getElementById('login-modal-subtitle').textContent = 'Enter your Roll No and Date of Birth';
         if (unGroup) unGroup.style.display = 'block';
         if (unField) { unField.value = ''; unField.placeholder = 'e.g. 23CSE12'; }
         if (pwField) { pwField.value = ''; pwField.placeholder = 'Date of Birth (DD-MM-YYYY)'; }
     } else {
-        // ALL OTHER ROLES: password only
         document.getElementById('login-modal-title').textContent = role + ' Login';
         document.getElementById('login-modal-subtitle').textContent = 'Enter ' + role + ' password to continue';
         if (unGroup) unGroup.style.display = 'none';
@@ -106,6 +104,86 @@ window.openLoginModal = function(role) {
     if (typeof closeSidebar === 'function') closeSidebar();
     if (modal) modal.style.display = 'flex';
 };
+
+// --- NEW: AI ROADMAP VIEWER ---
+window.showRoadmapAI = function(roleTitle) {
+    const dept = document.getElementById('dept-title-sidebar')?.textContent?.split(' ')[0] || 'CSE';
+    const deptData = CAREER_RESOURCES[dept];
+    if (!deptData) return;
+
+    let targetRole = null;
+    deptData.forEach(d => {
+        const found = d.roles.find(r => r.title === roleTitle);
+        if (found) targetRole = found;
+    });
+
+    if (!targetRole) {
+        showToast('Roadmap data not found for ' + roleTitle, 'error');
+        return;
+    }
+
+    const modal = document.createElement('div');
+    modal.className = 'modal-backdrop';
+    modal.style.zIndex = '9999';
+    
+    const stepsHTML = (targetRole.steps || []).map(step => `
+        <div style="display: flex; gap: 20px; padding: 1.25rem; background: #fff; border-radius: 12px; border: 1px solid var(--border-light); margin-bottom: 1rem; position: relative;">
+            <div style="flex-shrink: 0; width: 60px; text-align: center;">
+                <div style="font-size: 0.65rem; font-weight: 800; color: var(--text-dim); text-transform: uppercase;">Week</div>
+                <div style="font-size: 1.2rem; font-weight: 800; color: var(--primary);">${step.week}</div>
+            </div>
+            <div style="flex: 1;">
+                <h4 style="margin: 0; font-size: 1rem; color: var(--text-main); font-weight: 700;">${step.topic}</h4>
+                <p style="margin: 0.5rem 0 0 0; font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">${step.details}</p>
+            </div>
+        </div>
+    `).join('');
+
+    const companiesHTML = (targetRole.companies || []).map(c => `
+        <span class="chip" style="background: var(--surface-inset); color: var(--text-main); border: 1px solid var(--border); font-size: 0.75rem; padding: 8px 16px; border-radius: 8px;">${c}</span>
+    `).join('');
+
+    modal.innerHTML = `
+        <div class="modal-box" style="width: 100%; max-width: 800px; height: 90vh; display: flex; flex-direction: column; overflow: hidden; animation: zoomIn 0.3s ease;">
+            <div class="modal-header" style="flex-shrink: 0; padding: 2rem; background: linear-gradient(to right, var(--primary), #1e1b4b); color: #fff; position: relative;">
+                <button class="modal-close" style="color: #fff; top: 1.5rem; right: 1.5rem;" onclick="this.closest('.modal-backdrop').remove()">✕</button>
+                <div style="font-size: 0.7rem; font-weight: 800; opacity: 0.8; letter-spacing: 0.1em; text-transform: uppercase;">Ultimate Career Roadmap (AI Verified)</div>
+                <h2 style="margin: 4px 0 0 0; font-size: 1.8rem; font-weight: 800; font-family: 'Playfair Display', serif;">${targetRole.title}</h2>
+                <div style="margin-top: 1rem; display: flex; gap: 1rem; font-size: 0.8rem; opacity: 0.9;">
+                    <div style="display: flex; align-items: center; gap: 6px;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        ${targetRole.salaryRange}
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body" style="flex: 1; overflow-y: auto; padding: 2rem; background: var(--bg-main);">
+                <section style="margin-bottom: 3rem;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1.5rem;">
+                        <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em;">Week-by-Week Mastery</span>
+                        <div style="flex:1; height:1px; background: var(--border);"></div>
+                    </div>
+                    ${stepsHTML}
+                </section>
+                <section style="background: var(--surface-inset); padding: 2rem; border-radius: 16px; border: 1px dashed var(--border-strong);">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1.5rem;">
+                        <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em;">Top Hiring Companies</span>
+                        <div style="flex:1; height:1px; background: var(--border-strong);"></div>
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+                        ${companiesHTML}
+                    </div>
+                </section>
+            </div>
+            <div style="flex-shrink: 0; padding: 1.5rem 2rem; background: #fff; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; gap: 1rem;">
+                <button class="btn btn-secondary" onclick="this.closest('.modal-backdrop').remove()">Close Viewer</button>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+};
+
+
+
 
 /* ══════════════════════════════════════════════════════════
    OVERRIDE renderCollege — New Premium College Page
@@ -1642,8 +1720,8 @@ window.renderCareer = function(container) {
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary w-full" style="border-radius: 0; padding: 1rem; font-size: 0.8rem; letter-spacing: 0.05em;" onclick="showToast('Loading full roadmap from Google AI Learning library...', 'info')">
-                                    ACCESS FULL GOOGLE AI ROADMAP
+                                <button class="btn btn-primary w-full" style="border-radius: 0; padding: 1rem; font-size: 0.8rem; letter-spacing: 0.05em;" onclick="showRoadmapAI('${role.title}')">
+                                    VIEW BEST AI-GENERATED ROADMAP
                                 </button>
                             </div>
                         `).join('')}
