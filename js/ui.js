@@ -1053,6 +1053,39 @@ window.renderAssessments = function(container) {
             
             ${courseInfoHTML}
 
+            <div class="wiz-form-grid" style="margin-bottom: 24px;">
+                <div class="wiz-field"><label style="font-size: 0.8rem; font-weight: 700;">Assignment Type</label>
+                    <select id="wiz-type-new" class="form-input" onchange="(navState.assignConfig=navState.assignConfig||{}).assignType=this.value;">
+                        <option value="mixed" ${cfg.assignType === 'mixed' ? 'selected' : ''}>🔀 Mixed Types (Default)</option>
+                        <option value="presentation" ${cfg.assignType === 'presentation' ? 'selected' : ''}>&#127908; Team Presentation</option>
+                        <option value="practical" ${cfg.assignType === 'practical' ? 'selected' : ''}>&#128203; Practicals</option>
+                        <option value="mini_project" ${cfg.assignType === 'mini_project' ? 'selected' : ''}>&#128295; Mini Project</option>
+                        <option value="case_study" ${cfg.assignType === 'case_study' ? 'selected' : ''}>&#128216; Case Studies</option>
+                        <option value="problem_solve" ${cfg.assignType === 'problem_solve' ? 'selected' : ''}>&#129518; Problem Solving</option>
+                    </select>
+                </div>
+                <div class="wiz-field"><label style="font-size: 0.8rem; font-weight: 700;">Duration per Assignment</label>
+                    <select id="wiz-duration-new" class="form-input" onchange="(navState.assignConfig=navState.assignConfig||{}).duration=this.value;">
+                        <option value="10-15 min" ${(!cfg.duration || cfg.duration === '10-15 min') ? 'selected' : ''}>10-15 minutes</option>
+                        <option value="15-20 min" ${cfg.duration === '15-20 min' ? 'selected' : ''}>15-20 minutes</option>
+                    </select>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 24px;">
+                <label style="font-size: 0.8rem; font-weight: 700; color:var(--text-muted); display:block; margin-bottom: 8px;">Focus Units (untick to skip)</label>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 8px;" id="new-focus-units">
+                    ${[1,2,3,4,5].map(u => {
+                        const isChecked = (!cfg.focusUnits || !cfg.focusUnits.length || cfg.focusUnits.includes(u)) ? 'checked' : '';
+                        const utitle = (cfg.units && cfg.units[u]) ? cfg.units[u].title : ('Unit ' + u);
+                        return `<label class="flex items-center gap-2 p-2 bg-surface text-main border border-border rounded text-sm cursor-pointer" style="background:var(--surface);">
+                            <input type="checkbox" class="focus-unit-cb" value="${u}" ${isChecked} style="accent-color:var(--primary);">
+                            <span style="font-weight: 600;">Unit ${u}</span>
+                        </label>`;
+                    }).join('')}
+                </div>
+            </div>
+
             <div class="flex gap-3 mb-6">
                 <button onclick="switchWizardCycle(1)" class="${cycleNum === 1 ? tabActive : tabInactive}">
                     Cycle 1 (S1-6) ${cfg.cycleData && cfg.cycleData[1] ? '✅' : ''}
@@ -1219,9 +1252,23 @@ window.generateWizardPhase3Assignments = function(cycleNum) {
 
     if (!syl || !syl.units) { showToast('⚠️ Syllabus details not found.', 'error'); return; }
 
+    const cbAll = document.querySelectorAll('.focus-unit-cb');
+    if (cbAll.length > 0) {
+        const sel = Array.from(cbAll).filter(cb => cb.checked).map(cb => parseInt(cb.value));
+        cfg.focusUnits = sel.length ? sel : [1, 2, 3, 4, 5];
+    } else {
+        cfg.focusUnits = cfg.focusUnits || [];
+    }
+    
+    cfg.assignType = document.getElementById('wiz-type-new') ? document.getElementById('wiz-type-new').value : (cfg.assignType || 'mixed');
+    cfg.duration = document.getElementById('wiz-duration-new') ? document.getElementById('wiz-duration-new').value : (cfg.duration || '10-15 min');
+
     const generated = logicGeneratePhase3Assignments(teams, syl.units, cycleNum, {
         courseName: cfg.courseName,
-        courseCode: subjCode
+        courseCode: subjCode,
+        assignType: cfg.assignType,
+        duration: cfg.duration,
+        focusUnits: cfg.focusUnits
     });
 
     cfg.cycleData = cfg.cycleData || {};
