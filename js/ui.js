@@ -1630,7 +1630,7 @@ window.renderCareer = function(container) {
                 ${deptInfo.map((domainObj, idx) => `
                     <div class="domain-card card" style="border-left: 4px solid var(--primary); border-radius: 12px; transition: transform 0.3s; cursor:pointer;" onclick="scrollToDomain('domain-${idx}')">
                         <div style="font-size: 1.25rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem;">${domainObj.domain}</div>
-                        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">${domainObj.description}</p>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">${domainObj.description || ''}</p>
                         <div style="margin-top: 1rem; color: var(--primary); font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; gap: 4px;">
                             View ${domainObj.roles.length} roles <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </div>
@@ -1656,9 +1656,9 @@ window.renderCareer = function(container) {
                             <tr style="border-bottom: 1px solid var(--border-light);">
                                 <td style="padding: 1rem 1.25rem; font-weight: 700; color: var(--primary);">${role.title}</td>
                                 <td><span class="chip" style="background: var(--success-light); color: var(--success); font-weight: 800;">${role.growth}</span></td>
-                                <td class="mono-text" style="font-size: 0.85rem;">${role.salaryRange}</td>
-                                <td><span class="chip" style="background: #fff; border: 1px solid var(--border-strong); color: var(--text-main);">${role.complexity}</span></td>
-                                <td style="font-size: 0.75rem; color: var(--text-dim); max-width: 200px;">${role.skills.slice(0,2).join(', ')}...</td>
+                                <td class="mono-text" style="font-size: 0.85rem;">${role.salaryRange || '—'}</td>
+                                <td><span class="chip" style="background: #fff; border: 1px solid var(--border-strong); color: var(--text-main);">${role.complexity || '—'}</span></td>
+                                <td style="font-size: 0.75rem; color: var(--text-dim); max-width: 200px;">${(role.skills||[]).slice(0,2).join(', ')}...</td>
                             </tr>
                         `).join('')}
                     </tbody>
@@ -1711,12 +1711,12 @@ window.renderCareer = function(container) {
                                     <div>
                                         <div style="font-size: 0.7rem; font-weight: 900; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 1rem; border-left: 2px solid var(--primary); padding-left: 8px;">Top Competencies</div>
                                         <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                                            ${role.skills.map(skill => `<span class="chip" style="background: var(--bg-main); color: var(--text-main); border: 1px solid var(--border); font-size: 0.7rem; font-weight: 600;">${skill}</span>`).join('')}
+                                            ${(role.skills||[]).map(skill => `<span class="chip" style="background: var(--bg-main); color: var(--text-main); border: 1px solid var(--border); font-size: 0.7rem; font-weight: 600;">${skill}</span>`).join('')}
                                         </div>
                                     </div>
 
-                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;">
-                                        <div>
+                                    ${(role.freeResources || role.paidCourses) ? `<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;">
+                                        ${role.freeResources ? `<div>
                                             <div style="font-size: 0.65rem; font-weight: 800; color: #059669; text-transform: uppercase; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 5px;">
                                                 <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                                                 Open Access
@@ -1724,8 +1724,8 @@ window.renderCareer = function(container) {
                                             <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.6;">
                                                 ${role.freeResources.slice(0,3).map(r => `• ${r}<br>`).join('')}
                                             </div>
-                                        </div>
-                                        <div>
+                                        </div>` : ''}
+                                        ${role.paidCourses ? `<div>
                                             <div style="font-size: 0.65rem; font-weight: 800; color: #7c3aed; text-transform: uppercase; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 5px;">
                                                 <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                                                 Certifications
@@ -1733,8 +1733,8 @@ window.renderCareer = function(container) {
                                             <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.6;">
                                                 ${role.paidCourses.slice(0,3).map(r => `• ${r}<br>`).join('')}
                                             </div>
-                                        </div>
-                                    </div>
+                                        </div>` : ''}
+                                    </div>` : ''}
                                 </div>
                                 <button class="btn btn-primary w-full" style="border-radius: 0; padding: 1rem; font-size: 0.8rem; letter-spacing: 0.05em;" onclick="showRoadmapAI('${role.title}')">
                                     VIEW BEST AI-GENERATED ROADMAP

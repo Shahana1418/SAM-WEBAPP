@@ -195,6 +195,36 @@ const CAREER_RESOURCES = {
                     growth: 'Medium', salaryRange: '₹8L - ₹26L', complexity: 'High',
                     skills: ['Unity', 'C#', 'Spatial Design'],
                     freeResources: ['Google ARCore Docs'], paidCourses: ['Coursera XR']
+                },
+                {
+                    title: 'Internet of Things (IoT)',
+                    steps: [
+                        { week: '1-4', topic: 'Microcontrollers', details: 'Arduino, ESP32, and Raspberry Pi basics.' },
+                        { week: '5-8', topic: 'Sensors & Actuators', details: 'Digital/Analog interfaces, I2C, SPI.' },
+                        { week: '9-12', topic: 'IoT Protocols', details: 'MQTT, CoAP, HTTP, and WebSockets.' },
+                        { week: '13-16', topic: 'Edge Computing', details: 'Local processing and TinyML.' },
+                        { week: '17-20', topic: 'Cloud IoT Platforms', details: 'AWS IoT Core, Azure IoT Hub.' },
+                        { week: '21-24', topic: 'Security', details: 'Device authentication and TLS.' }
+                    ],
+                    companies: ['Cisco', 'Amazon', 'Bosch', 'Samsung'],
+                    growth: 'High', salaryRange: '₹8L - ₹28L', complexity: 'High',
+                    skills: ['C/C++', 'Python', 'MQTT', 'AWS IoT'],
+                    freeResources: ['IoT For All', 'Arduino Docs'], paidCourses: ['Coursera IoT Specialization']
+                },
+                {
+                    title: 'Quantum Computing',
+                    steps: [
+                        { week: '1-4', topic: 'Quantum Physics Basics', details: 'Superposition, Entanglement, and Qubits.' },
+                        { week: '5-8', topic: 'Linear Algebra Review', details: 'Vectors, Matrices, and Dirac Notation.' },
+                        { week: '9-12', topic: 'Quantum Gates', details: 'Pauli, Hadamard, CNOT, and Bell States.' },
+                        { week: '13-16', topic: 'Quantum Algorithms', details: 'Deutsch-Jozsa, Grover’s, and Shor’s Algorithm.' },
+                        { week: '17-20', topic: 'Quantum Frameworks', details: 'IBM Qiskit and Pennylane.' },
+                        { week: '21-24', topic: 'Quantum Machine Learning', details: 'VQC, Quantum Neural Networks.' }
+                    ],
+                    companies: ['IBM', 'Google Quantum AI', 'Microsoft', 'IonQ'],
+                    growth: 'Exponential', salaryRange: '₹18L - ₹60L+', complexity: 'Extreme',
+                    skills: ['Python', 'Qiskit', 'Linear Algebra', 'Algorithms'],
+                    freeResources: ['IBM Quantum Learning'], paidCourses: ['MIT xPro Quantum Computing']
                 }
             ]
         }
@@ -1098,5 +1128,119 @@ const CAREER_RESOURCES = {
             ]
         }
     ],
-    'IMT': [{ domain: 'Cloud', roles: [{ title: 'Cloud Architect', companies: ['Google Cloud'], growth: 'Very High', salaryRange: '₹12L-₹45L+', skills: ['AWS/GCP', 'K8s'] }] }]
+    'IMT': [
+        {
+            domain: 'IT Infrastructure & Security',
+            description: 'Designing, maintaining, and securing enterprise networks and cloud infrastructure.',
+            roles: [
+                {
+                    title: 'Cloud Computing & DevOps',
+                    steps: [
+                        { week: '1-4', topic: 'Linux & Scripting', details: 'Bash scripting, Cron jobs, and User Management.' },
+                        { week: '5-8', topic: 'Networking & Cloud Basics', details: 'DNS, TCP/IP, VPC, and AWS/Azure fundamentals.' },
+                        { week: '9-12', topic: 'Containerization', details: 'Docker files, volumes, and networks.' },
+                        { week: '13-16', topic: 'Orchestration', details: 'Kubernetes (K8s) pods, deployments, and services.' },
+                        { week: '17-20', topic: 'CI/CD Pipelines', details: 'Jenkins, GitHub Actions, and Gitlab CI.' },
+                        { week: '21-24', topic: 'Infrastructure as Code', details: 'Terraform and Ansible automation.' }
+                    ],
+                    companies: ['Amazon Web Services', 'Microsoft', 'Google Cloud', 'IBM'],
+                    growth: 'Exponential', salaryRange: '₹12L - ₹45L', complexity: 'High',
+                    skills: ['AWS', 'Docker', 'Kubernetes', 'Terraform'],
+                    freeResources: ['KodeKloud (Free Tier)'], paidCourses: ['CKA Certification']
+                },
+                {
+                    title: 'Cybersecurity Operations',
+                    steps: [
+                        { week: '1-4', topic: 'Networking Security', details: 'Firewalls, VPNs, and OSI Model.' },
+                        { week: '5-8', topic: 'Vulnerability Assessment', details: 'Scanning, Nmap, and Nessus.' },
+                        { week: '9-12', topic: 'Threat Intelligence', details: 'Zero-day exploits, CVEs, and MITRE ATT&CK.' },
+                        { week: '13-16', topic: 'SIEM Tools', details: 'Splunk, ELK stack, and Log analysis.' },
+                        { week: '17-20', topic: 'Incident Response', details: 'Forensics, Containment, and Recovery.' },
+                        { week: '21-24', topic: 'Penetration Testing', details: 'Burp Suite, Metasploit, and Kali Linux.' }
+                    ],
+                    companies: ['CrowdStrike', 'Palo Alto Networks', 'Cisco', 'Symantec'],
+                    growth: 'Very High', salaryRange: '₹10L - ₹40L', complexity: 'High',
+                    skills: ['SIEM', 'Network Auth', 'Pen-Testing', 'Linux'],
+                    freeResources: ['TryHackMe'], paidCourses: ['CompTIA Security+', 'CEH']
+                },
+                {
+                    title: 'Network Administration',
+                    steps: [
+                        { week: '1-4', topic: 'Network Fundamentals', details: 'Switches, Routers, and Subnetting.' },
+                        { week: '5-8', topic: 'Routing Protocols', details: 'OSPF, BGP, and EIGRP.' },
+                        { week: '9-12', topic: 'Wireless & WAN', details: 'Wi-Fi standards, SD-WAN.' },
+                        { week: '13-16', topic: 'Network Security', details: 'ACLs, IPS/IDS, and NAT.' },
+                        { week: '17-20', topic: 'Network Programmability', details: 'Python for network automation (Netmiko).' },
+                        { week: '21-24', topic: 'Monitoring', details: 'SNMP, Wireshark, and SolarWinds.' }
+                    ],
+                    companies: ['Cisco', 'Juniper', 'AT&T', 'Verizon'],
+                    growth: 'Steady', salaryRange: '₹6L - ₹20L', complexity: 'Moderate',
+                    skills: ['Routing', 'Switching', 'Python', 'Wireshark'],
+                    freeResources: ['Cisco Packet Tracer Labs'], paidCourses: ['CCNA Certification']
+                }
+            ]
+        },
+        {
+            domain: 'Enterprise Data & Applications',
+            description: 'Managing and optimizing organizational data and core application systems.',
+            roles: [
+                {
+                    title: 'Database Administration (DBA)',
+                    steps: [
+                        { week: '1-4', topic: 'RDBMS Fundamentals', details: 'SQL queries, Normalization, and ACID properties.' },
+                        { week: '5-8', topic: 'Indexing & Tuning', details: 'Query execution plans and performance optimization.' },
+                        { week: '9-12', topic: 'Backup & Recovery', details: 'Point-in-time recovery, logs, and disaster recovery.' },
+                        { week: '13-16', topic: 'High Availability', details: 'Replication, Clustering, and Sharding.' },
+                        { week: '17-20', topic: 'Cloud Databases', details: 'Amazon RDS, Azure SQL, and Migration.' },
+                        { week: '21-24', topic: 'NoSQL DBs', details: 'MongoDB, Cassandra for unstructured data.' }
+                    ],
+                    companies: ['Oracle', 'Microsoft', 'MongoDB', 'EnterpriseDB'],
+                    growth: 'Steady', salaryRange: '₹8L - ₹28L', complexity: 'High',
+                    skills: ['SQL', 'Oracle/PostgreSQL', 'Performance Tuning'],
+                    freeResources: ['PostgreSQL Docs'], paidCourses: ['Oracle DBA Cert']
+                },
+                {
+                    title: 'Systems Analysis & Architecture',
+                    steps: [
+                        { week: '1-4', topic: 'Requirements Gathering', details: 'Stakeholder interviews, BRDs, and FRDs.' },
+                        { week: '5-8', topic: 'UML & Modeling', details: 'Use-case, Sequence, and Class diagrams.' },
+                        { week: '9-12', topic: 'System Design Patterns', details: 'Monoliths, Microservices, and Event-driven architecture.' },
+                        { week: '13-16', topic: 'API Design', details: 'RESTful constraints, GraphQL, and Open API specs.' },
+                        { week: '17-20', topic: 'Enterprise Integrations', details: 'ESB, Message Brokers (Kafka/RabbitMQ).' },
+                        { week: '21-24', topic: 'Cloud Architectures', details: 'Serverless computing and AWS Well-Architected Framework.' }
+                    ],
+                    companies: ['Accenture', 'TCS', 'Capgemini', 'IBM Consulting'],
+                    growth: 'High', salaryRange: '₹10L - ₹30L', complexity: 'High',
+                    skills: ['System Design', 'UML', 'Microservices', 'REST'],
+                    freeResources: ['System Design Primer (GitHub)'], paidCourses: ['TOGAF Certification']
+                },
+                {
+                    title: 'IT Project Management',
+                    steps: [
+                        { week: '1-4', topic: 'Agile & Scrum', details: 'Sprints, ceremonies, and artifacts.' },
+                        { week: '5-8', topic: 'Project Tracking', details: 'Jira, Confluence, and Trello.' },
+                        { week: '9-12', topic: 'Risk Management', details: 'Identifying dependencies and mitigating risks.' },
+                        { week: '13-16', topic: 'Resource Allocation', details: 'Capacity planning and budgeting.' },
+                        { week: '17-20', topic: 'Stakeholder Comms', details: 'Reporting KPIs, velocity, and burndown charts.' },
+                        { week: '21-24', topic: 'Release Management', details: 'Coordinating deployments and go-live phases.' }
+                    ],
+                    companies: ['Deloitte', 'Cognizant', 'Infosys', 'Tech Mahindra'],
+                    growth: 'High', salaryRange: '₹9L - ₹25L', complexity: 'Moderate',
+                    skills: ['Agile', 'Jira', 'Scrum', 'Risk Mgmt'],
+                    freeResources: ['Scrum Guide'], paidCourses: ['Certified ScrumMaster (CSM)']
+                }
+            ]
+        },
+        {
+            domain: 'Software & Core Development',
+            description: 'Core software engineering and full-stack integration.',
+            roles: [
+                { title: 'Software Development', companies: ['Google', 'Microsoft'], growth: 'Steady', salaryRange: '₹12L-₹50L', skills: ['Java', 'Python', 'DSA'] },
+                { title: 'Web Development', companies: ['Netflix', 'Meta'], growth: 'High', salaryRange: '₹8L-₹35L', skills: ['React', 'Node.js', 'TypeScript'] },
+                { title: 'Mobile App Development', companies: ['Google', 'Uber'], growth: 'High', salaryRange: '₹7L-₹28L', skills: ['Flutter', 'React Native'] },
+                { title: 'Data Analytics & BI', companies: ['Tableau', 'Mu Sigma'], growth: 'High', salaryRange: '₹8L-₹24L', skills: ['SQL', 'Power BI', 'Python'] },
+                { title: 'AI & Machine Learning', companies: ['OpenAI', 'Amazon'], growth: 'Very High', salaryRange: '₹15L-₹60L', skills: ['Python', 'TensorFlow', 'LLMs'] }
+            ]
+        }
+    ]
 };
