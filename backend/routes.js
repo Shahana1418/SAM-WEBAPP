@@ -360,6 +360,8 @@ router.get('/stats', async (req, res) => {
     }
 });
 
+router.get('/check', (req, res) => res.json({ status: 'Backend is Online!', time: new Date() }));
+
 /* ═══════════════════════════════════════════════════
    SECURE AI CHATBOT (Backend Proxy)
 ═══════════════════════════════════════════════════ */

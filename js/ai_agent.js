@@ -28,8 +28,12 @@ window.sendAIChat = async function() {
     }
 
     try {
+        // Use window.API_BASE or fallback to empty string
+        const base = window.API_BASE || (typeof API_BASE !== 'undefined' ? API_BASE : '');
+        console.log('[SAM-AI] Attempting backend fetch at:', base + '/api/ai/chat');
+
         // --- 1. ATTEMPT BACKEND PROXY ---
-        const response = await fetch((typeof API_BASE !== 'undefined' ? API_BASE : '') + '/api/ai/chat', {
+        const response = await fetch(base + '/api/ai/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message: msg })
@@ -37,18 +41,19 @@ window.sendAIChat = async function() {
 
         if (response.ok) {
             const data = await response.json();
+            console.log('[SAM-AI] Backend response received:', data);
             if (data.response) {
-                loadingEl.textContent = data.response;
+                loadingEl.innerHTML = formatAIResponse(data.response);
                 return;
             }
         }
-        throw new Error('Backend unavailable');
+        throw new Error('Backend responded with error: ' + response.status);
     } catch (e) {
         // --- 2. FALLBACK: LOCAL BROWSER AI (Transformers.js) ---
-        console.log('[SAM-AI] Backend not found or on GitHub Pages. Falling back to Local AI.');
+        console.warn('[SAM-AI] Backend connection failed. Falling back to Local AI. Error:', e.message);
         
         if (window.TransformersAI && window.TransformersAI.pipeline) {
-            loadingEl.textContent = "🧠 Running local security brain (no backend)...";
+            loadingEl.textContent = "🧠 Running local security brain (Offline mode)...";
             try {
                 const classifier = await window.TransformersAI.pipeline('text-classification', 'Xenova/distilbert-base-uncased-finetuned-sst-2-english');
                 const result = await classifier(msg);
@@ -57,23 +62,29 @@ window.sendAIChat = async function() {
                 let responseText = `[Offline Mode] Your message analyzed: "${label}". `;
                 
                 if (msg.toLowerCase().includes('roadmap') || msg.toLowerCase().includes('career')) {
-                    responseText += "To get full career maps, open our dedicated 'Career Dashboard' on the main portal!";
+                    responseText += "To get full career maps, open our dedicated 'Career Dashboard' on the main portal! (Backend is currently waking up on Render)";
                 } else {
-                    responseText += "I am currently running in privacy-mode directly in your browser tab.";
+                    responseText += "I am currently running in privacy-mode directly in your browser tab because the backend is sleeping.";
                 }
                 
                 loadingEl.textContent = responseText;
             } catch (err) {
-                loadingEl.textContent = "Local AI is initializing. Please wait a moment and try again.";
+                loadingEl.textContent = "Local AI is initializing. Please wait a moment.";
             }
         } else {
-             loadingEl.textContent = "Backend Offline. Note: GitHub Pages doesn't run Node.js backends. To enable full AI, run the backend folder locally on Port 5000.";
+             loadingEl.textContent = "Backend Offline. If you just saved, please wait 60 seconds for Render to wake up.";
         }
     }
 
     const chatMessages = document.getElementById('ai-chat-messages');
     chatMessages.scrollTop = chatMessages.scrollHeight;
 };
+
+// Formatting helper for long AI responses
+function formatAIResponse(text) {
+    return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+               .replace(/\n/g, '<br>');
+}
 
 function appendMessage(sender, text, type, id = '') {
     const chatMessages = document.getElementById('ai-chat-messages');
@@ -99,7 +110,7 @@ function appendMessage(sender, text, type, id = '') {
     }
     
     if (id) msgDiv.id = id;
-    msgDiv.textContent = text;
+    msgDiv.innerHTML = text; // Allow formatted HTML for AI messages
     chatMessages.appendChild(msgDiv);
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }

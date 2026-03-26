@@ -193,7 +193,8 @@ function showToast(message, type = 'info') {
 }
 
 // ===== Global State =====
-const API_BASE = 'https://sam-webapp.onrender.com';
+window.API_BASE = 'https://sam-webapp.onrender.com';
+const API_BASE = window.API_BASE;
 let appData = null;
 let currentUser = null; // null or { role: string, dept: string|null, canGenerate: boolean }
 
