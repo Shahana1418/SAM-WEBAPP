@@ -1581,38 +1581,70 @@ window.renderCareer = function(container) {
                     
                     <div class="roles-breakdown" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem;">
                         ${domainObj.roles.map(role => `
-                            <div class="role-detail-card card" style="padding: 0; display: flex; flex-direction: column; height: 100%; overflow: hidden;">
-                                <div style="background: var(--surface-inset); padding: 1.5rem; border-bottom: 1.5px solid var(--border);">
-                                    <h3 style="margin: 0; font-size: 1.2rem; color: var(--text-main);">${role.title}</h3>
-                                    <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">Skill Matrix & Learning Pathways</div>
+                            <div class="role-detail-card card" style="padding: 0; display: flex; flex-direction: column; height: 100%; border-radius: 20px; border: 1px solid var(--border); overflow: hidden; background: #fff; box-shadow: var(--shadow-sm); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
+                                <div style="background: linear-gradient(145deg, var(--surface-inset), #fff); padding: 1.5rem; border-bottom: 2px solid var(--border-light); position: relative;">
+                                    <div style="position: absolute; top: 1.5rem; right: 1.5rem; background: #E8F0FE; color: #1967D2; padding: 4px 12px; border-radius: 30px; font-size: 0.65rem; font-weight: 800; display: flex; align-items: center; gap: 4px;">
+                                        <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9v-2h2v2zm0-4H9V7h2v5zm4 4h-2v-5h2v5zm0-7h-2V7h2v2z"/></svg>
+                                        GOOGLE ALIGNED
+                                    </div>
+                                    <h3 style="margin: 0; font-size: 1.25rem; color: var(--text-main); font-weight: 800;">${role.title}</h3>
+                                    <p style="margin-top: 0.6rem; font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; font-style: italic; background: rgba(0,0,0,0.03); padding: 8px 12px; border-radius: 8px;">
+                                        ${role.googleComparison || 'Matches Google Technical Standards for SDE Roles.'}
+                                    </p>
                                 </div>
                                 
-                                <div style="padding: 1.5rem; flex: 1;">
-                                    <div style="margin-bottom: 1.5rem;">
-                                        <div style="font-size: 0.7rem; font-weight: 900; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 1rem; border-left: 2px solid var(--primary); padding-left: 8px;">Core Competencies</div>
-                                        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                                            ${role.skills.map(skill => `<span class="chip" style="background: #eff6ff; color: #1e40af; border: 1px solid #dbeafe; font-size: 0.7rem;">${skill}</span>`).join('')}
+                                <div style="padding: 1.5rem; flex: 1; display: grid; gap: 1.5rem;">
+                                    <!-- Roadmap Section -->
+                                    <div class="roadmap-section">
+                                        <div style="font-size: 0.7rem; font-weight: 900; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 1rem; display: flex; align-items: center; gap: 8px;">
+                                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                                            Detailed Learning Roadmap
+                                        </div>
+                                        <div class="roadmap-steps" style="display: grid; gap: 12px;">
+                                            ${(role.roadmap || ['Phase 1: Foundations', 'Phase 2: Core Expertise', 'Phase 3: Advanced Deployment']).map((step, sIdx) => `
+                                                <div style="display: flex; gap: 12px;">
+                                                    <div style="flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: ${sIdx === 0 ? 'var(--primary)' : 'var(--surface-inset)'}; color: ${sIdx === 0 ? '#fff' : 'var(--text-muted)'}; font-size: 0.7rem; font-weight: 800; display: flex; align-items: center; justify-content: center; border: 1.5px solid ${sIdx === 0 ? 'transparent' : 'var(--border)'};">
+                                                        ${sIdx + 1}
+                                                    </div>
+                                                    <div style="font-size: 0.82rem; color: ${sIdx === 0 ? 'var(--text-main)' : 'var(--text-muted)'}; line-height: 1.4; font-weight: ${sIdx === 0 ? '600' : '400'};">
+                                                        ${step}
+                                                    </div>
+                                                </div>
+                                            `).join('')}
                                         </div>
                                     </div>
 
-                                    <div style="display: grid; grid-cols: 2; gap: 1.5rem; margin-top: 2rem;">
-                                        <div>
-                                            <div style="font-size: 0.7rem; font-weight: 900; color: #0f766e; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem;">Free Learning (Open Source)</div>
-                                            <ul style="padding-left: 1.2rem; font-size: 0.85rem; color: var(--text-muted); display: grid; gap: 6px;">
-                                                ${role.freeResources.map(r => `<li>${r}</li>`).join('')}
-                                            </ul>
+                                    <div>
+                                        <div style="font-size: 0.7rem; font-weight: 900; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 1rem; border-left: 2px solid var(--primary); padding-left: 8px;">Top Competencies</div>
+                                        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                            ${role.skills.map(skill => `<span class="chip" style="background: var(--bg-main); color: var(--text-main); border: 1px solid var(--border); font-size: 0.7rem; font-weight: 600;">${skill}</span>`).join('')}
                                         </div>
-                                        <div style="margin-top: 1.5rem;">
-                                            <div style="font-size: 0.7rem; font-weight: 900; color: #b45309; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem;">Premium Courses (Certification)</div>
-                                            <ul style="padding-left: 1.2rem; font-size: 0.85rem; color: var(--text-muted); display: grid; gap: 6px;">
-                                                ${role.paidCourses.map(r => `<li>${r}</li>`).join('')}
-                                            </ul>
+                                    </div>
+
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;">
+                                        <div>
+                                            <div style="font-size: 0.65rem; font-weight: 800; color: #059669; text-transform: uppercase; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 5px;">
+                                                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                                Open Access
+                                            </div>
+                                            <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.6;">
+                                                ${role.freeResources.slice(0,3).map(r => `• ${r}<br>`).join('')}
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div style="font-size: 0.65rem; font-weight: 800; color: #7c3aed; text-transform: uppercase; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 5px;">
+                                                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                                Certifications
+                                            </div>
+                                            <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.6;">
+                                                ${role.paidCourses.slice(0,3).map(r => `• ${r}<br>`).join('')}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div style="padding: 1rem 1.5rem; background: #fff; border-top: 1px dashed var(--border);">
-                                    <button class="btn btn-primary w-full" style="border-radius: 8px;" onclick="showToast('Loading learning path for ${role.title}...', 'info')">Begin Journey Map</button>
-                                </div>
+                                <button class="btn btn-primary w-full" style="border-radius: 0; padding: 1rem; font-size: 0.8rem; letter-spacing: 0.05em;" onclick="showToast('Loading full roadmap from Google AI Learning library...', 'info')">
+                                    ACCESS FULL GOOGLE AI ROADMAP
+                                </button>
                             </div>
                         `).join('')}
                     </div>
