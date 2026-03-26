@@ -74,33 +74,61 @@ const PROGRAM_OUTCOMES = [
     { id: 'PO12', name: 'Life-long Learning', icon: '📚' }
 ];
 
-const ASGN_TYPE_ORDER = ['presentation', 'mini_project', 'practical', 'problem_solve'];
+const ASGN_TYPE_ORDER = ['presentation', 'mini_project', 'practical', 'problem_solve', 'case_study'];
 
 // ── Phase 3 Helper Functions ───────────────────────────────────────────────
 
-function buildPhase3Title(aType, unit) {
-    const verbs = {
-        presentation: [
-            'Present and Explain:', 'Deliver a Technical Seminar on:', 'Critical Overview of:', 
-            'Explain with Real-world Examples:', 'Architectural Breakdown of:', 'Case Study Presentation:'
-        ],
-        mini_project: [
-            'Mini Project — Design & Build:', 'Prototype Development for:', 'Working Implementation of:', 
-            'Build a Smart Solution for:', 'Functional Module Design:', 'Proof-of-Concept Development:'
-        ],
-        practical: [
+function extractSmartTopic(rawTopicText, hashKey) {
+    if (!rawTopicText) return "Core Principles";
+    const parts = rawTopicText.split(/[,;\-\.–]/).map(p => p.trim()).filter(p => p.length > 6 && p.length < 65 && !p.toLowerCase().includes('unit'));
+    if (parts.length === 0) return rawTopicText.length > 50 ? rawTopicText.substring(0, 47) + '...' : rawTopicText;
+    return parts[hashKey % parts.length];
+}
+
+function buildPhase3Title(aType, rawTopicText, courseName) {
+    let h = 0; for (let i = 0; i < rawTopicText.length; i++) h = (h * 31 + rawTopicText.charCodeAt(i)) & 0xffff;
+    
+    if (aType === 'practical') {
+        const verbs = [
             'Experimental Validation of:', 'Perform and Document:', 'Execute and Performance Evaluation:', 
             'Design and Simulation of:', 'Hardware/Software Interfacing for:', 'System-level Benchmarking:'
+        ];
+        const verb = verbs[h % verbs.length];
+        return `${verb} ${rawTopicText.length > 60 ? rawTopicText.substring(0, 57) + '...' : rawTopicText}`;
+    }
+
+    const smartConcept = extractSmartTopic(rawTopicText, h);
+    
+    const templates = {
+        presentation: [
+            `Anna Univ Top Repeated: Present on "${smartConcept}"`,
+            `Technical Seminar: Recent advances in "${smartConcept}"`,
+            `Core Concept Presentation: "${smartConcept}"`,
+            `Real-world Engineering Applications of "${smartConcept}"`,
+            `Important 16-Mark: Explain "${smartConcept}" in detail`
+        ],
+        mini_project: [
+            `Mini Project: Build a prototype demonstrating "${smartConcept}"`,
+            `AI/Software/Hardware Implementation of "${smartConcept}"`,
+            `Develop a Smart Solution leveraging "${smartConcept}"`,
+            `Proof-of-Concept: Working module for "${smartConcept}"`
+        ],
+        case_study: [
+            `Industry Case Study: Failure analysis in "${smartConcept}"`,
+            `Research Review: Real-world impact of "${smartConcept}"`,
+            `Corporate Case Study on "${smartConcept}" adoption`,
+            `Analyze Anna University strict case problem on "${smartConcept}"`
         ],
         problem_solve: [
-            'Solve a Numerical Problem Set on:', 'Mathematical Modelling of:', 'Analytical Reasoning Challenge:', 
-            'Problem Solving Case on:', 'Troubleshoot and Resolve:', 'Algorithm Optimization Task:'
+            `Anna Univ 13-Mark/15-Mark Problem: Numerical on "${smartConcept}"`,
+            `Derivation & Problem Solving Challenge: "${smartConcept}"`,
+            `Optimization & Algorithms based on "${smartConcept}"`,
+            `Advanced GATE/Anna Univ Analysis: "${smartConcept}"`
         ]
     };
-    const pool = verbs[aType] || ['Study and Analyse:'];
-    let h = 0; for (let i = 0; i < unit.length; i++) h = (h * 31 + unit.charCodeAt(i)) & 0xffff;
-    const verb = pool[h % pool.length];
-    return `${verb} ${unit.length > 60 ? unit.substring(0, 57) + '...' : unit}`;
+
+    const pool = templates[aType] || templates.presentation;
+    return pool[h % pool.length];
 }
 
 function buildPhase3Description(aType, topic, code, subject, bloomLevel, dur) {
@@ -151,7 +179,7 @@ function logicGeneratePhase3Assignments(teams, unitData, cycleNum, config = {}) 
             usedCombos.add(combo);
             const isReserve = assignments.length >= totalActive;
             const team = isReserve ? null : teams[assignments.length % teams.length];
-            const title = buildPhase3Title(aType, topic.title);
+            const title = buildPhase3Title(aType, topic.title, courseName);
             const bInfo = BLOOM_LEVELS[bloom];
             const poNum = Math.min(12, Math.max(1, bloom + (aType === 'mini_project' ? 2 : 0)));
             
