@@ -1,6 +1,6 @@
 /**
- * SAM Platform — AI AGENT
- * Handles Local AI (Transformers.js) and Secure Backend AI Chat
+ * SAM Platform — AI AGENT (Secure Edition)
+ * Optimized for GitHub Pages with Local-First AI Fallbacks
  */
 
 window.toggleAIChat = function() {
@@ -17,37 +17,58 @@ window.sendAIChat = async function() {
     input.value = '';
 
     const loadingId = 'ai-loading-' + Date.now();
-    appendMessage('SAM AI', 'Typing...', 'ai', loadingId);
+    appendMessage('SAM AI', 'Processing...', 'ai', loadingId);
+    const loadingEl = document.getElementById(loadingId);
+
+    // Initial Security Check (Local)
+    const isMalicious = /<script|javascript:|SELECT|UNION ALL|DROP TABLE/i.test(msg);
+    if (isMalicious) {
+        loadingEl.textContent = "🛡️ AI Security Alert: Your input contains patterns blocked by our security brains. Please keep it academic!";
+        return;
+    }
 
     try {
-        // --- SECURE BACKEND CHAT ---
-        // We use the proxy route to hide our API key on the backend
+        // --- 1. ATTEMPT BACKEND PROXY ---
         const response = await fetch((typeof API_BASE !== 'undefined' ? API_BASE : '') + '/api/ai/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message: msg })
         });
 
-        const data = await response.json();
-        const loadingEl = document.getElementById(loadingId);
-        
-        if (data.response) {
-            loadingEl.textContent = data.response;
-        } else {
-            // --- FALLBACK: LOCAL AI (Transformers.js) ---
-            // If backend is unavailable or fails, we use local browser AI
-            if (window.TransformersAI && window.TransformersAI.pipeline) {
-                loadingEl.textContent = "Backend busy. Using local analyzer...";
-                const classifier = await window.TransformersAI.pipeline('text-classification', 'Xenova/distilbert-base-uncased-finetuned-sst-2-english');
-                const result = await classifier(msg);
-                loadingEl.textContent = "[Local AI Result] Your message sentiment is: " + result[0].label + " (" + Math.round(result[0].score * 100) + "% confidence).";
-            } else {
-                loadingEl.textContent = "AI services are currently offline. Check backend connection.";
+        if (response.ok) {
+            const data = await response.json();
+            if (data.response) {
+                loadingEl.textContent = data.response;
+                return;
             }
         }
+        throw new Error('Backend unavailable');
     } catch (e) {
-        console.error('AI Chat Error:', e);
-        document.getElementById(loadingId).textContent = "Error connecting to AI. Make sure backend is running on :5000";
+        // --- 2. FALLBACK: LOCAL BROWSER AI (Transformers.js) ---
+        console.log('[SAM-AI] Backend not found or on GitHub Pages. Falling back to Local AI.');
+        
+        if (window.TransformersAI && window.TransformersAI.pipeline) {
+            loadingEl.textContent = "🧠 Running local security brain (no backend)...";
+            try {
+                const classifier = await window.TransformersAI.pipeline('text-classification', 'Xenova/distilbert-base-uncased-finetuned-sst-2-english');
+                const result = await classifier(msg);
+                
+                const label = result[0].label;
+                let responseText = `[Offline Mode] Your message analyzed: "${label}". `;
+                
+                if (msg.toLowerCase().includes('roadmap') || msg.toLowerCase().includes('career')) {
+                    responseText += "To get full career maps, open our dedicated 'Career Dashboard' on the main portal!";
+                } else {
+                    responseText += "I am currently running in privacy-mode directly in your browser tab.";
+                }
+                
+                loadingEl.textContent = responseText;
+            } catch (err) {
+                loadingEl.textContent = "Local AI is initializing. Please wait a moment and try again.";
+            }
+        } else {
+             loadingEl.textContent = "Backend Offline. Note: GitHub Pages doesn't run Node.js backends. To enable full AI, run the backend folder locally on Port 5000.";
+        }
     }
 
     const chatMessages = document.getElementById('ai-chat-messages');
