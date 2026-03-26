@@ -333,6 +333,8 @@ a { text-decoration: none; color: inherit; cursor: pointer; }
 .c-violet  { --stat-accent: #8b5cf6; }
 .c-emerald { --stat-accent: #10b981; }
 .c-amber   { --stat-accent: #f59e0b; }
+.c-rose    { --stat-accent: #f43f5e; }
+.c-sky     { --stat-accent: #0ea5e9; }
 
 /* Section Divider */
 .section-divider {
@@ -652,3 +654,11 @@ a { text-decoration: none; color: inherit; cursor: pointer; }
 .stat-card.c-amber { background: #fffbeb; border-color: #fef3c7; }
 .stat-card.c-amber .stat-value { color: #b45309; }
 .stat-card.c-amber .stat-icon { color: #fde68a; }
+
+.stat-card.c-rose { background: #fff1f2; border-color: #fecdd3; }
+.stat-card.c-rose .stat-value { color: #be123c; }
+.stat-card.c-rose .stat-icon { color: #fda4af; }
+
+.stat-card.c-sky { background: #f0f9ff; border-color: #bae6fd; }
+.stat-card.c-sky .stat-value { color: #0369a1; }
+.stat-card.c-sky .stat-icon { color: #7dd3fc; }

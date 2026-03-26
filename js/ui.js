@@ -220,6 +220,12 @@ window.renderCollege = function(container) {
         if (activeDepts.length === 1) { navigateTo('department', activeDepts[0].code); return; }
     }
 
+    // Count SAC members (exclude TBD entries)
+    const totalSacMembers = (typeof SAC_DATA !== 'undefined' ? SAC_DATA : []).filter(s => s.name && s.name !== 'TBD').length;
+
+    // Count Faculty members across all departments (exclude TBD entries)
+    const totalFaculty = (typeof FACULTY_DATA !== 'undefined' ? FACULTY_DATA : []).filter(f => f.name && f.name !== 'TBD').length;
+
     const deptColors = { ATE:'--dept-ate', CSE:'--dept-cse', CVE:'--dept-cve', ECE:'--dept-ece', EEE:'--dept-eee', IMT:'--dept-imt', MCE:'--dept-mce', CDS:'--dept-cds' };
     const deptIcons  = { ATE:'🚗', CSE:'💻', CVE:'🏗️', ECE:'📡', EEE:'⚡', IMT:'🌐', MCE:'⚙️', CDS:'📊' };
 
@@ -299,6 +305,16 @@ window.renderCollege = function(container) {
             <div class="stat-value">${activeDepts.length}</div>
             <div class="stat-label">Departments</div>
             <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+        </div>
+        <div class="stat-card c-rose">
+            <div class="stat-value">${totalSacMembers}</div>
+            <div class="stat-label">SAC Members</div>
+            <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        </div>
+        <div class="stat-card c-sky">
+            <div class="stat-value">${totalFaculty}</div>
+            <div class="stat-label">Faculty Count</div>
+            <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
         </div>
     </div>
 
