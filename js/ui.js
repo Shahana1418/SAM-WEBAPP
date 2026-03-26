@@ -443,7 +443,7 @@ window.renderBatch = function(container) {
                 </div>
                 <div class="page-sub">${info.yearSuffix} Year · Semester ${info.semester} · ${students.length} students enrolled</div>
             </div>
-            <button class="btn btn-secondary" onclick="${currentUser && currentUser.role === 'Student' ? 'navigateTo(\'selection\')' : `navigateTo('department','${deptCode}')`}">
+            <button class="btn btn-secondary" onclick="${currentUser && currentUser.role === 'Student' ? `navigateTo('selection', '${deptCode}', ${batchYear})` : `navigateTo('department','${deptCode}')`}">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
                 Back
             </button>
@@ -1617,7 +1617,7 @@ window.renderCareer = function(container) {
                 <h1 style="font-size: 2.8rem; color: var(--text-main); font-family: 'Playfair Display', serif; margin: 0; line-height: 1.1;">Blueprint Your<br>Industry Journey</h1>
                 <p style="color: var(--text-muted); margin-top: 0.8rem; font-size: 1.05rem; max-width: 600px;">Compare job roles, identify critical skills, and access curated resources for your academic department.</p>
             </div>
-            <button class="btn btn-secondary" onclick="navigateTo('selection')" style="white-space:nowrap; padding: 12px 24px; border-radius: 12px; height: fit-content; font-weight: 700;">
+            <button class="btn btn-secondary" onclick="navigateTo('selection', '${sDept}', ${navState.batch})" style="white-space:nowrap; padding: 12px 24px; border-radius: 12px; height: fit-content; font-weight: 700;">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" style="margin-right:0.4rem;"><polyline points="15 18 9 12 15 6"></polyline></svg>
                 Switch Portal
             </button>
