@@ -193,7 +193,7 @@ function showToast(message, type = 'info') {
 }
 
 // ===== Global State =====
-const API_BASE = 'http://localhost:8080';
+const API_BASE = 'https://sam-webapp.onrender.com';
 let appData = null;
 let currentUser = null; // null or { role: string, dept: string|null, canGenerate: boolean }
 
@@ -212,12 +212,12 @@ function getSubjectSpec(code) {
     ];
     let spec = null;
     for (const db of dbs) {
-        if (db && db[code]) { 
-            spec = db[code]; 
-            break; 
+        if (db && db[code]) {
+            spec = db[code];
+            break;
         }
     }
-    
+
     // If not found in primary subject array, create a dummy object
     if (!spec) spec = { name: code };
 
@@ -230,7 +230,7 @@ function getSubjectSpec(code) {
         if (details.outcomes && details.outcomes.length > 0) {
             spec.cos = {};
             details.outcomes.forEach((co, idx) => {
-                let coName = co.id || ('CO' + (idx+1));
+                let coName = co.id || ('CO' + (idx + 1));
                 if (co.desc) spec.cos[coName] = co.desc;
             });
         }
@@ -492,10 +492,10 @@ async function attemptLogin() {
     } else if (selectedLoginRole === 'Student' && (un || pw === 'student' || pw === 'default')) {
         const isTest = (pw === 'student' || pw === 'default');
         const match = un.match(/^(\d{2})([A-Z]+)(\d+)$/);
-        
+
         let sDept = 'CSE';
         let sBatch = 2027;
-        
+
         if (match) {
             sDept = match[2];
             sBatch = 2000 + parseInt(match[1]) + 4;
@@ -504,7 +504,7 @@ async function attemptLogin() {
             if (err) { err.textContent = 'Invalid Roll No format. Use e.g. 23CSE12'; err.style.display = 'block'; }
             return;
         }
-        
+
         // Try backend authentication first
         if (typeof SAM_API !== 'undefined' && SAM_API.isConnected() && match) {
             try {
@@ -518,16 +518,16 @@ async function attemptLogin() {
                 console.log('[SAM] Backend auth failed, using local parsing');
             }
         }
-        
+
         currentUser = { role: 'Student', dept: sDept, batch: sBatch, rollNo: un, canGenerate: false, canLock: false };
         roleMatched = true;
-        
+
         // Redirection to Selection Screen
         navState.dept = sDept;
         navState.batch = sBatch;
         navState.level = 'selection';
         fallbackNav = null;
-        
+
     } else if (selectedLoginRole === 'Alumni' && (pw === 'alumni' || pw === 'default')) {
         currentUser = { role: 'Alumni', dept: 'CSE', canGenerate: false, canLock: false };
         roleMatched = true;
@@ -543,7 +543,7 @@ async function attemptLogin() {
                 currentUser = { role: 'Faculty', dept: null, canGenerate: true, canLock: true };
                 roleMatched = true;
             }
-        } catch(e) {}
+        } catch (e) { }
     }
 
     if (roleMatched) {
